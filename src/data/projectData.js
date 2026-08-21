@@ -235,6 +235,7 @@ export const projectData = {
   },
 
   socials: {
+    facebook: "",
     linkedin: "",
     youtube: "",
     tiktok: "",

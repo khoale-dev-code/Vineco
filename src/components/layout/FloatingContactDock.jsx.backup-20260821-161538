@@ -29,7 +29,7 @@ function ImageContactButton({
       title={label}
       className={[
         "group",
-        "flex h-12 w-12",
+        "flex h-14 w-14",
         "items-center justify-center",
         "overflow-hidden",
         "rounded-full",
@@ -41,18 +41,18 @@ function ImageContactButton({
         "hover:-translate-y-1",
         "hover:scale-105",
         "hover:shadow-[0_18px_42px_rgba(255,164,18,.30)]",
-        "sm:h-13 sm:w-13",
+        "sm:h-15 sm:w-15",
       ].join(" ")}
     >
       <img
         src={image}
         alt={label}
         className={[
-          "h-[28px] w-[28px]",
+          "h-[34px] w-[34px]",
           "object-contain",
           "transition-transform duration-300",
           "group-hover:scale-110",
-          "sm:h-[30px] sm:w-[30px]",
+          "sm:h-[36px] sm:w-[36px]",
         ].join(" ")}
       />
     </a>
@@ -72,7 +72,7 @@ function InternalImageButton({
       title={label}
       className={[
         "group",
-        "flex h-12 w-12",
+        "flex h-14 w-14",
         "items-center justify-center",
         "overflow-hidden",
         "rounded-full",
@@ -84,18 +84,18 @@ function InternalImageButton({
         "hover:-translate-y-1",
         "hover:scale-105",
         "hover:shadow-[0_18px_42px_rgba(255,164,18,.30)]",
-        "sm:h-13 sm:w-13",
+        "sm:h-15 sm:w-15",
       ].join(" ")}
     >
       <img
         src={image}
         alt={label}
         className={[
-          "h-[28px] w-[28px]",
+          "h-[34px] w-[34px]",
           "object-contain",
           "transition-transform duration-300",
           "group-hover:scale-110",
-          "sm:h-[30px] sm:w-[30px]",
+          "sm:h-[36px] sm:w-[36px]",
         ].join(" ")}
       />
     </Link>
@@ -114,7 +114,7 @@ export default function FloatingContactDock() {
         "fixed",
         "bottom-5 right-3",
         "z-40",
-        "flex flex-col gap-2.5",
+        "flex flex-col gap-3",
         "sm:bottom-7 sm:right-6",
       ].join(" ")}
     >
