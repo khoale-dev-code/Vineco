@@ -1,5 +1,3 @@
-import { Link } from "react-router";
-
 import Reveal from "../ui/Reveal";
 import SiteIcon from "../ui/SiteIcon";
 
@@ -7,79 +5,143 @@ import {
   oemOdmContent,
 } from "../../data/oemOdmContent";
 
+import {
+  productCatalog,
+} from "../../data/productCatalog";
+
+
+function SectionLabel({
+  children,
+}) {
+  return (
+    <div className="flex items-center justify-center gap-3">
+
+      <span className="h-px w-9 bg-[#ffa412]/70" />
+
+      <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#e89400] sm:text-[11px]">
+        {children}
+      </p>
+
+      <span className="h-px w-9 bg-[#ffa412]/70" />
+
+    </div>
+  );
+}
+
+
 export default function OemCapabilities() {
   return (
-    <section className="oem-v3-capabilities">
+    <section
+      id="oem-capabilities"
+      className="bg-white py-20 sm:py-24 lg:py-28"
+    >
 
-      <div className="oem-v3-shell">
+      <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+
+
+        {/* HEADING */}
 
         <Reveal>
-          <header className="oem-v3-section-heading">
 
-            <div>
-              <p className="oem-v3-eyebrow">
-                Customization
-              </p>
+          <header className="mx-auto max-w-[860px] text-center">
 
-              <h2>
-                What can
-                <span>
-                  we customize?
-                </span>
-              </h2>
-            </div>
+            <SectionLabel>
+              Customization & Capabilities
+            </SectionLabel>
 
-            <p>
-              Build your project around the
-              product, packaging and brand details
-              that matter most.
+
+            <h2
+              className={[
+                "mt-4",
+                "text-balance",
+                "text-[clamp(2.25rem,5vw,4rem)]",
+                "font-extrabold",
+                "leading-[0.98]",
+                "tracking-[-0.055em]",
+                "text-[#03326b]",
+              ].join(" ")}
+            >
+              What we work with
+            </h2>
+
+
+            <p className="mx-auto mt-5 max-w-[700px] text-pretty text-[15px] leading-7 text-[#03326b]/55 sm:text-[17px] sm:leading-8">
+              Product development, packaging, branding and sampling support
+              for flexible OEM, ODM and private-label projects.
             </p>
 
           </header>
+
         </Reveal>
 
 
-        <div className="oem-v3-bento">
+        {/* CAPABILITY GRID */}
+
+        <div className="mt-11 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
           {oemOdmContent.capabilities.map(
             (item, index) => (
+
               <Reveal
                 key={item.number}
-                variant="up"
-                delay={index * 65}
-                className={
-                  index === 0 ||
-                  index === 3
-                    ? "oem-v3-bento__wide"
-                    : ""
-                }
+                delay={index * 55}
+                className="h-full"
               >
 
                 <article
                   className={[
-                    "oem-v3-capability",
-                    index === 1 ||
-                    index === 4
-                      ? "oem-v3-capability--navy"
-                      : "",
-                    index === 0 ||
-                    index === 3
-                      ? "oem-v3-capability--orange"
-                      : "",
+                    "group",
+                    "flex h-full min-h-[190px]",
+                    "flex-col",
+                    "rounded-[24px]",
+                    "border border-[#ffa412]/20",
+                    "bg-[#fffaf3]",
+                    "px-6 py-6",
+                    "transition duration-300",
+                    "hover:-translate-y-1",
+                    "hover:border-[#ffa412]",
+                    "hover:bg-white",
+                    "hover:shadow-[0_18px_42px_rgba(255,164,18,0.11)]",
                   ].join(" ")}
                 >
 
-                  <span>
-                    {item.number}
-                  </span>
+                  <div className="flex items-start justify-between gap-4">
 
-                  <div>
+                    <span
+                      className={[
+                        "flex h-12 w-12",
+                        "items-center justify-center",
+                        "rounded-full",
+                        "bg-[#ffa412]",
+                        "text-[#03326b]",
+                        "shadow-[0_10px_26px_rgba(255,164,18,0.22)]",
+                        "transition-transform duration-300",
+                        "group-hover:scale-105",
+                      ].join(" ")}
+                    >
+                      <SiteIcon
+                        name={item.icon}
+                        size={20}
+                        strokeWidth={2}
+                      />
+                    </span>
 
-                    <h3>
+
+                    <span className="text-[10px] font-extrabold tracking-[0.14em] text-[#03326b]/28">
+                      {item.number}
+                    </span>
+
+                  </div>
+
+
+                  <div className="mt-auto pt-6">
+
+                    <h3 className="text-[18px] font-extrabold leading-tight tracking-[-0.035em] text-[#03326b]">
                       {item.title}
                     </h3>
 
-                    <p>
+
+                    <p className="mt-2 text-[12px] leading-6 text-[#03326b]/55">
                       {item.text}
                     </p>
 
@@ -94,26 +156,42 @@ export default function OemCapabilities() {
         </div>
 
 
-        <Reveal delay={150}>
+        {/* PRODUCT CATEGORIES */}
 
-          <div className="oem-v3-capabilities__footer">
+        <Reveal delay={140}>
 
-            <p>
-              Have a product idea that does not fit
-              neatly into one of these categories?
+          <div className="mt-11">
+
+            <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.22em] text-[#03326b]/40">
+              Product Categories
             </p>
 
-            <Link
-              to="/contact"
-              className="oem-v3-text-link"
-            >
-              Tell us what you want to build
 
-              <SiteIcon
-                name="arrow"
-                size={15}
-              />
-            </Link>
+            <div className="mt-5 flex flex-wrap justify-center gap-2.5">
+
+              {productCatalog.map(
+                (product) => (
+
+                  <span
+                    key={product.slug}
+                    className={[
+                      "rounded-full",
+                      "border border-[#03326b]/10",
+                      "bg-white",
+                      "px-4 py-2.5",
+                      "text-[11px]",
+                      "font-bold",
+                      "text-[#03326b]/70",
+                      "shadow-[0_5px_18px_rgba(3,50,107,0.03)]",
+                    ].join(" ")}
+                  >
+                    {product.name}
+                  </span>
+
+                ),
+              )}
+
+            </div>
 
           </div>
 

@@ -5,17 +5,18 @@ export const oemOdmContent = {
       number: "01",
       eyebrow: "OEM",
       title: "OEM Manufacturing",
-      subtitle: "Your specification. Our production.",
+      subtitle: "Your design, our factory",
       description:
-        "A manufacturing path for brands that already have product specifications, references or samples and need a reliable production partner.",
-      minimumOrder: "Flexible by project",
-      leadTime: "Project dependent",
-      bestFor: "Brands with an existing product direction",
+        "You provide the full design - samples, tech packs, drawings or an approved reference. VinEco manufactures to your requirements with production follow-up and quality control.",
+      minimumOrder: "1,000 - 5,000 units",
+      leadTime: "30 - 45 days",
+      pricing: "$2 - $15 / unit",
+      bestFor: "Brands with ready designs",
       points: [
-        "Custom specifications",
-        "Production follow-up",
-        "Quality inspection",
-        "Packaging discussion",
+        "Full specification compliance",
+        "Mass production at scale",
+        "Production progress updates",
+        "Strict AQL inspection",
       ],
     },
 
@@ -24,36 +25,38 @@ export const oemOdmContent = {
       number: "02",
       eyebrow: "ODM",
       title: "ODM Development",
-      subtitle: "Your idea. Developed together.",
+      subtitle: "We design together",
       description:
-        "A collaborative development path for brands that have a concept but need support shaping the product, material direction and presentation.",
-      minimumOrder: "Flexible by project",
-      leadTime: "Development dependent",
-      bestFor: "Brands developing a new product",
+        "Bring a concept, reference or mood board. VinEco works with you to develop the product direction from first concept through sampling and production alignment.",
+      minimumOrder: "500 - 3,000 units",
+      leadTime: "35 - 60 days",
+      pricing: "$3 - $20 / unit",
+      bestFor: "Brands exploring new ideas",
       points: [
-        "Product concept discussion",
-        "Sampling",
-        "Material direction",
-        "Packaging development",
+        "Collaborative design process",
+        "Multiple prototype rounds",
+        "Product development support",
+        "Material consultation",
       ],
     },
 
     {
       key: "private",
       number: "03",
-      eyebrow: "Private Label",
+      eyebrow: "PRIVATE LABEL",
       title: "Private Label",
-      subtitle: "A faster route to your own collection.",
+      subtitle: "Your brand, our products",
       description:
-        "Use suitable VinEco products as a base and build your own branded presentation around them.",
-      minimumOrder: "From trial quantities",
-      leadTime: "Faster project route",
-      bestFor: "Brands testing a market",
+        "Choose from suitable VinEco products and build your own branded collection with logo, labels and packaging for a faster route to market.",
+      minimumOrder: "50 units",
+      leadTime: "7 days",
+      pricing: "$1 - $10 / unit",
+      bestFor: "Quick brand launch",
       points: [
-        "Brand labeling",
-        "Packaging options",
-        "Product selection",
-        "Market testing",
+        "Custom branding and logos",
+        "Retail-ready packaging",
+        "Product selection support",
+        "Lowest MOQ option",
       ],
     },
   ],
@@ -61,38 +64,47 @@ export const oemOdmContent = {
   process: [
     {
       number: "01",
-      eyebrow: "Brief",
-      title: "Share Your Direction",
+      eyebrow: "STEP 01",
+      title: "Send Your Design",
       text:
-        "Send product references, specifications, sketches, target market or sample requirements.",
+        "Share sketches, samples, or specs. NDA available on request.",
+      icon: "mail",
     },
+
     {
       number: "02",
-      eyebrow: "Develop",
+      eyebrow: "STEP 02",
       title: "Prototype & Sampling",
       text:
-        "VinEco reviews the direction and prepares a suitable development or sampling path.",
+        "We develop samples within 7-14 days. Revise until you approve.",
+      icon: "box",
     },
+
     {
       number: "03",
-      eyebrow: "Produce",
-      title: "Manufacturing",
+      eyebrow: "STEP 03",
+      title: "Mass Production",
       text:
-        "Approved requirements move into production with project follow-up.",
+        "Scaled production in our factory. Daily photos and progress.",
+      icon: "factory",
     },
+
     {
       number: "04",
-      eyebrow: "Inspect",
-      title: "Quality Check",
+      eyebrow: "STEP 04",
+      title: "Quality Inspection",
       text:
-        "Products are reviewed before packing and shipment preparation.",
+        "AQL inspection with photos and reports before shipment.",
+      icon: "check",
     },
+
     {
       number: "05",
-      eyebrow: "Deliver",
+      eyebrow: "STEP 05",
       title: "Global Delivery",
       text:
-        "Packing, export preparation and shipment are coordinated for the project.",
+        "Container loading and worldwide shipping - FOB, CIF, or DDP.",
+      icon: "globe",
     },
   ],
 
@@ -102,36 +114,47 @@ export const oemOdmContent = {
       title: "Product Format",
       text:
         "Discuss dimensions, shape and suitable natural-material product directions.",
+      icon: "box",
     },
+
     {
       number: "02",
       title: "Packaging",
       text:
-        "Develop presentation suitable for private-label and B2B projects.",
+        "Develop packaging suitable for private-label and international B2B projects.",
+      icon: "tag",
     },
+
     {
       number: "03",
       title: "Brand Labels",
       text:
         "Apply suitable labels, stickers, tags and brand identification.",
+      icon: "tag",
     },
+
     {
       number: "04",
       title: "Laser Engraving",
       text:
-        "Permanent branding on suitable coffee wood products.",
+        "Permanent branding on suitable natural coffee wood products.",
+      icon: "factory",
     },
+
     {
       number: "05",
       title: "Sampling",
       text:
-        "Evaluate product direction before larger production decisions.",
+        "Evaluate the product direction before moving into larger production.",
+      icon: "check",
     },
+
     {
       number: "06",
       title: "Product Media",
       text:
-        "Support product presentation for selected OEM / ODM projects.",
+        "Support product presentation for selected OEM and ODM projects.",
+      icon: "message",
     },
   ],
 };
