@@ -1,256 +1,209 @@
-VinEco Static React Website
+<div align="center">
+
+# 🐾 VinEco — Static React Website
+
+**Modern B2B showcase website for natural pet products, OEM / ODM & private-label manufacturing**
+
+<img src="https://img.shields.io/badge/React-19.2.8-03326b?logo=react&logoColor=ffa412" alt="React 19.2.8">
+<img src="https://img.shields.io/badge/Vite-8.2.1-03326b?logo=vite&logoColor=ffa412" alt="Vite 8.2.1">
+<img src="https://img.shields.io/badge/Tailwind_CSS-4.3.3-03326b?logo=tailwindcss&logoColor=ffa412" alt="Tailwind CSS 4.3.3">
+<img src="https://img.shields.io/badge/React_Router-8.3.0-03326b?logo=reactrouter&logoColor=ffa412" alt="React Router 8.3.0">
+<img src="https://img.shields.io/badge/license-Private-03326b" alt="License">
+
+</div>
+
+<br>
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="120">
+<img src="https://singlecolorimage.com/get/03326b/120x40" alt="Navy"><br>
+<sub><b>Navy</b> #03326b</sub>
+</td>
+<td align="center" width="120">
+<img src="https://singlecolorimage.com/get/ffa412/120x40" alt="Orange"><br>
+<sub><b>Orange</b> #ffa412</sub>
+</td>
+<td align="center" width="120">
+<img src="https://singlecolorimage.com/get/fffaf3/120x40" alt="Cream"><br>
+<sub><b>Cream</b> #fffaf3</sub>
+</td>
+</tr>
+</table>
+</div>
+
+---
+
+## 📖 Overview
+
+**VinEco Static React Website** is a responsive B2B presentation website built with **React 19**, **Vite 8**, and **Tailwind CSS v4**.
+
+It presents VinEco as a Vietnam-based natural pet-product manufacturer, showcasing:
+
+| | |
+|---|---|
+| 🐕 | Natural pet products |
+| ☕ | Coffee wood dog chews |
+| 🏭 | OEM manufacturing |
+| 🎨 | ODM product development |
+| 🏷️ | Private label |
+| 📦 | Packaging & branding support |
+| 🧪 | Sampling |
+| 🌍 | Export-ready B2B projects |
+
+> Built as a **fully static front-end**, so it deploys effortlessly to any static hosting platform.
+
+---
+
+## 🧱 Tech Stack
+
+| Technology | Version | Purpose |
+|---|---|---|
+| **React** | 19.2.8 | UI framework |
+| **React DOM** | 19.2.8 | Browser rendering |
+| **React Router** | ^8.3.0 | Client-side routing |
+| **Vite** | 8.2.1 | Dev server & production build |
+| **Tailwind CSS** | 4.3.3 | Styling system |
+| **@tailwindcss/vite** | 4.3.3 | Tailwind + Vite integration |
+| **Lexend Variable** | ^5.3.0 | Main project font |
+
+> Icons are implemented as **local SVG / UI components** — no heavy external icon package required.
+
+---
+
+## ✨ Main Features
+
+<table>
+<tr>
+<td valign="top" width="50%">
+
+### 🎨 UI / UX
+- Responsive desktop, tablet & mobile layouts
+- VinEco navy / orange visual system
+- Sticky responsive navigation
+- Mobile full-screen navigation
+- Product dropdown navigation
+- Scroll reveal animations
+- Reduced-motion accessibility support
+- Reusable image fallback system
+- Floating contact actions
+- Reusable modal system
+- Responsive product-detail experience
+
+</td>
+<td valign="top" width="50%">
+
+### 💼 Business Features
+- OEM / ODM presentation
+- Private-label positioning
+- Product catalog
+- Product detail pages
+- Sample request modal
+- Contact information
+- Google Map embed support
+- FAQ sections
+- Export / manufacturing content
 
-<p align="center">
-  <strong>Modern B2B showcase website for natural pet products, OEM / ODM and private-label manufacturing.</strong>
-</p>
+</td>
+</tr>
+</table>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-19.2.8-61DAFB?logo=react&logoColor=white" alt="React 19.2.8">
-  <img src="https://img.shields.io/badge/Vite-8.2.1-646CFF?logo=vite&logoColor=white" alt="Vite 8.2.1">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-4.3.3-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4.3.3">
-  <img src="https://img.shields.io/badge/React_Router-8.3.0-CA4245?logo=reactrouter&logoColor=white" alt="React Router 8.3.0">
-</p>
+### 📄 Pages
 
-Overview
+`Home` · `About Us` · `Products` · `Product Detail` · `Service` · `OEM / ODM` · `FAQ` · `Contact`
 
-VinEco Static React Website is a responsive B2B presentation website built with React 19, Vite 8 and Tailwind CSS v4.
+---
 
-The project presents VinEco as a Vietnam-based natural pet-product manufacturer with support for:
+## 🚀 Getting Started
 
-Natural pet products
+### Requirements
 
-Coffee wood dog chews
+- **Node.js 20+** (recommended)
+- **npm**
 
-OEM manufacturing
-
-ODM product development
-
-Private label
-
-Packaging and branding support
-
-Sampling
-
-Export-ready B2B projects
-
-The project is designed as a static front-end website, so it can be deployed easily to static hosting platforms.
-
-Tech Stack
-
-Technology
-
-Version
-
-Purpose
-
-React
-
-19.2.8
-
-UI framework
-
-React DOM
-
-19.2.8
-
-Browser rendering
-
-React Router
-
-^8.3.0
-
-Client-side routing
-
-Vite
-
-8.2.1
-
-Dev server and production build
-
-Tailwind CSS
-
-4.3.3
-
-Styling system
-
-@tailwindcss/vite
-
-4.3.3
-
-Tailwind + Vite integration
-
-Lexend Variable
-
-^5.3.0
-
-Main project font
-
-The project intentionally uses local SVG/UI icon components instead of depending on a large external icon package.
-
-Main Features
-
-UI / UX
-
-Responsive desktop, tablet and mobile layouts
-
-VinEco blue / orange visual system
-
-Sticky responsive navigation
-
-Mobile full-screen navigation
-
-Product dropdown navigation
-
-Scroll reveal animations
-
-Reduced-motion accessibility support
-
-Reusable image fallback system
-
-Floating contact actions
-
-Reusable modal system
-
-Responsive product-detail experience
-
-Pages
-
-Home
-
-About Us
-
-Products
-
-Product Detail
-
-Service
-
-OEM / ODM
-
-FAQ
-
-Contact
-
-Business Features
-
-OEM / ODM presentation
-
-Private-label positioning
-
-Product catalog
-
-Product detail pages
-
-Sample request modal
-
-Contact information
-
-Google Map embed support
-
-FAQ sections
-
-Export / manufacturing content
-
-Getting Started
-
-Requirements
-
-Install:
-
-Node.js 20+ recommended
-
-npm
-
-Check your environment:
-
+```bash
 node -v
 npm -v
+```
 
-Install
+### Installation
 
-From the project root:
-
+```bash
 npm install
+```
 
-Start the development server:
+### Run development server
 
+```bash
 npm run dev
+```
 
-To expose the dev server to your local network:
+Expose the dev server to your local network:
 
+```bash
 npm run dev -- --host
+```
 
 Vite will normally provide:
 
+```
 Local:   http://localhost:5173/
 Network: http://YOUR-LAN-IP:5173/
+```
 
-Clean Reinstall
+### Clean reinstall
 
-Use this when dependencies become inconsistent or after replacing the project with a newer version.
+Use this when dependencies become inconsistent, or after replacing the project with a newer version.
 
-PowerShell
+**PowerShell**
 
+```powershell
 Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
 Remove-Item package-lock.json -ErrorAction SilentlyContinue
 
 npm install
 npm run build
 npm run dev
+```
 
-Available Scripts
+---
 
-Development
+## 🛠️ Available Scripts
 
-npm run dev
+| Command | Description |
+|---|---|
+| `npm run dev` | Start development server |
+| `npm run dev -- --host` | Start dev server, exposed on local network |
+| `npm run build` | Production build → outputs to `dist/` |
+| `npm run preview` | Preview the production build |
 
-Development on local network
+---
 
-npm run dev -- --host
+## 🧭 Routing
 
-Production build
+The app uses **React Router** with `HashRouter`, so routes work on simple static hosting without server rewrite rules.
 
-npm run build
+| Route | Page |
+|---|---|
+| `#/` | Home |
+| `#/about` | About Us |
+| `#/products` | Products |
+| `#/products/coffee-wood` | Product Detail |
+| `#/service` | Service |
+| `#/oem-odm` | OEM / ODM |
+| `#/faq` | FAQ |
+| `#/contact` | Contact |
 
-Build output:
+- **Main router:** `src/app/App.jsx`
+- **Product detail routes:** `/products/:slug`
+- **Product slugs defined in:** `src/data/productCatalog.js`
 
-dist/
+---
 
-Preview production build
+## 📁 Project Structure
 
-npm run preview
-
-Routing
-
-The application uses React Router with HashRouter.
-
-That means routes are compatible with simple static hosting without requiring server rewrite rules.
-
-Examples:
-
-#/                       Home
-#/about                  About Us
-#/products               Products
-#/products/coffee-wood   Product Detail
-#/service                Service
-#/oem-odm                OEM / ODM
-#/faq                    FAQ
-#/contact                Contact
-
-Main router:
-
-src/app/App.jsx
-
-Product detail routes use:
-
-/products/:slug
-
-Product slugs are defined in:
-
-src/data/productCatalog.js
-
-Project Structure
-
+```
 vineco-static-react/
 │
 ├── public/
@@ -260,7 +213,6 @@ vineco-static-react/
 │   │   ├── service-mobile/
 │   │   ├── service-real/
 │   │   └── ...
-│   │
 │   └── video/
 │
 ├── src/
@@ -285,7 +237,7 @@ vineco-static-react/
 │   │   ├── oemOdmContent.js
 │   │   ├── productCatalog.js
 │   │   ├── projectData.js
-│   │   ├── serviceContent.js
+│   │   └── serviceContent.js
 │   │   └── siteContent.js
 │   │
 │   ├── features/
@@ -316,502 +268,330 @@ vineco-static-react/
 ├── package.json
 ├── vite.config.js
 └── README.md
+```
 
-Where to Edit Website Content
+---
 
-The current project no longer stores everything in a single data file.
+## ✏️ Where to Edit Website Content
 
-Use the following files depending on what you want to change.
+> The project no longer stores everything in a single data file. Edit the file that matches the section you want to change.
 
-Shared / Home / Contact Data
+| Area | File |
+|---|---|
+| Shared / Home / Contact data | `src/data/projectData.js` |
+| Product catalog & routes | `src/data/productCatalog.js` |
+| About page (current) | `src/data/aboutV4.js` |
+| About page (legacy/alt versions) | `aboutContent.js`, `aboutEditorial.js`, `aboutExperience.js` |
+| Service page | `src/data/serviceContent.js` |
+| OEM / ODM page | `src/data/oemOdmContent.js` |
+| Legacy / shared section content | `src/data/siteContent.js` |
 
-src/data/projectData.js
+### Shared / Home / Contact Data — `src/data/projectData.js`
+Contains: brand information, hero copy, metrics, home product cards, advantages, OEM models used by some sections, FAQ, contact information.
 
-Contains data such as:
+### Product Catalog — `src/data/productCatalog.js`
+Controls product navigation and product-detail routes.
 
-Brand information
-
-Hero copy
-
-Metrics
-
-Home product cards
-
-Advantages
-
-OEM models used by some sections
-
-FAQ
-
-Contact information
-
-Product Catalog
-
-src/data/productCatalog.js
-
-Controls the product navigation and product-detail routes.
-
-Example structure:
-
+```js
 {
   slug: "coffee-wood",
   name: "Coffee Wood",
   image: "/images/product-classic.webp",
   description: "..."
 }
+```
 
-The slug becomes part of the URL:
+The `slug` becomes part of the URL: `#/products/coffee-wood`
 
-#/products/coffee-wood
+### Service Page — `src/data/serviceContent.js`
+Update: service chapters, titles, descriptions, feature points, service images, overview information.
 
-About Page
+### OEM / ODM Page — `src/data/oemOdmContent.js`
+Update: OEM model, ODM model, private-label model, process, capabilities.
 
-Current About-page content is mainly driven by:
+> ⚠️ `siteContent.js` still exists but is **not guaranteed** to be used by every page. Always check which data file the target page imports before editing.
 
-src/data/aboutV4.js
+---
 
-Other About data files are also present for earlier / alternate section versions:
+## 🖼️ Images & Media
 
-src/data/aboutContent.js
-src/data/aboutEditorial.js
-src/data/aboutExperience.js
+| Type | Location |
+|---|---|
+| Images | `public/images/` |
+| Videos | `public/video/` |
 
-Service Page
+A file at `public/images/example.png` is referenced in React as:
 
-src/data/serviceContent.js
-
-Use this file to update:
-
-Service chapters
-
-Service titles
-
-Descriptions
-
-Feature points
-
-Service images
-
-Overview information
-
-OEM / ODM Page
-
-src/data/oemOdmContent.js
-
-Use this file to update:
-
-OEM model
-
-ODM model
-
-Private-label model
-
-Process
-
-Capabilities
-
-Legacy / Shared Section Content
-
-src/data/siteContent.js
-
-This file still exists, but do not assume that every current page reads from it.
-
-Before editing content, check which data file the target page imports.
-
-Images and Media
-
-Static assets belong inside:
-
-public/images/
-
-Videos belong inside:
-
-public/video/
-
-A file placed at:
-
-public/images/example.png
-
-is referenced in React as:
-
+```jsx
 <img src="/images/example.png" alt="" />
+```
 
-Image Fallback
+### Image Fallback — `src/components/ui/SmartImage.jsx`
 
-The project includes:
+Automatically displays a neutral placeholder when:
+- `src` is empty
+- the image does not exist
+- the browser cannot load the image
 
-src/components/ui/SmartImage.jsx
+If you see **"Add image / images/example.webp"**, the referenced file is missing or failed to load.
 
-SmartImage automatically displays a neutral placeholder when:
+### Product Images
 
-src is empty
+Image paths are expected in `src/data/productCatalog.js` and `src/data/projectData.js`. When adding/replacing images:
 
-the image does not exist
+1. Put the image inside `public/images/`
+2. Update the corresponding data object
+3. Keep image names simple and URL-safe
+4. Run `npm run build`
+5. Test both desktop and mobile
 
-the browser cannot load the image
+> 💡 For transparent PNG product images, `object-contain` is usually better than `object-cover` since it avoids cropping the product.
 
-If you see:
+---
 
-Add image
-/images/example.webp
+## 🗺️ Google Map
 
-it normally means the referenced file is missing or the image URL failed.
+Configured in `src/data/mapEmbed.js`. Paste either a complete Google Maps `<iframe>` or a valid map URL.
 
-Product Images
-
-The product catalog currently expects image paths defined in:
-
-src/data/productCatalog.js
-src/data/projectData.js
-
-When adding or replacing images:
-
-Put the image inside public/images/.
-
-Update the corresponding data object.
-
-Keep image names simple and URL-safe.
-
-Run npm run build.
-
-Test both desktop and mobile.
-
-For transparent PNG product images, object-contain is usually better than object-cover because it avoids cropping the product.
-
-Google Map
-
-Google Map configuration is stored in:
-
-src/data/mapEmbed.js
-
-Paste either:
-
-the complete Google Maps <iframe>
-
-or a valid map URL accepted by the component
-
-Example:
-
+```js
 export const mapEmbedHtml = `
   <iframe
     src="YOUR_GOOGLE_MAP_EMBED_URL"
     loading="lazy"
   ></iframe>
 `;
+```
 
-The renderer is:
+Renderer: `src/components/ui/GoogleMapEmbed.jsx`
+If no map is configured, the site shows a fallback card instead of breaking the page.
 
-src/components/ui/GoogleMapEmbed.jsx
+---
 
-If no map is configured, the website displays a fallback card instead of breaking the page.
+## ✉️ Contact Form
 
-Contact Form
+The Contact page is currently **static** — on submit it generates a pre-filled email via `mailto:` and opens the visitor's email client.
 
-The current Contact page is static.
+- **File:** `src/pages/ContactPage.jsx`
+- **Data source:** `src/data/projectData.js`
 
-On submit, it generates a pre-filled email using mailto: and opens the visitor's email application.
+> For production use requiring direct form submission, connect the form to your own API, serverless function, or hosted form provider.
 
-Relevant file:
+---
 
-src/pages/ContactPage.jsx
+## 🧪 Sample Request Modal
 
-Contact data is read from:
+Global modal managed by:
 
-src/data/projectData.js
+- `src/features/sample/SampleModal.jsx`
+- `src/features/sample/SampleModalContext.jsx`
 
-For production projects that require direct form submission, connect the form to your own API, serverless function or hosted form provider.
+Can be opened from multiple sections without duplicating modal state. Provider is mounted in `src/app/App.jsx`.
 
-Sample Request Modal
+---
 
-The global sample-request modal is managed by:
+## 🎨 Styling
 
-src/features/sample/SampleModal.jsx
-src/features/sample/SampleModalContext.jsx
+Global styles: `src/styles/globals.css` — built with **Tailwind CSS v4** + Vite integration.
 
-It can be opened from multiple sections without duplicating modal state.
+<div align="center">
+<table>
+<tr>
+<th>Role</th><th>Color</th><th>Hex</th>
+</tr>
+<tr>
+<td>Primary</td>
+<td><img src="https://singlecolorimage.com/get/03326b/60x20"></td>
+<td><code>#03326b</code> VinEco Navy</td>
+</tr>
+<tr>
+<td>Accent</td>
+<td><img src="https://singlecolorimage.com/get/ffa412/60x20"></td>
+<td><code>#ffa412</code> VinEco Orange</td>
+</tr>
+<tr>
+<td>Background</td>
+<td><img src="https://singlecolorimage.com/get/fffaf3/60x20"></td>
+<td><code>#fffaf3</code> Cream</td>
+</tr>
+<tr>
+<td>Base</td>
+<td><img src="https://singlecolorimage.com/get/ffffff/60x20"></td>
+<td><code>#ffffff</code> White</td>
+</tr>
+</table>
+</div>
 
-The provider is mounted in:
+**Primary font:** Lexend Variable
 
-src/app/App.jsx
+---
 
-Styling
+## 📱 Responsive Design
 
-Global styles are located in:
+Dedicated responsive behavior for: header, mobile navigation, service page, product detail page, about page, OEM/ODM page, cards & grids, contact layout, floating contact controls.
 
-src/styles/globals.css
+**Minimum test breakpoints:**
 
-The project uses Tailwind CSS v4 with Vite integration.
+`320px` · `375px` · `390px` · `430px` · `768px` · `900px` · `1024px` · `1280px` · `1440px`
 
-Main design colors:
+Also test **real iOS Safari** when changing: `position: fixed`, sticky navigation, `100vh` / `100dvh`, scroll locking, backdrop filters.
 
-VinEco Navy   #03326b
-VinEco Orange #ffa412
-Cream         #fffaf3
-White         #ffffff
+---
 
-The primary font is Lexend Variable.
+## ♿ Accessibility
 
-Responsive Design
+- Keyboard-focus states
+- Semantic navigation
+- Reduced-motion preferences
+- Image `alt` values
+- Responsive touch targets
+- Native `<details>` FAQ interactions
+- Scroll-reveal fallback when reduced motion is enabled
 
-The project includes dedicated responsive behavior for:
+> Avoid removing `@media (prefers-reduced-motion: reduce)` unless the animation system is replaced with an equivalent accessible solution.
 
-Header
+---
 
-Mobile navigation
+## 🔍 SEO
 
-Service page
+Basic metadata is configured in `index.html`, including: page title, meta description, Open Graph title & description, theme color.
 
-Product detail page
+> Review all SEO text before production and replace temporary content with final brand-approved copy.
 
-About page
+---
 
-OEM / ODM page
+## 🧩 Product Detail Patcher
 
-Cards and grids
+`tools/apply-product-detail.mjs` — rebuilds / patches the Product Detail implementation and **creates a backup** before changing source files. Run from the project root only when needed.
 
-Contact layout
-
-Floating contact controls
-
-When changing layout CSS, test at minimum:
-
-320 px
-375 px
-390 px
-430 px
-768 px
-900 px
-1024 px
-1280 px
-1440 px
-
-Also test real iOS Safari when changing:
-
-position: fixed
-
-sticky navigation
-
-100vh
-
-100dvh
-
-scroll locking
-
-backdrop filters
-
-Accessibility
-
-The project includes support for:
-
-Keyboard-focus states
-
-Semantic navigation
-
-Reduced-motion preferences
-
-Image alt values
-
-Responsive touch targets
-
-Native <details> FAQ interactions
-
-Scroll-reveal fallback when reduced motion is enabled
-
-Avoid removing:
-
-@media (prefers-reduced-motion: reduce)
-
-unless the animation system is replaced with an equivalent accessible solution.
-
-SEO
-
-Basic SEO metadata is configured in:
-
-index.html
-
-Including:
-
-Page title
-
-Meta description
-
-Open Graph title
-
-Open Graph description
-
-Theme color
-
-Before production, review all SEO text and replace temporary content with final brand-approved copy.
-
-Product Detail Patcher
-
-The repository includes:
-
-tools/apply-product-detail.mjs
-
-This utility can rebuild / patch the Product Detail implementation and creates a backup before changing source files.
-
-Run from the project root only when needed.
-
-Example:
-
+```bash
 node .\tools\apply-product-detail.mjs
+```
 
 Then verify:
 
+```bash
 npm run build
 npm run dev -- --host
+```
 
-Backups are stored inside:
+Backups are stored inside `.vineco-backups/`.
 
-.vineco-backups/
+---
 
-Build Verification
+## ✅ Build Verification
 
-Always run a production build after editing routes, JSX or major CSS:
+Always run a production build after editing routes, JSX, or major CSS:
 
+```bash
 npm run build
+```
 
-A successful build should complete without JSX parse errors or unresolved imports.
+A successful build completes without JSX parse errors or unresolved imports. Then test locally:
 
-Then test locally:
-
+```bash
 npm run dev -- --host
+```
 
-Common Issues
+---
 
-Vite reports a JSX parse error
+## 🐛 Common Issues
 
-Example:
+<details>
+<summary><b>Vite reports a JSX parse error</b></summary>
+<br>
 
+```
 [PARSE_ERROR] Unexpected token
+```
 
-Check the file and line reported by Vite.
+Check the file and line reported by Vite. Common causes:
+- Extra `/>`
+- Extra `}`
+- Missing closing JSX tag
+- Broken route
+- Invalid nested JSX
 
-Common causes:
+After fixing, run `npm run build`.
+</details>
 
-Extra />
+<details>
+<summary><b>Image shows "Add image"</b></summary>
+<br>
 
-Extra }
+Verify the file exists:
 
-Missing closing JSX tag
-
-Broken Route
-
-Invalid nested JSX
-
-After fixing:
-
-npm run build
-
-Image shows Add image
-
-Verify that the file exists:
-
+```powershell
 Test-Path ".\public\images\YOUR-IMAGE.png"
+```
 
-Then check that React uses a public URL such as:
+Make sure React references a **public URL**:
 
-/images/YOUR-IMAGE.png
+✅ `/images/YOUR-IMAGE.png`
+❌ `/public/images/YOUR-IMAGE.png`
+</details>
 
-and not:
+<details>
+<summary><b>Mobile UI looks correct at the top but breaks after scrolling</b></summary>
+<br>
 
-/public/images/YOUR-IMAGE.png
+Check the mobile navigation code and avoid combining complicated scroll-lock logic with unnecessary fixed-body positioning. Always test navigation on a real mobile browser after changing sticky/fixed elements.
+</details>
 
-Mobile UI looks correct at the top but fails after scrolling
+<details>
+<summary><b>Changes do not appear in the browser</b></summary>
+<br>
 
-Check mobile navigation code and avoid combining complicated scroll-lock logic with unnecessary fixed-body positioning.
+Hard refresh: `Ctrl + F5`, or restart Vite:
 
-Always test navigation on a real mobile browser after changing sticky / fixed elements.
-
-Changes do not appear in the browser
-
-Hard refresh:
-
-Ctrl + F5
-
-Or restart Vite:
-
+```bash
 npm run dev -- --host
+```
+</details>
 
-Production Checklist
+---
 
-Before publishing:
+## 📋 Production Checklist
 
-Run npm install
+- [ ] `npm install`
+- [ ] `npm run build`
+- [ ] Verify every route
+- [ ] Test desktop navigation
+- [ ] Test mobile navigation
+- [ ] Test product dropdown
+- [ ] Test all product-detail URLs
+- [ ] Replace temporary / placeholder images
+- [ ] Check SmartImage fallbacks
+- [ ] Verify contact email and phone number
+- [ ] Configure Google Map
+- [ ] Review OEM / ODM content
+- [ ] Review product descriptions
+- [ ] Verify social links
+- [ ] Check SEO metadata
+- [ ] Compress large images
+- [ ] Optimize video assets
+- [ ] Test Safari on iPhone
+- [ ] Test Android Chrome
+- [ ] Check keyboard navigation
+- [ ] Test reduced-motion mode
+- [ ] Confirm there are no console errors
 
-Run npm run build
+---
 
-Verify every route
+## 🚢 Deployment
 
-Test desktop navigation
+Because the app uses `HashRouter`, it works well on most static hosting services **without special SPA rewrite rules**.
 
-Test mobile navigation
+**Typical targets:** Vercel · Netlify · Cloudflare Pages · GitHub Pages · Shared static hosting · Traditional hosting serving `dist/`
 
-Test product dropdown
-
-Test all product-detail URLs
-
-Replace temporary / placeholder images
-
-Check SmartImage fallbacks
-
-Verify contact email and phone number
-
-Configure Google Map
-
-Review OEM / ODM content
-
-Review product descriptions
-
-Verify social links
-
-Check SEO metadata
-
-Compress large images
-
-Optimize video assets
-
-Test Safari on iPhone
-
-Test Android Chrome
-
-Check keyboard navigation
-
-Test reduced-motion mode
-
-Confirm there are no console errors
-
-Deployment
-
-Because the application uses HashRouter, it works well on most static hosting services without special SPA rewrite rules.
-
-Typical deployment targets:
-
-Vercel
-
-Netlify
-
-Cloudflare Pages
-
-GitHub Pages
-
-Shared static hosting
-
-Traditional web hosting serving the dist/ folder
-
-Build first:
-
+```bash
 npm run build
+```
 
-Deploy the generated:
+Deploy the generated `dist/` directory.
 
-dist/
+### Recommended workflow
 
-directory.
-
-Recommended Workflow
-
+```
 1. Edit content / UI
         ↓
 2. Test with npm run dev
@@ -825,37 +605,35 @@ Recommended Workflow
 6. Preview production build
         ↓
 7. Deploy dist/
+```
 
-Brand Direction
+---
 
-Brand:       VinEco
-Primary:     #03326b
-Accent:      #ffa412
-Typography:  Lexend Variable
-Positioning: Natural pet products · OEM / ODM · Private Label · Vietnam
+## 🧑‍💻 Notes for Developers
 
-Notes for Developers
+- Keep business content in `src/data/` whenever possible
+- Keep reusable components inside `src/components/`
+- Avoid hardcoding the same product data in multiple pages
+- Prefer local assets for production instead of third-party hotlinks
+- Always make a backup before large automated replacements
+- Do **not** edit files inside `.vineco-backups/` as active source code
+- Keep mobile behavior isolated and test it on real devices
+- Run `npm run build` before committing major changes
 
-Keep business content in src/data/ whenever possible.
+---
 
-Keep reusable components inside src/components/.
+<div align="center">
 
-Avoid hardcoding the same product data in multiple pages.
+## 🌿 Brand Direction
 
-Prefer local assets for production instead of third-party hotlinks.
+**VinEco**
 
-Always make a backup before large automated replacements.
+`Primary #03326b` · `Accent #ffa412` · `Font: Lexend Variable`
 
-Do not edit files inside .vineco-backups/ as active source code.
+Natural Pet Products · OEM / ODM · Private Label · Vietnam
 
-Keep mobile behavior isolated and test it on real devices.
+<br>
 
-Run npm run build before committing major changes.
+**VinEco — Crafted by Nature, Perfected by Us.**
 
-<p align="center">
-  <strong>VinEco — Crafted by Nature, Perfected by Us.</strong>
-</p>
-
-<p align="center">
-  Natural Pet Products · OEM / ODM · Private Label · Vietnam
-</p>
+</div>
