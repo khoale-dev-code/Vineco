@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1400"
+     height="750"
+     viewBox="0 0 1400 750">
+
+  <rect
+    width="1400"
+    height="750"
+    rx="50"
+    fill="#fff8ed"/>
+
+  <g
+    fill="#03326b"
+    opacity=".12">
+
+    <ellipse cx="300"
+             cy="300"
+             rx="210"
+             ry="120"/>
+
+    <ellipse cx="650"
+             cy="245"
+             rx="130"
+             ry="95"/>
+
+    <ellipse cx="820"
+             cy="310"
+             rx="180"
+             ry="130"/>
+
+    <ellipse cx="1080"
+             cy="300"
+             rx="160"
+             ry="100"/>
+
+    <ellipse cx="980"
+             cy="500"
+             rx="105"
+             ry="75"/>
+
+  </g>
+
+  <g fill="#ffa412">
+
+    <circle cx="850"
+            cy="390"
+            r="16"/>
+
+    <circle cx="330"
+            cy="280"
+            r="10"/>
+
+    <circle cx="650"
+            cy="230"
+            r="10"/>
+
+    <circle cx="1060"
+            cy="310"
+            r="10"/>
+
+  </g>
+
+  <path
+    d="M850 390
+       C680 220 500 200 330 280"
+    stroke="#ffa412"
+    stroke-width="4"
+    stroke-dasharray="10 12"
+    fill="none"/>
+
+  <path
+    d="M850 390
+       C820 250 760 210 650 230"
+    stroke="#ffa412"
+    stroke-width="4"
+    stroke-dasharray="10 12"
+    fill="none"/>
+
+  <path
+    d="M850 390
+       C970 250 1010 260 1060 310"
+    stroke="#ffa412"
+    stroke-width="4"
+    stroke-dasharray="10 12"
+    fill="none"/>
+
+  <text
+    x="880"
+    y="430"
+    font-family="Arial, sans-serif"
+    font-size="23"
+    font-weight="700"
+    fill="#03326b">
+    VIETNAM
+  </text>
+
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="1000" viewBox="0 0 1300 1000">
+  <rect width="1300" height="1000" fill="#fff8eb"/>
+  <rect x="0" y="0" width="20" height="1000" fill="#ffa412"/>
+
+  <g transform="translate(210 240)">
+    <rect x="0" y="50" width="700" height="90" rx="45" fill="#d2ae78" transform="rotate(-8 0 50)"/>
+    <rect x="60" y="210" width="780" height="100" rx="50" fill="#ba8b50" transform="rotate(7 60 210)"/>
+    <rect x="20" y="400" width="690" height="92" rx="46" fill="#dec293" transform="rotate(-5 20 400)"/>
+  </g>
+
+  <text x="85" y="120"
+        font-family="Arial, sans-serif"
+        font-size="26"
+        font-weight="700"
+        letter-spacing="5"
+        fill="#ffa412">
+    SAMPLE / COFFEE WOOD
+  </text>
+
+  <text x="85" y="820"
+        font-family="Arial, sans-serif"
+        font-size="62"
+        font-weight="800"
+        fill="#03326b">
+    SECOND LIFE.
+  </text>
+
+  <text x="85" y="885"
+        font-family="Arial, sans-serif"
+        font-size="30"
+        fill="#03326b"
+        opacity=".65">
+    Reclaimed instead of burned or discarded.
+  </text>
+</svg>

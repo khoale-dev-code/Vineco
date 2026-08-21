@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="1000" viewBox="0 0 1300 1000">
+  <rect width="1300" height="1000" fill="#ffa412"/>
+
+  <rect x="630" y="100" width="540" height="800" fill="#ffffff"/>
+
+  <rect x="710" y="380" width="370" height="94" rx="47"
+        fill="#c79b60"
+        transform="rotate(-13 710 380)"/>
+
+  <circle cx="895" cy="420" r="28" fill="#8e633d"/>
+
+  <text x="80" y="115"
+        font-family="Arial, sans-serif"
+        font-size="24"
+        font-weight="700"
+        letter-spacing="5"
+        fill="#03326b">
+    VINECO PRODUCT STORY
+  </text>
+
+  <text x="80" y="235"
+        font-family="Arial, sans-serif"
+        font-size="76"
+        font-weight="800"
+        fill="#03326b">
+    PREMIUM
+  </text>
+
+  <text x="80" y="315"
+        font-family="Arial, sans-serif"
+        font-size="76"
+        font-weight="800"
+        fill="#03326b">
+    COFFEE
+  </text>
+
+  <text x="80" y="395"
+        font-family="Arial, sans-serif"
+        font-size="76"
+        font-weight="800"
+        fill="#ffffff">
+    WOOD
+  </text>
+
+  <text x="80" y="475"
+        font-family="Arial, sans-serif"
+        font-size="76"
+        font-weight="800"
+        fill="#ffffff">
+    DOG CHEWS
+  </text>
+</svg>

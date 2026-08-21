@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="850"
+     viewBox="0 0 1200 850">
+
+  <rect width="1200"
+        height="850"
+        fill="#ffa412"/>
+
+  <circle cx="1030"
+          cy="130"
+          r="230"
+          fill="#ffa412"
+          opacity=".14"/>
+
+  <path
+    d="M60 690
+       C270 550 420 620 610 500
+       C820 370 980 430 1180 250"
+    stroke="#03326b"
+    stroke-width="10"
+    opacity=".10"
+    fill="none"/>
+
+  <text x="70"
+        y="120"
+        font-family="Arial, sans-serif"
+        font-size="22"
+        font-weight="700"
+        letter-spacing="5"
+        fill="#03326b">
+    VINECO SERVICE
+  </text>
+
+  <text x="70"
+        y="220"
+        font-family="Arial, sans-serif"
+        font-size="64"
+        font-weight="800"
+        fill="#03326b">
+    PRODUCT MIX
+  </text>
+
+  <text x="72"
+        y="275"
+        font-family="Arial, sans-serif"
+        font-size="25"
+        fill="#03326b"
+        opacity=".62">
+    Natural-material development
+  </text>
+
+  <rect x="70"
+        y="640"
+        width="170"
+        height="8"
+        rx="4"
+        fill="#ffa412"/>
+
+</svg>

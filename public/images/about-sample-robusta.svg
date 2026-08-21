@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="1000" viewBox="0 0 1300 1000">
+  <rect width="1300" height="1000" fill="#03326b"/>
+
+  <circle cx="1000" cy="210" r="260" fill="#ffa412"/>
+  <circle cx="270" cy="780" r="300" fill="#ffa412" opacity=".14"/>
+
+  <path d="M675 320 C580 430 560 550 590 760"
+        stroke="#fff"
+        stroke-width="28"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <path d="M615 470 C480 400 390 380 300 420"
+        stroke="#fff"
+        stroke-width="21"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <path d="M625 540 C760 470 850 450 950 480"
+        stroke="#fff"
+        stroke-width="21"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <text x="80" y="105"
+        font-family="Arial, sans-serif"
+        font-size="24"
+        font-weight="700"
+        letter-spacing="5"
+        fill="#ffa412">
+    MATERIAL NOTE / 01
+  </text>
+
+  <text x="80" y="190"
+        font-family="Arial, sans-serif"
+        font-size="70"
+        font-weight="800"
+        fill="#ffffff">
+    MATURE
+  </text>
+
+  <text x="80" y="265"
+        font-family="Arial, sans-serif"
+        font-size="70"
+        font-weight="800"
+        fill="#ffffff">
+    ROBUSTA
+  </text>
+
+  <text x="80" y="340"
+        font-family="Arial, sans-serif"
+        font-size="70"
+        font-weight="800"
+        fill="#ffa412">
+    20–25 YEARS
+  </text>
+</svg>
