@@ -1,0 +1,280 @@
+/* ==========================================================
+   VINECO NAVBAR TYPOGRAPHY V2 START
+========================================================== */
+
+
+/* ==========================================================
+   DESKTOP NAVBAR
+========================================================== */
+
+@media (min-width: 900px) {
+
+  /*
+   * Slightly taller header to support
+   * larger navigation typography.
+   */
+  .vineco-header__inner {
+    min-height: 82px !important;
+  }
+
+
+  /* Logo */
+
+  .vineco-logo {
+    font-size: 27px !important;
+
+    font-weight: 850 !important;
+
+    letter-spacing: -.045em;
+  }
+
+
+  /*
+   * Main navigation
+   */
+  .vineco-desktop-nav {
+    gap: 7px !important;
+  }
+
+
+  .vineco-desktop-nav > a,
+  .vineco-desktop-product__trigger {
+    min-height: 46px !important;
+
+    padding:
+      0 15px !important;
+
+    color:
+      #365d8b !important;
+
+    font-size:
+      14px !important;
+
+    font-weight:
+      750 !important;
+
+    line-height: 1 !important;
+
+    letter-spacing:
+      -.01em;
+
+    white-space:
+      nowrap;
+  }
+
+
+  /*
+   * Hover
+   */
+  .vineco-desktop-nav > a:hover,
+  .vineco-desktop-product__trigger:hover {
+    color:
+      #03326b !important;
+
+    background:
+      #fff5e3 !important;
+  }
+
+
+  /*
+   * Active nav item
+   */
+  .vineco-desktop-nav > a.active,
+  .vineco-desktop-product__trigger.active {
+    color:
+      #03326b !important;
+
+    font-weight:
+      850 !important;
+
+    background:
+      #fff3dc !important;
+  }
+
+
+  /*
+   * Orange active underline
+   */
+  .vineco-desktop-nav > a.active::after {
+    left:
+      16px !important;
+
+    right:
+      16px !important;
+
+    bottom:
+      3px !important;
+
+    height:
+      3px !important;
+
+    background:
+      #ffa412 !important;
+  }
+
+
+  /* ========================================================
+     GET FREE SAMPLE
+  ======================================================== */
+
+  .vineco-header__sample--desktop {
+    min-height:
+      50px !important;
+
+    margin-left:
+      16px !important;
+
+    padding:
+      0 25px !important;
+
+    border:
+      0 !important;
+
+    border-radius:
+      999px !important;
+
+    background:
+      #ffa412 !important;
+
+    /*
+     * Requested change:
+     * white text on orange.
+     */
+    color:
+      #ffffff !important;
+
+    font-size:
+      14px !important;
+
+    font-weight:
+      850 !important;
+
+    line-height:
+      1 !important;
+
+    letter-spacing:
+      -.01em;
+
+    box-shadow:
+      0 10px 24px
+      rgba(255,164,18,.18);
+
+    transition:
+      transform 180ms ease,
+      background 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+
+  .vineco-header__sample--desktop:hover {
+    transform:
+      translateY(-2px);
+
+    background:
+      #ed9500 !important;
+
+    color:
+      #ffffff !important;
+
+    box-shadow:
+      0 14px 30px
+      rgba(255,164,18,.26);
+  }
+
+
+  .vineco-header__sample--desktop:active {
+    transform:
+      translateY(0)
+      scale(.98);
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE HEADER
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .vineco-header__inner {
+    min-height:
+      70px !important;
+  }
+
+
+  .vineco-logo {
+    font-size:
+      24px !important;
+  }
+
+
+  /*
+   * Mobile nav links slightly larger.
+   */
+  .vineco-mobile-nav > a,
+  .vineco-mobile-product > button {
+    min-height:
+      57px !important;
+
+    font-size:
+      15px !important;
+
+    font-weight:
+      750 !important;
+  }
+
+
+  /*
+   * Product submenu
+   */
+  .vineco-mobile-product__links a {
+    min-height:
+      46px !important;
+
+    font-size:
+      13px !important;
+  }
+
+
+  /* ========================================================
+     MOBILE GET FREE SAMPLE
+  ======================================================== */
+
+  .vineco-mobile-menu__cta button {
+    min-height:
+      52px !important;
+
+    background:
+      #ffa412 !important;
+
+    color:
+      #ffffff !important;
+
+    font-size:
+      15px !important;
+
+    font-weight:
+      850 !important;
+
+    box-shadow:
+      0 12px 28px
+      rgba(255,164,18,.2);
+  }
+
+
+  .vineco-mobile-menu__cta button:hover,
+  .vineco-mobile-menu__cta button:active {
+    background:
+      #ed9500 !important;
+
+    color:
+      #ffffff !important;
+  }
+
+}
+
+
+/* ==========================================================
+   VINECO NAVBAR TYPOGRAPHY V2 END
+========================================================== */

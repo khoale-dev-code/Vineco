@@ -1,0 +1,249 @@
+/* ==========================================================
+   VINECO GLOBAL FOUNDATION
+========================================================== */
+
+:root {
+  color-scheme: light;
+
+  font-synthesis: none;
+
+  --vineco-orange: #ffa412;
+  --vineco-orange-dark: #ea9400;
+  --vineco-orange-soft: #fff6e8;
+
+  --vineco-blue: #03326b;
+  --vineco-navy: #03326b;
+}
+
+
+/* DOCUMENT */
+
+html {
+  width: 100%;
+  max-width: 100%;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+
+  background: #ffffff;
+
+  font-family:
+    var(--font-sans);
+}
+
+
+body {
+  width: 100%;
+  min-width: 320px;
+  max-width: 100%;
+
+  margin: 0;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+
+  background: #ffffff;
+  color: #03326b;
+
+  font-family:
+    var(--font-sans);
+
+  font-synthesis: none;
+
+  text-rendering:
+    optimizeLegibility;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+
+#root {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+
+  font-family:
+    var(--font-sans);
+}
+
+
+main {
+  min-width: 0;
+}
+
+
+/* MEDIA */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+
+  max-width: 100%;
+}
+
+
+video,
+iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+iframe {
+  border: 0;
+}
+
+
+/* FORM + INTERACTION */
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* SELECTION */
+
+::selection {
+  background: #ffa412;
+  color: #03326b;
+}
+
+
+/* ==========================================================
+   REVEAL MOTION
+========================================================== */
+
+.reveal {
+  --reveal-transform:
+    translate3d(0, 30px, 0);
+
+  opacity: 0;
+
+  transform:
+    var(--reveal-transform);
+
+  transition:
+    opacity
+    700ms
+    cubic-bezier(.2,.65,.3,1),
+
+    transform
+    700ms
+    cubic-bezier(.2,.65,.3,1);
+
+  transition-delay:
+    var(
+      --reveal-delay,
+      0ms
+    );
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+.reveal--up {
+  --reveal-transform:
+    translate3d(0, 32px, 0);
+}
+
+
+.reveal--left {
+  --reveal-transform:
+    translate3d(-42px, 0, 0);
+}
+
+
+.reveal--right {
+  --reveal-transform:
+    translate3d(42px, 0, 0);
+}
+
+
+.reveal--zoom {
+  --reveal-transform:
+    scale(.96);
+}
+
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+@media (max-width: 640px) {
+
+  .reveal--left,
+  .reveal--right {
+    --reveal-transform:
+      translate3d(0, 24px, 0);
+  }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior:
+      auto !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+  }
+
+
+  .reveal {
+    opacity:
+      1 !important;
+
+    transform:
+      none !important;
+  }
+
+}

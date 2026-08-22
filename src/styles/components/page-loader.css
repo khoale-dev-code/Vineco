@@ -1,0 +1,666 @@
+/* ==========================================================
+   VINECO PAGE LOADER
+   Premium route-level loading experience
+========================================================== */
+
+.page-loader {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2147483200;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 50% 44%,
+      rgba(255, 164, 18, .09),
+      transparent 27%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fffaf3 52%,
+      #ffffff 100%
+    );
+
+  color: #03326b;
+}
+
+
+/* ==========================================================
+   TOP LOADING ACCENT
+========================================================== */
+
+.page-loader::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ffa412,
+      #ffbf4d,
+      #ffa412,
+      transparent
+    );
+
+  transform:
+    translateX(-100%);
+
+  animation:
+    vineco-page-loader-top
+    1.45s
+    cubic-bezier(.4, 0, .2, 1)
+    infinite;
+}
+
+
+/* ==========================================================
+   AMBIENT BACKGROUND
+========================================================== */
+
+.page-loader__ambient {
+  position: absolute;
+
+  z-index: -1;
+
+  border-radius: 999px;
+
+  pointer-events: none;
+}
+
+
+.page-loader__ambient--one {
+  top: -130px;
+  right: -100px;
+
+  width: 340px;
+  height: 340px;
+
+  border:
+    65px solid
+    rgba(255, 164, 18, .07);
+}
+
+
+.page-loader__ambient--two {
+  left: -140px;
+  bottom: -170px;
+
+  width: 390px;
+  height: 390px;
+
+  border:
+    70px solid
+    rgba(3, 50, 107, .035);
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.page-loader__content {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  width:
+    min(
+      calc(100% - 40px),
+      380px
+    );
+
+  text-align: center;
+
+  animation:
+    vineco-page-loader-content
+    420ms
+    cubic-bezier(.16, 1, .3, 1)
+    both;
+}
+
+
+/* ==========================================================
+   EMBLEM
+========================================================== */
+
+.page-loader__emblem {
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 112px;
+  height: 112px;
+}
+
+
+/* Outer orbit */
+
+.page-loader__orbit {
+  position: absolute;
+
+  border-radius: 999px;
+}
+
+
+.page-loader__orbit--outer {
+  inset: 0;
+
+  border:
+    2px solid
+    rgba(255, 164, 18, .17);
+
+  border-top-color:
+    #ffa412;
+
+  border-right-color:
+    #ffa412;
+
+  box-shadow:
+    0 0 0 1px
+    rgba(255, 164, 18, .035);
+
+  animation:
+    vineco-page-loader-spin
+    1.05s
+    cubic-bezier(.55, .15, .45, .85)
+    infinite;
+}
+
+
+/* Inner orbit */
+
+.page-loader__orbit--inner {
+  inset: 11px;
+
+  border:
+    2px solid
+    rgba(3, 50, 107, .10);
+
+  border-bottom-color:
+    #03326b;
+
+  animation:
+    vineco-page-loader-spin-reverse
+    1.75s
+    linear
+    infinite;
+}
+
+
+/* Orange travelling dot */
+
+.page-loader__orbit-dot {
+  position: absolute;
+
+  top: 1px;
+  left: 50%;
+
+  width: 9px;
+  height: 9px;
+
+  margin-left: -4.5px;
+
+  border-radius: 999px;
+
+  background: #ffa412;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(255, 164, 18, .12);
+
+  transform-origin:
+    4.5px 55px;
+
+  animation:
+    vineco-page-loader-dot
+    1.05s
+    linear
+    infinite;
+}
+
+
+/* ==========================================================
+   CORE LOGOMARK
+========================================================== */
+
+.page-loader__core {
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 66px;
+  height: 66px;
+
+  border-radius: 22px;
+
+  background: #03326b;
+
+  box-shadow:
+    0 18px 42px
+    rgba(3, 50, 107, .18);
+
+  transform:
+    rotate(-3deg);
+
+  animation:
+    vineco-page-loader-core
+    2.1s
+    ease-in-out
+    infinite;
+}
+
+
+.page-loader__letter {
+  color: #ffffff;
+
+  font-size: 31px;
+
+  font-weight: 850;
+
+  line-height: 1;
+
+  letter-spacing: -.08em;
+
+  transform:
+    translateX(-1px);
+}
+
+
+.page-loader__leaf {
+  position: absolute;
+
+  top: 13px;
+  right: 12px;
+
+  width: 9px;
+  height: 15px;
+
+  border-radius:
+    9px 2px 9px 2px;
+
+  background: #ffa412;
+
+  transform:
+    rotate(36deg);
+}
+
+
+/* ==========================================================
+   BRAND COPY
+========================================================== */
+
+.page-loader__copy {
+  margin-top: 22px;
+}
+
+
+.page-loader__wordmark {
+  display: block;
+
+  color: #03326b;
+
+  font-size: 27px;
+
+  font-weight: 850;
+
+  line-height: 1;
+
+  letter-spacing: -.055em;
+}
+
+
+.page-loader__route {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 10px;
+
+  color:
+    rgba(3, 50, 107, .44);
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+}
+
+
+.page-loader__route strong {
+  color: #d98200;
+
+  font-weight: 850;
+}
+
+
+/* ==========================================================
+   PROGRESS
+========================================================== */
+
+.page-loader__progress {
+  position: relative;
+
+  width: 168px;
+  height: 3px;
+
+  margin-top: 20px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(3, 50, 107, .08);
+}
+
+
+.page-loader__progress span {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 45%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffa412,
+      #ffc259
+    );
+
+  box-shadow:
+    0 0 14px
+    rgba(255, 164, 18, .42);
+
+  animation:
+    vineco-page-loader-progress
+    1.15s
+    cubic-bezier(.65, 0, .35, 1)
+    infinite;
+}
+
+
+/* ==========================================================
+   TAGLINE
+========================================================== */
+
+.page-loader__tagline {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin:
+    15px 0 0;
+
+  color:
+    rgba(3, 50, 107, .34);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: .11em;
+
+  text-transform: uppercase;
+}
+
+
+.page-loader__tagline i {
+  display: block;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  background: #ffa412;
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes vineco-page-loader-spin {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+@keyframes vineco-page-loader-spin-reverse {
+
+  to {
+    transform:
+      rotate(-360deg);
+  }
+
+}
+
+
+@keyframes vineco-page-loader-dot {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+@keyframes vineco-page-loader-core {
+
+  0%,
+  100% {
+    transform:
+      rotate(-3deg)
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      rotate(1deg)
+      translateY(-2px)
+      scale(1.025);
+  }
+
+}
+
+
+@keyframes vineco-page-loader-progress {
+
+  0% {
+    transform:
+      translateX(-120%);
+  }
+
+  100% {
+    transform:
+      translateX(325%);
+  }
+
+}
+
+
+@keyframes vineco-page-loader-top {
+
+  0% {
+    transform:
+      translateX(-100%);
+  }
+
+  100% {
+    transform:
+      translateX(100%);
+  }
+
+}
+
+
+@keyframes vineco-page-loader-content {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translate3d(0, 12px, 0)
+      scale(.985);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+  .page-loader__emblem {
+    width: 98px;
+    height: 98px;
+  }
+
+
+  .page-loader__orbit--inner {
+    inset: 10px;
+  }
+
+
+  .page-loader__core {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 19px;
+  }
+
+
+  .page-loader__letter {
+    font-size: 28px;
+  }
+
+
+  .page-loader__leaf {
+    top: 11px;
+    right: 10px;
+
+    width: 8px;
+    height: 13px;
+  }
+
+
+  .page-loader__orbit-dot {
+    transform-origin:
+      4.5px 48px;
+  }
+
+
+  .page-loader__wordmark {
+    font-size: 25px;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .page-loader::before,
+  .page-loader__orbit,
+  .page-loader__orbit-dot,
+  .page-loader__core,
+  .page-loader__progress span,
+  .page-loader__content {
+    animation:
+      none !important;
+  }
+
+
+  .page-loader__orbit--outer {
+    border-color:
+      rgba(255, 164, 18, .25);
+
+    border-top-color:
+      #ffa412;
+  }
+
+
+  .page-loader__orbit--inner {
+    border-color:
+      rgba(3, 50, 107, .12);
+
+    border-bottom-color:
+      #03326b;
+  }
+
+
+  .page-loader__progress span {
+    width: 62%;
+  }
+
+}
+
+
+/* ==========================================================
+   VINECO PAGE LOADER END
+========================================================== */

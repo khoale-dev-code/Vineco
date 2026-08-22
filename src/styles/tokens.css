@@ -1,0 +1,29 @@
+/* ==========================================================
+   VINECO DESIGN TOKENS
+========================================================== */
+
+@theme {
+  --font-sans:
+    "Lexend Variable",
+    "Lexend",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  --color-brand-50: #fff9ee;
+  --color-brand-100: #fff1cf;
+  --color-brand-200: #ffdd84;
+  --color-brand-300: #ffca48;
+  --color-brand-400: #ffb821;
+  --color-brand-500: #ffa412;
+  --color-brand-600: #e89400;
+  --color-brand-700: #c77800;
+
+  --color-ink: #03326b;
+
+  --color-navy: #03326b;
+  --color-navy-dark: #022752;
+
+  --color-cream: #fffaf3;
+  --color-leaf: #6d8298;
+}

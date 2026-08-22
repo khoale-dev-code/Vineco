@@ -1,0 +1,1751 @@
+/*
+ * Compatibility layer retained temporarily
+ * to preserve the current Service mobile layout.
+ *
+ * It contains the previous V3/V4 adjustments.
+ * V5 remains the final source of truth below it
+ * in the CSS cascade.
+ */
+
+/* ==========================================================
+   VINECO SERVICE MOBILE V3 START
+========================================================== */
+
+
+/* ==========================================================
+   BASE MOBILE SAFETY
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2 {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden !important;
+
+    background: #fffdfa;
+  }
+
+
+  .service-v2 *,
+  .service-v2 *::before,
+  .service-v2 *::after {
+    box-sizing: border-box;
+  }
+
+
+  .service-v2-shell,
+  .service-v2-layout {
+    width: min(
+      calc(100% - 28px),
+      1280px
+    ) !important;
+
+    max-width: 100%;
+
+    margin-inline: auto;
+  }
+
+
+  .service-v2 img,
+  .service-v2 video,
+  .service-v2 iframe {
+    max-width: 100%;
+  }
+
+
+  /*
+   * Important:
+   * children inside Grid/Flex must be allowed
+   * to shrink instead of creating overflow.
+   */
+  .service-v2-content,
+  .service-v2-feature,
+  .service-v2-copy,
+  .service-v2-collage,
+  .service-v2-global__grid,
+  .service-v2-global__copy,
+  .service-v2-global__visual {
+    min-width: 0;
+  }
+
+}
+
+
+/* ==========================================================
+   HERO MOBILE
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-hero {
+    padding:
+      18px 0 54px !important;
+  }
+
+
+  .service-v2-hero__meta {
+    align-items: center;
+
+    gap: 10px;
+
+    padding-bottom: 10px;
+
+    font-size: 7px;
+
+    line-height: 1.4;
+  }
+
+
+  .service-v2-hero__meta span:last-child {
+    text-align: right;
+  }
+
+
+  .service-v2-hero__grid {
+    display: grid;
+
+    grid-template-columns: 1fr !important;
+
+    gap: 34px !important;
+
+    padding-top: 30px !important;
+  }
+
+
+  .service-v2-hero__copy {
+    min-width: 0;
+  }
+
+
+  .service-v2-hero__copy h1 {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.85rem,
+        12.8vw,
+        4.6rem
+      ) !important;
+
+    line-height: .96 !important;
+
+    letter-spacing: -.055em !important;
+  }
+
+
+  .service-v2-hero__copy > p:not(.service-v2-eyebrow) {
+    max-width: 100%;
+
+    margin-top: 20px;
+
+    font-size: 15px;
+
+    line-height: 1.72;
+  }
+
+
+  .service-v2-hero__actions {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+
+    gap: 9px;
+
+    margin-top: 24px;
+  }
+
+
+  .service-v2-hero__actions
+  .service-v2-button {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding-inline: 14px;
+
+    white-space: nowrap;
+  }
+
+}
+
+
+/* ==========================================================
+   HERO COLLAGE
+   Critical fix:
+   Remove absolute positioning on mobile.
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-hero-collage {
+    position: relative;
+
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1.32fr)
+      minmax(105px, .68fr);
+
+    grid-template-rows:
+      auto auto;
+
+    gap: 10px;
+
+    width: 100%;
+
+    min-height: 0 !important;
+
+    padding: 0;
+
+    overflow: visible !important;
+  }
+
+
+  .service-v2-hero-collage__large,
+  .service-v2-hero-collage__small,
+  .service-v2-hero-collage__orange {
+    position: relative !important;
+
+    inset: auto !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    transform: none !important;
+  }
+
+
+  /* Main product frame */
+
+  .service-v2-hero-collage__large {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    min-height: 300px;
+
+    aspect-ratio: 16 / 11;
+
+    border:
+      2px solid
+      #ffa412 !important;
+
+    border-radius: 20px;
+
+    overflow: hidden !important;
+
+    background: #ffffff;
+
+    box-shadow:
+      0 14px 35px
+      rgba(3,50,107,.07);
+  }
+
+
+  .service-v2-hero-collage__large img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain !important;
+  }
+
+
+  .service-v2-hero-collage__large > span {
+    left: 12px;
+    bottom: 12px;
+
+    max-width:
+      calc(100% - 24px);
+
+    border-radius: 999px;
+
+    white-space: nowrap;
+  }
+
+
+  /* Secondary visual */
+
+  .service-v2-hero-collage__small {
+    grid-column: 1;
+    grid-row: 2;
+
+    min-height: 150px;
+
+    aspect-ratio: 16 / 9;
+
+    border:
+      2px solid
+      #ffa412 !important;
+
+    border-radius: 18px;
+
+    overflow: hidden !important;
+
+    background: #fff6e6;
+
+    box-shadow: none !important;
+  }
+
+
+  .service-v2-hero-collage__small img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain !important;
+  }
+
+
+  /* Orange 08 Services card */
+
+  .service-v2-hero-collage__orange {
+    grid-column: 2;
+    grid-row: 2;
+
+    align-self: stretch;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    min-height: 150px;
+
+    padding: 17px !important;
+
+    border-radius: 18px;
+
+    background: #ffa412;
+
+    box-shadow:
+      0 12px 28px
+      rgba(255,164,18,.16);
+  }
+
+
+  .service-v2-hero-collage__orange span {
+    font-size:
+      clamp(
+        2.4rem,
+        10vw,
+        3.7rem
+      );
+  }
+
+
+  .service-v2-hero-collage__orange p {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+}
+
+
+/* ==========================================================
+   SERVICE PILLS
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-pills {
+    width:
+      calc(100% + 14px);
+
+    margin-top: 28px;
+
+    padding:
+      1px 14px 7px 0;
+
+    overflow-x: auto;
+
+    scroll-snap-type:
+      x proximity;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    overscroll-behavior-x:
+      contain;
+  }
+
+
+  .service-v2-pills span {
+    scroll-snap-align: start;
+
+    min-height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding:
+      0 15px;
+
+    background: #fff;
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* ==========================================================
+   INTRO
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-intro {
+    max-width: 100%;
+
+    padding:
+      60px 0 42px !important;
+  }
+
+
+  .service-v2-intro h2 {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.35rem,
+        10vw,
+        3.6rem
+      );
+
+    line-height: 1 !important;
+
+    letter-spacing: -.05em;
+  }
+
+
+  .service-v2-intro > p:not(.service-v2-eyebrow) {
+    max-width: 100%;
+
+    margin-top: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.72;
+  }
+
+}
+
+
+/* ==========================================================
+   SERVICE CHAPTERS
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-chapter {
+    padding:
+      42px 0 68px !important;
+  }
+
+
+  .service-v2-chapter__header {
+    display: grid;
+
+    grid-template-columns:
+      68px minmax(0, 1fr) !important;
+
+    align-items: start;
+
+    gap: 13px !important;
+
+    margin-bottom: 31px !important;
+  }
+
+
+  .service-v2-chapter__number {
+    font-size: 66px !important;
+
+    line-height: .78 !important;
+  }
+
+
+  .service-v2-chapter__header h2 {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        1.82rem,
+        7.8vw,
+        2.65rem
+      ) !important;
+
+    line-height: 1.07 !important;
+
+    letter-spacing: -.042em !important;
+  }
+
+
+  .service-v2-feature,
+  .service-v2-feature--reverse {
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+
+    gap: 34px !important;
+  }
+
+
+  /*
+   * Force text first, visual second on mobile
+   * regardless of desktop alternating layout.
+   */
+  .service-v2-feature > div:first-child,
+  .service-v2-feature--reverse > div:first-child {
+    order: 1 !important;
+  }
+
+
+  .service-v2-feature > div:last-child,
+  .service-v2-feature--reverse > div:last-child {
+    order: 2 !important;
+  }
+
+
+  .service-v2-copy {
+    max-width: 100%;
+
+    font-size: 15px !important;
+
+    line-height: 1.77 !important;
+  }
+
+
+  .service-v2-copy__lead {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        1.35rem,
+        6vw,
+        1.85rem
+      );
+
+    line-height: 1.42;
+  }
+
+
+  .service-v2-copy ul {
+    gap: 11px;
+
+    margin-top: 23px;
+  }
+
+
+  .service-v2-copy li {
+    grid-template-columns:
+      22px minmax(0, 1fr);
+
+    gap: 7px;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+}
+
+
+/* ==========================================================
+   SERVICE COLLAGE
+   Critical fix:
+   Keep every orange frame fully visible.
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-collage {
+    position: relative;
+
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+
+    gap: 10px;
+
+    width: 100%;
+
+    min-height: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  .service-v2-collage__main,
+  .service-v2-collage__secondary,
+  .service-v2-collage__third {
+    position: relative !important;
+
+    inset: auto !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+
+    transform: none !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /*
+   * Main visual spans full width.
+   */
+  .service-v2-collage__main {
+    grid-column: 1 / -1;
+
+    min-height: 270px;
+
+    aspect-ratio: 16 / 10;
+
+    border:
+      2px solid
+      #ffa412 !important;
+
+    border-radius: 20px;
+
+    background: #fff6e5;
+
+    box-shadow:
+      0 13px 32px
+      rgba(3,50,107,.06);
+  }
+
+
+  .service-v2-collage__main img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  .service-v2-collage__main > span {
+    left: 12px;
+    bottom: 12px;
+
+    max-width:
+      calc(100% - 24px);
+
+    padding:
+      7px 10px;
+
+    border-radius: 999px;
+
+    font-size: 7px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+
+  /*
+   * Supporting images become proper cards.
+   */
+  .service-v2-collage__secondary,
+  .service-v2-collage__third {
+    min-height: 145px;
+
+    aspect-ratio: 4 / 3;
+
+    border:
+      2px solid
+      #ffa412 !important;
+
+    border-radius: 17px;
+
+    background: #fff;
+
+    box-shadow:
+      none !important;
+  }
+
+
+  .service-v2-collage__secondary img,
+  .service-v2-collage__third img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  /*
+   * If there is only 1 secondary image,
+   * allow it to use full width visually.
+   */
+  .service-v2-collage__secondary:last-child {
+    grid-column:
+      1 / -1;
+
+    aspect-ratio: 16 / 8.5;
+  }
+
+}
+
+
+/* ==========================================================
+   SERVICE OVERVIEW
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-overview {
+    padding:
+      62px 0 !important;
+  }
+
+
+  .service-v2-overview__header h2 {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.35rem,
+        10vw,
+        3.6rem
+      );
+
+    line-height: 1;
+  }
+
+
+  /*
+   * Convert desktop table into stacked cards.
+   * No horizontal scroll required.
+   */
+  .service-v2-table {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 30px;
+
+    padding: 10px !important;
+
+    overflow: visible !important;
+
+    border-radius: 20px;
+  }
+
+
+  .service-v2-table__head {
+    display: none !important;
+  }
+
+
+  .service-v2-table__row {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0,1fr)
+      auto !important;
+
+    min-width: 0 !important;
+
+    gap:
+      7px 12px !important;
+
+    margin-top: 7px;
+
+    padding:
+      15px !important;
+
+    border-radius: 13px;
+  }
+
+
+  .service-v2-table__row strong {
+    grid-column: 1;
+
+    font-size: 12px;
+  }
+
+
+  .service-v2-table__row
+  .service-v2-status {
+    grid-column: 2;
+    grid-row: 1;
+
+    align-self: start;
+
+    padding:
+      4px 7px;
+
+    border-radius: 999px;
+
+    background: #fff4dc;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+  }
+
+
+  .service-v2-table__row > span:last-child {
+    grid-column:
+      1 / -1;
+
+    color:
+      rgba(3,50,107,.52);
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* ==========================================================
+   GLOBAL SUPPORT SECTION
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-global {
+    padding:
+      62px 0 !important;
+  }
+
+
+  .service-v2-global__grid {
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+
+    width: 100%;
+
+    border:
+      2px solid
+      #ffa412 !important;
+
+    border-radius: 22px;
+
+    overflow: hidden !important;
+  }
+
+
+  .service-v2-global__copy {
+    padding:
+      30px 22px !important;
+  }
+
+
+  .service-v2-global__copy h2 {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.25rem,
+        9.5vw,
+        3.45rem
+      );
+
+    line-height: 1;
+  }
+
+
+  .service-v2-global__visual {
+    width: 100%;
+
+    min-height: 290px !important;
+
+    overflow: hidden;
+  }
+
+
+  .service-v2-global__map {
+    min-height: 290px;
+  }
+
+
+  .service-v2-global__stamp {
+    right: 12px;
+    bottom: 12px;
+
+    max-width:
+      calc(100% - 24px);
+  }
+
+}
+
+
+/* ==========================================================
+   FAQ MOBILE
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-faq {
+    padding:
+      60px 0 !important;
+  }
+
+
+  .service-v2-faq__header h2 {
+    font-size:
+      clamp(
+        2.35rem,
+        10vw,
+        3.55rem
+      );
+
+    line-height: 1;
+  }
+
+
+  .service-v2-faq__list {
+    width: 100%;
+  }
+
+
+  .service-v2-faq-item {
+    width: 100%;
+
+    margin-bottom: 7px;
+
+    border:
+      1px solid
+      rgba(255,164,18,.55);
+
+    border-radius: 13px;
+
+    overflow: hidden;
+  }
+
+
+  .service-v2-faq-item summary {
+    min-height: 54px;
+
+    padding:
+      13px 14px;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+  }
+
+
+  .service-v2-faq-item summary span {
+    min-width: 0;
+
+    padding-right: 5px;
+  }
+
+
+  .service-v2-faq-item > p {
+    max-width: 100%;
+
+    padding:
+      0 14px 15px;
+
+    font-size: 13px;
+
+    line-height: 1.68;
+  }
+
+}
+
+
+/* ==========================================================
+   CTA MOBILE
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-cta {
+    padding:
+      52px 0 65px !important;
+  }
+
+
+  .service-v2-cta__inner {
+    width: 100%;
+
+    padding:
+      42px 20px !important;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+  }
+
+
+  .service-v2-cta__inner h2 {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.65rem,
+        11vw,
+        4rem
+      );
+
+    line-height: .95;
+  }
+
+
+  .service-v2-cta__inner > span {
+    max-width: 100%;
+
+    font-size: 13px;
+
+    line-height: 1.68;
+  }
+
+
+  .service-v2-cta__inner > div {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+    width: 100%;
+
+    gap: 8px;
+
+    margin-top: 24px;
+  }
+
+
+  .service-v2-cta__inner
+  .service-v2-button {
+    width: 100%;
+
+    min-height: 47px;
+
+    padding-inline: 10px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+  }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL MOBILE
+========================================================== */
+
+@media (max-width: 374px) {
+
+  .service-v2-shell,
+  .service-v2-layout {
+    width:
+      calc(100% - 22px) !important;
+  }
+
+
+  .service-v2-hero__actions {
+    grid-template-columns: 1fr;
+  }
+
+
+  .service-v2-hero-collage {
+    grid-template-columns:
+      1fr 112px;
+  }
+
+
+  .service-v2-hero-collage__large {
+    min-height: 250px;
+  }
+
+
+  .service-v2-chapter__header {
+    grid-template-columns:
+      58px minmax(0,1fr) !important;
+  }
+
+
+  .service-v2-chapter__number {
+    font-size:
+      55px !important;
+  }
+
+
+  .service-v2-collage {
+    grid-template-columns: 1fr;
+  }
+
+
+  .service-v2-collage__main,
+  .service-v2-collage__secondary,
+  .service-v2-collage__third,
+  .service-v2-collage__secondary:last-child {
+    grid-column: 1 !important;
+  }
+
+
+  .service-v2-cta__inner > div {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE LANDSCAPE
+========================================================== */
+
+@media (
+  max-width: 899px
+)
+and (
+  orientation: landscape
+)
+and (
+  max-height: 520px
+) {
+
+  .service-v2-hero-collage__large {
+    min-height: 250px;
+  }
+
+
+  .service-v2-collage__main {
+    min-height: 230px;
+  }
+
+}
+
+
+/* ==========================================================
+   TOUCH
+========================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .service-v2-button {
+    min-height: 48px;
+  }
+
+
+  .service-v2-faq-item summary {
+    cursor: default;
+  }
+
+}
+
+
+/* ==========================================================
+   VINECO SERVICE MOBILE V3 END
+========================================================== */
+
+
+
+
+/* ==========================================================
+   VINECO SERVICE MOBILE V4 START
+========================================================== */
+
+
+/* ==========================================================
+   MOBILE HERO
+========================================================== */
+
+@media (max-width: 899px) {
+
+  /*
+   * Never allow the Service Hero itself
+   * to produce horizontal overflow.
+   */
+  .service-v2-hero {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden !important;
+
+    padding-bottom: 48px !important;
+  }
+
+
+  .service-v2-hero .service-v2-shell {
+    width:
+      min(
+        calc(100% - 22px),
+        1240px
+      ) !important;
+
+    max-width: 100%;
+  }
+
+
+  /*
+   * Text first, visual second.
+   */
+  .service-v2-hero__grid {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+
+    gap: 28px !important;
+  }
+
+
+  /*
+   * Remove the old desktop collage geometry.
+   */
+  .service-v2-hero-collage {
+    position: relative !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      104px !important;
+
+    grid-template-rows:
+      auto auto !important;
+
+    gap: 10px !important;
+
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    min-height: 0 !important;
+
+    height: auto !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /*
+   * Cancel all desktop absolute values.
+   */
+  .service-v2-hero-collage__large,
+  .service-v2-hero-collage__small,
+  .service-v2-hero-collage__orange {
+    position: relative !important;
+
+    inset: auto !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-width: 0 !important;
+
+    transform: none !important;
+
+    margin: 0 !important;
+  }
+
+
+  /* ========================================================
+     MAIN PRODUCT IMAGE
+  ======================================================== */
+
+  .service-v2-hero-collage__large {
+    grid-column:
+      1 / -1;
+
+    grid-row: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 305px !important;
+
+    aspect-ratio:
+      1.25 / 1;
+
+    padding:
+      16px !important;
+
+    border:
+      2px solid
+      #ffa412 !important;
+
+    border-radius:
+      22px !important;
+
+    overflow: hidden !important;
+
+    background:
+      #fffaf1 !important;
+
+    box-shadow:
+      0 14px 30px
+      rgba(3,50,107,.06);
+  }
+
+
+  .service-v2-hero-collage__large img,
+  .service-v2-hero-collage__large picture,
+  .service-v2-hero-collage__large picture img {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100% !important;
+    max-height: 100% !important;
+
+    object-fit:
+      contain !important;
+
+    object-position:
+      center !important;
+  }
+
+
+  .service-v2-hero-collage__large > span {
+    position: absolute !important;
+
+    left: 12px !important;
+    bottom: 12px !important;
+
+    right: auto !important;
+
+    max-width:
+      calc(100% - 24px);
+
+    padding:
+      8px 13px !important;
+
+    border-radius:
+      999px;
+
+    background:
+      #ffa412;
+
+    color:
+      #03326b;
+
+    font-size:
+      8px !important;
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing:
+      .1em;
+
+    white-space:
+      nowrap;
+  }
+
+
+  /* ========================================================
+     SECOND IMAGE
+  ======================================================== */
+
+  .service-v2-hero-collage__small {
+    grid-column: 1;
+
+    grid-row: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height:
+      155px !important;
+
+    aspect-ratio:
+      1.7 / 1;
+
+    padding:
+      10px !important;
+
+    border:
+      2px solid
+      #ffa412 !important;
+
+    border-radius:
+      20px !important;
+
+    overflow: hidden !important;
+
+    background:
+      #fffaf1 !important;
+
+    box-shadow:
+      none !important;
+  }
+
+
+  .service-v2-hero-collage__small img,
+  .service-v2-hero-collage__small picture,
+  .service-v2-hero-collage__small picture img {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100% !important;
+    max-height: 100% !important;
+
+    object-fit:
+      contain !important;
+
+    object-position:
+      center !important;
+  }
+
+
+  /* ========================================================
+     08 SERVICE AREAS
+  ======================================================== */
+
+  .service-v2-hero-collage__orange {
+    grid-column: 2;
+
+    grid-row: 2;
+
+    display: flex !important;
+
+    flex-direction:
+      column !important;
+
+    align-items:
+      flex-start !important;
+
+    justify-content:
+      space-between !important;
+
+    min-height:
+      155px !important;
+
+    padding:
+      16px 12px !important;
+
+    border-radius:
+      20px !important;
+
+    overflow:
+      hidden !important;
+
+    background:
+      #ffa412 !important;
+
+    box-shadow:
+      0 12px 26px
+      rgba(255,164,18,.18);
+  }
+
+
+  .service-v2-hero-collage__orange span {
+    font-size:
+      46px !important;
+
+    line-height:
+      .9 !important;
+
+    letter-spacing:
+      -.06em;
+  }
+
+
+  .service-v2-hero-collage__orange p {
+    margin: 0 !important;
+
+    color:
+      #03326b;
+
+    font-size:
+      8px !important;
+
+    font-weight: 850;
+
+    line-height:
+      1.25;
+
+    letter-spacing:
+      .05em;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE PRODUCT IMAGE QUALITY
+========================================================== */
+
+@media (max-width: 899px) {
+
+  /*
+   * Prevent SmartImage fallback block from
+   * accidentally changing frame dimensions.
+   */
+  .service-v2-hero-collage
+  [class*="smart-image"],
+  .service-v2-hero-collage
+  [data-smart-image] {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+  }
+
+
+  /*
+   * Image rendering.
+   */
+  .service-v2-hero-collage img {
+    image-rendering:
+      auto;
+
+    -webkit-user-drag:
+      none;
+  }
+
+}
+
+
+/* ==========================================================
+   SERVICE PILLS
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-pills {
+    display: flex;
+
+    width:
+      calc(100% + 11px);
+
+    max-width:
+      calc(100% + 11px);
+
+    gap: 7px !important;
+
+    margin-top:
+      25px !important;
+
+    padding:
+      2px 11px 8px 0;
+
+    overflow-x:
+      auto !important;
+
+    overflow-y:
+      hidden !important;
+
+    scrollbar-width:
+      none;
+
+    scroll-snap-type:
+      x proximity;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    overscroll-behavior-x:
+      contain;
+  }
+
+
+  .service-v2-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .service-v2-pills span {
+    flex:
+      0 0 auto;
+
+    min-height:
+      40px;
+
+    display:
+      inline-flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    padding:
+      0 15px !important;
+
+    border:
+      1.5px solid
+      #ffa412 !important;
+
+    border-radius:
+      999px;
+
+    background:
+      #fff;
+
+    scroll-snap-align:
+      start;
+
+    font-size:
+      10px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   390PX / IPHONE CLASS
+========================================================== */
+
+@media (max-width: 430px) {
+
+  .service-v2-hero-collage {
+    grid-template-columns:
+      minmax(0, 1fr)
+      100px !important;
+  }
+
+
+  .service-v2-hero-collage__large {
+    min-height:
+      295px !important;
+  }
+
+
+  .service-v2-hero-collage__small,
+  .service-v2-hero-collage__orange {
+    min-height:
+      150px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONE
+========================================================== */
+
+@media (max-width: 359px) {
+
+  .service-v2-hero
+  .service-v2-shell {
+    width:
+      calc(100% - 16px) !important;
+  }
+
+
+  .service-v2-hero-collage {
+    grid-template-columns:
+      minmax(0,1fr)
+      92px !important;
+
+    gap:
+      7px !important;
+  }
+
+
+  .service-v2-hero-collage__large {
+    min-height:
+      270px !important;
+
+    padding:
+      12px !important;
+  }
+
+
+  .service-v2-hero-collage__small,
+  .service-v2-hero-collage__orange {
+    min-height:
+      140px !important;
+  }
+
+
+  .service-v2-hero-collage__orange {
+    padding:
+      13px 9px !important;
+  }
+
+
+  .service-v2-hero-collage__orange span {
+    font-size:
+      40px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   SERVICE CHAPTER IMAGE SAFETY
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-collage {
+    max-width:
+      100% !important;
+
+    overflow:
+      visible !important;
+  }
+
+
+  .service-v2-collage figure {
+    max-width:
+      100% !important;
+  }
+
+
+  .service-v2-collage img,
+  .service-v2-collage picture,
+  .service-v2-collage picture img {
+    display: block;
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    max-width:
+      100% !important;
+
+    object-fit:
+      cover;
+
+    object-position:
+      center;
+  }
+
+}
+
+
+/* ==========================================================
+   VINECO SERVICE MOBILE V4 END
+========================================================== */

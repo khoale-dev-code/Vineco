@@ -1,0 +1,136 @@
+/* VINECO IOS MOBILE NAV FIX START */
+
+/*
+ * Lock page scrolling without changing body to position: fixed.
+ * This prevents Safari from freezing / shifting fixed layers
+ * when the menu is opened after the page has been scrolled.
+ */
+html.vineco-mobile-nav-open,
+body.vineco-mobile-nav-open {
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+}
+
+
+/*
+ * The menu is rendered with React Portal directly under body.
+ * Therefore it is independent from the sticky header and its
+ * backdrop-filter compositing layer.
+ */
+.vineco-mobile-menu {
+  position: fixed !important;
+
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+
+  inset: 0 !important;
+
+  width: 100% !important;
+
+  height: 100vh !important;
+  height: 100dvh !important;
+
+  max-height: 100dvh !important;
+
+  margin: 0 !important;
+
+  overflow: hidden !important;
+
+  background: #ffffff !important;
+
+  z-index: 2147483640 !important;
+
+  isolation: isolate;
+
+  transform:
+    translate3d(0, 0, 0);
+
+  -webkit-transform:
+    translate3d(0, 0, 0);
+}
+
+
+/*
+ * Only menu content scrolls.
+ */
+.vineco-mobile-menu__scroll {
+  flex: 1 1 auto !important;
+
+  min-height: 0 !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  -webkit-overflow-scrolling:
+    touch;
+
+  overscroll-behavior-y:
+    contain;
+
+  touch-action:
+    pan-y;
+}
+
+
+/*
+ * Avoid Safari repaint cost while the full-screen menu is active.
+ */
+body.vineco-mobile-nav-open
+.floating-contact-dock,
+
+body.vineco-mobile-nav-open
+.floating-contact,
+
+body.vineco-mobile-nav-open
+.contact-dock,
+
+body.vineco-mobile-nav-open
+[data-floating-contact] {
+  display: none !important;
+
+  opacity: 0 !important;
+
+  visibility: hidden !important;
+
+  pointer-events: none !important;
+}
+
+
+/*
+ * On mobile the glass blur does not add much visual value,
+ * but can be expensive on iOS while scrolling.
+ */
+@media (max-width: 899px) {
+
+  .vineco-header {
+    -webkit-backdrop-filter:
+      none !important;
+
+    backdrop-filter:
+      none !important;
+
+    background:
+      rgba(255,255,255,.985) !important;
+  }
+
+}
+
+
+/*
+ * Prevent accidental menu animation issues on older Safari.
+ */
+@supports (-webkit-touch-callout: none) {
+
+  .vineco-mobile-menu {
+    backface-visibility:
+      hidden;
+
+    -webkit-backface-visibility:
+      hidden;
+  }
+
+}
+
+/* VINECO IOS MOBILE NAV FIX END */

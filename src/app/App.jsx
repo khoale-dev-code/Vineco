@@ -1,5 +1,4 @@
-﻿import ProductDetailPage from "../pages/ProductDetailPage";
-import { useEffect } from "react";
+﻿import { lazy, Suspense, useEffect } from "react";
 
 import {
   HashRouter,
@@ -8,19 +7,51 @@ import {
   useLocation,
 } from "react-router";
 
-import HomePage from "../pages/HomePage";
-import AboutPage from "../pages/AboutPage";
-import ProductsPage from "../pages/ProductsPage";
-
-import ServicePage from "../pages/ServicePage";
-import OemOdmPage from "../pages/OemOdmPage";
-import FaqPage from "../pages/FaqPage";
-import ContactPage from "../pages/ContactPage";
+import PageLoader from "../components/ui/PageLoader";
 
 import {
   SampleModalProvider,
 } from "../features/sample/SampleModalContext";
 import SampleModal from "../features/sample/SampleModal";
+
+/*
+ * Route-level code splitting.
+ *
+ * Each page is downloaded only when needed.
+ * PageLoader is displayed while its chunk is loading.
+ */
+const HomePage = lazy(
+  () => import("../pages/HomePage"),
+);
+
+const AboutPage = lazy(
+  () => import("../pages/AboutPage"),
+);
+
+const ProductsPage = lazy(
+  () => import("../pages/ProductsPage"),
+);
+
+const ProductDetailPage = lazy(
+  () => import("../pages/ProductDetailPage"),
+);
+
+const ServicePage = lazy(
+  () => import("../pages/ServicePage"),
+);
+
+const OemOdmPage = lazy(
+  () => import("../pages/OemOdmPage"),
+);
+
+const FaqPage = lazy(
+  () => import("../pages/FaqPage"),
+);
+
+const ContactPage = lazy(
+  () => import("../pages/ContactPage"),
+);
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,7 +73,8 @@ export default function App() {
       <SampleModalProvider>
         <ScrollToTop />
 
-        <Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
           <Route
             path="/"
             element={<HomePage />}
@@ -84,7 +116,8 @@ export default function App() {
             path="*"
             element={<HomePage />}
           />
-        </Routes>
+          </Routes>
+        </Suspense>
 
         <SampleModal />
       </SampleModalProvider>

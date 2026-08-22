@@ -1,0 +1,991 @@
+/* ==========================================================
+   VINECO MOBILE UI V4 START
+========================================================== */
+
+
+/* ==========================================================
+   GLOBAL MOBILE SAFETY
+========================================================== */
+
+html {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+main {
+  min-width: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+video,
+iframe {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.vineco-header {
+  position: sticky;
+  top: 0;
+  z-index: 9000;
+
+  width: 100%;
+
+  border-top:
+    3px solid
+    #ffa412;
+
+  border-bottom:
+    1px solid
+    rgba(3, 50, 107, .08);
+
+  background:
+    rgba(255,255,255,.96);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+}
+
+
+.vineco-header__inner {
+  display: flex;
+  align-items: center;
+
+  width:
+    min(
+      calc(100% - 32px),
+      1240px
+    );
+
+  min-height: 70px;
+
+  margin-inline: auto;
+}
+
+
+.vineco-logo {
+  flex: 0 0 auto;
+
+  color: #03326b;
+
+  font-size: 23px;
+  font-weight: 850;
+
+  line-height: 1;
+
+  letter-spacing: -.045em;
+}
+
+
+.vineco-desktop-nav {
+  display: none;
+}
+
+
+.vineco-header__sample--desktop {
+  display: none;
+}
+
+
+.vineco-mobile-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  margin-left: auto;
+
+  border:
+    1.5px solid
+    rgba(255,164,18,.75);
+
+  border-radius: 14px;
+
+  background: #fff;
+
+  color: #03326b;
+}
+
+
+/* ==========================================================
+   MOBILE FULL SCREEN MENU
+========================================================== */
+
+.vineco-mobile-menu {
+  position: fixed;
+  inset: 0;
+
+  /*
+   * Intentionally extremely high.
+   * It must sit above floating contact buttons.
+   */
+  z-index: 2147483000;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  color: #03326b;
+
+  overscroll-behavior:
+    contain;
+
+  animation:
+    vineco-mobile-menu-enter
+    230ms
+    cubic-bezier(.16,1,.3,1)
+    both;
+}
+
+
+.vineco-mobile-menu__top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  min-height: 74px;
+
+  padding:
+    max(
+      10px,
+      env(safe-area-inset-top)
+    )
+    14px
+    10px;
+
+  border-top:
+    3px solid
+    #ffa412;
+
+  border-bottom:
+    1px solid
+    rgba(3,50,107,.09);
+
+  background: #f7f9fc;
+}
+
+
+.vineco-mobile-menu__logo {
+  color: #03326b;
+
+  font-size: 22px;
+  font-weight: 850;
+
+  letter-spacing: -.045em;
+}
+
+
+.vineco-mobile-menu__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  margin-left: auto;
+
+  border:
+    1.5px solid
+    #ffa412;
+
+  border-radius: 14px;
+
+  background: #fff;
+
+  color: #03326b;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+
+.vineco-mobile-menu__close:active {
+  transform:
+    scale(.94);
+
+  background:
+    #fff5e2;
+}
+
+
+.vineco-mobile-menu__scroll {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding:
+    10px
+    14px
+    calc(
+      24px +
+      env(safe-area-inset-bottom)
+    );
+
+  -webkit-overflow-scrolling:
+    touch;
+
+  overscroll-behavior-y:
+    contain;
+}
+
+
+/* ==========================================================
+   MOBILE NAVIGATION
+========================================================== */
+
+.vineco-mobile-nav {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+
+.vineco-mobile-nav > a,
+.vineco-mobile-product > button {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 56px;
+
+  padding:
+    0 14px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #03326b;
+
+  font-size: 14px;
+  font-weight: 720;
+
+  text-align: left;
+
+  line-height: 1.3;
+}
+
+
+.vineco-mobile-nav > a {
+  border-bottom:
+    1px solid
+    rgba(3,50,107,.06);
+}
+
+
+.vineco-mobile-nav > a.active {
+  color: #03326b;
+
+  font-weight: 850;
+}
+
+
+.vineco-mobile-nav > a.active::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  margin-right: 9px;
+
+  border-radius: 50%;
+
+  background: #ffa412;
+}
+
+
+/* ==========================================================
+   PRODUCT ACCORDION
+========================================================== */
+
+.vineco-mobile-product {
+  border-bottom:
+    1px solid
+    rgba(3,50,107,.06);
+}
+
+
+.vineco-mobile-product > button {
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+
+
+.vineco-chevron {
+  flex: 0 0 auto;
+
+  color: #03326b;
+
+  transition:
+    transform 200ms
+    cubic-bezier(.16,1,.3,1);
+}
+
+
+.vineco-chevron.is-open {
+  transform:
+    rotate(180deg);
+}
+
+
+.vineco-mobile-product__panel {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  transition:
+    grid-template-rows
+    260ms
+    cubic-bezier(.16,1,.3,1);
+}
+
+
+.vineco-mobile-product__panel.is-open {
+  grid-template-rows: 1fr;
+}
+
+
+.vineco-mobile-product__links {
+  min-height: 0;
+
+  overflow: hidden;
+
+  padding-inline:
+    14px;
+}
+
+
+.vineco-mobile-product__panel.is-open
+.vineco-mobile-product__links {
+  padding-bottom: 14px;
+}
+
+
+.vineco-mobile-product__links a {
+  display: flex;
+  align-items: center;
+
+  min-height: 44px;
+
+  padding:
+    0 13px;
+
+  border-left:
+    2px solid
+    rgba(255,164,18,.45);
+
+  color:
+    rgba(3,50,107,.67);
+
+  font-size: 13px;
+  font-weight: 620;
+
+  line-height: 1.35;
+}
+
+
+.vineco-mobile-product__links a:hover,
+.vineco-mobile-product__links a:active {
+  border-left-color:
+    #ffa412;
+
+  background:
+    #fff8eb;
+
+  color:
+    #03326b;
+}
+
+
+.vineco-mobile-product__links
+.vineco-mobile-product__all {
+  color: #03326b;
+
+  font-weight: 850;
+}
+
+
+/* ==========================================================
+   SAMPLE CTA
+========================================================== */
+
+.vineco-mobile-menu__cta {
+  margin-top: 18px;
+
+  padding:
+    6px 0 2px;
+}
+
+
+.vineco-mobile-menu__cta button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 50px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background: #ffa412;
+
+  color: #03326b;
+
+  font-size: 14px;
+  font-weight: 850;
+
+  box-shadow:
+    0 12px 28px
+    rgba(255,164,18,.18);
+
+  transition:
+    transform 180ms ease;
+}
+
+
+.vineco-mobile-menu__cta button:active {
+  transform:
+    scale(.985);
+}
+
+
+.vineco-mobile-menu__cta p {
+  max-width: 270px;
+
+  margin:
+    12px auto 0;
+
+  color:
+    rgba(3,50,107,.42);
+
+  font-size: 9px;
+  font-weight: 620;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   HIDE INTERFERING ELEMENTS WHILE MENU IS OPEN
+========================================================== */
+
+body.vineco-mobile-nav-open
+.floating-contact-dock,
+
+body.vineco-mobile-nav-open
+.floating-contact,
+
+body.vineco-mobile-nav-open
+.contact-dock,
+
+body.vineco-mobile-nav-open
+[data-floating-contact] {
+  opacity: 0 !important;
+
+  visibility:
+    hidden !important;
+
+  pointer-events:
+    none !important;
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 900px) {
+
+  .vineco-header__inner {
+    min-height: 72px;
+  }
+
+
+  .vineco-mobile-menu-button {
+    display: none;
+  }
+
+
+  .vineco-desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-left: auto;
+  }
+
+
+  .vineco-desktop-nav > a,
+  .vineco-desktop-product__trigger {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 42px;
+
+    gap: 5px;
+
+    padding:
+      0 12px;
+
+    border-radius: 999px;
+
+    color:
+      rgba(3,50,107,.72);
+
+    font-size: 11px;
+    font-weight: 720;
+
+    white-space: nowrap;
+
+    transition:
+      background 160ms ease,
+      color 160ms ease;
+  }
+
+
+  .vineco-desktop-nav > a:hover,
+  .vineco-desktop-product__trigger:hover,
+  .vineco-desktop-nav > a.active {
+    background:
+      #fff5e3;
+
+    color:
+      #03326b;
+  }
+
+
+  .vineco-desktop-nav > a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: #ffa412;
+  }
+
+
+  .vineco-header__sample--desktop {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    margin-left: 11px;
+
+    padding:
+      0 18px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: #ffa412;
+
+    color: #03326b;
+
+    font-size: 11px;
+    font-weight: 850;
+
+    white-space: nowrap;
+
+    transition:
+      transform 180ms ease;
+  }
+
+
+  .vineco-header__sample--desktop:hover {
+    transform:
+      translateY(-2px);
+  }
+
+
+  /* Product dropdown */
+
+  .vineco-desktop-product {
+    position: relative;
+  }
+
+
+  .vineco-product-dropdown {
+    position: absolute;
+
+    top: calc(100% + 7px);
+    left: 50%;
+
+    z-index: 100;
+
+    width: 260px;
+
+    padding-top: 8px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+      translate3d(-50%, 8px, 0);
+
+    transition:
+      opacity 170ms ease,
+      transform 170ms ease,
+      visibility 170ms ease;
+  }
+
+
+  .vineco-desktop-product:hover
+  .vineco-product-dropdown,
+
+  .vineco-desktop-product:focus-within
+  .vineco-product-dropdown {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+      translate3d(-50%, 0, 0);
+  }
+
+
+  .vineco-product-dropdown__inner {
+    overflow: hidden;
+
+    padding:
+      12px;
+
+    border:
+      1px solid
+      rgba(3,50,107,.09);
+
+    border-radius: 18px;
+
+    background: #fff;
+
+    box-shadow:
+      0 22px 55px
+      rgba(3,50,107,.13);
+  }
+
+
+  .vineco-product-dropdown__inner > p {
+    margin:
+      2px 8px 7px;
+
+    color:
+      rgba(3,50,107,.35);
+
+    font-size: 8px;
+    font-weight: 850;
+
+    letter-spacing: .18em;
+  }
+
+
+  .vineco-product-dropdown__inner > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 40px;
+
+    gap: 10px;
+
+    padding:
+      0 9px;
+
+    border-radius: 9px;
+
+    color: #03326b;
+
+    font-size: 11px;
+    font-weight: 650;
+  }
+
+
+  .vineco-product-dropdown__inner > a:hover {
+    background:
+      #fff6e7;
+  }
+
+
+  .vineco-product-dropdown__all {
+    margin-top: 7px;
+
+    border-top:
+      1px solid
+      rgba(3,50,107,.08);
+
+    border-radius:
+      0 !important;
+
+    color:
+      #d98300 !important;
+
+    font-weight:
+      850 !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE PAGE HARDENING
+========================================================== */
+
+@media (max-width: 899px) {
+
+  /*
+   * Prevent common grid / flex children
+   * from creating horizontal page overflow.
+   */
+  main > *,
+  section,
+  footer {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+
+  /*
+   * Maps and embedded media.
+   */
+  iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+
+  video {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: auto;
+  }
+
+
+  /*
+   * Service page tables should scroll internally,
+   * never expand the entire page width.
+   */
+  .service-v2-table {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling:
+      touch;
+  }
+
+
+  /*
+   * About editorial layouts.
+   */
+  .about-v4,
+  .story-page,
+  .editorial-about {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+
+  /*
+   * Home carousels should remain
+   * horizontally self-contained.
+   */
+  .inside-reviews__track {
+    max-width: 100%;
+
+    overscroll-behavior-x:
+      contain;
+  }
+
+
+  /*
+   * Footer safety.
+   */
+  footer {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONES
+========================================================== */
+
+@media (max-width: 374px) {
+
+  .vineco-header__inner {
+    width:
+      calc(100% - 24px);
+  }
+
+
+  .vineco-mobile-menu__scroll {
+    padding-inline:
+      10px;
+  }
+
+
+  .vineco-mobile-nav > a,
+  .vineco-mobile-product > button {
+    min-height:
+      53px;
+
+    padding-inline:
+      11px;
+  }
+
+
+  .vineco-mobile-menu__cta button {
+    min-height:
+      48px;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .vineco-mobile-menu,
+  .vineco-chevron,
+  .vineco-mobile-product__panel,
+  .vineco-mobile-menu__close,
+  .vineco-mobile-menu__cta button,
+  .vineco-header__sample--desktop,
+  .vineco-product-dropdown {
+    animation: none !important;
+
+    transition:
+      none !important;
+  }
+
+}
+
+
+/* ==========================================================
+   ANIMATION
+========================================================== */
+
+@keyframes vineco-mobile-menu-enter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translate3d(0, -10px, 0);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0);
+  }
+
+}
+
+
+/* ==========================================================
+   VINECO MOBILE UI V4 END
+========================================================== */
