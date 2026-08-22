@@ -1,250 +1,358 @@
 <div align="center">
 
-# 🐾 VinEco — Static React Website
+# VINECO
 
-**Modern B2B showcase website for natural pet products, OEM / ODM & private-label manufacturing**
+### Modern React Website Platform
 
-<img src="https://img.shields.io/badge/React-19.2.8-03326b?logo=react&logoColor=ffa412" alt="React 19.2.8">
-<img src="https://img.shields.io/badge/Vite-8.2.1-03326b?logo=vite&logoColor=ffa412" alt="Vite 8.2.1">
-<img src="https://img.shields.io/badge/Tailwind_CSS-4.3.3-03326b?logo=tailwindcss&logoColor=ffa412" alt="Tailwind CSS 4.3.3">
-<img src="https://img.shields.io/badge/React_Router-8.3.0-03326b?logo=reactrouter&logoColor=ffa412" alt="React Router 8.3.0">
-<img src="https://img.shields.io/badge/license-Private-03326b" alt="License">
-
-</div>
+**A responsive, performance-focused web experience built for VINECO**
 
 <br>
 
-<div align="center">
-<table>
-<tr>
-<td align="center" width="120">
-<img src="https://singlecolorimage.com/get/03326b/120x40" alt="Navy"><br>
-<sub><b>Navy</b> #03326b</sub>
-</td>
-<td align="center" width="120">
-<img src="https://singlecolorimage.com/get/ffa412/120x40" alt="Orange"><br>
-<sub><b>Orange</b> #ffa412</sub>
-</td>
-<td align="center" width="120">
-<img src="https://singlecolorimage.com/get/fffaf3/120x40" alt="Cream"><br>
-<sub><b>Cream</b> #fffaf3</sub>
-</td>
-</tr>
-</table>
+![React](https://img.shields.io/badge/React-19.2.8-03326b?logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-8.2.1-03326b?logo=vite&logoColor=ffa412)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.3-03326b?logo=tailwindcss&logoColor=ffa412)
+![React Router](https://img.shields.io/badge/React_Router-8.3.0-03326b?logo=reactrouter&logoColor=ffa412)
+![Status](https://img.shields.io/badge/Status-Active-ffa412)
+![License](https://img.shields.io/badge/License-Private-03326b)
+
+<br>
+
+**Primary Orange `#ffa412` · Navy `#03326b` · Cream `#fffaf3` · Lexend Variable**
+
 </div>
 
 ---
 
-## 📖 Overview
+## About VINECO
 
-**VinEco Static React Website** is a responsive B2B presentation website built with **React 19**, **Vite 8**, and **Tailwind CSS v4**.
+This website project was developed for **VINECO**.
 
-It presents VinEco as a Vietnam-based natural pet-product manufacturer, showcasing:
+According to the company information provided for this project, **VinEco**, now known as **WinEco**, is a high-tech agricultural brand originally established by Vingroup and later transferred to Masan.
 
-| | |
-|---|---|
-| 🐕 | Natural pet products |
-| ☕ | Coffee wood dog chews |
-| 🏭 | OEM manufacturing |
-| 🎨 | ODM product development |
-| 🏷️ | Private label |
-| 📦 | Packaging & branding support |
-| 🧪 | Sampling |
-| 🌍 | Export-ready B2B projects |
+The brand focuses on the production of clean agricultural products and applies recognized farming and quality standards such as **VietGAP** and **GlobalGAP**.
 
-> Built as a **fully static front-end**, so it deploys effortlessly to any static hosting platform.
+Official reference:
+
+**WinEco / WinMart:**  
+https://wineco.winmart.vn/
+
+> Company and brand information in this repository should be reviewed against the latest official VINECO / WinEco materials before public production deployment.
 
 ---
 
-## 🧱 Tech Stack
+# Project Overview
+
+This repository contains the modern front-end implementation of the **VINECO website**, developed with:
+
+- React 19
+- Vite 8
+- Tailwind CSS v4
+- React Router
+- Modular CSS architecture
+- Route-level code splitting
+- Responsive desktop, tablet and mobile layouts
+- Custom loading experience
+- Reusable UI components
+- Static-hosting-friendly routing
+
+The project is designed with a strong focus on:
+
+**Performance · Maintainability · Responsive UX · Brand consistency · Accessibility**
+
+---
+
+# Design System
+
+VINECO uses a clean visual identity centered around orange, navy and neutral backgrounds.
+
+| Role | Color | Hex |
+|---|---|---|
+| Primary Brand | Orange | `#ffa412` |
+| Secondary / Ink | Navy | `#03326b` |
+| Dark Navy | Navy Dark | `#022752` |
+| Soft Background | Cream | `#fffaf3` |
+| Base | White | `#ffffff` |
+
+### Typography
+
+Primary font:
+
+```text
+Lexend Variable
+```
+
+Fallback stack:
+
+```css
+"Lexend Variable",
+"Lexend",
+ui-sans-serif,
+system-ui,
+sans-serif
+```
+
+---
+
+# Technology Stack
 
 | Technology | Version | Purpose |
-|---|---|---|
-| **React** | 19.2.8 | UI framework |
-| **React DOM** | 19.2.8 | Browser rendering |
-| **React Router** | ^8.3.0 | Client-side routing |
-| **Vite** | 8.2.1 | Dev server & production build |
-| **Tailwind CSS** | 4.3.3 | Styling system |
-| **@tailwindcss/vite** | 4.3.3 | Tailwind + Vite integration |
-| **Lexend Variable** | ^5.3.0 | Main project font |
+|---|---:|---|
+| React | 19.2.8 | Component-based UI |
+| React DOM | 19.2.8 | Browser rendering |
+| React Router | 8.3.x | Client-side routing |
+| Vite | 8.2.1 | Development and production build |
+| Tailwind CSS | 4.3.3 | Utility-first styling |
+| `@tailwindcss/vite` | 4.3.3 | Tailwind integration with Vite |
+| Lexend Variable | 5.x | Brand typography |
 
-> Icons are implemented as **local SVG / UI components** — no heavy external icon package required.
+The project intentionally avoids unnecessary UI dependencies where native React, CSS and local SVG solutions are sufficient.
 
 ---
 
-## ✨ Main Features
+# Main Features
 
-<table>
-<tr>
-<td valign="top" width="50%">
+## User Experience
 
-### 🎨 UI / UX
-- Responsive desktop, tablet & mobile layouts
-- VinEco navy / orange visual system
-- Sticky responsive navigation
-- Mobile full-screen navigation
+- Responsive desktop layout
+- Tablet optimization
+- Mobile-first responsive behavior
+- Sticky navigation
+- Full-screen mobile navigation
 - Product dropdown navigation
+- Mobile product accordion
 - Scroll reveal animations
-- Reduced-motion accessibility support
-- Reusable image fallback system
+- Smooth route transitions
+- Custom VINECO loading screen
+- Responsive image handling
 - Floating contact actions
-- Reusable modal system
-- Responsive product-detail experience
-
-</td>
-<td valign="top" width="50%">
-
-### 💼 Business Features
-- OEM / ODM presentation
-- Private-label positioning
-- Product catalog
-- Product detail pages
 - Sample request modal
-- Contact information
-- Google Map embed support
-- FAQ sections
-- Export / manufacturing content
+- Google Maps integration
+- FAQ interactions
+- Touch-friendly mobile controls
+- Reduced-motion accessibility support
 
-</td>
-</tr>
-</table>
+## Architecture
 
-### 📄 Pages
-
-`Home` · `About Us` · `Products` · `Product Detail` · `Service` · `OEM / ODM` · `FAQ` · `Contact`
-
----
-
-## 🚀 Getting Started
-
-### Requirements
-
-- **Node.js 20+** (recommended)
-- **npm**
-
-```bash
-node -v
-npm -v
-```
-
-### Installation
-
-```bash
-npm install
-```
-
-### Run development server
-
-```bash
-npm run dev
-```
-
-Expose the dev server to your local network:
-
-```bash
-npm run dev -- --host
-```
-
-Vite will normally provide:
-
-```
-Local:   http://localhost:5173/
-Network: http://YOUR-LAN-IP:5173/
-```
-
-### Clean reinstall
-
-Use this when dependencies become inconsistent, or after replacing the project with a newer version.
-
-**PowerShell**
-
-```powershell
-Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
-Remove-Item package-lock.json -ErrorAction SilentlyContinue
-
-npm install
-npm run build
-npm run dev
-```
+- React functional components
+- Route-level code splitting
+- `React.lazy()`
+- `Suspense`
+- Modular CSS architecture
+- Centralized content data
+- Reusable layout components
+- Reusable SmartImage fallback
+- Hash-based client routing
+- Static deployment support
 
 ---
 
-## 🛠️ Available Scripts
+# Pages
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start development server |
-| `npm run dev -- --host` | Start dev server, exposed on local network |
-| `npm run build` | Production build → outputs to `dist/` |
-| `npm run preview` | Preview the production build |
-
----
-
-## 🧭 Routing
-
-The app uses **React Router** with `HashRouter`, so routes work on simple static hosting without server rewrite rules.
+The current application contains the following main pages:
 
 | Route | Page |
 |---|---|
 | `#/` | Home |
-| `#/about` | About Us |
+| `#/about` | About |
 | `#/products` | Products |
-| `#/products/coffee-wood` | Product Detail |
+| `#/products/:slug` | Product Detail |
 | `#/service` | Service |
 | `#/oem-odm` | OEM / ODM |
 | `#/faq` | FAQ |
 | `#/contact` | Contact |
 
-- **Main router:** `src/app/App.jsx`
-- **Product detail routes:** `/products/:slug`
-- **Product slugs defined in:** `src/data/productCatalog.js`
+Example product route:
+
+```text
+#/products/coffee-wood
+```
+
+Product slugs are managed in:
+
+```text
+src/data/productCatalog.js
+```
 
 ---
 
-## 📁 Project Structure
+# Routing Architecture
 
+The application uses:
+
+```jsx
+HashRouter
 ```
+
+instead of `BrowserRouter`.
+
+This means production routes work on most static hosting providers without requiring custom SPA rewrite rules.
+
+Main router:
+
+```text
+src/app/App.jsx
+```
+
+The application also uses route-level lazy loading.
+
+Example:
+
+```jsx
+const AboutPage = lazy(
+  () => import("../pages/AboutPage"),
+);
+
+const ServicePage = lazy(
+  () => import("../pages/ServicePage"),
+);
+```
+
+Routes are rendered inside:
+
+```jsx
+<Suspense fallback={<PageLoader />}>
+  <Routes>
+    ...
+  </Routes>
+</Suspense>
+```
+
+---
+
+# Route Code Splitting
+
+Major pages are compiled into independent JavaScript chunks.
+
+A production build may generate output similar to:
+
+```text
+HomePage-*.js
+AboutPage-*.js
+ProductsPage-*.js
+ProductDetailPage-*.js
+ServicePage-*.js
+OemOdmPage-*.js
+FaqPage-*.js
+ContactPage-*.js
+```
+
+This means visitors do not need to download the complete code for every page during the initial load.
+
+Benefits include:
+
+- Smaller initial JavaScript bundle
+- Faster first-page load
+- Better cache utilization
+- Less unnecessary JavaScript execution
+- Better performance on mobile devices
+
+---
+
+# VINECO Page Loader
+
+Lazy routes use a custom branded loading experience.
+
+Component:
+
+```text
+src/components/ui/PageLoader.jsx
+```
+
+Styles:
+
+```text
+src/styles/components/page-loader.css
+```
+
+The loader contains:
+
+- VINECO brand colors
+- Animated navy/orange emblem
+- Dual orbit animation
+- Animated progress indicator
+- Dynamic route label
+- Reduced-motion support
+
+Examples:
+
+```text
+LOADING · PRODUCTS
+
+LOADING · OUR STORY
+
+LOADING · OEM / ODM
+```
+
+No artificial loading delay is added.
+
+The loader only appears while a route chunk is actually being loaded.
+
+---
+
+# Project Structure
+
+```text
 vineco-static-react/
 │
 ├── public/
+│   │
 │   ├── images/
 │   │   ├── pinterest-preview/
 │   │   ├── service/
 │   │   ├── service-mobile/
-│   │   ├── service-real/
+│   │   ├── social/
 │   │   └── ...
+│   │
 │   └── video/
 │
 ├── src/
+│   │
 │   ├── app/
 │   │   └── App.jsx
 │   │
 │   ├── components/
+│   │   │
 │   │   ├── about/
+│   │   │   └── EditorialHighlight.jsx
+│   │   │
 │   │   ├── home/
+│   │   │   ├── InsideVinEcoExtras.jsx
+│   │   │   └── WhyVinEcoSection.jsx
+│   │   │
 │   │   ├── layout/
+│   │   │   ├── FloatingContactDock.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.jsx
+│   │   │   └── PageHero.jsx
+│   │   │
 │   │   ├── oem/
-│   │   ├── sections/
+│   │   │   ├── OemCapabilities.jsx
+│   │   │   ├── OemModels.jsx
+│   │   │   └── OemProcess.jsx
+│   │   │
 │   │   ├── service/
+│   │   │   ├── ServiceChapter.jsx
+│   │   │   └── ServiceIndex.jsx
+│   │   │
 │   │   └── ui/
+│   │       ├── GoogleMapEmbed.jsx
+│   │       ├── PageLoader.jsx
+│   │       ├── Reveal.jsx
+│   │       ├── SiteIcon.jsx
+│   │       └── SmartImage.jsx
 │   │
 │   ├── data/
-│   │   ├── aboutContent.js
-│   │   ├── aboutEditorial.js
-│   │   ├── aboutExperience.js
 │   │   ├── aboutV4.js
 │   │   ├── mapEmbed.js
 │   │   ├── oemOdmContent.js
 │   │   ├── productCatalog.js
 │   │   ├── projectData.js
 │   │   └── serviceContent.js
-│   │   └── siteContent.js
 │   │
 │   ├── features/
 │   │   └── sample/
-│   │
-│   ├── hooks/
-│   │   └── useScrollSpy.js
+│   │       ├── SampleModal.jsx
+│   │       └── SampleModalContext.jsx
 │   │
 │   ├── pages/
 │   │   ├── AboutPage.jsx
@@ -257,101 +365,462 @@ vineco-static-react/
 │   │   └── ServicePage.jsx
 │   │
 │   ├── styles/
-│   │   └── globals.css
+│   │   │
+│   │   ├── globals.css
+│   │   ├── tokens.css
+│   │   ├── core.css
+│   │   │
+│   │   ├── components/
+│   │   │   ├── page-loader.css
+│   │   │   └── sample-modal.css
+│   │   │
+│   │   ├── home/
+│   │   │   └── inside-extras.css
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── ios-nav-fix.css
+│   │   │   ├── navigation.css
+│   │   │   └── navigation-typography.css
+│   │   │
+│   │   └── pages/
+│   │       ├── about-v4.css
+│   │       ├── product-detail.css
+│   │       ├── service-mobile-compat.css
+│   │       ├── service-mobile.css
+│   │       └── service-v2.css
 │   │
 │   └── main.jsx
 │
 ├── tools/
-│   └── apply-product-detail.mjs
 │
 ├── index.html
 ├── package.json
+├── package-lock.json
 ├── vite.config.js
 └── README.md
 ```
 
 ---
 
-## ✏️ Where to Edit Website Content
+# CSS Architecture
 
-> The project no longer stores everything in a single data file. Edit the file that matches the section you want to change.
+The project uses **Tailwind CSS v4 together with modular custom CSS**.
 
-| Area | File |
-|---|---|
-| Shared / Home / Contact data | `src/data/projectData.js` |
-| Product catalog & routes | `src/data/productCatalog.js` |
-| About page (current) | `src/data/aboutV4.js` |
-| About page (legacy/alt versions) | `aboutContent.js`, `aboutEditorial.js`, `aboutExperience.js` |
-| Service page | `src/data/serviceContent.js` |
-| OEM / ODM page | `src/data/oemOdmContent.js` |
-| Legacy / shared section content | `src/data/siteContent.js` |
+Previously, most custom CSS existed inside a very large `globals.css`.
 
-### Shared / Home / Contact Data — `src/data/projectData.js`
-Contains: brand information, hero copy, metrics, home product cards, advantages, OEM models used by some sections, FAQ, contact information.
+The stylesheet architecture has now been refactored so that:
 
-### Product Catalog — `src/data/productCatalog.js`
-Controls product navigation and product-detail routes.
+```text
+globals.css
+```
+
+acts only as the CSS entrypoint.
+
+Current structure:
+
+```text
+styles/
+│
+├── globals.css
+├── tokens.css
+├── core.css
+│
+├── components/
+├── home/
+├── layout/
+└── pages/
+```
+
+---
+
+## `globals.css`
+
+The file should remain small.
+
+Its responsibility is mainly importing the project's CSS modules.
+
+Example:
+
+```css
+@import "tailwindcss";
+
+@import "./tokens.css";
+@import "./core.css";
+
+@import "./components/sample-modal.css";
+@import "./components/page-loader.css";
+
+@import "./pages/about-v4.css";
+@import "./home/inside-extras.css";
+
+@import "./pages/service-v2.css";
+
+@import "./layout/navigation.css";
+
+@import "./pages/service-mobile-compat.css";
+@import "./pages/service-mobile.css";
+
+@import "./layout/navigation-typography.css";
+
+@import "./pages/product-detail.css";
+
+@import "./layout/ios-nav-fix.css";
+```
+
+### Important
+
+Do not add large page-specific style blocks directly into:
+
+```text
+globals.css
+```
+
+Instead, place styles in the correct module.
+
+---
+
+# CSS Development Rules
+
+When adding or modifying styles:
+
+### Global tokens
+
+Use:
+
+```text
+src/styles/tokens.css
+```
+
+for:
+
+- colors
+- typography tokens
+- theme variables
+- shared design tokens
+
+### Global browser rules
+
+Use:
+
+```text
+src/styles/core.css
+```
+
+for:
+
+- document defaults
+- global media rules
+- reset behavior
+- shared reveal animation
+- accessibility behavior
+
+### Components
+
+Use:
+
+```text
+src/styles/components/
+```
+
+for reusable component-specific styles.
+
+### Layout
+
+Use:
+
+```text
+src/styles/layout/
+```
+
+for:
+
+- Header
+- Navigation
+- Mobile navigation
+- Global layout behavior
+- Browser-specific navigation fixes
+
+### Pages
+
+Use:
+
+```text
+src/styles/pages/
+```
+
+for page-specific visual systems.
+
+### Development guideline
+
+Avoid introducing layers such as:
+
+```text
+V2
+V3
+V4
+V5
+```
+
+only to override previous CSS.
+
+Prefer refactoring the existing stylesheet into one source of truth.
+
+Avoid excessive use of:
+
+```css
+!important
+```
+
+unless it solves a documented cross-browser or cascade requirement.
+
+---
+
+# Content Management
+
+Most editable business content is stored inside:
+
+```text
+src/data/
+```
+
+This allows business copy to be updated without rewriting component logic.
+
+---
+
+## Shared Project Data
+
+```text
+src/data/projectData.js
+```
+
+Contains shared information such as:
+
+```text
+brand
+hero
+metrics
+products
+faq
+contact
+socials
+```
+
+---
+
+## Products
+
+```text
+src/data/productCatalog.js
+```
+
+Controls:
+
+- Product names
+- Product slugs
+- Product descriptions
+- Product images
+- Product details
+- Product navigation
+
+Example:
 
 ```js
 {
   slug: "coffee-wood",
   name: "Coffee Wood",
-  image: "/images/product-classic.webp",
+  image: "/images/product-coffee-wood.webp",
   description: "..."
 }
 ```
 
-The `slug` becomes part of the URL: `#/products/coffee-wood`
+The slug is used to generate routes such as:
 
-### Service Page — `src/data/serviceContent.js`
-Update: service chapters, titles, descriptions, feature points, service images, overview information.
-
-### OEM / ODM Page — `src/data/oemOdmContent.js`
-Update: OEM model, ODM model, private-label model, process, capabilities.
-
-> ⚠️ `siteContent.js` still exists but is **not guaranteed** to be used by every page. Always check which data file the target page imports before editing.
-
----
-
-## 🖼️ Images & Media
-
-| Type | Location |
-|---|---|
-| Images | `public/images/` |
-| Videos | `public/video/` |
-
-A file at `public/images/example.png` is referenced in React as:
-
-```jsx
-<img src="/images/example.png" alt="" />
+```text
+#/products/coffee-wood
 ```
 
-### Image Fallback — `src/components/ui/SmartImage.jsx`
+---
 
-Automatically displays a neutral placeholder when:
-- `src` is empty
-- the image does not exist
-- the browser cannot load the image
+## About Page
 
-If you see **"Add image / images/example.webp"**, the referenced file is missing or failed to load.
+Content:
 
-### Product Images
+```text
+src/data/aboutV4.js
+```
 
-Image paths are expected in `src/data/productCatalog.js` and `src/data/projectData.js`. When adding/replacing images:
+Page:
 
-1. Put the image inside `public/images/`
-2. Update the corresponding data object
-3. Keep image names simple and URL-safe
-4. Run `npm run build`
-5. Test both desktop and mobile
+```text
+src/pages/AboutPage.jsx
+```
 
-> 💡 For transparent PNG product images, `object-contain` is usually better than `object-cover` since it avoids cropping the product.
+Styles:
+
+```text
+src/styles/pages/about-v4.css
+```
 
 ---
 
-## 🗺️ Google Map
+## Service Page
 
-Configured in `src/data/mapEmbed.js`. Paste either a complete Google Maps `<iframe>` or a valid map URL.
+Content:
+
+```text
+src/data/serviceContent.js
+```
+
+Components:
+
+```text
+src/components/service/
+```
+
+Styles:
+
+```text
+src/styles/pages/service-v2.css
+src/styles/pages/service-mobile.css
+```
+
+---
+
+## OEM / ODM
+
+Content:
+
+```text
+src/data/oemOdmContent.js
+```
+
+Components:
+
+```text
+src/components/oem/
+```
+
+Page:
+
+```text
+src/pages/OemOdmPage.jsx
+```
+
+---
+
+# Images and Media
+
+Static files are stored inside:
+
+```text
+public/
+```
+
+Images:
+
+```text
+public/images/
+```
+
+Videos:
+
+```text
+public/video/
+```
+
+A file stored as:
+
+```text
+public/images/example.webp
+```
+
+is referenced from React using:
+
+```jsx
+<img
+  src="/images/example.webp"
+  alt="Description"
+/>
+```
+
+Do not write:
+
+```jsx
+src="/public/images/example.webp"
+```
+
+---
+
+# SmartImage
+
+Reusable image fallback:
+
+```text
+src/components/ui/SmartImage.jsx
+```
+
+`SmartImage` protects the layout when:
+
+- an image URL is missing
+- an image cannot be loaded
+- an asset path is incorrect
+- a production asset has not yet been supplied
+
+This prevents missing images from breaking surrounding layouts.
+
+---
+
+# Image Recommendations
+
+For production:
+
+- Prefer WebP or AVIF where practical
+- Compress large photographs
+- Use correct intrinsic image dimensions
+- Avoid loading unnecessarily large assets on mobile
+- Prefer local production assets over third-party hotlinks
+- Use descriptive `alt` text
+- Use `object-fit: contain` for isolated transparent product imagery
+- Use `object-fit: cover` for editorial photography where cropping is acceptable
+
+---
+
+# Sample Request Modal
+
+The project contains a reusable global sample-request system.
+
+Files:
+
+```text
+src/features/sample/SampleModal.jsx
+src/features/sample/SampleModalContext.jsx
+```
+
+Styles:
+
+```text
+src/styles/components/sample-modal.css
+```
+
+The provider is mounted globally so buttons from different pages can open the same modal without duplicating state.
+
+---
+
+# Google Maps
+
+Map configuration:
+
+```text
+src/data/mapEmbed.js
+```
+
+Renderer:
+
+```text
+src/components/ui/GoogleMapEmbed.jsx
+```
+
+Example configuration:
 
 ```js
 export const mapEmbedHtml = `
@@ -362,278 +831,769 @@ export const mapEmbedHtml = `
 `;
 ```
 
-Renderer: `src/components/ui/GoogleMapEmbed.jsx`
-If no map is configured, the site shows a fallback card instead of breaking the page.
+If the map is unavailable, the component can display a fallback instead of breaking the layout.
 
 ---
 
-## ✉️ Contact Form
+# Contact Form
 
-The Contact page is currently **static** — on submit it generates a pre-filled email via `mailto:` and opens the visitor's email client.
+The current contact page is a static front-end implementation.
 
-- **File:** `src/pages/ContactPage.jsx`
-- **Data source:** `src/data/projectData.js`
+File:
 
-> For production use requiring direct form submission, connect the form to your own API, serverless function, or hosted form provider.
+```text
+src/pages/ContactPage.jsx
+```
 
----
+Contact information:
 
-## 🧪 Sample Request Modal
+```text
+src/data/projectData.js
+```
 
-Global modal managed by:
+The current form can generate an email using:
 
-- `src/features/sample/SampleModal.jsx`
-- `src/features/sample/SampleModalContext.jsx`
+```text
+mailto:
+```
 
-Can be opened from multiple sections without duplicating modal state. Provider is mounted in `src/app/App.jsx`.
+and open the visitor's configured email client.
 
----
-
-## 🎨 Styling
-
-Global styles: `src/styles/globals.css` — built with **Tailwind CSS v4** + Vite integration.
-
-<div align="center">
-<table>
-<tr>
-<th>Role</th><th>Color</th><th>Hex</th>
-</tr>
-<tr>
-<td>Primary</td>
-<td><img src="https://singlecolorimage.com/get/03326b/60x20"></td>
-<td><code>#03326b</code> VinEco Navy</td>
-</tr>
-<tr>
-<td>Accent</td>
-<td><img src="https://singlecolorimage.com/get/ffa412/60x20"></td>
-<td><code>#ffa412</code> VinEco Orange</td>
-</tr>
-<tr>
-<td>Background</td>
-<td><img src="https://singlecolorimage.com/get/fffaf3/60x20"></td>
-<td><code>#fffaf3</code> Cream</td>
-</tr>
-<tr>
-<td>Base</td>
-<td><img src="https://singlecolorimage.com/get/ffffff/60x20"></td>
-<td><code>#ffffff</code> White</td>
-</tr>
-</table>
-</div>
-
-**Primary font:** Lexend Variable
+For server-side production submission, integrate a backend endpoint, serverless function or approved form service.
 
 ---
 
-## 📱 Responsive Design
+# Responsive Design
 
-Dedicated responsive behavior for: header, mobile navigation, service page, product detail page, about page, OEM/ODM page, cards & grids, contact layout, floating contact controls.
+The website is designed for:
 
-**Minimum test breakpoints:**
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+- Small mobile devices
 
-`320px` · `375px` · `390px` · `430px` · `768px` · `900px` · `1024px` · `1280px` · `1440px`
+Recommended test widths:
 
-Also test **real iOS Safari** when changing: `position: fixed`, sticky navigation, `100vh` / `100dvh`, scroll locking, backdrop filters.
+```text
+320px
+360px
+375px
+390px
+430px
+768px
+900px
+1024px
+1280px
+1440px
+```
+
+Always test responsive layouts after modifying:
+
+- navigation
+- grids
+- collage layouts
+- product images
+- fixed elements
+- forms
+- modals
+- service sections
 
 ---
 
-## ♿ Accessibility
+# iOS Safari
 
-- Keyboard-focus states
+Special care is taken around iOS Safari behavior.
+
+Relevant stylesheet:
+
+```text
+src/styles/layout/ios-nav-fix.css
+```
+
+When modifying mobile navigation, test:
+
+- menu opening after page scrolling
+- scroll lock
+- fixed overlays
+- sticky header
+- `100dvh`
+- safe-area inset behavior
+- background blur
+- touch scrolling
+
+Avoid forcing:
+
+```css
+body {
+  position: fixed;
+}
+```
+
+for scroll locking unless thoroughly tested on iOS.
+
+---
+
+# Accessibility
+
+The project includes support for:
+
 - Semantic navigation
+- Native interactive elements
+- Touch-friendly targets
+- Image alternative text
+- Native `<details>` FAQ controls
+- Keyboard interaction
 - Reduced-motion preferences
-- Image `alt` values
-- Responsive touch targets
-- Native `<details>` FAQ interactions
-- Scroll-reveal fallback when reduced motion is enabled
+- Accessible route loader
+- Motion fallbacks
 
-> Avoid removing `@media (prefers-reduced-motion: reduce)` unless the animation system is replaced with an equivalent accessible solution.
+Reduced-motion CSS should be preserved:
 
----
-
-## 🔍 SEO
-
-Basic metadata is configured in `index.html`, including: page title, meta description, Open Graph title & description, theme color.
-
-> Review all SEO text before production and replace temporary content with final brand-approved copy.
-
----
-
-## 🧩 Product Detail Patcher
-
-`tools/apply-product-detail.mjs` — rebuilds / patches the Product Detail implementation and **creates a backup** before changing source files. Run from the project root only when needed.
-
-```bash
-node .\tools\apply-product-detail.mjs
+```css
+@media (prefers-reduced-motion: reduce) {
+  ...
+}
 ```
 
-Then verify:
+Animations must never be required to understand or access content.
+
+---
+
+# Performance
+
+The project includes multiple performance optimizations.
+
+## Route-level code splitting
+
+Pages use:
+
+```text
+React.lazy()
+Suspense
+```
+
+to reduce the initial JavaScript bundle.
+
+## Image handling
+
+Images are loaded from optimized static paths and supported by reusable fallback components.
+
+## CSS cleanup
+
+Unused legacy CSS has been removed and the stylesheet system has been modularized.
+
+## Content visibility
+
+Some large page sections may use:
+
+```css
+content-visibility: auto;
+```
+
+to reduce rendering work for below-the-fold content.
+
+## Reduced unnecessary dependencies
+
+The project avoids introducing large UI libraries for simple interface requirements.
+
+---
+
+# SEO
+
+Base SEO metadata is configured in:
+
+```text
+index.html
+```
+
+The document can include:
+
+- Page title
+- Meta description
+- Open Graph title
+- Open Graph description
+- Open Graph image
+- Theme color
+- Social preview information
+
+Because the application currently uses `HashRouter`, crawlers generally see the root HTML document rather than unique server-rendered HTML for every hash route.
+
+For advanced SEO requirements, server rendering, prerendering or route-specific static generation can be evaluated in a future architecture.
+
+---
+
+# Getting Started
+
+## Requirements
+
+Recommended:
+
+```text
+Node.js 20+
+npm
+```
+
+Check versions:
 
 ```bash
-npm run build
+node -v
+npm -v
+```
+
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Start Development Server
+
+```bash
+npm run dev
+```
+
+Vite normally starts at:
+
+```text
+http://localhost:5173/
+```
+
+---
+
+## Expose to Local Network
+
+```bash
 npm run dev -- --host
 ```
 
-Backups are stored inside `.vineco-backups/`.
+Useful for testing the website from:
+
+- iPhone
+- Android devices
+- tablets
+- other computers on the same network
 
 ---
 
-## ✅ Build Verification
+# Available Scripts
 
-Always run a production build after editing routes, JSX, or major CSS:
+| Command | Description |
+|---|---|
+| `npm run dev` | Start Vite development server |
+| `npm run dev -- --host` | Expose development server to LAN |
+| `npm run build` | Create production build |
+| `npm run preview` | Preview production build |
+
+---
+
+# Production Build
+
+Always verify the project before deployment:
 
 ```bash
 npm run build
 ```
 
-A successful build completes without JSX parse errors or unresolved imports. Then test locally:
+Successful output should contain:
 
-```bash
-npm run dev -- --host
+```text
+✓ built
+```
+
+Production files are generated inside:
+
+```text
+dist/
 ```
 
 ---
 
-## 🐛 Common Issues
+# Preview Production Build
 
-<details>
-<summary><b>Vite reports a JSX parse error</b></summary>
-<br>
+After building:
 
-```
-[PARSE_ERROR] Unexpected token
+```bash
+npm run preview
 ```
 
-Check the file and line reported by Vite. Common causes:
-- Extra `/>`
-- Extra `}`
-- Missing closing JSX tag
-- Broken route
-- Invalid nested JSX
+This allows the production bundle to be tested locally before deployment.
 
-After fixing, run `npm run build`.
-</details>
+---
 
-<details>
-<summary><b>Image shows "Add image"</b></summary>
-<br>
+# Recommended Development Workflow
 
-Verify the file exists:
+```text
+Edit content / UI
+        ↓
+npm run dev
+        ↓
+Desktop testing
+        ↓
+Mobile testing
+        ↓
+npm run build
+        ↓
+Check build output
+        ↓
+npm run preview
+        ↓
+Final browser test
+        ↓
+Git commit
+        ↓
+Deploy
+```
+
+---
+
+# Clean Dependency Reinstall
+
+If dependencies become inconsistent:
+
+### PowerShell
 
 ```powershell
-Test-Path ".\public\images\YOUR-IMAGE.png"
+Remove-Item `
+  -Recurse `
+  -Force `
+  node_modules `
+  -ErrorAction SilentlyContinue
+
+Remove-Item `
+  package-lock.json `
+  -ErrorAction SilentlyContinue
+
+npm install
+npm run build
 ```
 
-Make sure React references a **public URL**:
+Only remove `package-lock.json` when a dependency reset is intentionally required.
 
-✅ `/images/YOUR-IMAGE.png`
-❌ `/public/images/YOUR-IMAGE.png`
-</details>
+For normal development, preserve the lockfile.
 
-<details>
-<summary><b>Mobile UI looks correct at the top but breaks after scrolling</b></summary>
-<br>
+---
 
-Check the mobile navigation code and avoid combining complicated scroll-lock logic with unnecessary fixed-body positioning. Always test navigation on a real mobile browser after changing sticky/fixed elements.
-</details>
+# Git Workflow
 
-<details>
-<summary><b>Changes do not appear in the browser</b></summary>
-<br>
-
-Hard refresh: `Ctrl + F5`, or restart Vite:
+Before committing major changes:
 
 ```bash
-npm run dev -- --host
+npm run build
+git status
 ```
-</details>
+
+Stage appropriate changes:
+
+```bash
+git add -u
+```
+
+Then add new source files explicitly.
+
+Example:
+
+```bash
+git add src
+git add README.md
+```
+
+Review:
+
+```bash
+git diff --cached --stat
+git status
+```
+
+Commit:
+
+```bash
+git commit -m "feat: update VINECO website"
+```
+
+Synchronize:
+
+```bash
+git pull --rebase origin main
+```
+
+Push:
+
+```bash
+git push origin main
+```
 
 ---
 
-## 📋 Production Checklist
+# Files That Should Not Be Committed
 
-- [ ] `npm install`
-- [ ] `npm run build`
-- [ ] Verify every route
-- [ ] Test desktop navigation
-- [ ] Test mobile navigation
-- [ ] Test product dropdown
-- [ ] Test all product-detail URLs
-- [ ] Replace temporary / placeholder images
-- [ ] Check SmartImage fallbacks
-- [ ] Verify contact email and phone number
-- [ ] Configure Google Map
-- [ ] Review OEM / ODM content
-- [ ] Review product descriptions
-- [ ] Verify social links
-- [ ] Check SEO metadata
-- [ ] Compress large images
-- [ ] Optimize video assets
-- [ ] Test Safari on iPhone
-- [ ] Test Android Chrome
-- [ ] Check keyboard navigation
-- [ ] Test reduced-motion mode
-- [ ] Confirm there are no console errors
+Local generated or backup files should normally be excluded.
+
+Recommended `.gitignore` entries:
+
+```gitignore
+node_modules/
+dist/
+output/
+.vineco-backups/
+```
+
+Do not treat backup files as active source code.
 
 ---
 
-## 🚢 Deployment
+# Deployment
 
-Because the app uses `HashRouter`, it works well on most static hosting services **without special SPA rewrite rules**.
+Because the application uses `HashRouter`, it is suitable for static hosting.
 
-**Typical targets:** Vercel · Netlify · Cloudflare Pages · GitHub Pages · Shared static hosting · Traditional hosting serving `dist/`
+Supported deployment targets include:
+
+- Vercel
+- Netlify
+- Cloudflare Pages
+- GitHub Pages
+- Traditional static hosting
+- Shared hosting capable of serving `dist/`
+
+Build:
 
 ```bash
 npm run build
 ```
 
-Deploy the generated `dist/` directory.
+Deploy:
 
-### Recommended workflow
-
-```
-1. Edit content / UI
-        ↓
-2. Test with npm run dev
-        ↓
-3. Test responsive layouts
-        ↓
-4. Run npm run build
-        ↓
-5. Fix warnings / errors
-        ↓
-6. Preview production build
-        ↓
-7. Deploy dist/
+```text
+dist/
 ```
 
 ---
 
-## 🧑‍💻 Notes for Developers
+# Production Checklist
 
-- Keep business content in `src/data/` whenever possible
-- Keep reusable components inside `src/components/`
-- Avoid hardcoding the same product data in multiple pages
-- Prefer local assets for production instead of third-party hotlinks
-- Always make a backup before large automated replacements
-- Do **not** edit files inside `.vineco-backups/` as active source code
-- Keep mobile behavior isolated and test it on real devices
-- Run `npm run build` before committing major changes
+Before releasing the website:
+
+- [ ] Run `npm install`
+- [ ] Run `npm run build`
+- [ ] Verify Home page
+- [ ] Verify About page
+- [ ] Verify Products page
+- [ ] Verify every Product Detail route
+- [ ] Verify Service page
+- [ ] Verify OEM / ODM page
+- [ ] Verify FAQ page
+- [ ] Verify Contact page
+- [ ] Test desktop navigation
+- [ ] Test product dropdown
+- [ ] Test mobile navigation
+- [ ] Test mobile menu after scrolling
+- [ ] Test PageLoader
+- [ ] Test Sample Request modal
+- [ ] Test floating contact actions
+- [ ] Verify all images
+- [ ] Verify all videos
+- [ ] Verify Google Map
+- [ ] Verify email addresses
+- [ ] Verify phone numbers
+- [ ] Verify social links
+- [ ] Verify product descriptions
+- [ ] Verify company information
+- [ ] Review SEO metadata
+- [ ] Review Open Graph image
+- [ ] Compress large images
+- [ ] Optimize videos
+- [ ] Check mobile horizontal overflow
+- [ ] Test iPhone Safari
+- [ ] Test Android Chrome
+- [ ] Test keyboard navigation
+- [ ] Test reduced-motion mode
+- [ ] Check browser console
+- [ ] Confirm no missing assets
+- [ ] Confirm production build succeeds
+
+---
+
+# Developer Guidelines
+
+## Components
+
+Reusable interface logic belongs in:
+
+```text
+src/components/
+```
+
+Avoid duplicating the same UI in multiple pages.
+
+---
+
+## Business Content
+
+Whenever practical, editable business copy belongs in:
+
+```text
+src/data/
+```
+
+rather than directly inside large JSX components.
+
+---
+
+## Page Logic
+
+Pages belong in:
+
+```text
+src/pages/
+```
+
+Pages should compose smaller reusable components instead of becoming oversized single files.
+
+---
+
+## CSS
+
+Keep CSS modular.
+
+Do not turn:
+
+```text
+src/styles/globals.css
+```
+
+back into a large monolithic stylesheet.
+
+Before adding a new CSS rule, determine whether it belongs to:
+
+```text
+tokens
+core
+components
+home
+layout
+pages
+```
+
+---
+
+## Legacy Code
+
+Do not keep old implementations only because a newer implementation replaced them.
+
+Before deleting anything:
+
+1. Search runtime imports
+2. Check static references
+3. Run `npm run build`
+4. Test affected routes
+5. Remove only verified unused code
+
+---
+
+## Automated Refactors
+
+Before running scripts that modify many source files:
+
+- Create a backup
+- Use UTF-8 without BOM
+- Run the script from project root
+- Build immediately afterward
+- Review `git diff`
+- Do not commit until the UI is tested
+
+---
+
+# Common Issues
+
+## Vite JSX Parse Error
+
+Example:
+
+```text
+Unexpected token
+```
+
+Check the reported file and line.
+
+Common causes:
+
+```text
+Missing JSX closing tag
+Extra }
+Extra />
+Invalid component nesting
+Broken import
+```
+
+Then run:
+
+```bash
+npm run build
+```
+
+---
+
+## Missing Image
+
+Check that the file exists:
+
+```powershell
+Test-Path ".\public\images\YOUR-IMAGE.webp"
+```
+
+Correct:
+
+```text
+/images/YOUR-IMAGE.webp
+```
+
+Incorrect:
+
+```text
+/public/images/YOUR-IMAGE.webp
+```
+
+---
+
+## Changes Are Not Visible
+
+Restart Vite:
+
+```bash
+npm run dev -- --host
+```
+
+Then perform a hard refresh.
+
+Windows:
+
+```text
+Ctrl + F5
+```
+
+---
+
+## Mobile Page Has Horizontal Overflow
+
+Inspect:
+
+- absolute elements
+- large fixed widths
+- grid children
+- flex children
+- transforms
+- overflowing media
+- `min-width`
+
+Grid and flex children often require:
+
+```css
+min-width: 0;
+```
+
+---
+
+## Mobile Menu Behaves Incorrectly on iPhone
+
+Review:
+
+```text
+src/styles/layout/ios-nav-fix.css
+```
+
+and:
+
+```text
+src/components/layout/Header.jsx
+```
+
+Test using real Safari whenever possible.
+
+---
+
+# Maintenance Priorities
+
+Future improvements should prioritize:
+
+1. Remove remaining legacy CSS compatibility layers
+2. Consolidate Service responsive CSS
+3. Reduce unnecessary `!important`
+4. Optimize large images
+5. Optimize video assets
+6. Move remaining remote image dependencies to local assets
+7. Continue improving route-level loading
+8. Validate all production content
+9. Improve route-specific SEO if required
+10. Maintain accessibility across new UI features
+
+---
+
+# Repository Philosophy
+
+The project should remain:
+
+```text
+Fast
+Modular
+Predictable
+Responsive
+Maintainable
+Accessible
+Production-safe
+```
+
+When choosing between adding another override and refactoring existing code:
+
+> Prefer refactoring.
+
+When choosing between duplicating a component and reusing an existing one:
+
+> Prefer reuse.
+
+When choosing between adding another dependency and implementing a simple native solution:
+
+> Prefer the smallest maintainable solution.
+
+---
+
+# Ownership
+
+This repository was created as a web development project for:
+
+## VINECO
+
+Company / brand information should be maintained using the latest approved official materials.
+
+Official reference supplied for the project:
+
+https://wineco.winmart.vn/
+
+---
+
+# License
+
+```text
+Private Project
+```
+
+This source code is intended for the VINECO project and is not licensed for unrestricted redistribution unless explicitly authorized by the project owner.
 
 ---
 
 <div align="center">
 
-## 🌿 Brand Direction
+## VINECO
 
-**VinEco**
+**Modern Web Experience · React · Tailwind CSS · Responsive Design**
 
-`Primary #03326b` · `Accent #ffa412` · `Font: Lexend Variable`
-
-Natural Pet Products · OEM / ODM · Private Label · Vietnam
+`#ffa412` Orange · `#03326b` Navy · `Lexend Variable`
 
 <br>
 
-**VinEco — Crafted by Nature, Perfected by Us.**
+**Built with performance, maintainability and user experience in mind.**
 
 </div>
