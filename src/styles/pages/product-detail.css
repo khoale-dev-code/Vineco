@@ -3,8 +3,8 @@
 ========================================================== */
 
 .pd3 {
-  --orange: #ffa412;
-  --blue: #03326b;
+  --orange: #F59E0B;
+  --blue: #1E2A24;
   --cream: #fff6e6;
 
   overflow-x: clip;
@@ -156,10 +156,10 @@
 
   border-bottom:
     1px solid
-    rgba(3,50,107,.3);
+    rgba(30,42,36,.3);
 
   color:
-    rgba(3,50,107,.5);
+    rgba(30,42,36,.5);
 
   font-size: 7px;
   font-weight: 850;
@@ -198,7 +198,7 @@
   margin-top: 22px;
 
   color:
-    rgba(3,50,107,.69);
+    rgba(30,42,36,.69);
 
   font-size: 14px;
 
@@ -228,7 +228,7 @@
 
   border:
     1px solid
-    rgba(3,50,107,.35);
+    rgba(30,42,36,.35);
 
   border-radius: 999px;
 
@@ -352,7 +352,7 @@
   background:
     radial-gradient(
       circle at 75% 22%,
-      rgba(255,164,18,.22),
+      rgba(245,158,11,.22),
       transparent 28%
     ),
     #fff7e9;
@@ -611,7 +611,7 @@
   margin-top: 10px;
 
   color:
-    rgba(3,50,107,.6);
+    rgba(30,42,36,.6);
 
   font-size: 11px;
 
@@ -671,7 +671,7 @@
   margin-top: 16px;
 
   color:
-    rgba(3,50,107,.62);
+    rgba(30,42,36,.62);
 
   font-size: 13px;
 
@@ -814,7 +814,7 @@
 
   border-top:
     1px solid
-    rgba(3,50,107,.17);
+    rgba(30,42,36,.17);
 }
 
 .pd3-quality-list span {
@@ -886,7 +886,7 @@
 
   border:
     1.5px solid
-    rgba(255,164,18,.7);
+    rgba(245,158,11,.7);
 
   border-radius: 12px;
 
@@ -944,7 +944,7 @@ summary strong {
   padding: 0 13px 14px;
 
   color:
-    rgba(3,50,107,.6);
+    rgba(30,42,36,.6);
 
   font-size: 11px;
 

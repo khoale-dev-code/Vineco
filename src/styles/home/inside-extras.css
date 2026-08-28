@@ -48,7 +48,7 @@
   margin:
     7px 0 0;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size:
     clamp(2.7rem, 5vw, 5rem);
@@ -63,14 +63,14 @@
 .inside-reviews__header h2 span {
   display: block;
 
-  color: #ffa412;
+  color: #F59E0B;
 }
 
 .inside-reviews__intro {
   max-width: 610px;
 
   color:
-    rgba(3,50,107,.68);
+    rgba(30,42,36,.68);
 
   font-size: 15px;
 
@@ -125,7 +125,7 @@
 
   border:
     1.5px solid
-    #ffa412;
+    #F59E0B;
 
   border-radius: 24px;
 
@@ -144,7 +144,7 @@
 
   box-shadow:
     0 20px 48px
-    rgba(3,50,107,.09);
+    rgba(30,42,36,.09);
 }
 
 
@@ -155,7 +155,7 @@
 
   overflow: hidden;
 
-  background: #fff4df;
+  background: #F4F1EA;
 }
 
 
@@ -174,8 +174,8 @@
 
   border-radius: 999px;
 
-  background: #ffa412;
-  color: #03326b;
+  background: #F59E0B;
+  color: #1E2A24;
 
   font-size: 10px;
   font-weight: 850;
@@ -202,7 +202,7 @@
   right: 14px;
 
   color:
-    rgba(255,164,18,.18);
+    rgba(245,158,11,.18);
 
   font-family:
     Georgia,
@@ -219,7 +219,7 @@
 
   z-index: 1;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 15px;
   font-weight: 720;
@@ -240,7 +240,7 @@
 
 
 .inside-review-card__body footer strong {
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 11px;
   font-weight: 850;
@@ -249,7 +249,7 @@
 
 .inside-review-card__body footer span {
   color:
-    rgba(3,50,107,.48);
+    rgba(30,42,36,.48);
 
   font-size: 10px;
 }
@@ -271,20 +271,20 @@
 
   border:
     1.5px solid
-    #ffa412;
+    #F59E0B;
 
   border-radius: 50%;
 
   background: #fff;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 28px;
   line-height: 1;
 
   box-shadow:
     0 8px 24px
-    rgba(3,50,107,.08);
+    rgba(30,42,36,.08);
 
   transition:
     background 180ms ease,
@@ -292,7 +292,7 @@
 }
 
 .inside-reviews__arrow:hover {
-  background: #ffa412;
+  background: #F59E0B;
 }
 
 .inside-reviews__arrow--left {
@@ -320,7 +320,7 @@
   border-radius: 50%;
 
   background:
-    rgba(3,50,107,.16);
+    rgba(30,42,36,.16);
 }
 
 .inside-reviews__dots span.is-active {
@@ -328,7 +328,7 @@
 
   border-radius: 999px;
 
-  background: #ffa412;
+  background: #F59E0B;
 }
 
 
@@ -351,7 +351,7 @@
 
   border:
     1.5px solid
-    rgba(255,164,18,.8);
+    rgba(245,158,11,.8);
 
   border-radius: 28px;
 
@@ -382,7 +382,7 @@
   margin:
     7px 0 0;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size:
     clamp(2rem, 4vw, 3.8rem);
@@ -395,7 +395,7 @@
 }
 
 .inside-partner__copy h2 span {
-  color: #ffa412;
+  color: #F59E0B;
 }
 
 
@@ -405,7 +405,7 @@
   margin-top: 16px;
 
   color:
-    rgba(3,50,107,.66);
+    rgba(30,42,36,.66);
 
   font-size: 14px;
   line-height: 1.7;
@@ -437,8 +437,8 @@
 
   border-radius: 999px;
 
-  background: #ffa412;
-  color: #03326b;
+  background: #F59E0B;
+  color: #1E2A24;
 
   font-size: 11px;
   font-weight: 850;
@@ -452,19 +452,19 @@
   transform:
     translateY(-2px);
 
-  background: #ed9200;
+  background: #D97706;
 }
 
 
 .inside-text-link {
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 11px;
   font-weight: 850;
 
   border-bottom:
     2px solid
-    #ffa412;
+    #F59E0B;
 }
 
 
@@ -491,7 +491,7 @@
   margin:
     8px 0 0;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size:
     clamp(2.6rem, 5vw, 5.2rem);
@@ -506,7 +506,7 @@
 .inside-quality__heading h2 span {
   display: block;
 
-  color: #ffa412;
+  color: #F59E0B;
 }
 
 
@@ -524,7 +524,7 @@
 
   border:
     1.5px solid
-    #ffa412;
+    #F59E0B;
 
   border-radius: 26px;
 }
@@ -561,8 +561,8 @@
   padding:
     8px 12px;
 
-  background: #ffa412;
-  color: #03326b;
+  background: #F59E0B;
+  color: #1E2A24;
 
   font-size: 8px;
   font-weight: 850;
@@ -578,14 +578,14 @@
   padding:
     34px 28px;
 
-  background: #ffa412;
+  background: #F59E0B;
 }
 
 
 .inside-quality__statement p {
   margin: 0;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size:
     clamp(2.5rem, 4vw, 4.2rem);
@@ -614,7 +614,7 @@
 
 
 .inside-quality__lead {
-  color: #03326b;
+  color: #1E2A24;
 
   font-size:
     clamp(1.05rem, 1.4vw, 1.18rem);
@@ -630,7 +630,7 @@
 
   border-top:
     1px solid
-    rgba(3,50,107,.16);
+    rgba(30,42,36,.16);
 }
 
 
@@ -646,12 +646,12 @@
 
   border-bottom:
     1px solid
-    rgba(3,50,107,.16);
+    rgba(30,42,36,.16);
 }
 
 
 .inside-quality__checks span {
-  color: #ffa412;
+  color: #F59E0B;
 
   font-size: 10px;
   font-weight: 850;
@@ -662,7 +662,7 @@
   margin: 0;
 
   color:
-    rgba(3,50,107,.65);
+    rgba(30,42,36,.65);
 
   font-size: 12px;
   line-height: 1.55;
@@ -695,11 +695,11 @@
 
   border:
     2px solid
-    #ffa412;
+    #F59E0B;
 
   border-radius: 999px;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 11px;
   font-weight: 850;
@@ -896,3 +896,126 @@
 /* ==========================================================
    VINECO INSIDE EXTRAS END
 ========================================================== */
+.partner-showcase {
+  padding: 56px 0;
+  background: #faf8f5;
+}
+
+.partner-showcase__grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 260px;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.partner-showcase__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+  border-radius: 28px;
+  background: #f4f1ea;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  overflow: hidden;
+  padding: 24px;
+}
+
+.partner-showcase__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: transparent !important;
+  border: 0;
+  box-shadow: none;
+}
+
+.partner-showcase__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 460px;
+  padding: 56px 72px;
+  border-radius: 28px;
+  border: 1.5px solid #f59e0b;
+  background: #fff;
+}
+
+.partner-showcase__content h2 {
+  margin: 12px 0 0;
+  color: #1e2a24;
+  font-size: clamp(48px, 5vw, 74px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.partner-showcase__content h2 span {
+  display: block;
+  color: #f59e0b;
+}
+
+.partner-showcase__description {
+  margin-top: 22px;
+  max-width: 760px;
+  color: #6a645d;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.partner-showcase__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+@media (max-width: 1100px) {
+  .partner-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-showcase__content {
+    order: 1;
+    min-height: auto;
+    padding: 36px 28px;
+  }
+
+  .partner-showcase__visual {
+    min-height: 260px;
+  }
+}
+/* ==========================================================
+   QUALITY REAL PHOTOS
+========================================================== */
+
+.quality-photo-card {
+  position: relative;
+  overflow: hidden;
+  background: #F4F1EA;
+}
+
+.quality-photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none !important;
+}
+
+.quality-mini-photo {
+  overflow: hidden;
+  background: #F4F1EA;
+}
+
+.quality-mini-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none !important;
+}
+.about-v4-opening {
+  padding: 64px 0 72px;
+}

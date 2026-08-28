@@ -10,20 +10,20 @@
     system-ui,
     sans-serif;
 
-  --color-brand-50: #fff9ee;
-  --color-brand-100: #fff1cf;
+  --color-brand-50: #FAF8F5;
+  --color-brand-100: #F4F1EA;
   --color-brand-200: #ffdd84;
   --color-brand-300: #ffca48;
   --color-brand-400: #ffb821;
-  --color-brand-500: #ffa412;
-  --color-brand-600: #e89400;
-  --color-brand-700: #c77800;
+  --color-brand-500: #F59E0B;
+  --color-brand-600: #D97706;
+  --color-brand-700: #D97706;
 
-  --color-ink: #03326b;
+  --color-ink: #1E2A24;
 
-  --color-navy: #03326b;
-  --color-navy-dark: #022752;
+  --color-navy: #1E2A24;
+  --color-navy-dark: #0F2F24;
 
-  --color-cream: #fffaf3;
-  --color-leaf: #6d8298;
+  --color-cream: #FAF8F5;
+  --color-leaf: #3D5245;
 }

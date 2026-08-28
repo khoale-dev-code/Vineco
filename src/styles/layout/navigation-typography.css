@@ -69,7 +69,7 @@
   .vineco-desktop-nav > a:hover,
   .vineco-desktop-product__trigger:hover {
     color:
-      #03326b !important;
+      #1E2A24 !important;
 
     background:
       #fff5e3 !important;
@@ -82,7 +82,7 @@
   .vineco-desktop-nav > a.active,
   .vineco-desktop-product__trigger.active {
     color:
-      #03326b !important;
+      #1E2A24 !important;
 
     font-weight:
       850 !important;
@@ -109,7 +109,7 @@
       3px !important;
 
     background:
-      #ffa412 !important;
+      #F59E0B !important;
   }
 
 
@@ -134,7 +134,7 @@
       999px !important;
 
     background:
-      #ffa412 !important;
+      #F59E0B !important;
 
     /*
      * Requested change:
@@ -157,7 +157,7 @@
 
     box-shadow:
       0 10px 24px
-      rgba(255,164,18,.18);
+      rgba(245,158,11,.18);
 
     transition:
       transform 180ms ease,
@@ -171,14 +171,14 @@
       translateY(-2px);
 
     background:
-      #ed9500 !important;
+      #D97706 !important;
 
     color:
       #ffffff !important;
 
     box-shadow:
       0 14px 30px
-      rgba(255,164,18,.26);
+      rgba(245,158,11,.26);
   }
 
 
@@ -246,7 +246,7 @@
       52px !important;
 
     background:
-      #ffa412 !important;
+      #F59E0B !important;
 
     color:
       #ffffff !important;
@@ -259,14 +259,14 @@
 
     box-shadow:
       0 12px 28px
-      rgba(255,164,18,.2);
+      rgba(245,158,11,.2);
   }
 
 
   .vineco-mobile-menu__cta button:hover,
   .vineco-mobile-menu__cta button:active {
     background:
-      #ed9500 !important;
+      #D97706 !important;
 
     color:
       #ffffff !important;

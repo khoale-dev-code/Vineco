@@ -23,13 +23,13 @@ function HeroChip({
       className={[
         "inline-flex items-center",
         "rounded-full",
-        "border border-[#03326b]/12",
+        "border border-[#1E2A24]/12",
         "bg-white/24",
         "px-3.5 py-2",
         "text-[10px]",
         "font-extrabold uppercase",
         "tracking-[0.08em]",
-        "text-[#03326b]/70",
+        "text-[#1E2A24]/70",
         "backdrop-blur-sm",
       ].join(" ")}
     >
@@ -61,7 +61,7 @@ function InfoCard({
           ? "noreferrer"
           : undefined
       }
-      className="transition hover:text-[#e89400]"
+      className="transition hover:text-[#D97706]"
     >
       {children}
     </a>
@@ -83,16 +83,16 @@ function InfoCard({
         "sm:p-6",
         featured
           ? [
-              "border-[#ffa412]",
+              "border-[#F59E0B]",
               "bg-[#fff3d7]",
-              "shadow-[0_18px_45px_rgba(255,164,18,.14)]",
+              "shadow-[0_18px_45px_rgba(245,158,11,.14)]",
             ].join(" ")
           : [
-              "border-[#ffa412]/30",
+              "border-[#F59E0B]/30",
               "bg-white",
-              "shadow-[0_15px_38px_rgba(3,50,107,.045)]",
-              "hover:border-[#ffa412]/70",
-              "hover:shadow-[0_20px_46px_rgba(255,164,18,.10)]",
+              "shadow-[0_15px_38px_rgba(30,42,36,.045)]",
+              "hover:border-[#F59E0B]/70",
+              "hover:shadow-[0_20px_46px_rgba(245,158,11,.10)]",
             ].join(" "),
       ].join(" ")}
     >
@@ -106,8 +106,8 @@ function InfoCard({
           "h-28 w-28",
           "rounded-full",
           featured
-            ? "bg-[#ffa412]/18"
-            : "bg-[#ffa412]/8",
+            ? "bg-[#F59E0B]/18"
+            : "bg-[#F59E0B]/8",
         ].join(" ")}
       />
 
@@ -120,9 +120,9 @@ function InfoCard({
             "shrink-0",
             "items-center justify-center",
             "rounded-2xl",
-            "bg-[#ffa412]",
-            "text-[#03326b]",
-            "shadow-[0_10px_24px_rgba(255,164,18,.22)]",
+            "bg-[#F59E0B]",
+            "text-[#1E2A24]",
+            "shadow-[0_10px_24px_rgba(245,158,11,.22)]",
             "transition-transform duration-300",
             "group-hover:scale-105",
           ].join(" ")}
@@ -142,7 +142,7 @@ function InfoCard({
               "text-[9px]",
               "font-extrabold uppercase",
               "tracking-[0.18em]",
-              "text-[#e89400]",
+              "text-[#D97706]",
             ].join(" ")}
           >
             {label}
@@ -156,14 +156,14 @@ function InfoCard({
               "font-extrabold",
               "leading-tight",
               "tracking-[-0.03em]",
-              "text-[#03326b]",
+              "text-[#1E2A24]",
             ].join(" ")}
           >
             {title}
           </h3>
 
 
-          <div className="mt-2 break-words text-[13px] font-medium leading-6 text-[#03326b]/65">
+          <div className="mt-2 break-words text-[13px] font-medium leading-6 text-[#1E2A24]/65">
             {content}
           </div>
 
@@ -234,19 +234,19 @@ export default function ContactPage() {
   const fieldClass = [
     "h-12 w-full",
     "rounded-2xl",
-    "border border-[#ffa412]/25",
+    "border border-[#F59E0B]/25",
     "bg-[#fffdf8]",
     "px-4",
     "text-sm",
-    "text-[#03326b]",
+    "text-[#1E2A24]",
     "outline-none",
     "transition duration-200",
-    "placeholder:text-[#03326b]/27",
-    "hover:border-[#ffa412]/50",
-    "focus:border-[#ffa412]",
+    "placeholder:text-[#1E2A24]/27",
+    "hover:border-[#F59E0B]/50",
+    "focus:border-[#F59E0B]",
     "focus:bg-white",
     "focus:ring-4",
-    "focus:ring-[#ffa412]/12",
+    "focus:ring-[#F59E0B]/12",
   ].join(" ");
 
 
@@ -256,7 +256,7 @@ export default function ContactPage() {
       <Header />
 
 
-      <main className="overflow-hidden bg-[#fffaf3]">
+      <main className="overflow-hidden bg-[#FAF8F5]">
 
 
         {/* ==================================================
@@ -266,7 +266,7 @@ export default function ContactPage() {
         <section
           className={[
             "relative overflow-hidden",
-            "bg-[#ffa412]",
+            "bg-[#F59E0B]",
             "px-4",
             "py-20",
             "sm:px-6 sm:py-24",
@@ -311,7 +311,7 @@ export default function ContactPage() {
               "right-[18%] top-[20%]",
               "h-48 w-48",
               "rounded-full",
-              "bg-[#03326b]/8",
+              "bg-[#1E2A24]/8",
               "blur-3xl",
             ].join(" ")}
           />
@@ -333,20 +333,20 @@ export default function ContactPage() {
 
               <div className="flex items-center justify-center gap-3">
 
-                <span className="h-px w-10 bg-[#03326b]/35" />
+                <span className="h-px w-10 bg-[#1E2A24]/35" />
 
                 <p
                   className={[
                     "text-[10px]",
                     "font-extrabold uppercase",
                     "tracking-[0.3em]",
-                    "text-[#03326b]/65",
+                    "text-[#1E2A24]/65",
                   ].join(" ")}
                 >
                   Contact Us
                 </p>
 
-                <span className="h-px w-10 bg-[#03326b]/35" />
+                <span className="h-px w-10 bg-[#1E2A24]/35" />
 
               </div>
 
@@ -361,7 +361,7 @@ export default function ContactPage() {
                   "font-extrabold",
                   "leading-[0.9]",
                   "tracking-[-0.07em]",
-                  "text-[#03326b]",
+                  "text-[#1E2A24]",
                 ].join(" ")}
               >
                 Let's build
@@ -381,7 +381,7 @@ export default function ContactPage() {
                   "text-[15px]",
                   "font-medium",
                   "leading-7",
-                  "text-[#03326b]/70",
+                  "text-[#1E2A24]/70",
                   "sm:text-[17px]",
                   "sm:leading-8",
                 ].join(" ")}
@@ -426,15 +426,15 @@ export default function ContactPage() {
                     "items-center justify-center",
                     "gap-2",
                     "rounded-full",
-                    "bg-[#03326b]",
+                    "bg-[#1E2A24]",
                     "px-7 py-3.5",
                     "text-[13px]",
                     "font-extrabold",
                     "text-white",
-                    "shadow-[0_16px_36px_rgba(3,50,107,.22)]",
+                    "shadow-[0_16px_36px_rgba(30,42,36,.22)]",
                     "transition duration-200",
                     "hover:-translate-y-1",
-                    "hover:bg-[#022858]",
+                    "hover:bg-[#0F2F24]",
                   ].join(" ")}
                 >
                   Email Sales Team
@@ -455,12 +455,12 @@ export default function ContactPage() {
                     "inline-flex min-h-14",
                     "items-center justify-center",
                     "rounded-full",
-                    "border-2 border-[#03326b]/18",
+                    "border-2 border-[#1E2A24]/18",
                     "bg-white/22",
                     "px-7 py-3.5",
                     "text-[13px]",
                     "font-extrabold",
-                    "text-[#03326b]",
+                    "text-[#1E2A24]",
                     "transition duration-200",
                     "hover:-translate-y-1",
                     "hover:bg-white/35",
@@ -485,7 +485,7 @@ export default function ContactPage() {
         <section
           className={[
             "relative",
-            "bg-[#fffaf3]",
+            "bg-[#FAF8F5]",
             "py-16",
             "sm:py-20",
             "lg:py-24",
@@ -506,7 +506,7 @@ export default function ContactPage() {
                     "text-[10px]",
                     "font-extrabold uppercase",
                     "tracking-[0.24em]",
-                    "text-[#e89400]",
+                    "text-[#D97706]",
                   ].join(" ")}
                 >
                   Start A Conversation
@@ -520,7 +520,7 @@ export default function ContactPage() {
                     "font-extrabold",
                     "leading-[1]",
                     "tracking-[-0.05em]",
-                    "text-[#03326b]",
+                    "text-[#1E2A24]",
                   ].join(" ")}
                 >
                   Tell us what you want to build.
@@ -555,9 +555,9 @@ export default function ContactPage() {
                     className={[
                       "overflow-hidden",
                       "rounded-[30px]",
-                      "border-2 border-[#ffa412]",
+                      "border-2 border-[#F59E0B]",
                       "bg-white",
-                      "shadow-[0_25px_65px_rgba(255,164,18,.13)]",
+                      "shadow-[0_25px_65px_rgba(245,158,11,.13)]",
                     ].join(" ")}
                   >
 
@@ -581,7 +581,7 @@ export default function ContactPage() {
                           "-right-10 -top-12",
                           "h-36 w-36",
                           "rounded-full",
-                          "bg-[#ffa412]/24",
+                          "bg-[#F59E0B]/24",
                         ].join(" ")}
                       />
 
@@ -591,12 +591,12 @@ export default function ContactPage() {
                           "relative",
                           "inline-flex",
                           "rounded-full",
-                          "bg-[#ffa412]",
+                          "bg-[#F59E0B]",
                           "px-3 py-1.5",
                           "text-[9px]",
                           "font-extrabold uppercase",
                           "tracking-[0.14em]",
-                          "text-[#03326b]",
+                          "text-[#1E2A24]",
                         ].join(" ")}
                       >
                         Contact VinEco
@@ -611,7 +611,7 @@ export default function ContactPage() {
                           "font-extrabold",
                           "leading-[1]",
                           "tracking-[-0.045em]",
-                          "text-[#03326b]",
+                          "text-[#1E2A24]",
                         ].join(" ")}
                       >
                         Send us a message
@@ -625,7 +625,7 @@ export default function ContactPage() {
                           "max-w-[430px]",
                           "text-[13px]",
                           "leading-6",
-                          "text-[#03326b]/60",
+                          "text-[#1E2A24]/60",
                         ].join(" ")}
                       >
                         Share your product idea, target quantity,
@@ -644,7 +644,7 @@ export default function ContactPage() {
 
                         <label>
 
-                          <span className="mb-2 block text-[11px] font-bold text-[#03326b]/70">
+                          <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
                             Full name *
                           </span>
 
@@ -661,7 +661,7 @@ export default function ContactPage() {
 
                         <label>
 
-                          <span className="mb-2 block text-[11px] font-bold text-[#03326b]/70">
+                          <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
                             Company
                           </span>
 
@@ -677,7 +677,7 @@ export default function ContactPage() {
 
                         <label>
 
-                          <span className="mb-2 block text-[11px] font-bold text-[#03326b]/70">
+                          <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
                             Email *
                           </span>
 
@@ -695,7 +695,7 @@ export default function ContactPage() {
 
                         <label>
 
-                          <span className="mb-2 block text-[11px] font-bold text-[#03326b]/70">
+                          <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
                             Phone / Zalo
                           </span>
 
@@ -717,7 +717,7 @@ export default function ContactPage() {
 
                       <label className="mt-5 block">
 
-                        <span className="mb-2 block text-[11px] font-bold text-[#03326b]/70">
+                        <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
                           I'm interested in
                         </span>
 
@@ -754,7 +754,7 @@ export default function ContactPage() {
 
                       <label className="mt-5 block">
 
-                        <span className="mb-2 block text-[11px] font-bold text-[#03326b]/70">
+                        <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
                           Message *
                         </span>
 
@@ -767,20 +767,20 @@ export default function ContactPage() {
                             "w-full",
                             "resize-y",
                             "rounded-2xl",
-                            "border border-[#ffa412]/25",
+                            "border border-[#F59E0B]/25",
                             "bg-[#fffdf8]",
                             "px-4 py-3",
                             "text-sm",
                             "leading-6",
-                            "text-[#03326b]",
+                            "text-[#1E2A24]",
                             "outline-none",
                             "transition",
-                            "placeholder:text-[#03326b]/27",
-                            "hover:border-[#ffa412]/50",
-                            "focus:border-[#ffa412]",
+                            "placeholder:text-[#1E2A24]/27",
+                            "hover:border-[#F59E0B]/50",
+                            "focus:border-[#F59E0B]",
                             "focus:bg-white",
                             "focus:ring-4",
-                            "focus:ring-[#ffa412]/12",
+                            "focus:ring-[#F59E0B]/12",
                           ].join(" ")}
                         />
 
@@ -797,14 +797,14 @@ export default function ContactPage() {
                           "items-center justify-center",
                           "gap-2",
                           "rounded-full",
-                          "bg-[#ffa412]",
+                          "bg-[#F59E0B]",
                           "text-[13px]",
                           "font-extrabold",
-                          "text-[#03326b]",
-                          "shadow-[0_14px_32px_rgba(255,164,18,.26)]",
+                          "text-[#1E2A24]",
+                          "shadow-[0_14px_32px_rgba(245,158,11,.26)]",
                           "transition duration-200",
                           "hover:-translate-y-1",
-                          "hover:bg-[#e89400]",
+                          "hover:bg-[#D97706]",
                         ].join(" ")}
                       >
                         Send message
@@ -818,7 +818,7 @@ export default function ContactPage() {
                       </button>
 
 
-                      <p className="mt-4 text-center text-[10px] leading-5 text-[#03326b]/40">
+                      <p className="mt-4 text-center text-[10px] leading-5 text-[#1E2A24]/40">
                         Submitting opens your email application with
                         the enquiry pre-filled.
                       </p>
@@ -937,9 +937,9 @@ export default function ContactPage() {
                     className={[
                       "relative overflow-hidden",
                       "rounded-[26px]",
-                      "bg-[#ffa412]",
+                      "bg-[#F59E0B]",
                       "p-6",
-                      "shadow-[0_20px_48px_rgba(255,164,18,.18)]",
+                      "shadow-[0_20px_48px_rgba(245,158,11,.18)]",
                     ].join(" ")}
                   >
 
@@ -962,7 +962,7 @@ export default function ContactPage() {
                           "flex h-11 w-11",
                           "items-center justify-center",
                           "rounded-2xl",
-                          "bg-[#03326b]",
+                          "bg-[#1E2A24]",
                           "text-white",
                         ].join(" ")}
                       >
@@ -979,7 +979,7 @@ export default function ContactPage() {
                           "text-[9px]",
                           "font-extrabold uppercase",
                           "tracking-[0.18em]",
-                          "text-[#03326b]/55",
+                          "text-[#1E2A24]/55",
                         ].join(" ")}
                       >
                         Fast Response
@@ -993,14 +993,14 @@ export default function ContactPage() {
                           "font-extrabold",
                           "leading-tight",
                           "tracking-[-0.04em]",
-                          "text-[#03326b]",
+                          "text-[#1E2A24]",
                         ].join(" ")}
                       >
                         Ready when your project is.
                       </h3>
 
 
-                      <p className="mt-3 max-w-[520px] text-[13px] font-medium leading-6 text-[#03326b]/65">
+                      <p className="mt-3 max-w-[520px] text-[13px] font-medium leading-6 text-[#1E2A24]/65">
                         We usually respond within 24 business hours.
                         For urgent requests, reach us directly by
                         Zalo or email.
@@ -1017,7 +1017,7 @@ export default function ContactPage() {
                             "inline-flex h-11",
                             "items-center justify-center",
                             "rounded-full",
-                            "bg-[#03326b]",
+                            "bg-[#1E2A24]",
                             "px-5",
                             "text-xs",
                             "font-extrabold",
@@ -1036,12 +1036,12 @@ export default function ContactPage() {
                             "inline-flex h-11",
                             "items-center justify-center",
                             "rounded-full",
-                            "border border-[#03326b]/14",
+                            "border border-[#1E2A24]/14",
                             "bg-white/25",
                             "px-5",
                             "text-xs",
                             "font-extrabold",
-                            "text-[#03326b]",
+                            "text-[#1E2A24]",
                             "transition",
                             "hover:-translate-y-0.5",
                             "hover:bg-white/40",
@@ -1093,7 +1093,7 @@ export default function ContactPage() {
                       "text-[10px]",
                       "font-extrabold uppercase",
                       "tracking-[0.22em]",
-                      "text-[#e89400]",
+                      "text-[#D97706]",
                     ].join(" ")}
                   >
                     Find VinEco
@@ -1107,7 +1107,7 @@ export default function ContactPage() {
                       "font-extrabold",
                       "leading-[1]",
                       "tracking-[-0.05em]",
-                      "text-[#03326b]",
+                      "text-[#1E2A24]",
                     ].join(" ")}
                   >
                     Visit our Vietnam office.
@@ -1116,7 +1116,7 @@ export default function ContactPage() {
                 </div>
 
 
-                <p className="text-[13px] leading-6 text-[#03326b]/55 lg:text-right">
+                <p className="text-[13px] leading-6 text-[#1E2A24]/55 lg:text-right">
                   {projectData.contact.office}
                 </p>
 
@@ -1131,10 +1131,10 @@ export default function ContactPage() {
                 className={[
                   "overflow-hidden",
                   "rounded-[30px]",
-                  "border-2 border-[#ffa412]",
-                  "bg-[#fffaf3]",
+                  "border-2 border-[#F59E0B]",
+                  "bg-[#FAF8F5]",
                   "p-2",
-                  "shadow-[0_20px_55px_rgba(255,164,18,.11)]",
+                  "shadow-[0_20px_55px_rgba(245,158,11,.11)]",
                 ].join(" ")}
               >
 
@@ -1167,10 +1167,10 @@ export default function ContactPage() {
                 className={[
                   "relative overflow-hidden",
                   "rounded-[32px]",
-                  "bg-[#ffa412]",
+                  "bg-[#F59E0B]",
                   "px-6 py-11",
                   "text-center",
-                  "shadow-[0_26px_65px_rgba(255,164,18,.19)]",
+                  "shadow-[0_26px_65px_rgba(245,158,11,.19)]",
                   "sm:px-10",
                   "sm:py-13",
                 ].join(" ")}
@@ -1191,7 +1191,7 @@ export default function ContactPage() {
 
                 <div className="relative">
 
-                  <p className="text-[9px] font-extrabold uppercase tracking-[0.22em] text-[#03326b]/52">
+                  <p className="text-[9px] font-extrabold uppercase tracking-[0.22em] text-[#1E2A24]/52">
                     VinEco B2B
                   </p>
 
@@ -1204,7 +1204,7 @@ export default function ContactPage() {
                       "font-extrabold",
                       "leading-[0.98]",
                       "tracking-[-0.055em]",
-                      "text-[#03326b]",
+                      "text-[#1E2A24]",
                     ].join(" ")}
                   >
                     Your next product starts with one conversation.
@@ -1219,12 +1219,12 @@ export default function ContactPage() {
                       "items-center justify-center",
                       "gap-2",
                       "rounded-full",
-                      "bg-[#03326b]",
+                      "bg-[#1E2A24]",
                       "px-7 py-3.5",
                       "text-[13px]",
                       "font-extrabold",
                       "text-white",
-                      "shadow-[0_15px_35px_rgba(3,50,107,.22)]",
+                      "shadow-[0_15px_35px_rgba(30,42,36,.22)]",
                       "transition",
                       "hover:-translate-y-1",
                     ].join(" ")}

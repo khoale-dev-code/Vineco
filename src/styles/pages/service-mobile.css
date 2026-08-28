@@ -325,7 +325,7 @@
 
     border:
       2px solid
-      #ffa412 !important;
+      #F59E0B !important;
 
     border-radius:
       19px !important;
@@ -338,7 +338,7 @@
 
     box-shadow:
       0 12px 30px
-      rgba(3,50,107,.06);
+      rgba(30,42,36,.06);
   }
 
 
@@ -388,10 +388,10 @@
       999px;
 
     background:
-      #ffa412;
+      #F59E0B;
 
     color:
-      #03326b;
+      #1E2A24;
 
     font-size:
       7px !important;
@@ -441,7 +441,7 @@
 
     border:
       2px solid
-      #ffa412 !important;
+      #F59E0B !important;
 
     border-radius:
       17px !important;
@@ -518,7 +518,7 @@
       hidden;
 
     background:
-      #ffa412 !important;
+      #F59E0B !important;
 
     box-shadow:
       none !important;
@@ -528,7 +528,7 @@
   .service-v2-hero-collage__orange
   span {
     color:
-      #03326b;
+      #1E2A24;
 
     font-size:
       clamp(
@@ -554,7 +554,7 @@
       0 !important;
 
     color:
-      #03326b;
+      #1E2A24;
 
     font-size:
       7px !important;
@@ -628,7 +628,7 @@
 
     border:
       1.5px solid
-      rgba(255,164,18,.9) !important;
+      rgba(245,158,11,.9) !important;
 
     border-radius:
       999px;
@@ -637,7 +637,7 @@
       #fff;
 
     color:
-      #03326b;
+      #1E2A24;
 
     font-size:
       8px !important;
@@ -739,7 +739,7 @@
       8px;
 
     color:
-      #ffa412;
+      #F59E0B;
 
     font-size:
       50px !important;
@@ -972,7 +972,7 @@
 
     border:
       2px solid
-      #ffa412 !important;
+      #F59E0B !important;
 
     border-radius:
       17px !important;
@@ -1047,7 +1047,7 @@
 
     border:
       2px solid
-      #ffa412 !important;
+      #F59E0B !important;
 
     border-radius:
       15px !important;
@@ -1220,7 +1220,7 @@
       1 / -1;
 
     color:
-      rgba(3,50,107,.5);
+      rgba(30,42,36,.5);
 
     font-size:
       9px;
@@ -1256,7 +1256,7 @@
 
     border:
       2px solid
-      #ffa412 !important;
+      #F59E0B !important;
 
     border-radius:
       18px;
@@ -1354,7 +1354,7 @@
 
     border:
       1px solid
-      rgba(255,164,18,.55);
+      rgba(245,158,11,.55);
 
     border-radius:
       11px;

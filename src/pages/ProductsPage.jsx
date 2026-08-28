@@ -31,7 +31,7 @@ export default function ProductsPage() {
               >
                 <Link
                   to={`/products/${product.slug}`}
-                  className="group block h-full overflow-hidden rounded-[26px] border-2 border-brand-500/60 bg-white transition hover:-translate-y-1 hover:border-brand-500 hover:shadow-[0_18px_50px_rgba(255,164,18,0.12)]"
+                  className="group block h-full overflow-hidden rounded-[26px] border-2 border-brand-500/60 bg-white transition hover:-translate-y-1 hover:border-brand-500 hover:shadow-[0_18px_50px_rgba(245,158,11,0.12)]"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-brand-50">
                     <SmartImage

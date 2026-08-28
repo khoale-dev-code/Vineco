@@ -6,7 +6,7 @@ export default function PageHero({
   description,
 }) {
   return (
-    <section className="border-b border-brand-500/25 bg-[#fffaf3] px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+    <section className="border-b border-brand-500/25 bg-[#FAF8F5] px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
       <Reveal>
         <div className="mx-auto max-w-[900px] text-center">
           {eyebrow && (

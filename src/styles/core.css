@@ -7,12 +7,12 @@
 
   font-synthesis: none;
 
-  --vineco-orange: #ffa412;
+  --vineco-orange: #F59E0B;
   --vineco-orange-dark: #ea9400;
   --vineco-orange-soft: #fff6e8;
 
-  --vineco-blue: #03326b;
-  --vineco-navy: #03326b;
+  --vineco-blue: #1E2A24;
+  --vineco-navy: #1E2A24;
 }
 
 
@@ -46,7 +46,7 @@ body {
   overflow-x: clip;
 
   background: #ffffff;
-  color: #03326b;
+  color: #1E2A24;
 
   font-family:
     var(--font-sans);
@@ -129,8 +129,8 @@ select {
 /* SELECTION */
 
 ::selection {
-  background: #ffa412;
-  color: #03326b;
+  background: #F59E0B;
+  color: #1E2A24;
 }
 
 

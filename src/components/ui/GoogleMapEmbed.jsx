@@ -49,7 +49,7 @@ export default function GoogleMapEmbed({
   }
 
   return (
-    <div className="overflow-hidden rounded-[28px] border border-ink/10 bg-white shadow-[0_20px_60px_rgba(3,50,107,0.10)]">
+    <div className="overflow-hidden rounded-[28px] border border-ink/10 bg-white shadow-[0_20px_60px_rgba(30,42,36,0.10)]">
       <iframe
         src={src}
         title={title}

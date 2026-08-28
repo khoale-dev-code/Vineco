@@ -5,76 +5,100 @@ import Reveal from "../ui/Reveal";
 import SmartImage from "../ui/SmartImage";
 import SiteIcon from "../ui/SiteIcon";
 
-/*
- * IMPORTANT
- * ----------
- * Replace these sample partner notes with
- * client-approved reviews before publishing.
- *
- * Do not add marketplace / certification claims
- * unless VinEco has confirmed them.
- */
 
-const partnerReviews = [
+/* ==========================================================
+   REAL VINECO PROCESS DATA
+========================================================== */
+
+const processStories = [
   {
     id: 1,
-    image: "/images/pinterest-preview/pin-01.jpg",
-    quote:
-      "Sample partner note — replace this text with a verified customer review about product quality, packing or delivery.",
-    name: "Approved customer name",
-    meta: "Importer · Market",
+    number: "01",
+    image: "/images/home-stories/01-moisture-check.png",
+    imagePosition: "object-[50%_54%]",
+    eyebrow: "Quality Control",
+    title: "Moisture Inspection",
+    text:
+      "Finished coffee wood products are checked for moisture before packing to support greater product stability during storage and international shipping.",
+    meta: "QC · Finished Products",
+    alt:
+      "VinEco quality team checking the moisture level of finished coffee wood pet products",
   },
   {
     id: 2,
-    image: "/images/pinterest-preview/pin-02.jpg",
-    quote:
-      "Sample partner note — use an approved review describing the material quality, communication or sampling experience.",
-    name: "Approved customer name",
-    meta: "Private Label · Market",
+    number: "02",
+    image: "/images/home-stories/02-heat-drying.png",
+    imagePosition: "object-[50%_48%]",
+    eyebrow: "Controlled Drying",
+    title: "Heat Drying Process",
+    text:
+      "Prepared coffee wood is dried under controlled conditions as part of VinEco's production process before finishing and final inspection.",
+    meta: "Production · Drying",
+    alt:
+      "VinEco worker handling coffee wood products during the controlled drying process",
   },
   {
     id: 3,
-    image: "/images/pinterest-preview/pin-03.jpg",
-    quote:
-      "Sample partner note — replace with a real comment from a customer who has worked directly with VinEco.",
-    name: "Approved customer name",
-    meta: "Brand Partner · Market",
+    number: "03",
+    image: "/images/home-stories/03-wood-processing.png",
+    imagePosition: "object-[52%_50%]",
+    eyebrow: "Production",
+    title: "Coffee Wood Processing",
+    text:
+      "Raw coffee wood is selected and shaped into suitable dimensions before progressing through sanding, finishing and product-specific processing.",
+    meta: "Workshop · Processing",
+    alt:
+      "Coffee wood being cut and processed at the VinEco production facility",
   },
   {
     id: 4,
-    image: "/images/pinterest-preview/pin-04.jpg",
-    quote:
-      "Sample partner note — this card can feature feedback about shipping, packaging, product finishing or responsiveness.",
-    name: "Approved customer name",
-    meta: "Wholesale · Market",
+    number: "04",
+    image: "/images/home-stories/04-export-loading.png",
+    imagePosition: "object-[50%_45%]",
+    eyebrow: "Export",
+    title: "Container Loading",
+    text:
+      "Completed orders are packed, organized and prepared for container loading as part of VinEco's international B2B fulfillment process.",
+    meta: "Logistics · Export",
+    alt:
+      "VinEco export cartons loaded into a shipping container for international delivery",
   },
   {
     id: 5,
-    image: "/images/pinterest-preview/pin-05.jpg",
-    quote:
-      "Sample partner note — replace with verified buyer feedback before the website is published.",
-    name: "Approved customer name",
-    meta: "Retail Partner · Market",
+    number: "05",
+    image: "/images/home-stories/05-export-boxes.png",
+    imagePosition: "object-[50%_52%]",
+    eyebrow: "Shipment Ready",
+    title: "Packed for Delivery",
+    text:
+      "Finished products are packed into clearly identified VinEco export cartons and prepared for their next destination.",
+    meta: "Packing · Shipment",
+    alt:
+      "VinEco export cartons prepared and stored for international shipment",
   },
 ];
 
-function ReviewsSection() {
+
+/* ==========================================================
+   PROCESS STORIES
+========================================================== */
+
+function ProcessStoriesSection() {
   const trackRef = useRef(null);
 
-  function scrollReviews(direction) {
+  function scrollStories(direction) {
     const track = trackRef.current;
 
     if (!track) return;
 
     const firstCard =
-      track.querySelector("[data-review-card]");
+      track.querySelector("[data-process-card]");
 
-    const width =
-      firstCard?.getBoundingClientRect().width ??
-      300;
+    const cardWidth =
+      firstCard?.getBoundingClientRect().width ?? 300;
 
     track.scrollBy({
-      left: direction * (width + 16),
+      left: direction * (cardWidth + 16),
       behavior: "smooth",
     });
   }
@@ -88,21 +112,21 @@ function ReviewsSection() {
 
             <div>
               <p className="inside-extras-eyebrow">
-                Customer Stories
+                Inside VinEco
               </p>
 
               <h2>
-                Real Customers.
+                From Production.
                 <span>
-                  Real Reviews.
+                  To Global Delivery.
                 </span>
               </h2>
             </div>
 
             <p className="inside-reviews__intro">
-              Feedback from importers, brands and
-              business partners helps show how VinEco
-              works beyond the product itself.
+              A closer look at how VinEco processes,
+              checks, packs and prepares coffee wood
+              pet products for international B2B orders.
             </p>
 
           </header>
@@ -113,9 +137,9 @@ function ReviewsSection() {
 
           <button
             type="button"
-            onClick={() => scrollReviews(-1)}
+            onClick={() => scrollStories(-1)}
             className="inside-reviews__arrow inside-reviews__arrow--left"
-            aria-label="Previous reviews"
+            aria-label="Previous process"
           >
             ‹
           </button>
@@ -125,30 +149,35 @@ function ReviewsSection() {
             ref={trackRef}
             className="inside-reviews__track"
           >
-            {partnerReviews.map(
-              (review, index) => (
+            {processStories.map(
+              (story, index) => (
                 <Reveal
-                  key={review.id}
+                  key={story.id}
                   delay={index * 70}
                   className="inside-reviews__reveal"
                 >
                   <article
-                    data-review-card
+                    data-process-card
                     className="inside-review-card"
                   >
+
                     <div className="inside-review-card__media">
 
                       <SmartImage
-                        src={review.image}
-                        alt=""
-                        className="h-full w-full object-cover"
+                        src={story.image}
+                        alt={story.alt}
+                        className={[
+                          "h-full w-full object-cover",
+                          story.imagePosition,
+                        ].join(" ")}
                       />
 
                       <div className="inside-review-card__number">
-                        0{index + 1}
+                        {story.number}
                       </div>
 
                     </div>
+
 
                     <div className="inside-review-card__body">
 
@@ -156,24 +185,58 @@ function ReviewsSection() {
                         className="inside-review-card__quote"
                         aria-hidden="true"
                       >
-                        “
+                        +
                       </span>
 
-                      <p>
-                        {review.quote}
+                      <p
+                        style={{
+                          color: "#D97706",
+                          fontSize: "10px",
+                          fontWeight: 800,
+                          letterSpacing: ".12em",
+                          textTransform: "uppercase",
+                          marginBottom: "8px",
+                        }}
+                      >
+                        {story.eyebrow}
                       </p>
+
+
+                      <h3
+                        style={{
+                          margin: 0,
+                          color: "#1E2A24",
+                          fontSize: "20px",
+                          fontWeight: 800,
+                          lineHeight: 1.12,
+                          letterSpacing: "-.025em",
+                        }}
+                      >
+                        {story.title}
+                      </h3>
+
+
+                      <p
+                        style={{
+                          marginTop: "12px",
+                        }}
+                      >
+                        {story.text}
+                      </p>
+
 
                       <footer>
                         <strong>
-                          {review.name}
+                          VinEco Int Co., Ltd.
                         </strong>
 
                         <span>
-                          {review.meta}
+                          {story.meta}
                         </span>
                       </footer>
 
                     </div>
+
                   </article>
                 </Reveal>
               ),
@@ -183,9 +246,9 @@ function ReviewsSection() {
 
           <button
             type="button"
-            onClick={() => scrollReviews(1)}
+            onClick={() => scrollStories(1)}
             className="inside-reviews__arrow inside-reviews__arrow--right"
-            aria-label="Next reviews"
+            aria-label="Next process"
           >
             ›
           </button>
@@ -197,10 +260,10 @@ function ReviewsSection() {
           className="inside-reviews__dots"
           aria-hidden="true"
         >
-          {partnerReviews.map(
-            (review, index) => (
+          {processStories.map(
+            (story, index) => (
               <span
-                key={review.id}
+                key={story.id}
                 className={
                   index === 0
                     ? "is-active"
@@ -217,216 +280,172 @@ function ReviewsSection() {
 }
 
 
+/* ==========================================================
+   PARTNER BANNER
+========================================================== */
+
 function PartnerBanner() {
   return (
-    <section className="inside-partner">
+    <section className="inside-partner partner-showcase">
       <div className="inside-extras-shell">
-
-        <Reveal variant="up">
-          <div className="inside-partner__grid">
-
-            <div className="inside-partner__pet">
-
-              <SmartImage
-                src="/images/pinterest-preview/pin-06.jpg"
-                alt=""
-                className="h-full w-full object-cover"
-              />
-
-            </div>
-
-
-            <div className="inside-partner__copy">
-
-              <p className="inside-extras-eyebrow">
-                Partner With VinEco
-              </p>
-
-              <h2>
-                Welcome,
-                <span>
-                  partner!
-                </span>
-              </h2>
-
-              <p>
-                Explore samples, product development,
-                OEM / ODM support and natural-material
-                collections created for international
-                pet brands.
-              </p>
-
-              <div className="inside-partner__actions">
-
-                <Link
-                  to="/contact"
-                  className="inside-primary-button"
-                >
-                  Start a conversation
-
-                  <SiteIcon
-                    name="arrow"
-                    size={15}
-                  />
-                </Link>
-
-                <Link
-                  to="/oem-odm"
-                  className="inside-text-link"
-                >
-                  OEM / ODM Services
-                </Link>
-
-              </div>
-
-            </div>
-
-
-            <div className="inside-partner__pet">
-
-              <SmartImage
-                src="/images/pinterest-preview/pin-07.jpg"
-                alt=""
-                className="h-full w-full object-cover"
-              />
-
-            </div>
-
+        <div className="partner-showcase__grid">
+          <div className="partner-showcase__visual">
+            <img
+              src="/images/home-stories/07-partner-dog.png?v=2"
+              alt="Dog playing with VinEco coffee wood toy"
+              className="partner-showcase__image partner-showcase__image--dog"
+            />
           </div>
-        </Reveal>
 
+          <div className="partner-showcase__content">
+            <p className="inside-extras-eyebrow">PARTNER WITH VINECO</p>
+
+            <h2>
+              From your idea,
+              <span>to global delivery.</span>
+            </h2>
+
+            <p className="partner-showcase__description">
+              Work with VinEco on product development, sampling, OEM / ODM
+              manufacturing, private labeling, packaging and international
+              order fulfillment.
+            </p>
+
+            <div className="partner-showcase__actions">
+              <a href="/#/contact" className="inside-primary-button">
+                Start a conversation
+              </a>
+
+              <a href="/#/oem-odm" className="inside-text-link">
+                OEM / ODM Services
+              </a>
+            </div>
+          </div>
+
+          <div className="partner-showcase__visual">
+            <img
+              src="/images/home-stories/06-partner-cat.png?v=2"
+              alt="Cat playing with toy"
+              className="partner-showcase__image partner-showcase__image--cat"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
 
+/* ==========================================================
+   QUALITY
+========================================================== */
+
 function QualitySection() {
   return (
     <section className="inside-quality">
-
       <div className="inside-extras-shell">
 
         <Reveal>
           <header className="inside-quality__heading">
-
             <p className="inside-extras-eyebrow">
               Product Quality
             </p>
 
             <h2>
-              Where Every Product
+              Quality Starts
               <span>
-                Meets Global-Ready Standards.
+                Before Final Inspection.
               </span>
             </h2>
-
           </header>
         </Reveal>
 
 
         <div className="inside-quality__grid">
 
+          {/* LEFT — MOISTURE CONTROL */}
           <Reveal variant="left">
-
-            <div className="inside-quality__pet-card">
-
+            <div className="inside-quality__pet-card quality-photo-card">
               <SmartImage
-                src="/images/pinterest-preview/pin-08.jpg"
-                alt=""
-                className="h-full w-full object-contain"
+                src="/images/home-stories/01-moisture-check.png"
+                alt="VinEco moisture inspection for finished coffee wood pet products"
+                className="h-full w-full object-cover object-[50%_58%]"
               />
 
               <span>
-                NATURAL MATERIALS
+                QUALITY CONTROL
               </span>
-
             </div>
-
           </Reveal>
 
 
-          <Reveal
-            variant="up"
-            delay={80}
-          >
-
+          {/* CENTER */}
+          <Reveal variant="up" delay={80}>
             <div className="inside-quality__statement">
-
               <p>
-                QUALITY
+                CHECK.
                 <br />
-                STARTS
+                DRY.
                 <br />
-                BEFORE
+                FINISH.
                 <br />
-                THE FINAL
+                INSPECT.
                 <br />
-                PRODUCT.
+                PACK.
               </p>
-
             </div>
-
           </Reveal>
 
 
-          <Reveal
-            variant="right"
-            delay={130}
-          >
-
+          {/* RIGHT */}
+          <Reveal variant="right" delay={130}>
             <div className="inside-quality__detail">
 
               <p className="inside-quality__lead">
-                VinEco approaches quality as a
-                production process — not only as
-                a final inspection step.
+                VinEco treats quality as a sequence
+                of production controls rather than
+                relying only on a final inspection.
               </p>
 
 
               <div className="inside-quality__checks">
 
                 <div>
-                  <span>
-                    01
-                  </span>
+                  <span>01</span>
 
                   <p>
-                    Material selection and
-                    preparation.
+                    Coffee wood selection and
+                    material preparation.
                   </p>
                 </div>
 
+
                 <div>
-                  <span>
-                    02
-                  </span>
+                  <span>02</span>
 
                   <p>
-                    Moisture control and
-                    responsible drying.
+                    Controlled drying and
+                    moisture management.
                   </p>
                 </div>
 
+
                 <div>
-                  <span>
-                    03
-                  </span>
+                  <span>03</span>
 
                   <p>
-                    Surface finishing,
-                    smoothing and edge checks.
+                    Shaping, sanding,
+                    smoothing and finishing.
                   </p>
                 </div>
 
+
                 <div>
-                  <span>
-                    04
-                  </span>
+                  <span>04</span>
 
                   <p>
-                    Final inspection before
-                    packing and shipment.
+                    Final product check before
+                    packing and export preparation.
                   </p>
                 </div>
 
@@ -448,38 +467,37 @@ function QualitySection() {
                 </Link>
 
 
-                <div className="inside-quality__mini-pet">
-
+                {/* MINI PHOTO — DRYING PROCESS */}
+                <div className="inside-quality__mini-pet quality-mini-photo">
                   <SmartImage
-                    src="/images/pinterest-preview/pin-09.jpg"
-                    alt=""
-                    className="h-full w-full object-contain"
+                    src="/images/home-stories/02-heat-drying.png"
+                    alt="VinEco controlled coffee wood drying process"
+                    className="h-full w-full object-cover object-[50%_45%]"
                   />
-
                 </div>
 
               </div>
 
             </div>
-
           </Reveal>
 
         </div>
 
       </div>
-
     </section>
   );
 }
 
 
+/* ==========================================================
+   EXPORT
+========================================================== */
+
 export default function InsideVinEcoExtras() {
   return (
     <>
-      <ReviewsSection />
-
+      <ProcessStoriesSection />
       <PartnerBanner />
-
       <QualitySection />
     </>
   );

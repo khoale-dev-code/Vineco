@@ -35,12 +35,12 @@ function ImageContactButton({
         "rounded-full",
         "border-2 border-white",
         "bg-white",
-        "shadow-[0_12px_32px_rgba(3,50,107,.18)]",
-        "ring-1 ring-[#ffa412]/55",
+        "shadow-[0_12px_32px_rgba(30,42,36,.18)]",
+        "ring-1 ring-[#F59E0B]/55",
         "transition duration-300",
         "hover:-translate-y-1",
         "hover:scale-105",
-        "hover:shadow-[0_18px_42px_rgba(255,164,18,.30)]",
+        "hover:shadow-[0_18px_42px_rgba(245,158,11,.30)]",
         "sm:h-13 sm:w-13",
       ].join(" ")}
     >
@@ -78,12 +78,12 @@ function InternalImageButton({
         "rounded-full",
         "border-2 border-white",
         "bg-white",
-        "shadow-[0_12px_32px_rgba(3,50,107,.18)]",
-        "ring-1 ring-[#ffa412]/55",
+        "shadow-[0_12px_32px_rgba(30,42,36,.18)]",
+        "ring-1 ring-[#F59E0B]/55",
         "transition duration-300",
         "hover:-translate-y-1",
         "hover:scale-105",
-        "hover:shadow-[0_18px_42px_rgba(255,164,18,.30)]",
+        "hover:shadow-[0_18px_42px_rgba(245,158,11,.30)]",
         "sm:h-13 sm:w-13",
       ].join(" ")}
     >

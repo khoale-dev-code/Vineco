@@ -30,21 +30,21 @@ function SectionLabel({
   return (
     <div className="flex items-center justify-center gap-3">
 
-      <span className="h-px w-9 bg-[#ffa412]/70" />
+      <span className="h-px w-9 bg-[#F59E0B]/70" />
 
       <p
         className={[
           "text-[10px]",
           "font-extrabold uppercase",
           "tracking-[0.28em]",
-          "text-[#e89400]",
+          "text-[#D97706]",
           "sm:text-[11px]",
         ].join(" ")}
       >
         {children}
       </p>
 
-      <span className="h-px w-9 bg-[#ffa412]/70" />
+      <span className="h-px w-9 bg-[#F59E0B]/70" />
 
     </div>
   );
@@ -193,7 +193,7 @@ export default function OemProcess() {
       id="oem-process"
       className={[
         "relative overflow-hidden",
-        "bg-[#fffaf3]",
+        "bg-[#FAF8F5]",
         "py-20",
         "sm:py-24",
         "lg:py-28",
@@ -212,7 +212,7 @@ export default function OemProcess() {
           "-left-32 top-[22%]",
           "h-[420px] w-[420px]",
           "rounded-full",
-          "bg-[#ffa412]/8",
+          "bg-[#F59E0B]/8",
           "blur-[90px]",
         ].join(" ")}
       />
@@ -226,7 +226,7 @@ export default function OemProcess() {
           "-right-36 bottom-[12%]",
           "h-[460px] w-[460px]",
           "rounded-full",
-          "bg-[#03326b]/5",
+          "bg-[#1E2A24]/5",
           "blur-[100px]",
         ].join(" ")}
       />
@@ -271,11 +271,11 @@ export default function OemProcess() {
                 "font-extrabold",
                 "leading-[0.98]",
                 "tracking-[-0.055em]",
-                "text-[#03326b]",
+                "text-[#1E2A24]",
               ].join(" ")}
             >
               From idea to delivery
-              <span className="text-[#ffa412]">
+              <span className="text-[#F59E0B]">
                 {" "}in 5 steps
               </span>
             </h2>
@@ -288,7 +288,7 @@ export default function OemProcess() {
                 "text-pretty",
                 "text-[15px]",
                 "leading-7",
-                "text-[#03326b]/55",
+                "text-[#1E2A24]/55",
                 "sm:text-[17px]",
                 "sm:leading-8",
               ].join(" ")}
@@ -306,14 +306,14 @@ export default function OemProcess() {
                 "flex w-max",
                 "items-center gap-2",
                 "rounded-full",
-                "border border-[#ffa412]/20",
+                "border border-[#F59E0B]/20",
                 "bg-white/70",
                 "px-3 py-2",
                 "text-[9px]",
                 "font-extrabold uppercase",
                 "tracking-[0.16em]",
-                "text-[#03326b]/40",
-                "shadow-[0_8px_25px_rgba(3,50,107,.035)]",
+                "text-[#1E2A24]/40",
+                "shadow-[0_8px_25px_rgba(30,42,36,.035)]",
               ].join(" ")}
             >
               <span
@@ -321,7 +321,7 @@ export default function OemProcess() {
                   "relative",
                   "h-4 w-[9px]",
                   "rounded-full",
-                  "border border-[#ffa412]",
+                  "border border-[#F59E0B]",
                 ].join(" ")}
               >
                 <span
@@ -331,7 +331,7 @@ export default function OemProcess() {
                     "h-[3px] w-[3px]",
                     "-translate-x-1/2",
                     "rounded-full",
-                    "bg-[#ffa412]",
+                    "bg-[#F59E0B]",
                     "animate-bounce",
                   ].join(" ")}
                 />
@@ -374,7 +374,7 @@ export default function OemProcess() {
               "w-[2px]",
               "overflow-hidden",
               "rounded-full",
-              "bg-[#ffa412]/15",
+              "bg-[#F59E0B]/15",
               "lg:left-1/2",
               "lg:-translate-x-1/2",
             ].join(" ")}
@@ -391,9 +391,9 @@ export default function OemProcess() {
                 "rounded-full",
                 "bg-gradient-to-b",
                 "from-[#ffc35c]",
-                "via-[#ffa412]",
-                "to-[#e89400]",
-                "shadow-[0_0_15px_rgba(255,164,18,.35)]",
+                "via-[#F59E0B]",
+                "to-[#D97706]",
+                "shadow-[0_0_15px_rgba(245,158,11,.35)]",
               ].join(" ")}
               style={{
                 transform:
@@ -533,13 +533,13 @@ export default function OemProcess() {
 
                         borderColor:
                           stepProgress > 0.75
-                            ? "rgba(255,164,18,.48)"
-                            : "rgba(3,50,107,.09)",
+                            ? "rgba(245,158,11,.48)"
+                            : "rgba(30,42,36,.09)",
 
                         boxShadow:
                           stepProgress > 0.7
-                            ? "0 20px 48px rgba(255,164,18,.10)"
-                            : "0 12px 32px rgba(3,50,107,.04)",
+                            ? "0 20px 48px rgba(245,158,11,.10)"
+                            : "0 12px 32px rgba(30,42,36,.04)",
                       }}
                     >
 
@@ -553,7 +553,7 @@ export default function OemProcess() {
                             "text-[10px]",
                             "font-extrabold uppercase",
                             "tracking-[0.13em]",
-                            "text-[#e89400]",
+                            "text-[#D97706]",
                           ].join(" ")}
                         >
                           {item.eyebrow}
@@ -565,7 +565,7 @@ export default function OemProcess() {
                             "text-[10px]",
                             "font-extrabold",
                             "tracking-[0.12em]",
-                            "text-[#03326b]/18",
+                            "text-[#1E2A24]/18",
                           ].join(" ")}
                         >
                           {item.number}
@@ -583,7 +583,7 @@ export default function OemProcess() {
                           "font-extrabold",
                           "leading-tight",
                           "tracking-[-0.035em]",
-                          "text-[#03326b]",
+                          "text-[#1E2A24]",
                           "sm:text-[20px]",
                         ].join(" ")}
                       >
@@ -599,7 +599,7 @@ export default function OemProcess() {
                           "max-w-[430px]",
                           "text-[12px]",
                           "leading-6",
-                          "text-[#03326b]/55",
+                          "text-[#1E2A24]/55",
                           "sm:text-[13px]",
                         ].join(" ")}
                       >
@@ -616,7 +616,7 @@ export default function OemProcess() {
                           "h-[2px]",
                           "overflow-hidden",
                           "rounded-full",
-                          "bg-[#ffa412]/10",
+                          "bg-[#F59E0B]/10",
                         ].join(" ")}
                       >
 
@@ -625,7 +625,7 @@ export default function OemProcess() {
                             "h-full",
                             "origin-left",
                             "rounded-full",
-                            "bg-[#ffa412]",
+                            "bg-[#F59E0B]",
                           ].join(" ")}
                           style={{
                             transform:
@@ -652,7 +652,7 @@ export default function OemProcess() {
                         "items-center justify-center",
                         "rounded-full",
                         "border-[5px]",
-                        "border-[#fffaf3]",
+                        "border-[#FAF8F5]",
                         "will-change-transform",
                         "lg:col-start-2",
                         "lg:h-16 lg:w-16",
@@ -672,18 +672,18 @@ export default function OemProcess() {
 
                         backgroundColor:
                           nodeProgress > 0.2
-                            ? "#ffa412"
+                            ? "#F59E0B"
                             : "#ffffff",
 
                         color:
                           nodeProgress > 0.2
-                            ? "#03326b"
-                            : "rgba(3,50,107,.28)",
+                            ? "#1E2A24"
+                            : "rgba(30,42,36,.28)",
 
                         boxShadow:
                           nodeProgress > 0.7
-                            ? "0 12px 32px rgba(255,164,18,.30)"
-                            : "0 8px 22px rgba(3,50,107,.06)",
+                            ? "0 12px 32px rgba(245,158,11,.30)"
+                            : "0 8px 22px rgba(30,42,36,.06)",
                       }}
                     >
 
@@ -695,7 +695,7 @@ export default function OemProcess() {
                         className={[
                           "absolute inset-0",
                           "rounded-full",
-                          "border border-[#ffa412]",
+                          "border border-[#F59E0B]",
                         ].join(" ")}
                         style={{
                           opacity:
@@ -739,10 +739,10 @@ export default function OemProcess() {
               "flex w-max",
               "items-center gap-3",
               "rounded-full",
-              "border border-[#ffa412]/20",
+              "border border-[#F59E0B]/20",
               "bg-white",
               "px-4 py-2.5",
-              "shadow-[0_10px_28px_rgba(3,50,107,.05)]",
+              "shadow-[0_10px_28px_rgba(30,42,36,.05)]",
             ].join(" ")}
             style={{
               opacity:
@@ -771,7 +771,7 @@ export default function OemProcess() {
             }}
           >
 
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#ffa412] text-[#03326b]">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F59E0B] text-[#1E2A24]">
               <SiteIcon
                 name="check"
                 size={14}
@@ -780,7 +780,7 @@ export default function OemProcess() {
             </span>
 
 
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.13em] text-[#03326b]/60">
+            <span className="text-[10px] font-extrabold uppercase tracking-[0.13em] text-[#1E2A24]/60">
               Ready for your project
             </span>
 
@@ -800,7 +800,7 @@ export default function OemProcess() {
           ].join(" ")}
         >
 
-          <div className="flex items-center justify-between text-[9px] font-extrabold uppercase tracking-[0.13em] text-[#03326b]/35">
+          <div className="flex items-center justify-between text-[9px] font-extrabold uppercase tracking-[0.13em] text-[#1E2A24]/35">
 
             <span>
               Process progress
@@ -824,7 +824,7 @@ export default function OemProcess() {
               "h-[4px]",
               "overflow-hidden",
               "rounded-full",
-              "bg-[#ffa412]/12",
+              "bg-[#F59E0B]/12",
             ].join(" ")}
           >
 
@@ -833,8 +833,8 @@ export default function OemProcess() {
                 "h-full",
                 "origin-left",
                 "rounded-full",
-                "bg-[#ffa412]",
-                "shadow-[0_0_12px_rgba(255,164,18,.35)]",
+                "bg-[#F59E0B]",
+                "shadow-[0_0_12px_rgba(245,158,11,.35)]",
               ].join(" ")}
               style={{
                 transform:

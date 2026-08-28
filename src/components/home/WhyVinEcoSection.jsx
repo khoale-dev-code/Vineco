@@ -1,4 +1,4 @@
-﻿import Reveal from "../ui/Reveal";
+import Reveal from "../ui/Reveal";
 import SmartImage from "../ui/SmartImage";
 
 
@@ -100,7 +100,7 @@ function WhyCard({
             "overflow-hidden",
             "rounded-[24px]",
             "border-[2px]",
-            "border-[#ff9800]",
+            "border-[#F59E0B]",
             "bg-[#fbfbfd]",
             "px-[26px] pb-[27px]",
             "pt-[235px]",
@@ -123,7 +123,7 @@ function WhyCard({
               "font-extrabold",
               "leading-[1.02]",
               "tracking-[-0.045em]",
-              "text-[#ff9900]",
+              "text-[#F59E0B]",
               "sm:text-[28px]",
               "lg:text-[31px]",
             ].join(" ")}
@@ -142,7 +142,7 @@ function WhyCard({
               "font-extrabold",
               "leading-[1.3]",
               "tracking-[-0.02em]",
-              "text-[#03326b]",
+              "text-[#1E2A24]",
               "sm:text-[17px]",
               "lg:text-[19px]",
             ].join(" ")}

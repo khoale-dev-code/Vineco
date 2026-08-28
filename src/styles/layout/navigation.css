@@ -80,11 +80,11 @@ textarea {
 
   border-top:
     3px solid
-    #ffa412;
+    #F59E0B;
 
   border-bottom:
     1px solid
-    rgba(3, 50, 107, .08);
+    rgba(30, 42, 36, .08);
 
   background:
     rgba(255,255,255,.96);
@@ -116,7 +116,7 @@ textarea {
 .vineco-logo {
   flex: 0 0 auto;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 23px;
   font-weight: 850;
@@ -149,13 +149,13 @@ textarea {
 
   border:
     1.5px solid
-    rgba(255,164,18,.75);
+    rgba(245,158,11,.75);
 
   border-radius: 14px;
 
   background: #fff;
 
-  color: #03326b;
+  color: #1E2A24;
 }
 
 
@@ -184,7 +184,7 @@ textarea {
 
   background: #fff;
 
-  color: #03326b;
+  color: #1E2A24;
 
   overscroll-behavior:
     contain;
@@ -219,18 +219,18 @@ textarea {
 
   border-top:
     3px solid
-    #ffa412;
+    #F59E0B;
 
   border-bottom:
     1px solid
-    rgba(3,50,107,.09);
+    rgba(30,42,36,.09);
 
   background: #f7f9fc;
 }
 
 
 .vineco-mobile-menu__logo {
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 22px;
   font-weight: 850;
@@ -251,13 +251,13 @@ textarea {
 
   border:
     1.5px solid
-    #ffa412;
+    #F59E0B;
 
   border-radius: 14px;
 
   background: #fff;
 
-  color: #03326b;
+  color: #1E2A24;
 
   transition:
     transform 180ms ease,
@@ -325,7 +325,7 @@ textarea {
 
   background: transparent;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 14px;
   font-weight: 720;
@@ -339,12 +339,12 @@ textarea {
 .vineco-mobile-nav > a {
   border-bottom:
     1px solid
-    rgba(3,50,107,.06);
+    rgba(30,42,36,.06);
 }
 
 
 .vineco-mobile-nav > a.active {
-  color: #03326b;
+  color: #1E2A24;
 
   font-weight: 850;
 }
@@ -360,7 +360,7 @@ textarea {
 
   border-radius: 50%;
 
-  background: #ffa412;
+  background: #F59E0B;
 }
 
 
@@ -371,7 +371,7 @@ textarea {
 .vineco-mobile-product {
   border-bottom:
     1px solid
-    rgba(3,50,107,.06);
+    rgba(30,42,36,.06);
 }
 
 
@@ -385,7 +385,7 @@ textarea {
 .vineco-chevron {
   flex: 0 0 auto;
 
-  color: #03326b;
+  color: #1E2A24;
 
   transition:
     transform 200ms
@@ -443,10 +443,10 @@ textarea {
 
   border-left:
     2px solid
-    rgba(255,164,18,.45);
+    rgba(245,158,11,.45);
 
   color:
-    rgba(3,50,107,.67);
+    rgba(30,42,36,.67);
 
   font-size: 13px;
   font-weight: 620;
@@ -458,19 +458,19 @@ textarea {
 .vineco-mobile-product__links a:hover,
 .vineco-mobile-product__links a:active {
   border-left-color:
-    #ffa412;
+    #F59E0B;
 
   background:
     #fff8eb;
 
   color:
-    #03326b;
+    #1E2A24;
 }
 
 
 .vineco-mobile-product__links
 .vineco-mobile-product__all {
-  color: #03326b;
+  color: #1E2A24;
 
   font-weight: 850;
 }
@@ -500,16 +500,16 @@ textarea {
 
   border-radius: 13px;
 
-  background: #ffa412;
+  background: #F59E0B;
 
-  color: #03326b;
+  color: #1E2A24;
 
   font-size: 14px;
   font-weight: 850;
 
   box-shadow:
     0 12px 28px
-    rgba(255,164,18,.18);
+    rgba(245,158,11,.18);
 
   transition:
     transform 180ms ease;
@@ -529,7 +529,7 @@ textarea {
     12px auto 0;
 
   color:
-    rgba(3,50,107,.42);
+    rgba(30,42,36,.42);
 
   font-size: 9px;
   font-weight: 620;
@@ -609,7 +609,7 @@ body.vineco-mobile-nav-open
     border-radius: 999px;
 
     color:
-      rgba(3,50,107,.72);
+      rgba(30,42,36,.72);
 
     font-size: 11px;
     font-weight: 720;
@@ -629,7 +629,7 @@ body.vineco-mobile-nav-open
       #fff5e3;
 
     color:
-      #03326b;
+      #1E2A24;
   }
 
 
@@ -646,7 +646,7 @@ body.vineco-mobile-nav-open
 
     border-radius: 999px;
 
-    background: #ffa412;
+    background: #F59E0B;
   }
 
 
@@ -666,9 +666,9 @@ body.vineco-mobile-nav-open
 
     border-radius: 999px;
 
-    background: #ffa412;
+    background: #F59E0B;
 
-    color: #03326b;
+    color: #1E2A24;
 
     font-size: 11px;
     font-weight: 850;
@@ -745,7 +745,7 @@ body.vineco-mobile-nav-open
 
     border:
       1px solid
-      rgba(3,50,107,.09);
+      rgba(30,42,36,.09);
 
     border-radius: 18px;
 
@@ -753,7 +753,7 @@ body.vineco-mobile-nav-open
 
     box-shadow:
       0 22px 55px
-      rgba(3,50,107,.13);
+      rgba(30,42,36,.13);
   }
 
 
@@ -762,7 +762,7 @@ body.vineco-mobile-nav-open
       2px 8px 7px;
 
     color:
-      rgba(3,50,107,.35);
+      rgba(30,42,36,.35);
 
     font-size: 8px;
     font-weight: 850;
@@ -785,7 +785,7 @@ body.vineco-mobile-nav-open
 
     border-radius: 9px;
 
-    color: #03326b;
+    color: #1E2A24;
 
     font-size: 11px;
     font-weight: 650;
@@ -803,7 +803,7 @@ body.vineco-mobile-nav-open
 
     border-top:
       1px solid
-      rgba(3,50,107,.08);
+      rgba(30,42,36,.08);
 
     border-radius:
       0 !important;

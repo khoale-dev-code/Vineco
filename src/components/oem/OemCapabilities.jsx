@@ -16,13 +16,13 @@ function SectionLabel({
   return (
     <div className="flex items-center justify-center gap-3">
 
-      <span className="h-px w-9 bg-[#ffa412]/70" />
+      <span className="h-px w-9 bg-[#F59E0B]/70" />
 
-      <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#e89400] sm:text-[11px]">
+      <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#D97706] sm:text-[11px]">
         {children}
       </p>
 
-      <span className="h-px w-9 bg-[#ffa412]/70" />
+      <span className="h-px w-9 bg-[#F59E0B]/70" />
 
     </div>
   );
@@ -58,14 +58,14 @@ export default function OemCapabilities() {
                 "font-extrabold",
                 "leading-[0.98]",
                 "tracking-[-0.055em]",
-                "text-[#03326b]",
+                "text-[#1E2A24]",
               ].join(" ")}
             >
               What we work with
             </h2>
 
 
-            <p className="mx-auto mt-5 max-w-[700px] text-pretty text-[15px] leading-7 text-[#03326b]/55 sm:text-[17px] sm:leading-8">
+            <p className="mx-auto mt-5 max-w-[700px] text-pretty text-[15px] leading-7 text-[#1E2A24]/55 sm:text-[17px] sm:leading-8">
               Product development, packaging, branding and sampling support
               for flexible OEM, ODM and private-label projects.
             </p>
@@ -94,14 +94,14 @@ export default function OemCapabilities() {
                     "flex h-full min-h-[190px]",
                     "flex-col",
                     "rounded-[24px]",
-                    "border border-[#ffa412]/20",
-                    "bg-[#fffaf3]",
+                    "border border-[#F59E0B]/20",
+                    "bg-[#FAF8F5]",
                     "px-6 py-6",
                     "transition duration-300",
                     "hover:-translate-y-1",
-                    "hover:border-[#ffa412]",
+                    "hover:border-[#F59E0B]",
                     "hover:bg-white",
-                    "hover:shadow-[0_18px_42px_rgba(255,164,18,0.11)]",
+                    "hover:shadow-[0_18px_42px_rgba(245,158,11,0.11)]",
                   ].join(" ")}
                 >
 
@@ -112,9 +112,9 @@ export default function OemCapabilities() {
                         "flex h-12 w-12",
                         "items-center justify-center",
                         "rounded-full",
-                        "bg-[#ffa412]",
-                        "text-[#03326b]",
-                        "shadow-[0_10px_26px_rgba(255,164,18,0.22)]",
+                        "bg-[#F59E0B]",
+                        "text-[#1E2A24]",
+                        "shadow-[0_10px_26px_rgba(245,158,11,0.22)]",
                         "transition-transform duration-300",
                         "group-hover:scale-105",
                       ].join(" ")}
@@ -127,7 +127,7 @@ export default function OemCapabilities() {
                     </span>
 
 
-                    <span className="text-[10px] font-extrabold tracking-[0.14em] text-[#03326b]/28">
+                    <span className="text-[10px] font-extrabold tracking-[0.14em] text-[#1E2A24]/28">
                       {item.number}
                     </span>
 
@@ -136,12 +136,12 @@ export default function OemCapabilities() {
 
                   <div className="mt-auto pt-6">
 
-                    <h3 className="text-[18px] font-extrabold leading-tight tracking-[-0.035em] text-[#03326b]">
+                    <h3 className="text-[18px] font-extrabold leading-tight tracking-[-0.035em] text-[#1E2A24]">
                       {item.title}
                     </h3>
 
 
-                    <p className="mt-2 text-[12px] leading-6 text-[#03326b]/55">
+                    <p className="mt-2 text-[12px] leading-6 text-[#1E2A24]/55">
                       {item.text}
                     </p>
 
@@ -162,7 +162,7 @@ export default function OemCapabilities() {
 
           <div className="mt-11">
 
-            <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.22em] text-[#03326b]/40">
+            <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.22em] text-[#1E2A24]/40">
               Product Categories
             </p>
 
@@ -176,13 +176,13 @@ export default function OemCapabilities() {
                     key={product.slug}
                     className={[
                       "rounded-full",
-                      "border border-[#03326b]/10",
+                      "border border-[#1E2A24]/10",
                       "bg-white",
                       "px-4 py-2.5",
                       "text-[11px]",
                       "font-bold",
-                      "text-[#03326b]/70",
-                      "shadow-[0_5px_18px_rgba(3,50,107,0.03)]",
+                      "text-[#1E2A24]/70",
+                      "shadow-[0_5px_18px_rgba(30,42,36,0.03)]",
                     ].join(" ")}
                   >
                     {product.name}

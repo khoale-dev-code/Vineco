@@ -1,9 +1,10 @@
-import InsideVinEcoExtras from "../components/home/InsideVinEcoExtras";
 import { Link } from "react-router";
 
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import FloatingContactDock from "../components/layout/FloatingContactDock";
+import InsideVinEcoExtras from "../components/home/InsideVinEcoExtras";
+import WhyVinEcoSection from "../components/home/WhyVinEcoSection";
 
 import Reveal from "../components/ui/Reveal";
 import SmartImage from "../components/ui/SmartImage";
@@ -11,43 +12,98 @@ import SiteIcon from "../components/ui/SiteIcon";
 
 import { projectData } from "../data/projectData";
 
-import WhyVinEcoSection from "../components/home/WhyVinEcoSection";
+
+const homeContent = {
+  hero: {
+    eyebrow: "Natural Pet Products · Made in Vietnam",
+    titleLine1: "Crafted By Nature,",
+    titleLine2: "Perfected By Us",
+    description:
+      "VinEco is a premier Vietnam-based manufacturer and global exporter of high-quality pet products made from natural materials, bringing safe, durable, and eco-friendly solutions to pets worldwide",
+    subDescription:
+      "Crafted from 100% natural, sustainable coffee wood from the Central Highlands. Safe, durable, and eco-friendly chew toys designed for global pet brands, start up, and Amazon FBA sellers.",
+    image: "/images/home/home-hero-main.webp",
+    primaryCta: "Request B2B Quote",
+    secondaryCta: "OEM / ODM",
+  },
+
+  sideCard: {
+    badge: "VinEco Product",
+    title: "Eco-friendly Coffee Wood Chews",
+    tagline: "Safe. Tough. Sustainable.",
+    description:
+      "Low-MOQ manufacturing (from 50 pcs) tailored for global pet supply distributors.",
+    note: "Complimentary OEM samples ready in 7 days.",
+    image: "/images/home/home-hero-side.webp",
+  },
+
+  products: [
+    {
+      id: "classic-chew",
+      badge: "Best Seller",
+      category: "Natural Dog Chew",
+      title: "Classic Coffee Wood Chew",
+      description:
+        "Smooth, durable coffee wood chew made from mature branches. Ideal for everyday chewing and clean product presentation.",
+      image: "/images/home/product-classic-chew.webp",
+      imagePosition: "object-[50%_48%]",
+    },
+    {
+      id: "gorilla-chew",
+      badge: "Heavy Chewer",
+      category: "Strong Chewer",
+      title: "Coffee Wood Gorilla Chew",
+      description:
+        "Dense and thicker-root coffee wood chew for bigger dogs and stronger chewers who need a tougher natural option.",
+      image: "/images/home/product-gorilla-chew.webp",
+      imagePosition: "object-[50%_43%]",
+    },
+    {
+      id: "rope-toy",
+      badge: "Interactive Play",
+      category: "Coffee Wood + Rope",
+      title: "Coffee Wood + Natural Rope",
+      description:
+        "Natural coffee wood paired with rope for tugging, chewing and enrichment. A stronger-value format for premium pet lines.",
+      image: "/images/home/product-rope-toy.webp",
+      imagePosition: "object-[50%_40%]",
+    },
+  ],
+};
+
+
 function ProductCard({ product, index }) {
   return (
-    <Reveal
-      variant="up"
-      delay={index * 100}
-      className="h-full"
-    >
-      <article className="group flex h-full flex-col overflow-hidden rounded-[24px] border-2 border-brand-500/60 bg-white transition duration-300 hover:-translate-y-1 hover:border-brand-500 hover:shadow-[0_20px_52px_rgba(255,164,18,0.18)]">
-        <div className="relative aspect-[4/3] overflow-hidden bg-brand-50">
+    <Reveal variant="up" delay={index * 100} className="h-full">
+      <article className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-[#F59E0B]/35 bg-[#F4F1EA] transition duration-300 hover:-translate-y-1 hover:border-[#F59E0B] hover:shadow-[0_20px_52px_rgba(245,158,11,0.16)]">
+        <div className="relative aspect-[4/3] overflow-hidden bg-white">
           <SmartImage
             src={product.image}
             alt={product.title}
-            className="h-full w-full object-contain p-3 sm:p-4 transition duration-500 group-hover:scale-[1.05]"
+            className={`h-full w-full object-cover ${product.imagePosition}`}
           />
 
-          <span className="absolute left-4 top-4 rounded-full bg-brand-500 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-ink">
+          <span className="absolute left-4 top-4 rounded-full bg-[#3D5245] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-white">
             {product.badge}
           </span>
         </div>
 
         <div className="flex flex-1 flex-col p-5">
-          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-brand-600">
+          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#F59E0B]">
             {product.category}
           </p>
 
-          <h3 className="mt-2 text-lg font-bold leading-tight text-ink">
+          <h3 className="mt-2 text-lg font-bold leading-tight text-[#1E2A24]">
             {product.title}
           </h3>
 
-          <p className="mt-3 flex-1 text-sm leading-6 text-ink/55">
+          <p className="mt-3 flex-1 text-sm leading-6 text-[#6A645D]">
             {product.description}
           </p>
 
           <Link
             to="/contact"
-            className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-ink transition hover:text-brand-600"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#1E2A24] transition hover:text-[#F59E0B]"
           >
             Request sample
             <SiteIcon name="arrow" size={16} />
@@ -58,100 +114,117 @@ function ProductCard({ product, index }) {
   );
 }
 
+
 export default function HomePage() {
   return (
     <>
       <Header />
 
-      <main>
+      <main className="bg-[#FAF8F5] text-[#1E2A24]">
+
         {/* HERO */}
-        <section
-          id="home"
-          className="scroll-mt-24 overflow-hidden bg-white"
-        >
+        <section id="home" className="scroll-mt-24 overflow-hidden bg-[#FAF8F5]">
           <div className="mx-auto max-w-[1240px] px-4 pb-10 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-14">
+
             <div className="grid gap-4 lg:grid-cols-[1.55fr_.72fr]">
+
               <Reveal variant="left">
-                <div className="relative min-h-[430px] overflow-hidden rounded-[30px] border-2 border-brand-500 bg-[linear-gradient(180deg,#fffaf3_0%,#fff_100%)] shadow-[0_18px_48px_rgba(255,164,18,0.14)] sm:min-h-[520px]">
+                <div className="relative min-h-[430px] overflow-hidden rounded-[30px] border border-[#F59E0B]/40 bg-white shadow-[0_18px_48px_rgba(245,158,11,0.10)] sm:min-h-[520px]">
+
                   <SmartImage
-                    src="/images/pinterest-preview/pin-06.jpg"
-                    alt="VinEco natural coffee wood pet products"
+                    src={homeContent.hero.image}
+                    alt="VinEco natural pet products - Crafted By Nature, Perfected By Us"
                     loading="eager"
-                    className="absolute inset-0 h-full w-full object-cover object-center opacity-90 transition-transform duration-[1400ms] hover:scale-[1.025]"
+                    className="absolute inset-0 h-full w-full object-cover object-[68%_center] opacity-95"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/82 to-white/25" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FAF8F5]/98 via-[#FAF8F5]/78 to-transparent" />
 
                   <div className="relative z-10 flex min-h-[430px] max-w-2xl flex-col justify-end p-7 sm:min-h-[520px] sm:p-10 lg:p-12">
-                    <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-ink/60">
-                      {projectData.hero.eyebrow}
+                    <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#3D5245]">
+                      {homeContent.hero.eyebrow}
                     </p>
 
-                    <h1 className="max-w-xl text-4xl font-extrabold leading-[1.02] tracking-[-0.04em] text-ink sm:text-5xl lg:text-6xl">
-                      Crafted by nature,
-                      <span className="block text-ink">
-                        perfected by us.
+                    <h1 className="max-w-xl text-4xl font-extrabold leading-[1.02] tracking-[-0.04em] text-[#1E2A24] sm:text-5xl lg:text-6xl">
+                      {homeContent.hero.titleLine1}
+                      <span className="block">
+                        {homeContent.hero.titleLine2}
                       </span>
                     </h1>
 
-                    <p className="mt-5 max-w-xl text-sm leading-7 text-ink/65 sm:text-base">
-                      {projectData.hero.description}
-                    </p>
+                    <div className="mt-5 max-w-xl space-y-3">
+                      <p className="text-sm font-medium leading-7 text-[#1E2A24]/80 sm:text-base">
+                        {homeContent.hero.description}
+                      </p>
+
+                      <p className="max-w-lg text-sm leading-6 text-[#6A645D]">
+                        {homeContent.hero.subDescription}
+                      </p>
+                    </div>
 
                     <div className="mt-7 flex flex-wrap gap-3">
                       <Link
                         to="/contact"
-                        className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-6 text-sm font-extrabold text-ink shadow-[0_12px_28px_rgba(255,164,18,0.20)] transition hover:-translate-y-0.5 hover:bg-brand-600"
+                        className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#F59E0B] px-6 text-sm font-extrabold text-[#1E2A24] shadow-[0_12px_28px_rgba(245,158,11,0.20)] transition hover:-translate-y-0.5 hover:bg-[#D97706]"
                       >
-                        Request B2B Quote
+                        {homeContent.hero.primaryCta}
                       </Link>
 
                       <Link
                         to="/oem-odm"
-                        className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-brand-500 bg-white px-6 text-sm font-bold text-ink backdrop-blur transition hover:bg-brand-50"
+                        className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#F59E0B] bg-white px-6 text-sm font-bold text-[#1E2A24] transition hover:bg-[#F4F1EA]"
                       >
-                        OEM / ODM
+                        {homeContent.hero.secondaryCta}
                       </Link>
                     </div>
                   </div>
                 </div>
               </Reveal>
 
-              <Reveal
-                variant="right"
-                delay={100}
-              >
-                <div className="flex h-full min-h-[360px] flex-col justify-between overflow-hidden rounded-[30px] border-2 border-brand-500 bg-[linear-gradient(180deg,#fff1d6_0%,#fff8ee_100%)] p-7 shadow-[0_20px_50px_rgba(255,164,18,0.16)] sm:p-8">
+
+              <Reveal variant="right" delay={100}>
+                <div className="flex h-full min-h-[360px] flex-col justify-between overflow-hidden rounded-[30px] border border-[#F59E0B]/40 bg-gradient-to-b from-[#F4F1EA] to-[#FAF8F5] p-7 shadow-[0_20px_50px_rgba(245,158,11,0.10)] sm:p-8">
+
                   <div>
-                    <span className="inline-flex rounded-full bg-brand-500 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-ink">
-                      VinEco Product
+                    <span className="inline-flex rounded-full bg-[#3D5245] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-white">
+                      {homeContent.sideCard.badge}
                     </span>
 
-                    <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-[-0.035em] text-ink">
-                      Natural chew toys made for global pet brands.
+                    <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-[-0.035em] text-[#1E2A24]">
+                      {homeContent.sideCard.title}
                     </h2>
 
-                    <p className="mt-4 text-sm leading-7 text-ink/60">
-                      Safe natural materials, flexible private labeling and export-ready support.
+                    <p className="mt-4 text-sm font-semibold text-[#F59E0B]">
+                      {homeContent.sideCard.tagline}
+                    </p>
+
+                    <p className="mt-3 text-sm leading-7 text-[#6A645D]">
+                      {homeContent.sideCard.description}
+                    </p>
+
+                    <p className="mt-3 text-sm leading-6 text-[#3D5245]">
+                      {homeContent.sideCard.note}
                     </p>
                   </div>
 
                   <div className="mt-7 overflow-hidden rounded-[24px] bg-white">
                     <SmartImage
-                      src="/images/pinterest-preview/pin-07.jpg"
-                      alt="Coffee wood dog chew"
-                      className="aspect-[4/3] h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.04]"
+                      src={homeContent.sideCard.image}
+                      alt="VinEco eco-friendly coffee wood chews"
+                      className="aspect-[4/3] h-full w-full object-contain object-center p-3"
                     />
                   </div>
                 </div>
               </Reveal>
             </div>
 
+
+            {/* PRODUCTS */}
             <div
               id="products"
-              className="scroll-mt-24 mt-4 grid gap-4 md:grid-cols-3"
+              className="mt-4 grid scroll-mt-24 gap-4 md:grid-cols-3"
             >
-              {projectData.products.map((product, index) => (
+              {homeContent.products.map((product, index) => (
                 <ProductCard
                   key={product.id}
                   product={product}
@@ -162,25 +235,22 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* WHY */}
-        
+
+        {/* WHY VINECO */}
         <WhyVinEcoSection />
 
 
         {/* METRICS */}
-        <section className="bg-white py-14 sm:py-16">
+        <section className="bg-[#FAF8F5] py-14 sm:py-16">
           <div className="mx-auto grid max-w-[1240px] grid-cols-2 gap-3 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
             {projectData.metrics.map((metric, index) => (
-              <Reveal
-                key={metric.label}
-                delay={index * 80}
-              >
-                <div className="rounded-[24px] border-2 border-brand-500 bg-brand-500 p-5 text-center shadow-[0_14px_30px_rgba(255,164,18,0.18)] transition hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(255,164,18,0.26)] sm:p-6">
-                  <p className="text-2xl font-extrabold text-ink sm:text-3xl">
+              <Reveal key={metric.label} delay={index * 80}>
+                <div className="rounded-[24px] border border-[#F59E0B]/25 bg-[#0F2F24] p-5 text-center shadow-[0_14px_30px_rgba(15,47,36,0.08)] transition hover:-translate-y-1 sm:p-6">
+                  <p className="text-2xl font-extrabold text-[#F59E0B] sm:text-3xl">
                     {metric.value}
                   </p>
 
-                  <p className="mt-2 text-xs font-bold leading-5 text-ink/70">
+                  <p className="mt-2 text-xs font-bold leading-5 text-white/75">
                     {metric.label}
                   </p>
                 </div>
@@ -189,48 +259,60 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* VIDEO */}
-        <section className="bg-[#f7f9fc] py-16 sm:py-20">
-          <div className="mx-auto max-w-[1080px] px-4 sm:px-6">
-            <Reveal>
-              <div className="mb-8 text-center">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-600">
-                  Inside VinEco
-                </p>
 
-                <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.035em] text-ink sm:text-4xl">
-                  See how we work.
-                </h2>
-              </div>
-            </Reveal>
+      {/* VIDEO */}
+<section className="bg-[#FAF8F5] py-16 sm:py-20">
+  <div className="mx-auto max-w-[1080px] px-4 sm:px-6">
+    <Reveal>
+      <div className="mb-8 text-center">
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#3D5245]">
+          Inside VinEco
+        </p>
 
-            <Reveal variant="zoom">
-              <div className="overflow-hidden rounded-[30px] border-[5px] border-brand-500 bg-white shadow-[0_24px_70px_rgba(255,164,18,0.16)]">
-                <video
-                  controls
-                  preload="metadata"
-                  poster="/images/video-poster.webp"
-                  className="aspect-video w-full bg-black object-cover"
-                >
-                  <source
-                    src="/video/vineco-brand.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-            </Reveal>
-          </div>
-        </section>
+        <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.035em] text-[#1E2A24] sm:text-4xl">
+          See how we work.
+        </h2>
+      </div>
+    </Reveal>
+
+    <Reveal variant="zoom">
+      {/* Khung lớn giữ nguyên như cũ */}
+      <div className="aspect-video w-full overflow-hidden rounded-[30px] border-[3px] border-[#F59E0B]/35 bg-[#F4F1EA] shadow-[0_24px_70px_rgba(245,158,11,0.10)]">
+
+        {/* Video dọc giữ nguyên tỷ lệ 9:16 */}
+        <div className="flex h-full w-full items-center justify-center">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            className="h-full w-auto max-w-full object-contain"
+          >
+            <source
+              src="/video/home.mp4"
+              type="video/mp4"
+            />
+
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+      </div>
+    </Reveal>
+  </div>
+</section>
+
         <InsideVinEcoExtras />
 
 
-        {/* OEM TEASER */}
-        <section className="bg-white py-16 sm:py-20 lg:py-24">
+        {/* OEM / ODM */}
+        <section className="bg-[#FAF8F5] py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+
             <Reveal>
-              <div className="overflow-hidden rounded-[32px] border-2 border-brand-500 bg-[linear-gradient(135deg,#fff0cf_0%,#fffaf0_100%)] px-6 py-10 text-ink shadow-[0_22px_58px_rgba(255,164,18,0.16)] sm:px-10 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10 lg:px-14 lg:py-14">
+              <div className="overflow-hidden rounded-[32px] border border-[#F59E0B]/35 bg-gradient-to-br from-[#F4F1EA] to-[#FAF8F5] px-6 py-10 text-[#1E2A24] shadow-[0_22px_58px_rgba(245,158,11,0.10)] sm:px-10 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10 lg:px-14 lg:py-14">
+
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-500">
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#3D5245]">
                     OEM / ODM / Private Label
                   </p>
 
@@ -238,93 +320,108 @@ export default function HomePage() {
                     Turn your product idea into an export-ready collection.
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-ink/65">
-                    Sampling, manufacturing, inspection, branding and global shipping support in one clear process.
+                  <p className="mt-4 max-w-2xl text-sm leading-7 text-[#6A645D]">
+                    Sampling, manufacturing, inspection, branding and global
+                    shipping support in one clear process.
                   </p>
                 </div>
 
                 <Link
                   to="/oem-odm"
-                  className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand-500 px-7 text-sm font-extrabold text-ink shadow-[0_12px_28px_rgba(255,164,18,0.20)] transition hover:bg-brand-600 lg:mt-0"
+                  className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#F59E0B] px-7 text-sm font-extrabold text-[#1E2A24] shadow-[0_12px_28px_rgba(245,158,11,0.16)] transition hover:bg-[#D97706] lg:mt-0"
                 >
                   Explore OEM / ODM
                   <SiteIcon name="arrow" size={17} />
                 </Link>
+
               </div>
             </Reveal>
+
           </div>
         </section>
+
 
         {/* FAQ */}
         <section
           id="faq"
-          className="scroll-mt-24 bg-[#fff8ef] py-16 sm:py-20"
+          className="scroll-mt-24 bg-[#F4F1EA] py-16 sm:py-20"
         >
           <div className="mx-auto max-w-[860px] px-4 sm:px-6">
+
             <Reveal>
               <div className="text-center">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-600">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#3D5245]">
                   FAQ
                 </p>
 
-                <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.035em] text-ink sm:text-4xl">
+                <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.035em] text-[#1E2A24] sm:text-4xl">
                   Frequently Asked Questions
                 </h2>
               </div>
             </Reveal>
 
+
             <div className="mt-9 space-y-3">
               {projectData.faq.map((item, index) => (
-                <Reveal
-                  key={item.q}
-                  delay={index * 60}
-                >
-                  <details className="group rounded-2xl border-2 border-brand-500/55 bg-white px-5 py-1 shadow-[0_6px_18px_rgba(255,164,18,0.05)]">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-sm font-bold text-ink">
+                <Reveal key={item.q} delay={index * 60}>
+
+                  <details className="group rounded-2xl border border-[#F59E0B]/25 bg-white px-5 py-1 shadow-[0_6px_18px_rgba(15,47,36,0.04)]">
+
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-sm font-bold text-[#1E2A24]">
                       {item.q}
 
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-500 text-lg font-medium text-ink transition group-open:rotate-45">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F59E0B] text-lg font-medium text-[#1E2A24] transition group-open:rotate-45">
                         +
                       </span>
                     </summary>
 
-                    <p className="border-t border-ink/8 pb-5 pt-4 text-sm leading-7 text-ink/60">
+                    <p className="border-t border-[#1E2A24]/10 pb-5 pt-4 text-sm leading-7 text-[#6A645D]">
                       {item.a}
                     </p>
+
                   </details>
+
                 </Reveal>
               ))}
             </div>
+
           </div>
         </section>
 
+
         {/* FINAL CTA */}
-        <section className="bg-white py-16 sm:py-20">
+        <section className="bg-[#FAF8F5] py-16 sm:py-20">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+
             <Reveal variant="zoom">
-              <div className="rounded-[32px] border-2 border-brand-500 bg-[linear-gradient(135deg,#ffa412_0%,#ffb530_100%)] px-6 py-12 text-center shadow-[0_24px_65px_rgba(255,164,18,0.22)] sm:px-10">
-                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-ink/70">
+              <div className="rounded-[32px] border border-[#F59E0B]/30 bg-gradient-to-br from-[#F59E0B] to-[#FFB530] px-6 py-12 text-center shadow-[0_24px_65px_rgba(245,158,11,0.18)] sm:px-10">
+
+                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#1E2A24]/70">
                   Start your brand journey
                 </p>
 
-                <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-extrabold tracking-[-0.04em] text-ink sm:text-4xl">
+                <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-extrabold tracking-[-0.04em] text-[#1E2A24] sm:text-4xl">
                   Ready to test VinEco quality?
                 </h2>
 
-                <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-ink/65">
-                  Request a sample, discuss your packaging or send us your OEM / ODM idea.
+                <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#1E2A24]/70">
+                  Request a sample, discuss your packaging or send us your
+                  OEM / ODM idea.
                 </p>
 
                 <Link
                   to="/contact"
-                  className="mt-7 inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-extrabold text-ink shadow-[0_10px_24px_rgba(3,50,107,0.10)] transition hover:-translate-y-0.5 hover:bg-[#fff8ef]"
+                  className="mt-7 inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-extrabold text-[#1E2A24] shadow-[0_10px_24px_rgba(30,42,36,0.08)] transition hover:-translate-y-0.5 hover:bg-[#FAF8F5]"
                 >
                   Contact VinEco
                 </Link>
+
               </div>
             </Reveal>
+
           </div>
         </section>
+
       </main>
 
       <Footer />

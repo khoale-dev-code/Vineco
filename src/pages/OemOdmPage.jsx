@@ -29,7 +29,7 @@ export default function OemOdmPage() {
         <section
           className={[
             "relative overflow-hidden",
-            "bg-[#ffa412]",
+            "bg-[#F59E0B]",
           ].join(" ")}
         >
 
@@ -93,13 +93,13 @@ export default function OemOdmPage() {
 
                 <div className="flex items-center justify-center gap-3">
 
-                  <span className="h-px w-10 bg-[#03326b]/45" />
+                  <span className="h-px w-10 bg-[#1E2A24]/45" />
 
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#03326b]/65 sm:text-[11px]">
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#1E2A24]/65 sm:text-[11px]">
                     OEM / ODM Services
                   </p>
 
-                  <span className="h-px w-10 bg-[#03326b]/45" />
+                  <span className="h-px w-10 bg-[#1E2A24]/45" />
 
                 </div>
 
@@ -114,7 +114,7 @@ export default function OemOdmPage() {
                     "font-extrabold",
                     "leading-[0.89]",
                     "tracking-[-0.07em]",
-                    "text-[#03326b]",
+                    "text-[#1E2A24]",
                   ].join(" ")}
                 >
                   Built your way,
@@ -134,7 +134,7 @@ export default function OemOdmPage() {
                     "text-[15px]",
                     "font-medium",
                     "leading-7",
-                    "text-[#03326b]/70",
+                    "text-[#1E2A24]/70",
                     "sm:text-[17px]",
                     "sm:leading-8",
                   ].join(" ")}
@@ -157,15 +157,15 @@ export default function OemOdmPage() {
                       "items-center justify-center",
                       "gap-2",
                       "rounded-full",
-                      "bg-[#03326b]",
+                      "bg-[#1E2A24]",
                       "px-7 py-3.5",
                       "text-[13px]",
                       "font-extrabold",
                       "text-white",
-                      "shadow-[0_16px_38px_rgba(3,50,107,0.22)]",
+                      "shadow-[0_16px_38px_rgba(30,42,36,0.22)]",
                       "transition duration-200",
                       "hover:-translate-y-1",
-                      "hover:bg-[#022858]",
+                      "hover:bg-[#0F2F24]",
                     ].join(" ")}
                   >
                     Start your project
@@ -184,16 +184,16 @@ export default function OemOdmPage() {
                       "inline-flex min-h-14",
                       "items-center justify-center",
                       "rounded-full",
-                      "border-2 border-[#03326b]/20",
+                      "border-2 border-[#1E2A24]/20",
                       "bg-white/18",
                       "px-7 py-3.5",
                       "text-[13px]",
                       "font-extrabold",
-                      "text-[#03326b]",
+                      "text-[#1E2A24]",
                       "backdrop-blur-sm",
                       "transition duration-200",
                       "hover:-translate-y-1",
-                      "hover:border-[#03326b]/45",
+                      "hover:border-[#1E2A24]/45",
                       "hover:bg-white/30",
                     ].join(" ")}
                   >
@@ -212,7 +212,7 @@ export default function OemOdmPage() {
                     "grid-cols-3",
                     "overflow-hidden",
                     "rounded-[22px]",
-                    "border border-[#03326b]/12",
+                    "border border-[#1E2A24]/12",
                     "bg-white/12",
                     "backdrop-blur-sm",
                   ].join(" ")}
@@ -220,24 +220,24 @@ export default function OemOdmPage() {
 
                   <div className="px-3 py-4 sm:px-5">
 
-                    <strong className="block text-[14px] font-extrabold text-[#03326b] sm:text-[16px]">
+                    <strong className="block text-[14px] font-extrabold text-[#1E2A24] sm:text-[16px]">
                       OEM
                     </strong>
 
-                    <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.08em] text-[#03326b]/50">
+                    <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.08em] text-[#1E2A24]/50">
                       Manufacturing
                     </span>
 
                   </div>
 
 
-                  <div className="border-x border-[#03326b]/10 px-3 py-4 sm:px-5">
+                  <div className="border-x border-[#1E2A24]/10 px-3 py-4 sm:px-5">
 
-                    <strong className="block text-[14px] font-extrabold text-[#03326b] sm:text-[16px]">
+                    <strong className="block text-[14px] font-extrabold text-[#1E2A24] sm:text-[16px]">
                       ODM
                     </strong>
 
-                    <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.08em] text-[#03326b]/50">
+                    <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.08em] text-[#1E2A24]/50">
                       Development
                     </span>
 
@@ -246,11 +246,11 @@ export default function OemOdmPage() {
 
                   <div className="px-3 py-4 sm:px-5">
 
-                    <strong className="block text-[14px] font-extrabold text-[#03326b] sm:text-[16px]">
+                    <strong className="block text-[14px] font-extrabold text-[#1E2A24] sm:text-[16px]">
                       50 units
                     </strong>
 
-                    <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.08em] text-[#03326b]/50">
+                    <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.08em] text-[#1E2A24]/50">
                       Private Label
                     </span>
 
@@ -302,10 +302,10 @@ export default function OemOdmPage() {
                 className={[
                   "relative overflow-hidden",
                   "rounded-[34px]",
-                  "bg-[#ffa412]",
+                  "bg-[#F59E0B]",
                   "px-6 py-11",
                   "text-center",
-                  "shadow-[0_28px_70px_rgba(255,164,18,0.18)]",
+                  "shadow-[0_28px_70px_rgba(245,158,11,0.18)]",
                   "sm:px-10 sm:py-14",
                 ].join(" ")}
               >
@@ -324,7 +324,7 @@ export default function OemOdmPage() {
 
                 <div className="relative">
 
-                  <p className="text-[9px] font-extrabold uppercase tracking-[0.25em] text-[#03326b]/55">
+                  <p className="text-[9px] font-extrabold uppercase tracking-[0.25em] text-[#1E2A24]/55">
                     Start Your Project
                   </p>
 
@@ -338,14 +338,14 @@ export default function OemOdmPage() {
                       "font-extrabold",
                       "leading-[0.98]",
                       "tracking-[-0.055em]",
-                      "text-[#03326b]",
+                      "text-[#1E2A24]",
                     ].join(" ")}
                   >
                     Ready to bring your design to life?
                   </h2>
 
 
-                  <p className="mx-auto mt-5 max-w-[620px] text-[14px] font-medium leading-7 text-[#03326b]/65 sm:text-[15px]">
+                  <p className="mx-auto mt-5 max-w-[620px] text-[14px] font-medium leading-7 text-[#1E2A24]/65 sm:text-[15px]">
                     Send us your sketches, samples or product
                     specifications. Our team will help define the
                     right OEM, ODM or private-label path.
@@ -360,15 +360,15 @@ export default function OemOdmPage() {
                       "items-center justify-center",
                       "gap-2",
                       "rounded-full",
-                      "bg-[#03326b]",
+                      "bg-[#1E2A24]",
                       "px-7 py-3.5",
                       "text-[13px]",
                       "font-extrabold",
                       "text-white",
-                      "shadow-[0_16px_38px_rgba(3,50,107,0.22)]",
+                      "shadow-[0_16px_38px_rgba(30,42,36,0.22)]",
                       "transition duration-200",
                       "hover:-translate-y-1",
-                      "hover:bg-[#022858]",
+                      "hover:bg-[#0F2F24]",
                     ].join(" ")}
                   >
                     Start your project

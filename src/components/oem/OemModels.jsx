@@ -26,13 +26,13 @@ function SectionLabel({
   return (
     <div className="flex items-center justify-center gap-3">
 
-      <span className="h-px w-9 bg-[#ffa412]/70" />
+      <span className="h-px w-9 bg-[#F59E0B]/70" />
 
-      <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#e89400] sm:text-[11px]">
+      <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#D97706] sm:text-[11px]">
         {children}
       </p>
 
-      <span className="h-px w-9 bg-[#ffa412]/70" />
+      <span className="h-px w-9 bg-[#F59E0B]/70" />
 
     </div>
   );
@@ -52,8 +52,8 @@ function StatCard({
         "px-5 py-5",
         "sm:px-6",
         highlighted
-          ? "border-[#ffa412]/55 bg-[#fff8ea]"
-          : "border-[#03326b]/10 bg-white",
+          ? "border-[#F59E0B]/55 bg-[#fff8ea]"
+          : "border-[#1E2A24]/10 bg-white",
       ].join(" ")}
     >
 
@@ -65,15 +65,15 @@ function StatCard({
           "uppercase",
           "tracking-[0.12em]",
           highlighted
-            ? "text-[#e89400]"
-            : "text-[#03326b]/45",
+            ? "text-[#D97706]"
+            : "text-[#1E2A24]/45",
         ].join(" ")}
       >
         {label}
       </span>
 
 
-      <strong className="mt-2 block text-[15px] font-extrabold leading-6 tracking-[-0.02em] text-[#03326b] sm:text-[16px]">
+      <strong className="mt-2 block text-[15px] font-extrabold leading-6 tracking-[-0.02em] text-[#1E2A24] sm:text-[16px]">
         {value}
       </strong>
 
@@ -129,14 +129,14 @@ export default function OemModels() {
                 "font-extrabold",
                 "leading-[0.98]",
                 "tracking-[-0.055em]",
-                "text-[#03326b]",
+                "text-[#1E2A24]",
               ].join(" ")}
             >
               Choose your manufacturing path
             </h2>
 
 
-            <p className="mx-auto mt-5 max-w-[720px] text-pretty text-[15px] leading-7 text-[#03326b]/55 sm:text-[17px] sm:leading-8">
+            <p className="mx-auto mt-5 max-w-[720px] text-pretty text-[15px] leading-7 text-[#1E2A24]/55 sm:text-[17px] sm:leading-8">
               Every brand is different. Pick the model that fits your needs -
               from full custom production to quick private label.
             </p>
@@ -180,16 +180,16 @@ export default function OemModels() {
                       "transition duration-300",
                       active
                         ? [
-                            "border-2 border-[#ffa412]",
-                            "bg-[#fffaf3]",
-                            "shadow-[0_18px_44px_rgba(255,164,18,0.14)]",
+                            "border-2 border-[#F59E0B]",
+                            "bg-[#FAF8F5]",
+                            "shadow-[0_18px_44px_rgba(245,158,11,0.14)]",
                           ].join(" ")
                         : [
-                            "border-[#03326b]/10",
+                            "border-[#1E2A24]/10",
                             "bg-white",
                             "hover:-translate-y-1",
-                            "hover:border-[#ffa412]/60",
-                            "hover:shadow-[0_18px_40px_rgba(3,50,107,0.06)]",
+                            "hover:border-[#F59E0B]/60",
+                            "hover:shadow-[0_18px_40px_rgba(30,42,36,0.06)]",
                           ].join(" "),
                     ].join(" ")}
                   >
@@ -201,8 +201,8 @@ export default function OemModels() {
                         "rounded-full",
                         "transition duration-300",
                         active
-                          ? "bg-[#ffa412] text-[#03326b]"
-                          : "bg-[#ffa412]/12 text-[#e89400]",
+                          ? "bg-[#F59E0B] text-[#1E2A24]"
+                          : "bg-[#F59E0B]/12 text-[#D97706]",
                       ].join(" ")}
                     >
                       <SiteIcon
@@ -215,17 +215,17 @@ export default function OemModels() {
 
                     <div className="mt-auto pt-5">
 
-                      <p className="text-[10px] font-extrabold uppercase tracking-[0.13em] text-[#03326b]/45">
+                      <p className="text-[10px] font-extrabold uppercase tracking-[0.13em] text-[#1E2A24]/45">
                         {item.eyebrow}
                       </p>
 
 
-                      <strong className="mt-1.5 block text-[18px] font-extrabold leading-tight tracking-[-0.035em] text-[#03326b] sm:text-[20px]">
+                      <strong className="mt-1.5 block text-[18px] font-extrabold leading-tight tracking-[-0.035em] text-[#1E2A24] sm:text-[20px]">
                         {item.title}
                       </strong>
 
 
-                      <small className="mt-1.5 block text-[12px] font-medium leading-5 text-[#03326b]/55">
+                      <small className="mt-1.5 block text-[12px] font-medium leading-5 text-[#1E2A24]/55">
                         {item.subtitle}
                       </small>
 
@@ -254,10 +254,10 @@ export default function OemModels() {
               "mt-7",
               "overflow-hidden",
               "rounded-[32px]",
-              "border border-[#03326b]/10",
+              "border border-[#1E2A24]/10",
               "bg-[#fcfdfc]",
               "p-6",
-              "shadow-[0_20px_55px_rgba(3,50,107,0.065)]",
+              "shadow-[0_20px_55px_rgba(30,42,36,0.065)]",
               "sm:p-8",
               "lg:grid",
               "lg:grid-cols-[1.08fr_.92fr]",
@@ -275,9 +275,9 @@ export default function OemModels() {
                   "flex h-14 w-14",
                   "items-center justify-center",
                   "rounded-full",
-                  "bg-[#ffa412]",
-                  "text-[#03326b]",
-                  "shadow-[0_13px_30px_rgba(255,164,18,0.26)]",
+                  "bg-[#F59E0B]",
+                  "text-[#1E2A24]",
+                  "shadow-[0_13px_30px_rgba(245,158,11,0.26)]",
                 ].join(" ")}
               >
                 <SiteIcon
@@ -292,17 +292,17 @@ export default function OemModels() {
               </span>
 
 
-              <p className="mt-6 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#e89400]">
+              <p className="mt-6 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#D97706]">
                 {activeModel.eyebrow}
               </p>
 
 
-              <h3 className="mt-2 text-[clamp(2rem,4vw,3rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-[#03326b]">
+              <h3 className="mt-2 text-[clamp(2rem,4vw,3rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-[#1E2A24]">
                 {activeModel.title}
               </h3>
 
 
-              <p className="mt-5 max-w-[620px] text-[14px] leading-7 text-[#03326b]/60 sm:text-[15px]">
+              <p className="mt-5 max-w-[620px] text-[14px] leading-7 text-[#1E2A24]/60 sm:text-[15px]">
                 {activeModel.description}
               </p>
 
@@ -314,10 +314,10 @@ export default function OemModels() {
 
                     <div
                       key={point}
-                      className="flex items-start gap-3 text-[13px] font-semibold leading-6 text-[#03326b]/70"
+                      className="flex items-start gap-3 text-[13px] font-semibold leading-6 text-[#1E2A24]/70"
                     >
 
-                      <span className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ffa412]/18 text-[#e89400]">
+                      <span className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#F59E0B]/18 text-[#D97706]">
                         <SiteIcon
                           name="check"
                           size={12}
@@ -380,15 +380,15 @@ export default function OemModels() {
                   "items-center justify-center",
                   "gap-2",
                   "rounded-full",
-                  "bg-[#ffa412]",
+                  "bg-[#F59E0B]",
                   "px-6 py-3.5",
                   "text-[13px]",
                   "font-extrabold",
-                  "text-[#03326b]",
-                  "shadow-[0_14px_30px_rgba(255,164,18,0.22)]",
+                  "text-[#1E2A24]",
+                  "shadow-[0_14px_30px_rgba(245,158,11,0.22)]",
                   "transition duration-200",
                   "hover:-translate-y-0.5",
-                  "hover:bg-[#e89400]",
+                  "hover:bg-[#D97706]",
                   "lg:col-span-2",
                 ].join(" ")}
               >

@@ -7,6 +7,27 @@
 
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Lexend Variable", "Lexend", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: #FFF8E8;
+  --color-brand-100: #FDECC8;
+  --color-brand-200: #FBD58B;
+  --color-brand-300: #F8C14A;
+  --color-brand-400: #F7AD24;
+  --color-brand-500: #F59E0B;
+  --color-brand-600: #D97706;
+  --color-brand-700: #D97706;
+
+  --color-ink: #1E2A24;
+  --color-navy: #1E2A24;
+  --color-navy-dark: #0F2F24;
+  --color-leaf: #3D5245;
+  --color-cream: #FAF8F5;
+  --color-muted: #6A645D;
+  --color-card: #F4F1EA;
+}
+
 @import "./tokens.css";
 @import "./core.css";
 
@@ -28,3 +49,27 @@
 @import "./pages/product-detail.css";
 
 @import "./layout/ios-nav-fix.css";
+/* VINECO CLIENT FONT GUARD START */
+html,
+body,
+#root {
+  font-family:
+    "Lexend Variable",
+    "Lexend",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+
+body {
+  background: #FAF8F5;
+  color: #1E2A24;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+/* VINECO CLIENT FONT GUARD END */

@@ -287,7 +287,7 @@ export default function SampleModal() {
 
           <button
             type="submit"
-            className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-brand-500 text-sm font-extrabold text-ink shadow-[0_12px_30px_rgba(255,164,18,0.22)] transition hover:bg-brand-600"
+            className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-brand-500 text-sm font-extrabold text-ink shadow-[0_12px_30px_rgba(245,158,11,0.22)] transition hover:bg-brand-600"
           >
             Send sample request
             <SiteIcon
