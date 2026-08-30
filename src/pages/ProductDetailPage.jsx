@@ -1,4 +1,3 @@
-
 import {
   useMemo,
   useState,
@@ -13,141 +12,509 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import FloatingContactDock from "../components/layout/FloatingContactDock";
 
-import {
-  productCatalog,
-} from "../data/productCatalog";
+import Reveal from "../components/ui/Reveal";
+import SiteIcon from "../components/ui/SiteIcon";
+
+import { productCatalog } from "../data/productCatalog";
 
 
-function resolveImage(product) {
-  if (!product) return "";
+/* ==========================================================
+   IMAGE
+========================================================== */
 
-  if (typeof product.image === "string") {
-    return product.image;
-  }
-
-  if (typeof product.thumbnail === "string") {
-    return product.thumbnail;
-  }
-
-  if (typeof product.cover === "string") {
-    return product.cover;
-  }
-
-  if (
-    Array.isArray(product.images) &&
-    product.images.length
-  ) {
-    const first = product.images[0];
-
-    if (typeof first === "string") {
-      return first;
-    }
-
-    if (first && typeof first === "object") {
-      return (
-        first.src ||
-        first.url ||
-        first.image ||
-        ""
-      );
-    }
-  }
-
-  return "";
-}
-
-
-function ProductVisual({
+function ProductImage({
   src,
   alt,
-  label,
+  contain = true,
+  eager = false,
+  className = "",
 }) {
   const [failed, setFailed] =
     useState(false);
 
   if (!src || failed) {
     return (
-      <div className="pd3-image-fallback">
+      <div className="flex h-full w-full items-center justify-center bg-[#F4F1EA] p-8 text-center">
 
-        <span>
-          VINECO
-        </span>
+        <div>
+          <strong className="block text-2xl font-extrabold text-[#0F2F24]">
+            VinEco
+          </strong>
 
-        <strong>
-          {label || "NATURAL PET PRODUCT"}
-        </strong>
-
-        <small>
-          Product visual
-        </small>
+          <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.18em] text-[#D97706]">
+            Product Visual
+          </span>
+        </div>
 
       </div>
     );
   }
 
+
   return (
     <img
       src={src}
       alt={alt || ""}
-      loading="lazy"
+      loading={eager ? "eager" : "lazy"}
       decoding="async"
-      onError={() =>
-        setFailed(true)
-      }
+      onError={() => setFailed(true)}
+      className={[
+        "block h-full w-full",
+
+        contain
+          ? "object-contain"
+          : "object-cover object-center",
+
+        className,
+      ].join(" ")}
     />
   );
 }
 
 
-const whyItems = [
-  {
-    number: "01",
-    title: "Natural Material Focus",
-    text:
-      "Built around natural-material product direction for modern pet brands.",
-  },
-  {
-    number: "02",
-    title: "OEM / ODM Flexibility",
-    text:
-      "Discuss sampling, customization, private labeling and packaging in one workflow.",
-  },
-  {
-    number: "03",
-    title: "Craft & Finishing",
-    text:
-      "Product preparation and finishing help create a stronger final presentation.",
-  },
-];
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+function Kicker({
+  children,
+  light = false,
+}) {
+  return (
+    <p
+      className={[
+        "text-[10px] font-extrabold uppercase tracking-[0.2em]",
+        light
+          ? "text-[#F59E0B]"
+          : "text-[#D97706]",
+      ].join(" ")}
+    >
+      {children}
+    </p>
+  );
+}
 
 
-const faq = [
-  {
-    q: "Can I request a free sample?",
-    a:
-      "Sample requirements can be discussed directly with VinEco through the contact page.",
-  },
-  {
-    q: "Can I customize this product?",
-    a:
-      "Customization depends on the selected product and project requirements. OEM, ODM and private-label options can be discussed.",
-  },
-  {
-    q: "Can I use my own branding?",
-    a:
-      "Private-label, packaging, labels and suitable branding options can be discussed with VinEco.",
-  },
-  {
-    q: "How do I start an OEM / ODM project?",
-    a:
-      "Send your product references, specifications, target market and packaging direction to VinEco.",
-  },
-];
+/* ==========================================================
+   BENEFIT
+========================================================== */
 
+function BenefitCard({
+  item,
+  index,
+}) {
+  return (
+    <Reveal
+      variant="up"
+      delay={index * 70}
+      className="h-full"
+    >
+      <article
+        className="
+          flex
+          h-full
+          flex-col
+          rounded-[22px]
+          border
+          border-[#1E2A24]/10
+          bg-white
+          p-5
+
+          sm:p-6
+        "
+      >
+        <span
+          className="
+            flex
+            h-9
+            w-9
+            items-center
+            justify-center
+            rounded-full
+            bg-[#FFF1D2]
+            text-[10px]
+            font-extrabold
+            text-[#D97706]
+          "
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+
+        <h3
+          className="
+            mt-7
+            text-[21px]
+            font-extrabold
+            leading-[1.05]
+            tracking-[-0.03em]
+            text-[#0F2F24]
+          "
+        >
+          {item.title}
+        </h3>
+
+
+        <p
+          className="
+            mt-3
+            text-[14px]
+            font-medium
+            leading-7
+            text-[#5F625E]
+          "
+        >
+          {item.text}
+        </p>
+
+      </article>
+    </Reveal>
+  );
+}
+
+
+/* ==========================================================
+   GALLERY
+========================================================== */
+
+function ProductGallery({
+  images,
+}) {
+  if (!images?.length) {
+    return null;
+  }
+
+  return (
+    <div
+      className={[
+        "grid gap-4",
+        images.length > 1
+          ? "lg:grid-cols-[1.05fr_.95fr]"
+          : "mx-auto max-w-[760px]",
+      ].join(" ")}
+    >
+      {images.map(
+        (image, index) => (
+          <Reveal
+            key={`${image.src}-${index}`}
+            variant="up"
+            delay={index * 70}
+            className="h-full"
+          >
+            <figure
+              className="
+                flex
+                h-full
+                flex-col
+                overflow-hidden
+                rounded-[24px]
+                border
+                border-[#1E2A24]/10
+                bg-white
+              "
+            >
+              <div
+                className="
+                  flex
+                  min-h-[280px]
+                  flex-1
+                  items-center
+                  justify-center
+                  overflow-hidden
+                  bg-[#F4F1EA]
+                  p-3
+
+                  sm:min-h-[360px]
+                  sm:p-5
+                "
+              >
+                <ProductImage
+                  src={image.src}
+                  alt={image.alt}
+                  contain={image.contain}
+                />
+              </div>
+
+
+              {image.label && (
+                <figcaption
+                  className="
+                    border-t
+                    border-[#1E2A24]/10
+                    px-5
+                    py-4
+                    text-[11px]
+                    font-bold
+                    text-[#5F625E]
+                  "
+                >
+                  {image.label}
+                </figcaption>
+              )}
+
+            </figure>
+          </Reveal>
+        ),
+      )}
+    </div>
+  );
+}
+
+
+/* ==========================================================
+   ROPE DESIGN
+========================================================== */
+
+function RopeDesignCard({
+  item,
+  index,
+}) {
+  const wide =
+    index === 4;
+
+  return (
+    <Reveal
+      variant="up"
+      delay={index * 55}
+      className={[
+        "h-full",
+        wide
+          ? "lg:col-span-2"
+          : "",
+      ].join(" ")}
+    >
+      <article
+        className={[
+          "group grid h-full overflow-hidden",
+          "rounded-[24px]",
+          "border border-[#1E2A24]/10",
+          "bg-white",
+
+          "transition-all duration-300",
+          "hover:border-[#F59E0B]/60",
+          "hover:shadow-[0_18px_46px_rgba(30,42,36,0.08)]",
+
+          wide
+            ? "lg:grid-cols-[340px_1fr]"
+            : "sm:grid-cols-[210px_1fr]",
+        ].join(" ")}
+      >
+        {/* IMAGE */}
+        <div
+          className="
+            aspect-[4/3]
+            overflow-hidden
+            bg-[#F4F1EA]
+
+            sm:aspect-auto
+            sm:min-h-[280px]
+          "
+        >
+          <ProductImage
+            src={item.image}
+            alt={item.name}
+            contain
+            className="p-4 sm:p-5"
+          />
+        </div>
+
+
+        {/* COPY */}
+        <div
+          className="
+            flex
+            min-w-0
+            flex-col
+            justify-center
+            p-5
+
+            sm:p-6
+          "
+        >
+
+          <div className="flex items-center gap-3">
+
+            <span
+              className="
+                flex
+                h-9
+                w-9
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-[#F59E0B]
+                text-[10px]
+                font-extrabold
+                text-[#0F2F24]
+              "
+            >
+              {item.number}
+            </span>
+
+            <Kicker>
+              Coffee Wood + Rope
+            </Kicker>
+
+          </div>
+
+
+          <h3
+            className="
+              mt-4
+              text-[22px]
+              font-extrabold
+              leading-[1.05]
+              tracking-[-0.035em]
+              text-[#0F2F24]
+
+              sm:text-[24px]
+            "
+          >
+            {item.name}
+          </h3>
+
+
+          <p
+            className="
+              mt-4
+              text-[13px]
+              font-medium
+              leading-6
+              text-[#5F625E]
+
+              sm:text-[14px]
+            "
+          >
+            <strong className="font-extrabold text-[#0F2F24]">
+              Design:
+            </strong>{" "}
+
+            {item.design ||
+              item.description}
+          </p>
+
+        </div>
+
+      </article>
+    </Reveal>
+  );
+}
+
+
+/* ==========================================================
+   RELATED PRODUCT
+========================================================== */
+
+function RelatedProduct({
+  item,
+  index,
+}) {
+  return (
+    <Reveal
+      variant="up"
+      delay={index * 70}
+      className="h-full"
+    >
+      <Link
+        to={`/products/${item.slug}`}
+        className="
+          group
+          grid
+          h-full
+          overflow-hidden
+          rounded-[24px]
+          border
+          border-white/10
+          bg-white/[0.06]
+
+          transition
+          duration-300
+
+          hover:border-[#F59E0B]/50
+
+          sm:grid-cols-[190px_1fr]
+        "
+      >
+        <div
+          className="
+            aspect-[4/3]
+            overflow-hidden
+            bg-white
+
+            sm:aspect-auto
+          "
+        >
+          <ProductImage
+            src={item.image}
+            alt={item.name}
+            contain
+            className="p-4"
+          />
+        </div>
+
+
+        <div
+          className="
+            flex
+            flex-col
+            justify-center
+            p-5
+          "
+        >
+          <Kicker light>
+            {item.eyebrow}
+          </Kicker>
+
+
+          <h3
+            className="
+              mt-2
+              text-[20px]
+              font-extrabold
+              leading-[1.06]
+              tracking-[-0.03em]
+              text-white
+            "
+          >
+            {item.name}
+          </h3>
+
+
+          <span
+            className="
+              mt-5
+              inline-flex
+              items-center
+              gap-2
+              text-[12px]
+              font-extrabold
+              text-[#F59E0B]
+            "
+          >
+            View product
+
+            <SiteIcon
+              name="arrow"
+              size={14}
+            />
+          </span>
+
+        </div>
+      </Link>
+    </Reveal>
+  );
+}
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
 
 export default function ProductDetailPage() {
   const { slug } =
     useParams();
+
 
   const product =
     useMemo(
@@ -155,24 +522,65 @@ export default function ProductDetailPage() {
         productCatalog.find(
           (item) =>
             item.slug === slug,
-        ) ||
-        productCatalog[0],
+        ),
       [slug],
     );
+
 
   if (!product) {
     return (
       <>
         <Header />
 
-        <main className="pd3-not-found">
-          <h1>
-            Product not found
-          </h1>
+        <main
+          className="
+            flex
+            min-h-[65vh]
+            items-center
+            justify-center
+            bg-[#FAF8F5]
+            px-4
+            text-center
+          "
+        >
+          <div>
 
-          <Link to="/products">
-            View products
-          </Link>
+            <Kicker>
+              VinEco Products
+            </Kicker>
+
+            <h1
+              className="
+                mt-3
+                text-4xl
+                font-extrabold
+                tracking-[-0.04em]
+                text-[#0F2F24]
+              "
+            >
+              Product not found
+            </h1>
+
+
+            <Link
+              to="/products"
+              className="
+                mt-6
+                inline-flex
+                min-h-[48px]
+                items-center
+                rounded-[14px]
+                bg-[#F59E0B]
+                px-6
+                text-sm
+                font-extrabold
+                text-[#0F2F24]
+              "
+            >
+              View products
+            </Link>
+
+          </div>
         </main>
 
         <Footer />
@@ -180,627 +588,778 @@ export default function ProductDetailPage() {
     );
   }
 
-  const mainImage =
-    resolveImage(product);
 
   const related =
     productCatalog
       .filter(
         (item) =>
-          item.slug !== product.slug,
+          item.slug !==
+          product.slug,
       )
-      .slice(0, 6);
+      .slice(0, 2);
 
-  const description =
-    product.description ||
-    product.shortDescription ||
-    "Natural pet product developed for distributors, pet brands and private-label partners.";
+
+  const displayName =
+    product.fullName ||
+    product.name;
+
 
   return (
     <>
       <Header />
 
-      <main className="pd3">
-
-        {/* HERO */}
-
-        <section className="pd3-hero">
-
-          <div className="pd3-shell">
-
-            <div className="pd3-hero-meta">
-
-              <span>
-                VINECO PRODUCT
-              </span>
-
-              <span>
-                MADE IN VIETNAM
-              </span>
-
-            </div>
-
-
-            <div className="pd3-hero-grid">
-
-              <div className="pd3-hero-copy">
-
-                <p className="pd3-kicker">
-                  NATURAL PET PRODUCTS
-                </p>
-
-                <h1>
-                  {product.name}
-                </h1>
-
-                <p className="pd3-lead">
-                  {description}
-                </p>
-
-
-                <div className="pd3-actions">
-
-                  <Link
-                    to="/contact"
-                    className="pd3-btn pd3-btn-dark"
-                  >
-                    Request Sample
-                  </Link>
-
-                  <Link
-                    to="/oem-odm"
-                    className="pd3-btn pd3-btn-light"
-                  >
-                    OEM / ODM
-                  </Link>
-
-                </div>
-
-
-                <div className="pd3-tags">
-
-                  <span>
-                    NATURAL
-                  </span>
-
-                  <span>
-                    PRIVATE LABEL
-                  </span>
-
-                  <span>
-                    OEM / ODM
-                  </span>
-
-                </div>
-
-              </div>
-
-
-              <div className="pd3-hero-media">
-
-                <div className="pd3-main-image">
-
-                  <ProductVisual
-                    src={mainImage}
-                    alt={product.name}
-                    label={product.name}
-                  />
-
-                  <span className="pd3-image-label">
-                    PRODUCT
-                  </span>
-
-                </div>
-
-
-                <div className="pd3-mini-card">
-
-                  <strong>
-                    100%
-                  </strong>
-
-                  <span>
-                    NATURAL
-                    <br />
-                    PRODUCT
-                  </span>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* RELATED PRODUCTS */}
-
-        <section className="pd3-products">
-
-          <div className="pd3-shell">
-
-            <p className="pd3-kicker">
-              PRODUCT FAMILY
-            </p>
-
-            <div className="pd3-section-head">
-
-              <h2>
-                Explore more
-                <span>
-                  VinEco products.
-                </span>
-              </h2>
-
-            </div>
-
-
-            <div className="pd3-product-track">
-
-              {related.map(
-                (item) => (
-                  <Link
-                    key={item.slug}
-                    to={
-                      "/products/" +
-                      item.slug
-                    }
-                    className="pd3-product-card"
-                  >
-
-                    <div className="pd3-product-card-image">
-
-                      <ProductVisual
-                        src={
-                          resolveImage(
-                            item,
-                          )
-                        }
-                        alt={item.name}
-                        label={item.name}
-                      />
-
-                    </div>
-
-                    <strong>
-                      {item.name}
-                    </strong>
-
-                    <small>
-                      View product →
-                    </small>
-
-                  </Link>
-                ),
-              )}
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* SCALE */}
-
-        <section className="pd3-scale">
-
-          <div className="pd3-shell">
-
-            <div className="pd3-scale-box">
-
-              <div>
-
-                <p className="pd3-kicker">
-                  B2B · OEM · ODM
-                </p>
-
-                <h2>
-                  Ready to scale
-                  <span>
-                    your product line?
-                  </span>
-                </h2>
-
-                <p>
-                  Turn a VinEco product
-                  into a branded collection
-                  with product, packaging and
-                  private-label support.
-                </p>
-
-              </div>
-
-
+      <main className="overflow-hidden bg-[#FAF8F5]">
+
+        {/* ==================================================
+            HERO
+        ================================================== */}
+
+        <section className="py-7 sm:py-10 lg:py-14">
+          <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+
+            {/* META */}
+            <div
+              className="
+                mb-7
+                flex
+                items-center
+                justify-between
+                border-b
+                border-[#1E2A24]/10
+                pb-3
+              "
+            >
               <Link
-                to="/contact"
-                className="pd3-btn pd3-btn-light"
+                to="/products"
+                className="
+                  text-[9px]
+                  font-extrabold
+                  uppercase
+                  tracking-[0.18em]
+                  text-[#D97706]
+                "
               >
-                Start a project
+                ← Product Collection
               </Link>
 
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* WHY */}
-
-        <section className="pd3-why">
-
-          <div className="pd3-shell">
-
-            <div className="pd3-section-head">
-
-              <p className="pd3-kicker">
-                WHY VINECO?
-              </p>
-
-              <h2>
-                Product support
-                <span>
-                  beyond manufacturing.
-                </span>
-              </h2>
-
+              <span
+                className="
+                  text-[9px]
+                  font-bold
+                  uppercase
+                  tracking-[0.18em]
+                  text-[#6A645D]
+                "
+              >
+                Made in Vietnam
+              </span>
             </div>
 
 
-            <div className="pd3-why-grid">
+            <div
+              className="
+                grid
+                items-center
+                gap-8
 
-              {whyItems.map(
-                (item) => (
-                  <article
-                    key={item.number}
-                    className="pd3-why-card"
+                lg:grid-cols-[.9fr_1.1fr]
+                lg:gap-14
+              "
+            >
+
+              {/* COPY */}
+              <Reveal variant="left">
+
+                <div>
+
+                  <Kicker>
+                    {product.eyebrow}
+                  </Kicker>
+
+
+                  <h1
+                    className="
+                      mt-3
+                      max-w-[700px]
+                      text-[clamp(2.7rem,5.5vw,5.8rem)]
+                      font-extrabold
+                      leading-[0.91]
+                      tracking-[-0.06em]
+                      text-[#0F2F24]
+                    "
                   >
-
-                    <span>
-                      {item.number}
-                    </span>
-
-                    <h3>
-                      {item.title}
-                    </h3>
-
-                    <p>
-                      {item.text}
-                    </p>
-
-                  </article>
-                ),
-              )}
-
-            </div>
-
-          </div>
-
-        </section>
+                    {displayName}
+                  </h1>
 
 
-        {/* EDITORIAL FEATURES */}
+                  <p
+                    className="
+                      mt-6
+                      max-w-[610px]
+                      text-[15px]
+                      font-medium
+                      leading-7
+                      text-[#5F625E]
 
-        <section className="pd3-story">
-
-          <div className="pd3-shell">
-
-            <div className="pd3-section-head">
-
-              <p className="pd3-kicker">
-                PRODUCT STORY
-              </p>
-
-              <h2>
-                What makes
-                <span>
-                  this product special?
-                </span>
-              </h2>
-
-            </div>
+                      sm:text-[16px]
+                    "
+                  >
+                    {product.description}
+                  </p>
 
 
-            <article className="pd3-feature">
+                  {/* QUICK INFO */}
+                  <div
+                    className="
+                      mt-7
+                      grid
+                      grid-cols-2
+                      gap-2
+                    "
+                  >
+                    {product.specifications
+                      ?.slice(0, 2)
+                      .map((spec) => (
+                        <div
+                          key={spec.label}
+                          className="
+                            rounded-[16px]
+                            border
+                            border-[#1E2A24]/10
+                            bg-white
+                            p-4
+                          "
+                        >
+                          <span
+                            className="
+                              text-[9px]
+                              font-bold
+                              uppercase
+                              tracking-[0.14em]
+                              text-[#D97706]
+                            "
+                          >
+                            {spec.label}
+                          </span>
 
-              <div className="pd3-feature-copy">
+                          <p
+                            className="
+                              mt-1.5
+                              text-[11px]
+                              font-semibold
+                              leading-5
+                              text-[#0F2F24]
 
-                <strong className="pd3-big-number">
-                  01
-                </strong>
-
-                <h3>
-                  Natural-material
-                  product direction.
-                </h3>
-
-                <p>
-                  Natural materials provide
-                  a distinctive visual and
-                  tactile identity for
-                  modern pet products.
-                </p>
-
-              </div>
-
-              <div className="pd3-feature-visual pd3-feature-cream">
-
-                <ProductVisual
-                  src={mainImage}
-                  label={product.name}
-                />
-
-              </div>
-
-            </article>
+                              sm:text-[12px]
+                            "
+                          >
+                            {spec.value}
+                          </p>
+                        </div>
+                      ))}
+                  </div>
 
 
-            <article className="pd3-feature pd3-feature-reverse">
+                  {/* ACTIONS */}
+                  <div
+                    className="
+                      mt-7
+                      flex
+                      flex-col
+                      gap-3
 
-              <div className="pd3-feature-copy">
+                      sm:flex-row
+                    "
+                  >
+                    <Link
+                      to="/contact"
+                      className="
+                        inline-flex
+                        min-h-[50px]
+                        items-center
+                        justify-center
+                        gap-2
+                        rounded-[14px]
+                        bg-[#F59E0B]
+                        px-7
+                        text-[14px]
+                        font-extrabold
+                        text-[#0F2F24]
 
-                <strong className="pd3-big-number">
-                  02
-                </strong>
+                        transition
+                        hover:bg-[#D97706]
+                      "
+                    >
+                      Request Sample
 
-                <h3>
-                  OEM & ODM
-                  flexibility.
-                </h3>
+                      <SiteIcon
+                        name="arrow"
+                        size={15}
+                      />
+                    </Link>
 
-                <p>
-                  Work with VinEco on
-                  sampling, product format,
-                  labels, packaging and
-                  private-label presentation.
-                </p>
 
-                <Link
-                  to="/oem-odm"
-                  className="pd3-text-link"
+                    <Link
+                      to="/oem-odm"
+                      className="
+                        inline-flex
+                        min-h-[50px]
+                        items-center
+                        justify-center
+                        rounded-[14px]
+                        border
+                        border-[#F59E0B]
+                        bg-white
+                        px-7
+                        text-[14px]
+                        font-bold
+                        text-[#0F2F24]
+
+                        transition
+                        hover:bg-[#FFF4DA]
+                      "
+                    >
+                      OEM / ODM
+                    </Link>
+                  </div>
+
+                </div>
+              </Reveal>
+
+
+              {/* IMAGE */}
+              <Reveal
+                variant="right"
+                delay={80}
+              >
+                <div
+                  className="
+                    relative
+                    overflow-hidden
+                    rounded-[28px]
+                    border
+                    border-[#1E2A24]/10
+                    bg-[#F4F1EA]
+                  "
                 >
-                  Explore OEM / ODM →
-                </Link>
+                  <div
+                    className="
+                      aspect-[4/3]
+                      p-3
 
-              </div>
-
-              <div className="pd3-feature-visual pd3-feature-orange">
-
-                <div className="pd3-poster">
-
-                  <span>
-                    YOUR BRAND.
-                  </span>
-
-                  <strong>
-                    OUR
-                    <br />
-                    MANUFACTURING.
-                  </strong>
-
-                </div>
-
-              </div>
-
-            </article>
+                      sm:p-5
+                    "
+                  >
+                    <ProductImage
+                      src={product.image}
+                      alt={product.name}
+                      contain
+                      eager
+                    />
+                  </div>
 
 
-            <article className="pd3-feature">
+                  <div
+                    className="
+                      absolute
+                      bottom-4
+                      left-4
+                      rounded-full
+                      bg-[#0F2F24]
+                      px-3
+                      py-2
+                      text-[9px]
+                      font-extrabold
+                      uppercase
+                      tracking-[0.14em]
+                      text-white
 
-              <div className="pd3-feature-copy">
-
-                <strong className="pd3-big-number">
-                  03
-                </strong>
-
-                <h3>
-                  Consistent finishing
-                  & presentation.
-                </h3>
-
-                <p>
-                  Product quality is not only
-                  about the raw material.
-                  Finishing and presentation
-                  shape the final customer
-                  experience.
-                </p>
-
-              </div>
-
-              <div className="pd3-feature-visual pd3-feature-blue">
-
-                <div className="pd3-poster pd3-poster-light">
-
-                  <span>
-                    VINECO
-                  </span>
-
-                  <strong>
-                    QUALITY
-                    <br />
-                    IN EVERY
-                    <br />
-                    DETAIL.
-                  </strong>
+                      sm:bottom-5
+                      sm:left-5
+                    "
+                  >
+                    VinEco Product
+                  </div>
 
                 </div>
+              </Reveal>
 
-              </div>
-
-            </article>
+            </div>
 
           </div>
-
         </section>
 
 
-        {/* QUALITY */}
+        {/* ==================================================
+            PRODUCT ESSENTIALS
+        ================================================== */}
 
-        <section className="pd3-quality">
+        <section className="py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
 
-          <div className="pd3-shell">
+            <Reveal>
 
-            <div className="pd3-quality-grid">
+              <div
+                className="
+                  grid
+                  gap-5
+                  border-b
+                  border-[#1E2A24]/10
+                  pb-7
 
-              <div>
+                  lg:grid-cols-[1fr_.75fr]
+                  lg:items-end
+                "
+              >
+                <div>
+                  <Kicker>
+                    Product Essentials
+                  </Kicker>
 
-                <p className="pd3-kicker">
-                  QUALITY PROCESS
+                  <h2
+                    className="
+                      mt-3
+                      text-[36px]
+                      font-extrabold
+                      leading-[0.98]
+                      tracking-[-0.05em]
+                      text-[#0F2F24]
+
+                      sm:text-[46px]
+                    "
+                  >
+                    Benefits & technical details.
+                  </h2>
+                </div>
+
+
+                <p
+                  className="
+                    max-w-[460px]
+                    text-[14px]
+                    font-medium
+                    leading-7
+                    text-[#5F625E]
+
+                    lg:justify-self-end
+                  "
+                >
+                  The core characteristics buyers need
+                  before moving into sampling, packaging
+                  and private-label development.
                 </p>
-
-                <h2>
-                  From product
-                  <span>
-                    to shipment.
-                  </span>
-                </h2>
 
               </div>
 
+            </Reveal>
 
-              <div className="pd3-quality-list">
 
-                {[
-                  "Material preparation",
-                  "Production follow-up",
-                  "Finishing review",
-                  "Packing preparation",
-                ].map(
-                  (text, index) => (
-                    <div key={text}>
+            <div
+              className="
+                mt-8
+                grid
+                gap-4
 
-                      <span>
-                        {
-                          String(
-                            index + 1,
-                          ).padStart(
-                            2,
-                            "0",
-                          )
-                        }
-                      </span>
+                lg:grid-cols-[1.1fr_.9fr]
+                lg:gap-5
+              "
+            >
 
-                      <strong>
-                        {text}
-                      </strong>
+              {/* BENEFITS */}
+              <div
+                className="
+                  grid
+                  gap-4
 
-                    </div>
+                  sm:grid-cols-2
+                "
+              >
+                {product.highlights?.map(
+                  (item, index) => (
+                    <BenefitCard
+                      key={item.title}
+                      item={item}
+                      index={index}
+                    />
                   ),
                 )}
-
               </div>
+
+
+              {/* SPECS */}
+              <Reveal
+                variant="right"
+                delay={80}
+                className="h-full"
+              >
+                <div
+                  className="
+                    flex
+                    h-full
+                    flex-col
+                    overflow-hidden
+                    rounded-[22px]
+                    bg-[#0F2F24]
+                    p-5
+                    text-white
+
+                    sm:p-7
+                  "
+                >
+
+                  <Kicker light>
+                    Specifications
+                  </Kicker>
+
+
+                  <h3
+                    className="
+                      mt-3
+                      text-[27px]
+                      font-extrabold
+                      tracking-[-0.04em]
+                      text-white
+                    "
+                  >
+                    Product details.
+                  </h3>
+
+
+                  <div className="mt-auto pt-8">
+
+                    {product.specifications?.map(
+                      (spec, index) => (
+                        <div
+                          key={spec.label}
+                          className={[
+                            "grid gap-2 py-4",
+
+                            index
+                              ? "border-t border-white/10"
+                              : "",
+                          ].join(" ")}
+                        >
+                          <span
+                            className="
+                              text-[10px]
+                              font-bold
+                              uppercase
+                              tracking-[0.13em]
+                              text-[#F59E0B]
+                            "
+                          >
+                            {spec.label}
+                          </span>
+
+                          <p
+                            className="
+                              text-[14px]
+                              font-medium
+                              leading-6
+                              text-white/75
+                            "
+                          >
+                            {spec.value}
+                          </p>
+                        </div>
+                      ),
+                    )}
+
+                  </div>
+                </div>
+              </Reveal>
 
             </div>
 
           </div>
-
         </section>
 
 
-        {/* COLLECTION */}
+        {/* ==================================================
+            PRODUCT REFERENCES
+        ================================================== */}
 
-        <section className="pd3-collection">
+        {product.productImages?.length > 0 && (
+          <section className="bg-[#F4F1EA] py-12 sm:py-16 lg:py-20">
+            <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
 
-          <div className="pd3-shell">
+              <Reveal>
+                <div className="mb-8 max-w-[680px]">
 
-            <div className="pd3-collection-box">
+                  <Kicker>
+                    Product Reference
+                  </Kicker>
 
-              <p className="pd3-kicker">
-                BUILD YOUR COLLECTION
-              </p>
+                  <h2
+                    className="
+                      mt-3
+                      text-[34px]
+                      font-extrabold
+                      leading-[1]
+                      tracking-[-0.045em]
+                      text-[#0F2F24]
 
-              <h2>
-                Your product.
-                <span>
-                  Your brand.
-                </span>
-                Our support.
+                      sm:text-[42px]
+                    "
+                  >
+                    Product, sizing & presentation.
+                  </h2>
+
+                </div>
+              </Reveal>
+
+
+              <ProductGallery
+                images={product.productImages}
+              />
+
+            </div>
+          </section>
+        )}
+
+
+        {/* ==================================================
+            ROPE DESIGNS
+        ================================================== */}
+
+        {product.variants?.length > 0 && (
+          <section className="py-14 sm:py-16 lg:py-20">
+            <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+
+              <Reveal>
+
+                <div
+                  className="
+                    grid
+                    gap-5
+                    border-b
+                    border-[#1E2A24]/10
+                    pb-8
+
+                    lg:grid-cols-[1fr_.75fr]
+                    lg:items-end
+                  "
+                >
+
+                  <div>
+                    <Kicker>
+                      Product Designs
+                    </Kicker>
+
+                    <h2
+                      className="
+                        mt-3
+                        max-w-[700px]
+                        text-[38px]
+                        font-extrabold
+                        leading-[0.96]
+                        tracking-[-0.05em]
+                        text-[#0F2F24]
+
+                        sm:text-[48px]
+                      "
+                    >
+                      Five rope configurations.
+                    </h2>
+                  </div>
+
+
+                  <p
+                    className="
+                      max-w-[470px]
+                      text-[14px]
+                      font-medium
+                      leading-7
+                      text-[#5F625E]
+
+                      lg:justify-self-end
+                    "
+                  >
+                    Different wood-and-rope structures
+                    give buyers multiple formats within
+                    one cohesive product family.
+                  </p>
+
+                </div>
+
+              </Reveal>
+
+
+              <div
+                className="
+                  mt-8
+                  grid
+                  gap-4
+
+                  lg:grid-cols-2
+                  lg:gap-5
+                "
+              >
+                {product.variants.map(
+                  (item, index) => (
+                    <RopeDesignCard
+                      key={item.id}
+                      item={item}
+                      index={index}
+                    />
+                  ),
+                )}
+              </div>
+
+            </div>
+          </section>
+        )}
+
+
+        {/* ==================================================
+            RELATED
+        ================================================== */}
+
+        <section className="bg-[#0F2F24] py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-8">
+
+            <Reveal>
+
+              <Kicker light>
+                Product Family
+              </Kicker>
+
+              <h2
+                className="
+                  mt-3
+                  max-w-[620px]
+                  text-[35px]
+                  font-extrabold
+                  leading-[0.98]
+                  tracking-[-0.045em]
+                  text-white
+
+                  sm:text-[44px]
+                "
+              >
+                Continue exploring VinEco.
               </h2>
 
+            </Reveal>
 
-              <div className="pd3-actions">
 
-                <Link
-                  to="/products"
-                  className="pd3-btn pd3-btn-light"
-                >
-                  View Products
-                </Link>
+            <div
+              className="
+                mt-8
+                grid
+                gap-4
+
+                lg:grid-cols-2
+              "
+            >
+              {related.map(
+                (item, index) => (
+                  <RelatedProduct
+                    key={item.slug}
+                    item={item}
+                    index={index}
+                  />
+                ),
+              )}
+            </div>
+
+          </div>
+        </section>
+
+
+        {/* ==================================================
+            CTA
+        ================================================== */}
+
+        <section className="py-14 sm:py-20">
+          <div className="mx-auto max-w-[1040px] px-4 sm:px-6">
+
+            <Reveal variant="zoom">
+
+              <div
+                className="
+                  grid
+                  gap-8
+                  rounded-[28px]
+                  bg-[#F59E0B]
+                  px-6
+                  py-10
+
+                  sm:px-9
+                  sm:py-12
+
+                  lg:grid-cols-[1fr_auto]
+                  lg:items-end
+                  lg:px-12
+                "
+              >
+
+                <div>
+
+                  <p
+                    className="
+                      text-[10px]
+                      font-extrabold
+                      uppercase
+                      tracking-[0.18em]
+                      text-[#0F2F24]/60
+                    "
+                  >
+                    OEM / ODM / Private Label
+                  </p>
+
+
+                  <h2
+                    className="
+                      mt-3
+                      max-w-[690px]
+                      text-[34px]
+                      font-extrabold
+                      leading-[0.98]
+                      tracking-[-0.05em]
+                      text-[#0F2F24]
+
+                      sm:text-[44px]
+                    "
+                  >
+                    Ready to develop this product
+                    for your brand?
+                  </h2>
+
+                </div>
+
 
                 <Link
                   to="/contact"
-                  className="pd3-btn pd3-btn-dark"
+                  className="
+                    inline-flex
+                    min-h-[52px]
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-[14px]
+                    bg-white
+                    px-7
+                    text-[14px]
+                    font-extrabold
+                    text-[#0F2F24]
+
+                    transition
+                    hover:-translate-y-0.5
+                  "
                 >
                   Contact VinEco
+
+                  <SiteIcon
+                    name="arrow"
+                    size={16}
+                  />
                 </Link>
 
               </div>
 
-            </div>
-
+            </Reveal>
           </div>
-
-        </section>
-
-
-        {/* FAQ */}
-
-        <section className="pd3-faq">
-
-          <div className="pd3-shell">
-
-            <div className="pd3-section-head">
-
-              <p className="pd3-kicker">
-                FAQ
-              </p>
-
-              <h2>
-                Frequently Asked
-                Questions
-              </h2>
-
-            </div>
-
-
-            <div className="pd3-faq-list">
-
-              {faq.map(
-                (item) => (
-                  <details
-                    key={item.q}
-                    className="pd3-faq-item"
-                  >
-
-                    <summary>
-
-                      <span>
-                        {item.q}
-                      </span>
-
-                      <strong>
-                        +
-                      </strong>
-
-                    </summary>
-
-                    <p>
-                      {item.a}
-                    </p>
-
-                  </details>
-                ),
-              )}
-
-            </div>
-
-          </div>
-
         </section>
 
       </main>
@@ -809,4 +1368,4 @@ export default function ProductDetailPage() {
       <FloatingContactDock />
     </>
   );
-}
+} 

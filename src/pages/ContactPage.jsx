@@ -6,1255 +6,561 @@ import GoogleMapEmbed from "../components/ui/GoogleMapEmbed";
 import Reveal from "../components/ui/Reveal";
 import SiteIcon from "../components/ui/SiteIcon";
 
-import {
-  projectData,
-} from "../data/projectData";
-
-import {
-  mapEmbedHtml,
-} from "../data/mapEmbed";
+import { projectData } from "../data/projectData";
+import { mapEmbedHtml } from "../data/mapEmbed";
 
 
-function HeroChip({
-  children,
-}) {
-  return (
-    <span
-      className={[
-        "inline-flex items-center",
-        "rounded-full",
-        "border border-[#1E2A24]/12",
-        "bg-white/24",
-        "px-3.5 py-2",
-        "text-[10px]",
-        "font-extrabold uppercase",
-        "tracking-[0.08em]",
-        "text-[#1E2A24]/70",
-        "backdrop-blur-sm",
-      ].join(" ")}
-    >
-      {children}
-    </span>
-  );
-}
-
-
-function InfoCard({
-  icon,
-  label,
-  title,
-  children,
-  href,
-  external = false,
-  featured = false,
-}) {
-  const content = href ? (
-    <a
-      href={href}
-      target={
-        external
-          ? "_blank"
-          : undefined
-      }
-      rel={
-        external
-          ? "noreferrer"
-          : undefined
-      }
-      className="transition hover:text-[#D97706]"
-    >
-      {children}
-    </a>
-  ) : (
-    children
-  );
-
-
+function ContactCard({ icon, eyebrow, title, children, dark = false }) {
   return (
     <article
       className={[
-        "group",
-        "relative overflow-hidden",
-        "rounded-[26px]",
-        "border",
-        "p-5",
-        "transition duration-300",
+        "rounded-[22px] border p-5 transition duration-300 sm:p-6",
         "hover:-translate-y-1",
-        "sm:p-6",
-        featured
-          ? [
-              "border-[#F59E0B]",
-              "bg-[#fff3d7]",
-              "shadow-[0_18px_45px_rgba(245,158,11,.14)]",
-            ].join(" ")
-          : [
-              "border-[#F59E0B]/30",
-              "bg-white",
-              "shadow-[0_15px_38px_rgba(30,42,36,.045)]",
-              "hover:border-[#F59E0B]/70",
-              "hover:shadow-[0_20px_46px_rgba(245,158,11,.10)]",
-            ].join(" "),
+        dark
+          ? "border-white/10 bg-[#0F2F24] text-white"
+          : "border-[#1E2A24]/10 bg-white text-[#1E2A24] hover:border-[#F59E0B]/60",
       ].join(" ")}
     >
-
-      <div
-        aria-hidden="true"
-        className={[
-          "pointer-events-none",
-          "absolute",
-          "-right-10 -top-10",
-          "h-28 w-28",
-          "rounded-full",
-          featured
-            ? "bg-[#F59E0B]/18"
-            : "bg-[#F59E0B]/8",
-        ].join(" ")}
-      />
-
-
-      <div className="relative flex gap-4">
-
+      <div className="flex items-start gap-4">
         <span
           className={[
-            "flex h-12 w-12",
-            "shrink-0",
-            "items-center justify-center",
-            "rounded-2xl",
-            "bg-[#F59E0B]",
-            "text-[#1E2A24]",
-            "shadow-[0_10px_24px_rgba(245,158,11,.22)]",
-            "transition-transform duration-300",
-            "group-hover:scale-105",
+            "flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px]",
+            dark
+              ? "bg-[#F59E0B] text-[#0F2F24]"
+              : "bg-[#FFF3D6] text-[#D97706]",
           ].join(" ")}
         >
-          <SiteIcon
-            name={icon}
-            size={20}
-            strokeWidth={2}
-          />
+          <SiteIcon name={icon} size={18} strokeWidth={2} />
         </span>
 
-
         <div className="min-w-0">
-
           <p
             className={[
-              "text-[9px]",
-              "font-extrabold uppercase",
-              "tracking-[0.18em]",
-              "text-[#D97706]",
+              "text-[8px] font-extrabold uppercase tracking-[0.18em]",
+              dark ? "text-[#F59E0B]" : "text-[#D97706]",
             ].join(" ")}
           >
-            {label}
+            {eyebrow}
           </p>
 
-
-          <h3
-            className={[
-              "mt-1",
-              "text-[17px]",
-              "font-extrabold",
-              "leading-tight",
-              "tracking-[-0.03em]",
-              "text-[#1E2A24]",
-            ].join(" ")}
-          >
+          <h3 className="mt-1.5 text-[17px] font-extrabold leading-tight tracking-[-0.03em]">
             {title}
           </h3>
 
-
-          <div className="mt-2 break-words text-[13px] font-medium leading-6 text-[#1E2A24]/65">
-            {content}
+          <div
+            className={[
+              "mt-2 break-words text-[12px] font-medium leading-6 sm:text-[13px]",
+              dark ? "text-white/65" : "text-[#5F625E]",
+            ].join(" ")}
+          >
+            {children}
           </div>
-
         </div>
-
       </div>
-
     </article>
   );
 }
 
 
 export default function ContactPage() {
+  const contact = projectData.contact;
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    const formData =
-      new FormData(
-        event.currentTarget,
-      );
+    const data = new FormData(event.currentTarget);
+    const name = data.get("name") || "";
+    const company = data.get("company") || "";
+    const email = data.get("email") || "";
+    const phone = data.get("phone") || "";
+    const interest = data.get("interest") || "";
+    const message = data.get("message") || "";
 
-    const name =
-      formData.get("name") || "";
+    const subject = encodeURIComponent(
+      `[VinEco Website] ${interest} - ${name}`,
+    );
 
-    const company =
-      formData.get("company") || "";
-
-    const email =
-      formData.get("email") || "";
-
-    const phone =
-      formData.get("phone") || "";
-
-    const interest =
-      formData.get("interest") || "";
-
-    const message =
-      formData.get("message") || "";
-
-
-    const subject =
-      encodeURIComponent(
-        `[VinEco Website] ${interest} - ${name}`,
-      );
-
-
-    const body =
-      encodeURIComponent(
-        [
-          `Full name: ${name}`,
-          `Company: ${company}`,
-          `Email: ${email}`,
-          `Phone / Zalo: ${phone}`,
-          `Interested in: ${interest}`,
-          "",
-          "Message:",
-          message,
-        ].join("\n"),
-      );
-
+    const body = encodeURIComponent(
+      [
+        `Full name: ${name}`,
+        `Company: ${company}`,
+        `Email: ${email}`,
+        `Phone / WhatsApp / Zalo: ${phone}`,
+        `Interested in: ${interest}`,
+        "",
+        "Message:",
+        message,
+      ].join("\n"),
+    );
 
     window.location.href =
-      `mailto:${projectData.contact.salesEmail}?subject=${subject}&body=${body}`;
+      `mailto:${contact.salesEmail}?subject=${subject}&body=${body}`;
   }
 
 
-  const fieldClass = [
-    "h-12 w-full",
-    "rounded-2xl",
-    "border border-[#F59E0B]/25",
-    "bg-[#fffdf8]",
-    "px-4",
-    "text-sm",
-    "text-[#1E2A24]",
-    "outline-none",
-    "transition duration-200",
-    "placeholder:text-[#1E2A24]/27",
+  const inputClass = [
+    "h-[50px] w-full rounded-[14px]",
+    "border border-[#1E2A24]/12 bg-[#FAF8F5]",
+    "px-4 text-[13px] font-medium text-[#1E2A24]",
+    "outline-none transition duration-200",
+    "placeholder:text-[#1E2A24]/30",
     "hover:border-[#F59E0B]/50",
-    "focus:border-[#F59E0B]",
-    "focus:bg-white",
-    "focus:ring-4",
-    "focus:ring-[#F59E0B]/12",
+    "focus:border-[#F59E0B] focus:bg-white",
+    "focus:ring-4 focus:ring-[#F59E0B]/10",
   ].join(" ");
 
 
   return (
     <>
-
       <Header />
-
 
       <main className="overflow-hidden bg-[#FAF8F5]">
 
+        {/* =================================================
+            HERO
+        ================================================= */}
 
-        {/* ==================================================
-            HERO - ORANGE FIRST
-        ================================================== */}
-
-        <section
-          className={[
-            "relative overflow-hidden",
-            "bg-[#F59E0B]",
-            "px-4",
-            "py-20",
-            "sm:px-6 sm:py-24",
-            "lg:px-8 lg:py-28",
-          ].join(" ")}
-        >
-
-          {/* DECOR */}
+        <section className="relative overflow-hidden bg-[#0F2F24] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <div
+            aria-hidden="true"
+            className="absolute -left-32 -top-32 h-[360px] w-[360px] rounded-full border-[70px] border-white/[0.025]"
+          />
 
           <div
             aria-hidden="true"
-            className={[
-              "pointer-events-none",
-              "absolute",
-              "-left-24 -top-24",
-              "h-[360px] w-[360px]",
-              "rounded-full",
-              "border-[70px]",
-              "border-white/14",
-            ].join(" ")}
+            className="absolute -bottom-40 right-[8%] h-[360px] w-[360px] rounded-full bg-[#F59E0B]/[0.04] blur-3xl"
           />
-
-
-          <div
-            aria-hidden="true"
-            className={[
-              "pointer-events-none",
-              "absolute",
-              "-bottom-36 right-[5%]",
-              "h-[420px] w-[420px]",
-              "rounded-full",
-              "bg-white/11",
-            ].join(" ")}
-          />
-
-
-          <div
-            aria-hidden="true"
-            className={[
-              "pointer-events-none",
-              "absolute",
-              "right-[18%] top-[20%]",
-              "h-48 w-48",
-              "rounded-full",
-              "bg-[#1E2A24]/8",
-              "blur-3xl",
-            ].join(" ")}
-          />
-
 
           <Reveal>
-
-            <div
-              className={[
-                "relative",
-                "mx-auto",
-                "max-w-[880px]",
-                "text-center",
-              ].join(" ")}
-            >
-
-
-              {/* EYEBROW */}
-
+            <div className="relative mx-auto max-w-[900px] text-center">
               <div className="flex items-center justify-center gap-3">
-
-                <span className="h-px w-10 bg-[#1E2A24]/35" />
-
-                <p
-                  className={[
-                    "text-[10px]",
-                    "font-extrabold uppercase",
-                    "tracking-[0.3em]",
-                    "text-[#1E2A24]/65",
-                  ].join(" ")}
-                >
+                <span className="h-px w-8 bg-[#F59E0B]" />
+                <p className="text-[9px] font-extrabold uppercase tracking-[0.3em] text-[#F59E0B] sm:text-[10px]">
                   Contact Us
                 </p>
-
-                <span className="h-px w-10 bg-[#1E2A24]/35" />
-
+                <span className="h-px w-8 bg-[#F59E0B]" />
               </div>
 
-
-              {/* TITLE */}
-
-              <h1
-                className={[
-                  "mt-5",
-                  "text-balance",
-                  "text-[clamp(3rem,7vw,5.6rem)]",
-                  "font-extrabold",
-                  "leading-[0.9]",
-                  "tracking-[-0.07em]",
-                  "text-[#1E2A24]",
-                ].join(" ")}
-              >
+              <h1 className="mx-auto mt-5 max-w-[820px] text-[clamp(2.6rem,6vw,5rem)] font-extrabold leading-[0.95] tracking-[-0.06em] text-white">
                 Let's build
-                <span className="block text-white">
-                  something together.
-                </span>
+                <span className="block">something together.</span>
               </h1>
 
-
-              {/* DESCRIPTION */}
-
-              <p
-                className={[
-                  "mx-auto mt-6",
-                  "max-w-[700px]",
-                  "text-pretty",
-                  "text-[15px]",
-                  "font-medium",
-                  "leading-7",
-                  "text-[#1E2A24]/70",
-                  "sm:text-[17px]",
-                  "sm:leading-8",
-                ].join(" ")}
-              >
-                Whether you need samples, a quotation,
-                private label, or a full OEM / ODM partnership,
-                our team is ready to help.
+              <p className="mx-auto mt-6 max-w-[680px] text-[14px] font-medium leading-7 text-white/58 sm:text-[17px] sm:leading-8">
+                Whether you need a quotation, samples, or a full OEM / ODM
+                partnership — our team is ready to help.
               </p>
 
-
-              {/* CHIPS */}
-
-              <div className="mt-7 flex flex-wrap justify-center gap-2.5">
-
-                <HeroChip>
-                  OEM / ODM
-                </HeroChip>
-
-                <HeroChip>
-                  Private Label
-                </HeroChip>
-
-                <HeroChip>
-                  50 Units MOQ
-                </HeroChip>
-
-                <HeroChip>
-                  Vietnam
-                </HeroChip>
-
+              <div className="mt-7 flex flex-wrap justify-center gap-2">
+                {["OEM / ODM", "Private Label", "50 Units MOQ", "Vietnam"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-2 text-[9px] font-bold uppercase tracking-[0.08em] text-white/70"
+                    >
+                      {item}
+                    </span>
+                  ),
+                )}
               </div>
-
-
-              {/* HERO ACTIONS */}
-
-              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-
-                <a
-                  href={`mailto:${projectData.contact.salesEmail}`}
-                  className={[
-                    "inline-flex min-h-14",
-                    "items-center justify-center",
-                    "gap-2",
-                    "rounded-full",
-                    "bg-[#1E2A24]",
-                    "px-7 py-3.5",
-                    "text-[13px]",
-                    "font-extrabold",
-                    "text-white",
-                    "shadow-[0_16px_36px_rgba(30,42,36,.22)]",
-                    "transition duration-200",
-                    "hover:-translate-y-1",
-                    "hover:bg-[#0F2F24]",
-                  ].join(" ")}
-                >
-                  Email Sales Team
-
-                  <SiteIcon
-                    name="mail"
-                    size={16}
-                  />
-
-                </a>
-
-
-                <a
-                  href={projectData.contact.zaloUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={[
-                    "inline-flex min-h-14",
-                    "items-center justify-center",
-                    "rounded-full",
-                    "border-2 border-[#1E2A24]/18",
-                    "bg-white/22",
-                    "px-7 py-3.5",
-                    "text-[13px]",
-                    "font-extrabold",
-                    "text-[#1E2A24]",
-                    "transition duration-200",
-                    "hover:-translate-y-1",
-                    "hover:bg-white/35",
-                  ].join(" ")}
-                >
-                  Chat on Zalo
-                </a>
-
-              </div>
-
             </div>
-
           </Reveal>
-
         </section>
 
 
-        {/* ==================================================
-            CONTACT MAIN AREA
-        ================================================== */}
+        {/* =================================================
+            MAIN CONTACT
+        ================================================= */}
 
-        <section
-          className={[
-            "relative",
-            "bg-[#FAF8F5]",
-            "py-16",
-            "sm:py-20",
-            "lg:py-24",
-          ].join(" ")}
-        >
-
+        <section className="py-14 sm:py-18 lg:py-22">
           <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
 
-
-            {/* SMALL INTRO */}
-
             <Reveal>
-
-              <div className="mx-auto mb-10 max-w-[720px] text-center">
-
-                <p
-                  className={[
-                    "text-[10px]",
-                    "font-extrabold uppercase",
-                    "tracking-[0.24em]",
-                    "text-[#D97706]",
-                  ].join(" ")}
-                >
+              <div className="mb-9 lg:mb-12">
+                <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#D97706]">
                   Start A Conversation
                 </p>
 
+                <div className="mt-3 grid gap-4 lg:grid-cols-[1fr_.7fr] lg:items-end">
+                  <h2 className="max-w-[680px] text-[clamp(2rem,4vw,3.5rem)] font-extrabold leading-[0.96] tracking-[-0.05em] text-[#1E2A24]">
+                    Tell us about
+                    <span className="text-[#F59E0B]"> your project.</span>
+                  </h2>
 
-                <h2
-                  className={[
-                    "mt-3",
-                    "text-[clamp(2rem,4vw,3.25rem)]",
-                    "font-extrabold",
-                    "leading-[1]",
-                    "tracking-[-0.05em]",
-                    "text-[#1E2A24]",
-                  ].join(" ")}
-                >
-                  Tell us what you want to build.
-                </h2>
-
+                  <p className="max-w-[500px] text-[13px] font-medium leading-6 text-[#6A645D] lg:justify-self-end lg:text-right">
+                    Send us your product requirements, target quantity,
+                    packaging direction and expected timeline.
+                  </p>
+                </div>
               </div>
-
             </Reveal>
 
 
-            <div
-              className={[
-                "grid",
-                "items-start",
-                "gap-8",
-                "lg:grid-cols-[.9fr_1.1fr]",
-                "lg:gap-10",
-              ].join(" ")}
-            >
+            <div className="grid gap-6 lg:grid-cols-[1.02fr_.98fr] lg:gap-8">
 
-
-              {/* ==================================================
-                  LEFT - FORM
-              ================================================== */}
-
+              {/* FORM */}
               <Reveal variant="left">
+                <form
+                  onSubmit={handleSubmit}
+                  className="overflow-hidden rounded-[28px] border border-[#1E2A24]/10 bg-white shadow-[0_22px_60px_rgba(30,42,36,0.07)]"
+                >
+                  <div className="border-b border-[#1E2A24]/10 px-5 py-6 sm:px-7">
+                    <p className="text-[9px] font-extrabold uppercase tracking-[0.18em] text-[#D97706]">
+                      Enquiry Form
+                    </p>
 
-                <div className="lg:sticky lg:top-28">
+                    <h3 className="mt-2 text-[27px] font-extrabold tracking-[-0.04em] text-[#1E2A24]">
+                      Send us a message
+                    </h3>
 
-                  <form
-                    onSubmit={handleSubmit}
-                    className={[
-                      "overflow-hidden",
-                      "rounded-[30px]",
-                      "border-2 border-[#F59E0B]",
-                      "bg-white",
-                      "shadow-[0_25px_65px_rgba(245,158,11,.13)]",
-                    ].join(" ")}
-                  >
-
-
-                    {/* FORM HEADER */}
-
-                    <div
-                      className={[
-                        "relative overflow-hidden",
-                        "bg-[#fff2d5]",
-                        "px-5 py-6",
-                        "sm:px-7",
-                      ].join(" ")}
-                    >
-
-                      <div
-                        aria-hidden="true"
-                        className={[
-                          "pointer-events-none",
-                          "absolute",
-                          "-right-10 -top-12",
-                          "h-36 w-36",
-                          "rounded-full",
-                          "bg-[#F59E0B]/24",
-                        ].join(" ")}
-                      />
+                    <p className="mt-2 max-w-[470px] text-[12px] font-medium leading-6 text-[#6A645D]">
+                      Our sales team will review your enquiry and get back to you
+                      as soon as possible.
+                    </p>
+                  </div>
 
 
-                      <span
-                        className={[
-                          "relative",
-                          "inline-flex",
-                          "rounded-full",
-                          "bg-[#F59E0B]",
-                          "px-3 py-1.5",
-                          "text-[9px]",
-                          "font-extrabold uppercase",
-                          "tracking-[0.14em]",
-                          "text-[#1E2A24]",
-                        ].join(" ")}
-                      >
-                        Contact VinEco
+                  <div className="p-5 sm:p-7">
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <label>
+                        <span className="mb-2 block text-[11px] font-bold text-[#3D5245]">
+                          Full name *
+                        </span>
+                        <input
+                          required
+                          name="name"
+                          autoComplete="name"
+                          placeholder="John Smith"
+                          className={inputClass}
+                        />
+                      </label>
+
+                      <label>
+                        <span className="mb-2 block text-[11px] font-bold text-[#3D5245]">
+                          Company
+                        </span>
+                        <input
+                          name="company"
+                          autoComplete="organization"
+                          placeholder="Acme Inc."
+                          className={inputClass}
+                        />
+                      </label>
+
+                      <label>
+                        <span className="mb-2 block text-[11px] font-bold text-[#3D5245]">
+                          Email *
+                        </span>
+                        <input
+                          required
+                          type="email"
+                          name="email"
+                          autoComplete="email"
+                          placeholder="john@acme.com"
+                          className={inputClass}
+                        />
+                      </label>
+
+                      <label>
+                        <span className="mb-2 block text-[11px] font-bold text-[#3D5245]">
+                          Phone / WhatsApp / Zalo
+                        </span>
+                        <input
+                          name="phone"
+                          type="tel"
+                          autoComplete="tel"
+                          placeholder="+84 ..."
+                          className={inputClass}
+                        />
+                      </label>
+                    </div>
+
+
+                    <label className="mt-4 block">
+                      <span className="mb-2 block text-[11px] font-bold text-[#3D5245]">
+                        I'm interested in
                       </span>
 
-
-                      <h3
-                        className={[
-                          "relative",
-                          "mt-4",
-                          "text-[28px]",
-                          "font-extrabold",
-                          "leading-[1]",
-                          "tracking-[-0.045em]",
-                          "text-[#1E2A24]",
-                        ].join(" ")}
+                      <select
+                        name="interest"
+                        defaultValue="Product quotation"
+                        className={inputClass}
                       >
-                        Send us a message
-                      </h3>
+                        <option>Product quotation</option>
+                        <option>Free sample</option>
+                        <option>OEM manufacturing</option>
+                        <option>ODM development</option>
+                        <option>Private Label</option>
+                        <option>Packaging & branding</option>
+                      </select>
+                    </label>
 
 
-                      <p
-                        className={[
-                          "relative",
-                          "mt-3",
-                          "max-w-[430px]",
-                          "text-[13px]",
-                          "leading-6",
-                          "text-[#1E2A24]/60",
-                        ].join(" ")}
-                      >
-                        Share your product idea, target quantity,
-                        packaging requirements and expected timeline.
-                      </p>
+                    <label className="mt-4 block">
+                      <span className="mb-2 block text-[11px] font-bold text-[#3D5245]">
+                        Message *
+                      </span>
 
-                    </div>
+                      <textarea
+                        required
+                        rows="6"
+                        name="message"
+                        placeholder="Tell us about your project, product specs, target quantity, packaging needs and timeline..."
+                        className="min-h-[150px] w-full resize-y rounded-[14px] border border-[#1E2A24]/12 bg-[#FAF8F5] px-4 py-3 text-[13px] font-medium leading-6 text-[#1E2A24] outline-none transition placeholder:text-[#1E2A24]/30 hover:border-[#F59E0B]/50 focus:border-[#F59E0B] focus:bg-white focus:ring-4 focus:ring-[#F59E0B]/10"
+                      />
+                    </label>
 
 
-                    {/* FIELDS */}
+                    <button
+                      type="submit"
+                      className="mt-5 flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-[#0F2F24] px-6 text-[13px] font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#3D5245]"
+                    >
+                      Send message
+                      <SiteIcon name="send" size={16} />
+                    </button>
 
-                    <div className="p-5 sm:p-7">
-
-                      <div className="grid gap-5 sm:grid-cols-2">
-
-
-                        <label>
-
-                          <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
-                            Full name *
-                          </span>
-
-                          <input
-                            required
-                            name="name"
-                            autoComplete="name"
-                            placeholder="John Smith"
-                            className={fieldClass}
-                          />
-
-                        </label>
-
-
-                        <label>
-
-                          <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
-                            Company
-                          </span>
-
-                          <input
-                            name="company"
-                            autoComplete="organization"
-                            placeholder="Acme Inc."
-                            className={fieldClass}
-                          />
-
-                        </label>
-
-
-                        <label>
-
-                          <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
-                            Email *
-                          </span>
-
-                          <input
-                            required
-                            type="email"
-                            name="email"
-                            autoComplete="email"
-                            placeholder="john@acme.com"
-                            className={fieldClass}
-                          />
-
-                        </label>
-
-
-                        <label>
-
-                          <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
-                            Phone / Zalo
-                          </span>
-
-                          <input
-                            type="tel"
-                            name="phone"
-                            autoComplete="tel"
-                            inputMode="tel"
-                            placeholder="+84 ..."
-                            className={fieldClass}
-                          />
-
-                        </label>
-
-                      </div>
-
-
-                      {/* INTEREST */}
-
-                      <label className="mt-5 block">
-
-                        <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
-                          I'm interested in
-                        </span>
-
-                        <select
-                          name="interest"
-                          defaultValue="Product quotation"
-                          className={fieldClass}
-                        >
-                          <option>
-                            Product quotation
-                          </option>
-
-                          <option>
-                            Free sample
-                          </option>
-
-                          <option>
-                            OEM manufacturing
-                          </option>
-
-                          <option>
-                            ODM development
-                          </option>
-
-                          <option>
-                            Private label
-                          </option>
-                        </select>
-
-                      </label>
-
-
-                      {/* MESSAGE */}
-
-                      <label className="mt-5 block">
-
-                        <span className="mb-2 block text-[11px] font-bold text-[#1E2A24]/70">
-                          Message *
-                        </span>
-
-                        <textarea
-                          required
-                          name="message"
-                          rows="6"
-                          placeholder="Tell us about your project, product specs, target quantity, packaging needs and timeline..."
-                          className={[
-                            "w-full",
-                            "resize-y",
-                            "rounded-2xl",
-                            "border border-[#F59E0B]/25",
-                            "bg-[#fffdf8]",
-                            "px-4 py-3",
-                            "text-sm",
-                            "leading-6",
-                            "text-[#1E2A24]",
-                            "outline-none",
-                            "transition",
-                            "placeholder:text-[#1E2A24]/27",
-                            "hover:border-[#F59E0B]/50",
-                            "focus:border-[#F59E0B]",
-                            "focus:bg-white",
-                            "focus:ring-4",
-                            "focus:ring-[#F59E0B]/12",
-                          ].join(" ")}
-                        />
-
-                      </label>
-
-
-                      {/* CTA */}
-
-                      <button
-                        type="submit"
-                        className={[
-                          "mt-6",
-                          "flex h-13 w-full",
-                          "items-center justify-center",
-                          "gap-2",
-                          "rounded-full",
-                          "bg-[#F59E0B]",
-                          "text-[13px]",
-                          "font-extrabold",
-                          "text-[#1E2A24]",
-                          "shadow-[0_14px_32px_rgba(245,158,11,.26)]",
-                          "transition duration-200",
-                          "hover:-translate-y-1",
-                          "hover:bg-[#D97706]",
-                        ].join(" ")}
-                      >
-                        Send message
-
-                        <SiteIcon
-                          name="send"
-                          size={16}
-                          strokeWidth={2.2}
-                        />
-
-                      </button>
-
-
-                      <p className="mt-4 text-center text-[10px] leading-5 text-[#1E2A24]/40">
-                        Submitting opens your email application with
-                        the enquiry pre-filled.
-                      </p>
-
-                    </div>
-
-                  </form>
-
-                </div>
-
+                    <p className="mt-4 text-center text-[10px] font-medium leading-5 text-[#6A645D]/70">
+                      Submitting opens your email application with the enquiry
+                      already prepared.
+                    </p>
+                  </div>
+                </form>
               </Reveal>
 
 
-              {/* ==================================================
-                  RIGHT INFORMATION
-              ================================================== */}
-
+              {/* CONTACT INFORMATION */}
               <div className="space-y-4">
-
-
-                {/* EMAIL + PHONE */}
-
                 <Reveal variant="right">
+                  <div className="rounded-[24px] bg-[#0F2F24] p-5 text-white sm:p-6">
+                    <p className="text-[8px] font-extrabold uppercase tracking-[0.18em] text-[#F59E0B]">
+                      Direct Contact
+                    </p>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
+                    <h3 className="mt-2 text-[25px] font-extrabold tracking-[-0.04em]">
+                      Talk directly with VinEco.
+                    </h3>
 
-                    <InfoCard
-                      icon="mail"
-                      label="Email"
-                      title="Sales Team"
-                      href={`mailto:${projectData.contact.salesEmail}`}
-                      featured
-                    >
-                      {projectData.contact.salesEmail}
-                    </InfoCard>
+                    <div className="mt-5 grid gap-2 sm:grid-cols-2">
+                      <a
+                        href={`mailto:${contact.salesEmail}`}
+                        className="rounded-[14px] border border-white/10 bg-white/[0.06] px-4 py-3 transition hover:bg-white/[0.1]"
+                      >
+                        <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-white/40">
+                          Sales
+                        </span>
+                        <strong className="mt-1 block text-[12px]">
+                          {contact.salesEmail}
+                        </strong>
+                      </a>
 
-
-                    <InfoCard
-                      icon="phone"
-                      label="Phone / Zalo"
-                      title="Talk to VinEco"
-                      href={projectData.contact.zaloUrl}
-                      external
-                    >
-                      {projectData.contact.phone}
-                    </InfoCard>
-
+                      <a
+                        href={contact.whatsappUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-[14px] border border-white/10 bg-white/[0.06] px-4 py-3 transition hover:bg-white/[0.1]"
+                      >
+                        <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-white/40">
+                          WhatsApp / Zalo
+                        </span>
+                        <strong className="mt-1 block text-[12px]">
+                          {contact.phone}
+                        </strong>
+                      </a>
+                    </div>
                   </div>
-
                 </Reveal>
 
 
-                {/* OFFICE */}
+                {/* WEBSITES */}
+                <Reveal variant="right" delay={40}>
+                  <article className="rounded-[22px] border border-[#1E2A24]/10 bg-white p-5 sm:p-6">
+                    <p className="text-[8px] font-extrabold uppercase tracking-[0.18em] text-[#D97706]">
+                      Websites
+                    </p>
 
-                <Reveal
-                  variant="right"
-                  delay={50}
-                >
-
-                  <InfoCard
-                    icon="pin"
-                    label="Office"
-                    title="Ho Chi Minh City"
-                  >
-                    {projectData.contact.office}
-                  </InfoCard>
-
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {contact.websites?.map((site) => (
+                        <a
+                          key={site.url}
+                          href={site.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex min-h-[38px] items-center rounded-full border border-[#1E2A24]/10 bg-[#FAF8F5] px-4 text-[11px] font-bold text-[#0F2F24] transition hover:border-[#F59E0B] hover:text-[#D97706]"
+                        >
+                          {site.label}
+                        </a>
+                      ))}
+                    </div>
+                  </article>
                 </Reveal>
 
 
-                {/* FACTORY */}
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Reveal variant="right" delay={70}>
+                    <ContactCard
+                      icon="factory"
+                      eyebrow="Factory"
+                      title="Gia Lai"
+                    >
+                      {contact.factory}
+                    </ContactCard>
+                  </Reveal>
 
-                <Reveal
-                  variant="right"
-                  delay={100}
-                >
-
-                  <InfoCard
-                    icon="factory"
-                    label="Factory"
-                    title="VinEco Production"
-                  >
-                    {projectData.contact.factory}
-                  </InfoCard>
-
-                </Reveal>
+                  <Reveal variant="right" delay={100}>
+                    <ContactCard
+                      icon="pin"
+                      eyebrow="Office"
+                      title="Ho Chi Minh City"
+                    >
+                      {contact.office}
+                    </ContactCard>
+                  </Reveal>
+                </div>
 
 
-                {/* BUSINESS HOURS */}
-
-                <Reveal
-                  variant="right"
-                  delay={150}
-                >
-
-                  <InfoCard
+                <Reveal variant="right" delay={130}>
+                  <ContactCard
                     icon="clock"
-                    label="Business Hours"
-                    title="Monday - Friday"
-                    featured
+                    eyebrow="Business Hours"
+                    title="Monday – Friday"
                   >
-                    {projectData.contact.hours}
-                  </InfoCard>
-
+                    8:00 AM – 5:00 PM / GMT+7
+                  </ContactCard>
                 </Reveal>
 
 
-                {/* FAST RESPONSE */}
-
-                <Reveal
-                  variant="right"
-                  delay={200}
-                >
-
-                  <div
-                    className={[
-                      "relative overflow-hidden",
-                      "rounded-[26px]",
-                      "bg-[#F59E0B]",
-                      "p-6",
-                      "shadow-[0_20px_48px_rgba(245,158,11,.18)]",
-                    ].join(" ")}
-                  >
-
+                {/* RESPONSE */}
+                <Reveal variant="right" delay={160}>
+                  <article className="relative overflow-hidden rounded-[24px] bg-[#205B35] p-6 text-white">
                     <div
                       aria-hidden="true"
-                      className={[
-                        "absolute",
-                        "-right-12 -top-12",
-                        "h-40 w-40",
-                        "rounded-full",
-                        "bg-white/16",
-                      ].join(" ")}
+                      className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-white/[0.05]"
                     />
 
-
                     <div className="relative">
-
-                      <span
-                        className={[
-                          "flex h-11 w-11",
-                          "items-center justify-center",
-                          "rounded-2xl",
-                          "bg-[#1E2A24]",
-                          "text-white",
-                        ].join(" ")}
-                      >
-                        <SiteIcon
-                          name="message"
-                          size={19}
-                        />
-                      </span>
-
-
-                      <p
-                        className={[
-                          "mt-5",
-                          "text-[9px]",
-                          "font-extrabold uppercase",
-                          "tracking-[0.18em]",
-                          "text-[#1E2A24]/55",
-                        ].join(" ")}
-                      >
+                      <p className="text-[8px] font-extrabold uppercase tracking-[0.18em] text-[#F59E0B]">
                         Fast Response
                       </p>
 
-
-                      <h3
-                        className={[
-                          "mt-1",
-                          "text-[24px]",
-                          "font-extrabold",
-                          "leading-tight",
-                          "tracking-[-0.04em]",
-                          "text-[#1E2A24]",
-                        ].join(" ")}
-                      >
-                        Ready when your project is.
+                      <h3 className="mt-2 text-[23px] font-extrabold tracking-[-0.04em]">
+                        Fast response guaranteed.
                       </h3>
 
-
-                      <p className="mt-3 max-w-[520px] text-[13px] font-medium leading-6 text-[#1E2A24]/65">
-                        We usually respond within 24 business hours.
-                        For urgent requests, reach us directly by
-                        Zalo or email.
+                      <p className="mt-3 max-w-[560px] text-[13px] font-medium leading-6 text-white/70">
+                        We respond to all inquiries within 24 hours during
+                        business days. For urgent matters, use WhatsApp.
                       </p>
 
-
-                      <div className="mt-5 flex flex-wrap gap-2.5">
-
+                      <div className="mt-5 flex flex-wrap gap-2">
                         <a
-                          href={projectData.contact.zaloUrl}
+                          href={contact.whatsappUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className={[
-                            "inline-flex h-11",
-                            "items-center justify-center",
-                            "rounded-full",
-                            "bg-[#1E2A24]",
-                            "px-5",
-                            "text-xs",
-                            "font-extrabold",
-                            "text-white",
-                            "transition",
-                            "hover:-translate-y-0.5",
-                          ].join(" ")}
+                          className="inline-flex min-h-[42px] items-center justify-center rounded-full bg-[#F59E0B] px-5 text-[11px] font-extrabold text-[#0F2F24] transition hover:-translate-y-0.5 hover:bg-[#D97706]"
                         >
-                          Open Zalo
+                          WhatsApp
                         </a>
-
 
                         <a
-                          href={`mailto:${projectData.contact.salesEmail}`}
-                          className={[
-                            "inline-flex h-11",
-                            "items-center justify-center",
-                            "rounded-full",
-                            "border border-[#1E2A24]/14",
-                            "bg-white/25",
-                            "px-5",
-                            "text-xs",
-                            "font-extrabold",
-                            "text-[#1E2A24]",
-                            "transition",
-                            "hover:-translate-y-0.5",
-                            "hover:bg-white/40",
-                          ].join(" ")}
+                          href={contact.zaloUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex min-h-[42px] items-center justify-center rounded-full border border-white/15 bg-white/[0.07] px-5 text-[11px] font-extrabold text-white transition hover:bg-white/[0.12]"
                         >
-                          Send Email
+                          Zalo
                         </a>
-
                       </div>
-
                     </div>
-
-                  </div>
-
+                  </article>
                 </Reveal>
-
               </div>
-
             </div>
-
           </div>
-
         </section>
 
 
-        {/* ==================================================
+        {/* =================================================
             MAP
-        ================================================== */}
+        ================================================= */}
 
-        <section className="bg-white py-16 sm:py-20">
-
+        <section className="bg-white py-14 sm:py-18 lg:py-20">
           <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
 
             <Reveal>
-
-              <div
-                className={[
-                  "mb-8",
-                  "grid gap-5",
-                  "lg:grid-cols-[1fr_.7fr]",
-                  "lg:items-end",
-                ].join(" ")}
-              >
-
+              <div className="mb-7 grid gap-4 lg:grid-cols-[1fr_.7fr] lg:items-end">
                 <div>
-
-                  <p
-                    className={[
-                      "text-[10px]",
-                      "font-extrabold uppercase",
-                      "tracking-[0.22em]",
-                      "text-[#D97706]",
-                    ].join(" ")}
-                  >
+                  <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#D97706]">
                     Find VinEco
                   </p>
 
-
-                  <h2
-                    className={[
-                      "mt-3",
-                      "text-[clamp(2rem,4vw,3.4rem)]",
-                      "font-extrabold",
-                      "leading-[1]",
-                      "tracking-[-0.05em]",
-                      "text-[#1E2A24]",
-                    ].join(" ")}
-                  >
-                    Visit our Vietnam office.
+                  <h2 className="mt-3 text-[clamp(2rem,4vw,3.2rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-[#1E2A24]">
+                    Visit our
+                    <span className="text-[#F59E0B]"> Vietnam office.</span>
                   </h2>
-
                 </div>
 
-
-                <p className="text-[13px] leading-6 text-[#1E2A24]/55 lg:text-right">
-                  {projectData.contact.office}
+                <p className="text-[12px] font-medium leading-6 text-[#6A645D] lg:text-right">
+                  {contact.office}
                 </p>
-
               </div>
-
             </Reveal>
 
 
             <Reveal variant="zoom">
-
-              <div
-                className={[
-                  "overflow-hidden",
-                  "rounded-[30px]",
-                  "border-2 border-[#F59E0B]",
-                  "bg-[#FAF8F5]",
-                  "p-2",
-                  "shadow-[0_20px_55px_rgba(245,158,11,.11)]",
-                ].join(" ")}
-              >
-
+              <div className="overflow-hidden rounded-[26px] border border-[#1E2A24]/10 bg-[#F4F1EA] p-2 shadow-[0_18px_48px_rgba(30,42,36,.06)]">
                 <GoogleMapEmbed
                   html={mapEmbedHtml}
                   title="VinEco office Google Map"
-                  address={projectData.contact.office}
+                  address={contact.office}
                 />
-
               </div>
-
             </Reveal>
 
           </div>
-
         </section>
 
 
-        {/* ==================================================
-            FINAL ORANGE CTA
-        ================================================== */}
+        {/* =================================================
+            FINAL CTA
+        ================================================= */}
 
-        <section className="bg-white pb-20 sm:pb-24">
-
+        <section className="bg-white pb-16 sm:pb-20 lg:pb-24">
           <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
 
             <Reveal variant="zoom">
-
-              <div
-                className={[
-                  "relative overflow-hidden",
-                  "rounded-[32px]",
-                  "bg-[#F59E0B]",
-                  "px-6 py-11",
-                  "text-center",
-                  "shadow-[0_26px_65px_rgba(245,158,11,.19)]",
-                  "sm:px-10",
-                  "sm:py-13",
-                ].join(" ")}
-              >
-
+              <div className="relative overflow-hidden rounded-[28px] bg-[#F59E0B] px-6 py-10 text-center sm:px-10 sm:py-12">
                 <div
                   aria-hidden="true"
-                  className={[
-                    "absolute",
-                    "-right-16 -top-16",
-                    "h-56 w-56",
-                    "rounded-full",
-                    "border-[45px]",
-                    "border-white/13",
-                  ].join(" ")}
+                  className="absolute -right-20 -top-20 h-60 w-60 rounded-full border-[45px] border-white/[0.12]"
                 />
 
-
                 <div className="relative">
-
-                  <p className="text-[9px] font-extrabold uppercase tracking-[0.22em] text-[#1E2A24]/52">
+                  <p className="text-[8px] font-extrabold uppercase tracking-[0.2em] text-[#0F2F24]/55">
                     VinEco B2B
                   </p>
 
-
-                  <h2
-                    className={[
-                      "mx-auto mt-3",
-                      "max-w-[700px]",
-                      "text-[clamp(2rem,5vw,3.3rem)]",
-                      "font-extrabold",
-                      "leading-[0.98]",
-                      "tracking-[-0.055em]",
-                      "text-[#1E2A24]",
-                    ].join(" ")}
-                  >
+                  <h2 className="mx-auto mt-3 max-w-[720px] text-[clamp(2rem,4vw,3.3rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-[#0F2F24]">
                     Your next product starts with one conversation.
                   </h2>
 
-
                   <a
-                    href={`mailto:${projectData.contact.salesEmail}`}
-                    className={[
-                      "mt-7",
-                      "inline-flex min-h-14",
-                      "items-center justify-center",
-                      "gap-2",
-                      "rounded-full",
-                      "bg-[#1E2A24]",
-                      "px-7 py-3.5",
-                      "text-[13px]",
-                      "font-extrabold",
-                      "text-white",
-                      "shadow-[0_15px_35px_rgba(30,42,36,.22)]",
-                      "transition",
-                      "hover:-translate-y-1",
-                    ].join(" ")}
+                    href={`mailto:${contact.salesEmail}`}
+                    className="mt-7 inline-flex min-h-[50px] items-center justify-center gap-2 rounded-full bg-[#0F2F24] px-7 text-[12px] font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#3D5245]"
                   >
                     Start your enquiry
-
-                    <SiteIcon
-                      name="arrow"
-                      size={15}
-                    />
-
+                    <SiteIcon name="arrow" size={15} />
                   </a>
-
                 </div>
-
               </div>
-
             </Reveal>
 
           </div>
-
         </section>
 
       </main>
 
-
       <Footer />
-
       <FloatingContactDock />
-
     </>
   );
 }

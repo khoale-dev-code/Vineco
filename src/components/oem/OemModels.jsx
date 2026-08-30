@@ -132,13 +132,15 @@ export default function OemModels() {
                 "text-[#1E2A24]",
               ].join(" ")}
             >
-              Choose your manufacturing path
+              Three ways to work:
+              <span className="block text-[#F59E0B]">
+                OEM / ODM / Private Label
+              </span>
             </h2>
 
 
             <p className="mx-auto mt-5 max-w-[720px] text-pretty text-[15px] leading-7 text-[#1E2A24]/55 sm:text-[17px] sm:leading-8">
-              Every brand is different. Pick the model that fits your needs -
-              from full custom production to quick private label.
+              Choose the partnership model that fits your stage - OEM for ready specifications, ODM for collaborative development, or Private Label for a faster route to market.
             </p>
 
           </header>

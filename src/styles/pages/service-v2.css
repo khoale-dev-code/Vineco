@@ -1449,3 +1449,195 @@ summary strong {
 /* ==========================================================
    VINECO OEM V3 END
 ========================================================== */
+
+/* VINECO-QC-STEPS-START */
+
+/* ==========================================================
+   QUALITY CONTROL
+   4 STEPS / 2 IMAGES PER STEP
+========================================================== */
+
+.service-v2-quality-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, .62fr) minmax(0, 1.38fr);
+  gap: clamp(30px, 4vw, 64px);
+  align-items: start;
+}
+
+.qc-steps {
+  display: grid;
+  gap: 14px;
+}
+
+.qc-step {
+  display: grid;
+  grid-template-columns: minmax(180px, .72fr) minmax(0, 1.28fr);
+  gap: 18px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid rgba(30, 42, 36, .1);
+  border-radius: 20px;
+  background: #fff;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.qc-step:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, .45);
+  box-shadow: 0 16px 38px rgba(30, 42, 36, .06);
+}
+
+.qc-step__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qc-step__meta span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border-radius: 999px;
+  background: #f59e0b;
+  color: #0f2f24;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.qc-step__meta small {
+  color: #d97706;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.qc-step h3 {
+  margin: 13px 0 0;
+  color: #0f2f24;
+  font-size: clamp(18px, 1.55vw, 23px);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -.035em;
+}
+
+.qc-step__copy > p {
+  margin: 9px 0 0;
+  color: #666b67;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.qc-step__images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.qc-step__images figure {
+  display: flex;
+  height: 145px;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 5px;
+  border: 1px solid rgba(30, 42, 36, .08);
+  border-radius: 13px;
+  background: #f4f1ea;
+}
+
+.qc-step__images img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.service-v2-quality-layout .service-v2-copy ul li strong {
+  color: #0f2f24;
+  font-weight: 700;
+}
+
+
+/* DESKTOP LARGE */
+
+@media (min-width: 1280px) {
+  .qc-step__images figure {
+    height: 170px;
+  }
+}
+
+
+/* TABLET */
+
+@media (max-width: 980px) {
+  .service-v2-quality-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .qc-steps {
+    margin-top: 4px;
+  }
+
+  .qc-step {
+    grid-template-columns: minmax(180px, .7fr) minmax(0, 1.3fr);
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .service-v2-quality-layout {
+    gap: 22px;
+  }
+
+  .qc-steps {
+    gap: 11px;
+  }
+
+  .qc-step {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding: 13px;
+    border-radius: 17px;
+  }
+
+  .qc-step h3 {
+    margin-top: 10px;
+    font-size: 19px;
+  }
+
+  .qc-step__copy > p {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .qc-step__images {
+    gap: 6px;
+  }
+
+  .qc-step__images figure {
+    height: 128px;
+    padding: 4px;
+    border-radius: 11px;
+  }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .qc-step__images figure {
+    height: 112px;
+  }
+}
+
+/* VINECO-QC-STEPS-END */

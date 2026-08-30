@@ -157,7 +157,7 @@ export default function OemOdmPage() {
                       "items-center justify-center",
                       "gap-2",
                       "rounded-full",
-                      "bg-[#1E2A24]",
+                      "bg-[#0F2F24]",
                       "px-7 py-3.5",
                       "text-[13px]",
                       "font-extrabold",
@@ -165,7 +165,7 @@ export default function OemOdmPage() {
                       "shadow-[0_16px_38px_rgba(30,42,36,0.22)]",
                       "transition duration-200",
                       "hover:-translate-y-1",
-                      "hover:bg-[#0F2F24]",
+                      "hover:bg-[#3D5245]",
                     ].join(" ")}
                   >
                     Start your project
@@ -360,7 +360,7 @@ export default function OemOdmPage() {
                       "items-center justify-center",
                       "gap-2",
                       "rounded-full",
-                      "bg-[#1E2A24]",
+                      "bg-[#0F2F24]",
                       "px-7 py-3.5",
                       "text-[13px]",
                       "font-extrabold",
@@ -368,7 +368,7 @@ export default function OemOdmPage() {
                       "shadow-[0_16px_38px_rgba(30,42,36,0.22)]",
                       "transition duration-200",
                       "hover:-translate-y-1",
-                      "hover:bg-[#0F2F24]",
+                      "hover:bg-[#3D5245]",
                     ].join(" ")}
                   >
                     Start your project

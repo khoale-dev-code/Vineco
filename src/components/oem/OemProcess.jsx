@@ -258,6 +258,10 @@ export default function OemProcess() {
             ].join(" ")}
           >
 
+            <p className="mb-3 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#3D5245] sm:text-[10px]">
+              How to Start Your Brand Journey with VinEco
+            </p>
+
             <SectionLabel>
               How It Works
             </SectionLabel>

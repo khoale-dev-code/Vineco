@@ -1,281 +1,219 @@
 export const serviceContent = {
   hero: {
-    eyebrow:
-      "VinEco Services",
-
-    title:
-      "More than manufacturing. We help shape the product around your brand.",
-
+    eyebrow: "VinEco Services",
     description:
-      "From product presentation and packaging to branding, customization, sampling and OEM / ODM development, VinEco supports international pet brands from product preparation through market launch.",
+      "From custom packaging and branding to laser engraving, flexible packing and quality control, VinEco supports global pet brands with practical OEM, ODM and Private Label solutions.",
+
+    pills: [
+      "Packaging Design",
+      "Labels & Tags",
+      "Laser Engraving",
+      "Custom Packaging",
+      "Quality Control",
+    ],
+
+    images: [
+      "/images/service-v3/02-retail-box-window.jpg",
+      "/images/service-v3/07-rope-tags.jpg",
+    ],
   },
 
   services: [
     {
-      id: "media",
-      number: "01",
-      eyebrow: "Product Presentation",
-
-      title:
-        "Product Image & Video Support",
-
-      intro:
-        "Clear product presentation helps buyers understand materials, dimensions, use and packaging before a product reaches the market.",
-
-      body:
-        "For selected OEM / ODM and Private Label projects, VinEco can support product presentation assets that give partners a stronger foundation for listings, sales materials and B2B communication.",
-
-      points: [
-        "Product-focused visual preparation",
-        "Lifestyle and usage presentation",
-        "Packaging and branding presentation",
-        "Media support for selected B2B projects",
-      ],
-
-      images: [
-        "/images/service/service-media-main.svg",
-        "/images/service/service-media-detail.svg",
-        "/images/service/service-media-lifestyle.svg",
-      ],
-    },
-
-    {
       id: "packaging-design",
-      number: "02",
-      eyebrow: "Brand Presentation",
-
-      title:
-        "Packaging Design Support",
+      number: "01",
+      eyebrow: "Product Packaging Design",
+      title: "Custom Packaging Solutions",
 
       intro:
-        "Packaging brings product information, brand identity and customer experience together at the point of sale.",
+        "VinEco provides custom paper and kraft boxes designed around your brand, product dimensions and retail requirements.",
 
       body:
-        "For Private Label and OEM / ODM projects, packaging direction can be developed around product dimensions, brand identity, retail requirements and the needs of the target market.",
+        "From dielines and artwork preparation to retail-ready printing, packaging can be developed for private-label products, gift sets and international sales channels.",
 
       points: [
-        "Packaging concept and format",
-        "Brand and product information layout",
-        "Retail-ready presentation",
-        "Private-label packaging support",
+        "Custom Designs â€” Made to your exact size, shape and branding style.",
+        "Artwork Support â€” Support with dielines and print files. Use your own artwork or let VinEco assist with the design.",
+        "Low MOQ â€” Custom printed boxes can start from around 200 pieces.",
+        "Retail Ready â€” Suitable for retail shelves, private-label products and gift sets.",
+        "Variable Printing â€” Add barcodes, QR codes, product information and custom brand elements.",
+        "Extra Protection â€” Retail packaging can be combined with inner vacuum sealing.",
       ],
 
       images: [
-        "/images/service/service-packaging-main.svg",
-        "/images/service/service-packaging-box.svg",
+        "/images/service-v3/02-retail-box-window.jpg",
+        "/images/service-v3/03-retail-box-closed.jpg",
+        "/images/service-v3/06-individual-vacuum-pack.jpg",
       ],
     },
 
     {
       id: "labels",
-      number: "03",
+      number: "02",
       eyebrow: "Brand Details",
-
-      title:
-        "Stickers, Labels & Tags",
+      title: "Custom Stickers & Tags on Request",
 
       intro:
-        "Thoughtful branding details help a natural product feel complete, recognizable and ready for retail.",
+        "VinEco provides custom tags and stickers designed to match your brand identity and product presentation.",
 
       body:
-        "VinEco can work with customer-provided artwork and branding guidelines to apply suitable labels, stickers, hang tags and other identification elements to selected products and packaging.",
+        "Brands can choose the design, color, size, material and placement depending on the product, packaging format and target market.",
 
       points: [
-        "Product labels",
-        "Hang tags",
-        "Sticker application",
-        "Brand identification elements",
+        "Size â€” Standard 5 Ã— 8 cm format is available, with custom sizing on request.",
+        "Material â€” Kraft paper or eco-friendly cardboard options.",
+        "Colors â€” Natural brown, full-color printing or custom brand tones.",
+        "Placement â€” Tags can be placed inside vacuum-sealed bags.",
+        "Placement â€” Tags can be tied directly to the chew stick.",
+        "Placement â€” Labels or tags can be attached to the outer packaging.",
       ],
 
       images: [
-        "/images/service/service-labels-main.svg",
-        "/images/service/service-tags.svg",
+        "/images/service-v3/05-kraft-hang-tag.jpg",
+        "/images/service-v3/07-rope-tags.jpg",
+        "/images/service-v3/06-individual-vacuum-pack.jpg",
       ],
     },
 
     {
       id: "engraving",
-      number: "04",
+      number: "03",
       eyebrow: "Customization",
-
-      title:
-        "Laser Engraving",
+      title: "Laser Engraving",
 
       intro:
-        "For suitable coffee wood products, laser engraving adds a permanent and understated brand detail directly to the product.",
+        "VinEco offers laser engraving directly on suitable coffee wood surfaces using your custom logo or message.",
 
       body:
-        "This option gives brands an additional way to create product identity without relying entirely on external packaging or disposable labels.",
+        "Laser engraving creates a permanent brand detail on the product itself and is suitable for Private Label, small-batch testing and customized collections.",
 
       points: [
-        "Logo engraving",
-        "Simple text marking",
-        "Permanent brand identification",
-        "Available for suitable wood products",
+        "Low MOQ â€” Start from only 50 pieces for selected engraving projects.",
+        "Full Support â€” Support from branding discussion through production, shipping and required paperwork.",
+        "Custom Branding â€” Add your logo, message or suitable brand element directly to the wooden surface.",
+        "Made to Order â€” Engraving can be produced according to your supplied artwork and requirements.",
       ],
 
       images: [
-        "/images/service/service-engraving-main.svg",
-        "/images/service/service-engraving-detail.svg",
+        "/images/service-v3/08-laser-logo.jpg",
+        "/images/service-v3/09-laser-engraving.jpg",
       ],
     },
 
     {
       id: "custom-packaging",
-      number: "05",
+      number: "04",
       eyebrow: "Packing",
-
-      title:
-        "Custom Packaging & Packing",
+      title: "Custom Packaging & Packing",
 
       intro:
-        "Different products, sales channels and destination markets can require different packaging and packing configurations.",
+        "Different products, order quantities and destination markets can require different packing configurations.",
 
       body:
-        "VinEco can discuss physical packing requirements as part of OEM / ODM and Private Label projects, from individual product presentation and inner packing to export-carton preparation.",
+        "VinEco supports vacuum sealing, bulk packing and customized retail packing to help protect products, reduce shipping volume and prepare orders for wholesale or retail distribution.",
 
       points: [
-        "Individual product packaging",
-        "Inner packing configuration",
-        "Export-carton preparation",
-        "Brand-specific packing requirements",
+        "Vacuum Sealing Protection â€” Helps reduce shipping volume, limit moisture exposure, keep products clean and maintain product quality.",
+        "Standard Bulk Packing â€” Standard packing can include approximately 9 to 15 toys per bag depending on product size.",
+        "Custom Options â€” Individual bags, shrink wrap, custom retail boxes and other packing formats can be discussed based on your requirements.",
       ],
 
       images: [
-        "/images/service/service-custom-pack-main.svg",
-        "/images/service/service-custom-pack-detail.svg",
+        "/images/service-v3/04-export-vacuum-order.jpg",
+        "/images/service-v3/01-vacuum-bulk.jpg",
+        "/images/service-v3/11-export-container.jpg",
       ],
     },
 
-    {
-      id: "market",
-      number: "06",
-      eyebrow: "Product Development",
-
-      title:
-        "Products Adapted for Your Market",
+        {
+      id: "quality-control",
+      number: "05",
+      eyebrow: "Quality Control",
+      title: "A 4-Step Quality Control Process",
 
       intro:
-        "A product that performs well in one market may need a different size, presentation, configuration or product mix in another.",
+        "Every VinEco coffee wood dog chew goes through a strict 4-step quality process.",
 
       body:
-        "OEM / ODM development gives brands room to discuss product direction based on their customers, sales channels, positioning and target-market requirements.",
+        "From sustainable wood selection and careful hand finishing to controlled heat drying and final moisture inspection, each product is checked before packing and shipment.",
 
-      points: [
-        "Product concept discussion",
-        "Size and format adaptation",
-        "Natural-material product combinations",
-        "Market-oriented product development",
-      ],
+      steps: [
+        {
+          number: "01",
+          eyebrow: "Wood Selection",
+          title: "Sustainable Wood Selection",
+          text:
+            "We harvest only dense, solid wood from mature coffee trees (20–25 years old).",
+          images: [
+            "/images/service-v3/13-coffee-wood-source.jpg",
+            "/images/service-v3/16-coffee-tree-selection.jpg",
+          ],
+        },
 
-      images: [
-        "/images/service/service-market-main.svg",
-        "/images/service/service-market-products.svg",
-      ],
-    },
+        {
+          number: "02",
+          eyebrow: "Safety Finishing",
+          title: "Hand-Sanded for Safety",
+          text:
+            "Every piece is shaped and sanded by hand to ensure edges are smooth, splinter-free, and safe for dogs to chew.",
+          images: [
+            "/images/service-v3/17-wood-cutting.jpg",
+            "/images/service-v3/18-hand-sanding.jpg",
+          ],
+        },
 
-    {
-      id: "samples",
-      number: "07",
-      eyebrow: "Before Production",
+        {
+          number: "03",
+          eyebrow: "Heat Treatment",
+          title: "Heat Drying & Sterilization",
+          text:
+            "The wood is baked in industrial kilns to kill bacteria and lock in a safe, long-lasting moisture level (12%–14%).",
+          images: [
+            "/images/service-v3/19-heat-drying-kiln.jpg",
+            "/images/service-v3/20-finished-wood-check.jpg",
+          ],
+        },
 
-      title:
-        "Samples Before You Commit",
-
-      intro:
-        "Sampling gives buyers a practical way to evaluate materials, dimensions, finish and overall product direction before committing to larger production quantities.",
-
-      body:
-        "Sample development can be incorporated into the project before mass production, giving both sides an opportunity to review and align on the approved product direction.",
-
-      points: [
-        "Product evaluation",
-        "Material and finish review",
-        "Dimensions and specification review",
-        "Packaging discussion before production",
-      ],
-
-      images: [
-        "/images/service/service-samples-main.svg",
-        "/images/service/service-samples-detail.svg",
-      ],
-    },
-
-    {
-      id: "oem",
-      number: "08",
-      eyebrow: "Flexible Partnership",
-
-      title:
-        "OEM / ODM for Growing Brands",
-
-      intro:
-        "VinEco supports businesses that need more than a standard off-the-shelf product.",
-
-      body:
-        "From product specifications and sampling to branding, packaging and production, OEM / ODM projects can be structured around the development stage, requirements and growth plans of each brand.",
-
-      points: [
-        "OEM manufacturing",
-        "ODM product development",
-        "Private Label support",
-        "Flexible project development",
-      ],
-
-      images: [
-        "/images/service/service-oem-main.svg",
-        "/images/service/service-oem-export.svg",
+        {
+          number: "04",
+          eyebrow: "Final Control",
+          title: "Final Check & Moisture-Proof Packing",
+          text:
+            "Each batch is tested for quality, then sealed with natural moisture absorbers to stay fresh during shipping.",
+          images: [
+            "/images/service-v3/21-moisture-check.jpg",
+            "/images/service-v3/22-moisture-check-gorilla.jpg",
+          ],
+        },
       ],
     },
   ],
 
   overview: [
     {
-      service: "Product visuals",
-      availability: "Available",
-      note: "Selected projects",
-    },
-
-    {
       service: "Packaging design",
       availability: "Available",
-      note: "By project",
+      note: "MOQ around 200 pcs",
     },
-
     {
-      service: "Labels & tags",
+      service: "Stickers & tags",
       availability: "Available",
-      note: "By request",
+      note: "Custom by request",
     },
-
     {
       service: "Laser engraving",
       availability: "Available",
-      note: "Suitable products",
+      note: "From 50 pcs",
     },
-
     {
       service: "Custom packaging",
       availability: "Available",
-      note: "OEM / ODM / Private Label",
+      note: "Wholesale / Private Label",
     },
-
     {
-      service: "Sampling",
-      availability: "Available",
-      note: "Before production",
-    },
-
-    {
-      service: "Private Label",
-      availability: "Available",
-      note: "Brand-ready products",
-    },
-
-    {
-      service: "OEM / ODM",
-      availability: "Available",
-      note: "Custom development",
+      service: "Quality control",
+      availability: "Standard",
+      note: "4-step process",
     },
   ],
 };

@@ -27,14 +27,14 @@ function ChevronIcon({ open = false }) {
       viewBox="0 0 20 20"
       fill="none"
       aria-hidden="true"
-      className={`h-4 w-4 transition-transform duration-200 ${
+      className={`h-3.5 w-3.5 transition-transform duration-200 ${
         open ? "rotate-180" : ""
       }`}
     >
       <path
-        d="M5 7.5 10 12.5 15 7.5"
+        d="M5.5 7.5 10 12l4.5-4.5"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -49,12 +49,12 @@ function MenuIcon() {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="h-6 w-6"
+      className="h-5 w-5"
     >
       <path
         d="M4 7h16M4 12h16M4 17h16"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.7"
         strokeLinecap="round"
       />
     </svg>
@@ -68,12 +68,12 @@ function CloseIcon() {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="h-6 w-6"
+      className="h-5 w-5"
     >
       <path
         d="M6 6l12 12M18 6 6 18"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.7"
         strokeLinecap="round"
       />
     </svg>
@@ -100,8 +100,8 @@ function Logo({ mobile = false, onClick }) {
         decoding="async"
         className={
           mobile
-            ? "h-[62px] w-auto object-contain"
-            : "h-[66px] w-auto object-contain sm:h-[72px]"
+            ? "h-[58px] w-auto object-contain"
+            : "h-[66px] w-auto object-contain lg:h-[72px]"
         }
       />
     </Link>
@@ -113,76 +113,77 @@ function Logo({ mobile = false, onClick }) {
    SAMPLE CTA
 ========================================================== */
 
-function SampleButton({
-  onClick,
-  mobile = false,
-}) {
+function SampleButton({ onClick, mobile = false }) {
   return (
     <button
       type="button"
       onClick={onClick}
       className={[
-        "group relative isolate overflow-hidden rounded-full",
-        "border border-[#F59E0B] bg-[#F59E0B]",
-        "font-extrabold text-[#1E2A24]",
-        "shadow-[0_12px_30px_rgba(245,158,11,0.20)]",
-        "transition-all duration-500",
-        "ease-[cubic-bezier(0.22,1,0.36,1)]",
-        "hover:-translate-y-[2px]",
-        "hover:border-[#FFB62E]",
-        "hover:shadow-[0_18px_42px_rgba(245,158,11,0.34)]",
-        "active:translate-y-0 active:scale-[0.98]",
+        "group relative isolate overflow-hidden",
+        "border border-[#F59E0B]",
+        "bg-[#F59E0B]",
+        "text-[#0F2F24]",
+
+        "transition-all duration-300",
+        "ease-[cubic-bezier(.22,1,.36,1)]",
+
+        "hover:-translate-y-[1px]",
+        "hover:bg-[#FFA914]",
+        "hover:shadow-[0_10px_25px_rgba(245,158,11,0.25)]",
+
+        "active:translate-y-0",
+        "active:scale-[0.985]",
+
         "focus-visible:outline-none",
-        "focus-visible:ring-4 focus-visible:ring-[#F59E0B]/25",
+        "focus-visible:ring-4",
+        "focus-visible:ring-[#F59E0B]/20",
+
         mobile
-          ? "flex min-h-[52px] w-full items-center justify-center px-6 text-[14px]"
-          : "hidden min-h-[52px] shrink-0 items-center justify-center px-7 text-[13px] min-[1180px]:inline-flex",
+          ? [
+              "flex h-[52px] w-full",
+              "items-center justify-center",
+              "rounded-[15px]",
+              "px-6",
+              "text-[15px]",
+              "font-extrabold",
+              "leading-none",
+              "tracking-[-0.02em]",
+            ].join(" ")
+          : [
+              "hidden h-[48px] shrink-0",
+              "items-center justify-center",
+              "rounded-[15px]",
+              "px-7",
+              "text-[15px]",
+              "font-extrabold",
+              "leading-none",
+              "tracking-[-0.02em]",
+              "min-[1180px]:inline-flex",
+            ].join(" "),
       ].join(" ")}
     >
-      {/* ánh sáng từ dưới đi lên */}
+      {/* LIGHT FROM BOTTOM */}
       <span
         aria-hidden="true"
         className="
           pointer-events-none
           absolute
-          inset-x-[8%]
-          -bottom-10
-          h-16
+          inset-x-[12%]
+          -bottom-8
+          h-12
           rounded-full
-          bg-white/90
+          bg-white/65
           opacity-0
-          blur-2xl
+          blur-xl
           transition-all
           duration-500
-          ease-[cubic-bezier(0.22,1,0.36,1)]
-          group-hover:-bottom-2
-          group-hover:opacity-80
+          ease-[cubic-bezier(.22,1,.36,1)]
+          group-hover:-bottom-3
+          group-hover:opacity-70
         "
       />
 
-      {/* lớp sáng vàng nâng lên trong button */}
-      <span
-        aria-hidden="true"
-        className="
-          pointer-events-none
-          absolute
-          inset-x-0
-          -bottom-full
-          h-full
-          bg-gradient-to-t
-          from-[#FFE49B]/90
-          via-[#FFD36B]/45
-          to-transparent
-          opacity-0
-          transition-all
-          duration-500
-          ease-[cubic-bezier(0.22,1,0.36,1)]
-          group-hover:bottom-0
-          group-hover:opacity-100
-        "
-      />
-
-      {/* tia highlight quét ngang */}
+      {/* LIGHT SWEEP */}
       <span
         aria-hidden="true"
         className="
@@ -191,11 +192,11 @@ function SampleButton({
           -left-[55%]
           top-0
           h-full
-          w-[38%]
-          -skew-x-[22deg]
+          w-[35%]
+          -skew-x-[20deg]
           bg-gradient-to-r
           from-transparent
-          via-white/55
+          via-white/45
           to-transparent
           opacity-0
           transition-all
@@ -205,40 +206,74 @@ function SampleButton({
         "
       />
 
-      <span className="relative z-10">
+      <span className="relative z-10 whitespace-nowrap">
         Get Free Sample
       </span>
     </button>
   );
 }
 
-
 /* ==========================================================
-   NAV LINK STYLES
+   DESKTOP NAV STYLE
 ========================================================== */
 
 function desktopLinkClass({ isActive }) {
   return [
-    "relative inline-flex min-h-[44px] items-center rounded-full px-4",
-    "text-[13px] font-bold transition-colors duration-200",
-    "after:absolute after:bottom-[7px] after:left-4 after:right-4",
-    "after:h-[2px] after:origin-center after:rounded-full",
+    "relative inline-flex h-[84px] items-center",
+
+    "px-3",
+
+    "text-[14px]",
+    "font-semibold",
+    "leading-none",
+    "tracking-[-0.015em]",
+
+    "transition-colors duration-200",
+
+    "after:absolute",
+    "after:bottom-[18px]",
+    "after:left-3",
+    "after:right-3",
+    "after:h-[2px]",
+    "after:origin-center",
+    "after:rounded-full",
     "after:bg-[#F59E0B]",
-    "after:transition-transform after:duration-200",
+    "after:transition-transform",
+    "after:duration-200",
+
     isActive
-      ? "bg-[#FFF4DA] text-[#1E2A24] after:scale-x-100"
-      : "text-[#3D5245] after:scale-x-0 hover:bg-[#F4F1EA] hover:text-[#1E2A24]",
+      ? [
+          "text-[#0F2F24]",
+          "after:scale-x-100",
+        ].join(" ")
+      : [
+          "text-[#0F2F24]",
+          "after:scale-x-0",
+          "hover:text-[#D97706]",
+          "hover:after:scale-x-100",
+        ].join(" "),
   ].join(" ");
 }
 
 
+/* ==========================================================
+   MOBILE NAV STYLE
+========================================================== */
+
 function mobileLinkClass({ isActive }) {
   return [
-    "flex min-h-[54px] items-center rounded-2xl px-4",
-    "text-[17px] font-bold transition-colors duration-200",
+    "flex min-h-[50px] items-center",
+    "rounded-xl px-3",
+
+    "text-[15px]",
+    "font-medium",
+    "tracking-[-0.01em]",
+
+    "transition-colors duration-200",
+
     isActive
-      ? "bg-[#FFF4DA] text-[#1E2A24]"
-      : "text-[#3D5245] hover:bg-[#F4F1EA] hover:text-[#1E2A24]",
+      ? "bg-[#FFF3D6] text-[#D97706]"
+      : "text-[#26382F] hover:bg-[#F4F1EA] hover:text-[#1E2A24]",
   ].join(" ");
 }
 
@@ -251,16 +286,20 @@ export default function Header() {
   const location = useLocation();
   const { openSampleModal } = useSampleModal();
 
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileProductsOpen, setMobileProductsOpen] =
+  const [mobileOpen, setMobileOpen] =
     useState(false);
+
+  const [
+    mobileProductsOpen,
+    setMobileProductsOpen,
+  ] = useState(false);
 
   const productsActive =
     location.pathname.startsWith("/products");
 
 
   /* ========================================================
-     CLOSE MOBILE MENU AFTER ROUTE CHANGE
+     CLOSE MOBILE AFTER ROUTE CHANGE
   ======================================================== */
 
   useEffect(() => {
@@ -270,7 +309,7 @@ export default function Header() {
 
 
   /* ========================================================
-     MOBILE SCROLL LOCK + ESCAPE
+     MOBILE SCROLL LOCK + ESC
   ======================================================== */
 
   useEffect(() => {
@@ -279,11 +318,15 @@ export default function Header() {
     const html = document.documentElement;
     const body = document.body;
 
-    const oldHtmlOverflow = html.style.overflow;
-    const oldBodyOverflow = body.style.overflow;
+    const previousHtmlOverflow =
+      html.style.overflow;
+
+    const previousBodyOverflow =
+      body.style.overflow;
 
     html.style.overflow = "hidden";
     body.style.overflow = "hidden";
+
 
     function handleEscape(event) {
       if (event.key === "Escape") {
@@ -291,10 +334,12 @@ export default function Header() {
       }
     }
 
+
     document.addEventListener(
       "keydown",
       handleEscape,
     );
+
 
     return () => {
       document.removeEventListener(
@@ -302,8 +347,11 @@ export default function Header() {
         handleEscape,
       );
 
-      html.style.overflow = oldHtmlOverflow;
-      body.style.overflow = oldBodyOverflow;
+      html.style.overflow =
+        previousHtmlOverflow;
+
+      body.style.overflow =
+        previousBodyOverflow;
     };
   }, [mobileOpen]);
 
@@ -339,16 +387,34 @@ export default function Header() {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="fixed inset-0 z-[100] bg-[#FAF8F5]"
+            className="
+              fixed
+              inset-0
+              z-[100]
+              bg-[#FAF8F5]
+            "
           >
             <div className="flex h-full flex-col">
 
               {/* MOBILE TOP */}
-              <div className="flex min-h-[86px] items-center justify-between border-b border-[#1E2A24]/10 px-4 sm:px-6">
+              <div
+                className="
+                  flex
+                  h-[76px]
+                  shrink-0
+                  items-center
+                  justify-between
+                  border-b
+                  border-[#1E2A24]/10
+                  px-4
+                  sm:px-6
+                "
+              >
                 <Logo
                   mobile
                   onClick={closeMobileMenu}
                 />
+
 
                 <button
                   type="button"
@@ -356,8 +422,8 @@ export default function Header() {
                   aria-label="Close navigation"
                   className="
                     grid
-                    h-11
-                    w-11
+                    h-10
+                    w-10
                     place-items-center
                     rounded-full
                     border
@@ -366,7 +432,7 @@ export default function Header() {
                     text-[#1E2A24]
                     transition
                     hover:border-[#F59E0B]
-                    hover:bg-[#FFF4DA]
+                    hover:text-[#D97706]
                     focus-visible:outline-none
                     focus-visible:ring-4
                     focus-visible:ring-[#F59E0B]/20
@@ -374,28 +440,44 @@ export default function Header() {
                 >
                   <CloseIcon />
                 </button>
+
               </div>
 
 
-              {/* MOBILE SCROLL AREA */}
+              {/* MOBILE SCROLL */}
               <div className="flex-1 overflow-y-auto overscroll-contain">
-                <div className="mx-auto flex min-h-full w-full max-w-xl flex-col px-4 pb-8 pt-5 sm:px-6">
 
+                <div
+                  className="
+                    mx-auto
+                    flex
+                    min-h-full
+                    w-full
+                    max-w-xl
+                    flex-col
+                    px-4
+                    pb-8
+                    pt-5
+                    sm:px-6
+                  "
+                >
                   <nav
                     aria-label="Mobile navigation"
                     className="space-y-1"
                   >
                     {navigation.map((item) => {
+
+                      /* PRODUCT MOBILE */
                       if (item.type === "products") {
                         return (
                           <div key={item.label}>
 
-                            {/* PRODUCT BUTTON */}
                             <button
                               type="button"
                               onClick={() =>
                                 setMobileProductsOpen(
-                                  (current) => !current,
+                                  (current) =>
+                                    !current,
                                 )
                               }
                               aria-expanded={
@@ -403,41 +485,70 @@ export default function Header() {
                               }
                               aria-controls="mobile-product-menu"
                               className={[
-                                "flex min-h-[54px] w-full items-center justify-between",
-                                "rounded-2xl px-4 text-left text-[17px] font-bold",
+                                "flex min-h-[50px] w-full",
+                                "items-center justify-between",
+                                "rounded-xl px-3",
+                                "text-left text-[15px]",
+                                "font-medium",
+                                "tracking-[-0.01em]",
                                 "transition-colors duration-200",
+
                                 productsActive
-                                  ? "bg-[#FFF4DA] text-[#1E2A24]"
-                                  : "text-[#3D5245] hover:bg-[#F4F1EA] hover:text-[#1E2A24]",
+                                  ? "bg-[#FFF3D6] text-[#D97706]"
+                                  : "text-[#26382F] hover:bg-[#F4F1EA]",
                               ].join(" ")}
                             >
                               <span>Product</span>
 
                               <ChevronIcon
-                                open={mobileProductsOpen}
+                                open={
+                                  mobileProductsOpen
+                                }
                               />
                             </button>
 
 
-                            {/* PRODUCT SUBMENU */}
+                            {/* MOBILE PRODUCT SUBMENU */}
                             <div
                               id="mobile-product-menu"
                               className={[
                                 "grid overflow-hidden",
                                 "transition-[grid-template-rows,opacity]",
                                 "duration-300",
+
                                 mobileProductsOpen
                                   ? "grid-rows-[1fr] opacity-100"
                                   : "grid-rows-[0fr] opacity-0",
                               ].join(" ")}
                             >
                               <div className="min-h-0">
-                                <div className="ml-4 mt-1 space-y-1 border-l border-[#F59E0B]/35 pl-4">
 
+                                <div
+                                  className="
+                                    ml-3
+                                    mt-1
+                                    space-y-1
+                                    border-l
+                                    border-[#F59E0B]/30
+                                    pl-3
+                                  "
+                                >
                                   <Link
                                     to="/products"
-                                    onClick={closeMobileMenu}
-                                    className="block rounded-xl px-3 py-3 text-sm font-extrabold text-[#F59E0B] transition hover:bg-[#FFF4DA]"
+                                    onClick={
+                                      closeMobileMenu
+                                    }
+                                    className="
+                                      block
+                                      rounded-lg
+                                      px-3
+                                      py-2.5
+                                      text-[13px]
+                                      font-semibold
+                                      text-[#D97706]
+                                      transition
+                                      hover:bg-[#FFF3D6]
+                                    "
                                   >
                                     All Products
                                   </Link>
@@ -446,32 +557,52 @@ export default function Header() {
                                   {productCatalog.map(
                                     (product) => (
                                       <Link
-                                        key={product.slug}
+                                        key={
+                                          product.slug
+                                        }
                                         to={`/products/${product.slug}`}
                                         onClick={
                                           closeMobileMenu
                                         }
-                                        className="block rounded-xl px-3 py-3 text-sm font-semibold text-[#6A645D] transition hover:bg-[#F4F1EA] hover:text-[#1E2A24]"
+                                        className="
+                                          block
+                                          rounded-lg
+                                          px-3
+                                          py-2.5
+                                          text-[13px]
+                                          font-normal
+                                          text-[#6A645D]
+                                          transition
+                                          hover:bg-[#F4F1EA]
+                                          hover:text-[#1E2A24]
+                                        "
                                       >
-                                        {product.name}
+                                        {
+                                          product.name
+                                        }
                                       </Link>
                                     ),
                                   )}
+
                                 </div>
                               </div>
                             </div>
+
                           </div>
                         );
                       }
 
 
+                      /* NORMAL MOBILE LINK */
                       return (
                         <NavLink
                           key={item.label}
                           to={item.to}
                           end={item.end}
                           onClick={closeMobileMenu}
-                          className={mobileLinkClass}
+                          className={
+                            mobileLinkClass
+                          }
                         >
                           {item.label}
                         </NavLink>
@@ -482,19 +613,34 @@ export default function Header() {
 
                   {/* MOBILE CTA */}
                   <div className="mt-auto pt-8">
+
                     <SampleButton
                       mobile
-                      onClick={handleMobileSample}
+                      onClick={
+                        handleMobileSample
+                      }
                     />
 
-                    <p className="mt-4 text-center text-[11px] font-medium leading-5 text-[#6A645D]">
-                      Natural pet products · OEM / ODM ·
-                      Private Label · Vietnam
+                    <p
+                      className="
+                        mt-4
+                        text-center
+                        text-[10px]
+                        font-normal
+                        leading-5
+                        text-[#6A645D]
+                      "
+                    >
+                      Natural pet products ·
+                      OEM / ODM · Private Label ·
+                      Vietnam
                     </p>
+
                   </div>
 
                 </div>
               </div>
+
             </div>
           </div>,
           document.body,
@@ -514,34 +660,58 @@ export default function Header() {
           top-0
           z-50
           border-b
-          border-[#1E2A24]/10
-          bg-[#FAF8F5]/95
-          backdrop-blur-xl
+          border-[#1E2A24]/[0.08]
+          bg-white
         "
       >
         <div
           className="
             mx-auto
             flex
-            min-h-[88px]
+            h-[84px]
             w-full
-            max-w-[1240px]
+            max-w-[1360px]
             items-center
-            gap-3
             px-4
+
             sm:px-6
+
             lg:px-8
+
+            min-[1180px]:grid
+            min-[1180px]:grid-cols-[220px_minmax(0,1fr)_220px]
           "
         >
 
-          {/* LOGO */}
-          <Logo />
+          {/* =================================================
+              LEFT / LOGO
+          ================================================= */}
+
+          <div
+            className="
+              flex
+              items-center
+              justify-self-start
+            "
+          >
+            <Logo />
+          </div>
 
 
-          {/* DESKTOP NAVIGATION */}
+          {/* =================================================
+              CENTER / DESKTOP NAV
+          ================================================= */}
+
           <nav
             aria-label="Main navigation"
-            className="ml-auto hidden items-center gap-1 min-[1180px]:flex"
+            className="
+              hidden
+              items-center
+              justify-center
+              gap-4
+              min-[1180px]:flex
+              xl:gap-5
+            "
           >
             {navigation.map((item) => {
 
@@ -554,10 +724,20 @@ export default function Header() {
                   >
                     <NavLink
                       to="/products"
-                      className={desktopLinkClass}
+                      className={
+                        desktopLinkClass
+                      }
                     >
-                      <span>Product</span>
-                      <ChevronIcon />
+                      <span
+                        className="
+                          flex
+                          items-center
+                          gap-1
+                        "
+                      >
+                        Product
+                        <ChevronIcon />
+                      </span>
                     </NavLink>
 
 
@@ -569,11 +749,12 @@ export default function Header() {
                         left-1/2
                         top-full
                         z-50
-                        w-[340px]
+                        w-[320px]
                         -translate-x-1/2
-                        translate-y-1
-                        pt-3
+                        translate-y-2
+                        pt-2
                         opacity-0
+
                         transition-all
                         duration-200
 
@@ -586,20 +767,56 @@ export default function Header() {
                         group-focus-within:opacity-100
                       "
                     >
-                      <div className="overflow-hidden rounded-[22px] border border-[#1E2A24]/10 bg-white p-3 shadow-[0_24px_60px_rgba(30,42,36,0.14)]">
-
-                        <p className="px-3 pb-2 pt-1 text-[9px] font-extrabold uppercase tracking-[0.18em] text-[#F59E0B]">
+                      <div
+                        className="
+                          rounded-[18px]
+                          border
+                          border-[#1E2A24]/10
+                          bg-white
+                          p-2.5
+                          shadow-[0_18px_48px_rgba(30,42,36,0.12)]
+                        "
+                      >
+                        <p
+                          className="
+                            px-3
+                            pb-2
+                            pt-1
+                            text-[9px]
+                            font-semibold
+                            uppercase
+                            tracking-[0.16em]
+                            text-[#D97706]
+                          "
+                        >
                           Products
                         </p>
 
 
-                        <div className="space-y-1">
+                        <div className="space-y-0.5">
+
                           {productCatalog.map(
                             (product) => (
                               <Link
-                                key={product.slug}
+                                key={
+                                  product.slug
+                                }
                                 to={`/products/${product.slug}`}
-                                className="flex min-h-[44px] items-center justify-between gap-4 rounded-xl px-3 text-[12px] font-semibold text-[#3D5245] transition hover:bg-[#F4F1EA] hover:text-[#1E2A24]"
+                                className="
+                                  flex
+                                  min-h-[40px]
+                                  items-center
+                                  justify-between
+                                  gap-3
+                                  rounded-lg
+                                  px-3
+                                  text-[12px]
+                                  font-normal
+                                  text-[#3D5245]
+                                  transition
+                                  hover:bg-[#F4F1EA]
+                                  hover:text-[#1E2A24]
+                                "
                               >
                                 <span>
                                   {product.name}
@@ -614,30 +831,48 @@ export default function Header() {
                               </Link>
                             ),
                           )}
+
                         </div>
 
 
                         <Link
                           to="/products"
-                          className="mt-2 flex min-h-[44px] items-center justify-center rounded-xl bg-[#0F2F24] px-4 text-[11px] font-extrabold text-white transition hover:bg-[#3D5245]"
+                          className="
+                            mt-2
+                            flex
+                            min-h-[40px]
+                            items-center
+                            justify-center
+                            rounded-lg
+                            bg-[#0F2F24]
+                            px-4
+                            text-[11px]
+                            font-semibold
+                            text-white
+                            transition
+                            hover:bg-[#2F4538]
+                          "
                         >
                           View all products
                         </Link>
 
                       </div>
                     </div>
+
                   </div>
                 );
               }
 
 
-              /* NORMAL NAV LINK */
+              /* NORMAL DESKTOP LINK */
               return (
                 <NavLink
                   key={item.label}
                   to={item.to}
                   end={item.end}
-                  className={desktopLinkClass}
+                  className={
+                    desktopLinkClass
+                  }
                 >
                   {item.label}
                 </NavLink>
@@ -646,26 +881,40 @@ export default function Header() {
           </nav>
 
 
-          {/* DESKTOP CTA */}
-          <div className="ml-3 hidden min-[1180px]:block">
+          {/* =================================================
+              RIGHT / CTA
+          ================================================= */}
+
+          <div
+            className="
+              hidden
+              justify-self-end
+              min-[1180px]:block
+            "
+          >
             <SampleButton
               onClick={openSampleModal}
             />
           </div>
 
 
-          {/* MOBILE / TABLET BUTTON */}
+          {/* =================================================
+              MOBILE / TABLET MENU BUTTON
+          ================================================= */}
+
           <button
             type="button"
-            onClick={() => setMobileOpen(true)}
+            onClick={() =>
+              setMobileOpen(true)
+            }
             aria-label="Open navigation"
             aria-expanded={mobileOpen}
             aria-haspopup="dialog"
             className="
               ml-auto
               grid
-              h-11
-              w-11
+              h-10
+              w-10
               shrink-0
               place-items-center
               rounded-full
@@ -673,12 +922,16 @@ export default function Header() {
               border-[#1E2A24]/10
               bg-white
               text-[#1E2A24]
+
               transition
+
               hover:border-[#F59E0B]
-              hover:bg-[#FFF4DA]
+              hover:text-[#D97706]
+
               focus-visible:outline-none
               focus-visible:ring-4
               focus-visible:ring-[#F59E0B]/20
+
               min-[1180px]:hidden
             "
           >
