@@ -1019,3 +1019,206 @@
 .about-v4-opening {
   padding: 64px 0 72px;
 }
+
+/* ==========================================================
+   QUALITY - READABILITY TUNING
+   Chỉ tăng nhẹ size + độ đậm, không đổi layout
+========================================================== */
+
+.inside-quality__lead {
+  color: #1E2A24;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+.inside-quality__checks span {
+  color: #F59E0B;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.inside-quality__checks p {
+  color: #3D5245;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+.inside-outline-button {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+/* Tablet */
+@media (max-width: 999px) {
+  .inside-quality__lead {
+    font-size: 23px;
+  }
+
+  .inside-quality__checks p {
+    font-size: 16px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 640px) {
+  .inside-quality__lead {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .inside-quality__checks span {
+    font-size: 12px;
+  }
+
+  .inside-quality__checks p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .inside-outline-button {
+    font-size: 14px;
+  }
+}
+/* ==========================================================
+   QUALITY OUTER CARD ALIGNMENT
+========================================================== */
+
+.inside-quality__grid {
+  align-items: stretch;
+}
+
+/* Reveal wrapper phải stretch theo chiều cao của grid row */
+.inside-quality__grid > .reveal {
+  min-width: 0;
+}
+
+.inside-quality__grid > .reveal:first-child,
+.inside-quality__grid > .reveal:last-child {
+  height: 100%;
+}
+
+/* Hai card ngoài cùng cao bằng nhau */
+.inside-quality__grid > .reveal:first-child > *,
+.inside-quality__grid > .reveal:last-child > * {
+  height: 100%;
+}
+
+/* Không crop ảnh QC */
+.inside-quality__pet-card img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  transform: none !important;
+}
+
+/* Mini image cũng không crop */
+.inside-quality__mini-pet img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  transform: none !important;
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 1000px) {
+  .inside-quality__grid {
+    align-items: stretch;
+  }
+
+  .inside-quality__pet-card,
+  .inside-quality__detail {
+    min-height: 640px;
+  }
+
+  .inside-quality__lead {
+    font-size: 24px;
+  }
+
+  .inside-quality__checks p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .inside-quality__checks span {
+    font-size: 13px;
+    font-weight: 800;
+  }
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width: 720px) and (max-width: 999px) {
+  .inside-quality__pet-card,
+  .inside-quality__detail {
+    min-height: 520px;
+  }
+
+  .inside-quality__lead {
+    font-size: 22px;
+  }
+
+  .inside-quality__checks p {
+    font-size: 16px;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 719px) {
+  .inside-quality__grid {
+    align-items: initial;
+  }
+
+  .inside-quality__grid > .reveal:first-child,
+  .inside-quality__grid > .reveal:last-child {
+    height: auto;
+  }
+
+  .inside-quality__pet-card,
+  .inside-quality__detail {
+    height: auto;
+    min-height: auto;
+  }
+
+  .inside-quality__pet-card {
+    min-height: 420px;
+  }
+
+  .inside-quality__lead {
+    font-size: 21px;
+    line-height: 1.5;
+  }
+
+  .inside-quality__checks p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}

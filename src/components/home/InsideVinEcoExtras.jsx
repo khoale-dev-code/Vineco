@@ -80,6 +80,30 @@ const processStories = [
 
 
 /* ==========================================================
+   QUALITY STEPS
+========================================================== */
+
+const qualitySteps = [
+  {
+    number: "01",
+    text: "Coffee wood selection and material preparation.",
+  },
+  {
+    number: "02",
+    text: "Controlled drying and moisture management.",
+  },
+  {
+    number: "03",
+    text: "Shaping, sanding, smoothing and finishing.",
+  },
+  {
+    number: "04",
+    text: "Final product check before packing and export preparation.",
+  },
+];
+
+
+/* ==========================================================
    PROCESS STORIES
 ========================================================== */
 
@@ -88,14 +112,10 @@ function ProcessStoriesSection() {
 
   function scrollStories(direction) {
     const track = trackRef.current;
-
     if (!track) return;
 
-    const firstCard =
-      track.querySelector("[data-process-card]");
-
-    const cardWidth =
-      firstCard?.getBoundingClientRect().width ?? 300;
+    const firstCard = track.querySelector("[data-process-card]");
+    const cardWidth = firstCard?.getBoundingClientRect().width ?? 300;
 
     track.scrollBy({
       left: direction * (cardWidth + 16),
@@ -106,10 +126,8 @@ function ProcessStoriesSection() {
   return (
     <section className="inside-reviews">
       <div className="inside-extras-shell">
-
         <Reveal>
           <header className="inside-reviews__header">
-
             <div>
               <p className="inside-extras-eyebrow">
                 Inside VinEco
@@ -124,17 +142,13 @@ function ProcessStoriesSection() {
             </div>
 
             <p className="inside-reviews__intro">
-              A closer look at how VinEco processes,
-              checks, packs and prepares coffee wood
-              pet products for international B2B orders.
+              A closer look at how VinEco processes, checks, packs and
+              prepares coffee wood pet products for international B2B orders.
             </p>
-
           </header>
         </Reveal>
 
-
         <div className="inside-reviews__stage">
-
           <button
             type="button"
             onClick={() => scrollStories(-1)}
@@ -144,105 +158,87 @@ function ProcessStoriesSection() {
             ‹
           </button>
 
-
           <div
             ref={trackRef}
             className="inside-reviews__track"
           >
-            {processStories.map(
-              (story, index) => (
-                <Reveal
-                  key={story.id}
-                  delay={index * 70}
-                  className="inside-reviews__reveal"
+            {processStories.map((story, index) => (
+              <Reveal
+                key={story.id}
+                delay={index * 70}
+                className="inside-reviews__reveal"
+              >
+                <article
+                  data-process-card
+                  className="inside-review-card"
                 >
-                  <article
-                    data-process-card
-                    className="inside-review-card"
-                  >
+                  <div className="inside-review-card__media">
+                    <SmartImage
+                      src={story.image}
+                      alt={story.alt}
+                      className={[
+                        "h-full w-full object-cover",
+                        story.imagePosition,
+                      ].join(" ")}
+                    />
 
-                    <div className="inside-review-card__media">
-
-                      <SmartImage
-                        src={story.image}
-                        alt={story.alt}
-                        className={[
-                          "h-full w-full object-cover",
-                          story.imagePosition,
-                        ].join(" ")}
-                      />
-
-                      <div className="inside-review-card__number">
-                        {story.number}
-                      </div>
-
+                    <div className="inside-review-card__number">
+                      {story.number}
                     </div>
+                  </div>
 
+                  <div className="inside-review-card__body">
+                    <span
+                      className="inside-review-card__quote"
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
 
-                    <div className="inside-review-card__body">
+                    <p
+                      style={{
+                        color: "#D97706",
+                        fontSize: "10px",
+                        fontWeight: 800,
+                        letterSpacing: ".12em",
+                        textTransform: "uppercase",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      {story.eyebrow}
+                    </p>
 
-                      <span
-                        className="inside-review-card__quote"
-                        aria-hidden="true"
-                      >
-                        +
+                    <h3
+                      style={{
+                        margin: 0,
+                        color: "#1E2A24",
+                        fontSize: "20px",
+                        fontWeight: 800,
+                        lineHeight: 1.12,
+                        letterSpacing: "-.025em",
+                      }}
+                    >
+                      {story.title}
+                    </h3>
+
+                    <p style={{ marginTop: "12px" }}>
+                      {story.text}
+                    </p>
+
+                    <footer>
+                      <strong>
+                        VinEco Int Co., Ltd.
+                      </strong>
+
+                      <span>
+                        {story.meta}
                       </span>
-
-                      <p
-                        style={{
-                          color: "#D97706",
-                          fontSize: "10px",
-                          fontWeight: 800,
-                          letterSpacing: ".12em",
-                          textTransform: "uppercase",
-                          marginBottom: "8px",
-                        }}
-                      >
-                        {story.eyebrow}
-                      </p>
-
-
-                      <h3
-                        style={{
-                          margin: 0,
-                          color: "#1E2A24",
-                          fontSize: "20px",
-                          fontWeight: 800,
-                          lineHeight: 1.12,
-                          letterSpacing: "-.025em",
-                        }}
-                      >
-                        {story.title}
-                      </h3>
-
-
-                      <p
-                        style={{
-                          marginTop: "12px",
-                        }}
-                      >
-                        {story.text}
-                      </p>
-
-
-                      <footer>
-                        <strong>
-                          VinEco Int Co., Ltd.
-                        </strong>
-
-                        <span>
-                          {story.meta}
-                        </span>
-                      </footer>
-
-                    </div>
-
-                  </article>
-                </Reveal>
-              ),
-            )}
+                    </footer>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
           </div>
-
 
           <button
             type="button"
@@ -252,28 +248,19 @@ function ProcessStoriesSection() {
           >
             ›
           </button>
-
         </div>
-
 
         <div
           className="inside-reviews__dots"
           aria-hidden="true"
         >
-          {processStories.map(
-            (story, index) => (
-              <span
-                key={story.id}
-                className={
-                  index === 0
-                    ? "is-active"
-                    : ""
-                }
-              />
-            ),
-          )}
+          {processStories.map((story, index) => (
+            <span
+              key={story.id}
+              className={index === 0 ? "is-active" : ""}
+            />
+          ))}
         </div>
-
       </div>
     </section>
   );
@@ -286,56 +273,240 @@ function ProcessStoriesSection() {
 
 function PartnerBanner() {
   return (
-    <section className="inside-partner partner-showcase">
-      <div className="inside-extras-shell">
-        <div className="partner-showcase__grid">
-          <div className="partner-showcase__visual">
-            <img
-              src="/images/home-stories/07-partner-dog.png?v=2"
-              alt="Dog playing with VinEco coffee wood toy"
-              className="partner-showcase__image partner-showcase__image--dog"
-            />
-          </div>
+    <section className="bg-[#FAF8F5] py-14 sm:py-16 lg:py-20">
+      <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <div
+            className={[
+              "grid items-stretch gap-3",
+              "lg:grid-cols-[.72fr_1.7fr_.72fr]",
+              "xl:grid-cols-[.68fr_1.75fr_.68fr]",
+            ].join(" ")}
+          >
+            {/* LEFT VISUAL */}
+            <div
+              className={[
+                "group relative overflow-hidden",
+                "rounded-[28px]",
+                "bg-[#FAF8F5]",
+                "min-h-[300px]",
+                "sm:min-h-[360px]",
+                "lg:min-h-[520px]",
+              ].join(" ")}
+            >
+              <div
+                aria-hidden="true"
+                className={[
+                  "absolute left-1/2 top-[44%]",
+                  "h-[240px] w-[240px]",
+                  "-translate-x-1/2 -translate-y-1/2",
+                  "rounded-full",
+                  "bg-[#F59E0B]/[0.05]",
+                  "blur-2xl",
+                  "sm:h-[290px] sm:w-[290px]",
+                ].join(" ")}
+              />
 
-          <div className="partner-showcase__content">
-            <p className="inside-extras-eyebrow">PARTNER WITH VINECO</p>
+              <div className="absolute inset-0 flex items-end justify-center px-3 pb-12 pt-5 sm:px-5 lg:pb-14">
+                <img
+                  src="/images/home-stories/07-partner-dog.png?v=2"
+                  alt="Dog playing with VinEco coffee wood and rope toy"
+                  className={[
+                    "relative z-10",
+                    "block h-auto w-auto",
+                    "max-h-[280px] max-w-[96%]",
+                    "object-contain object-bottom",
+                    "sm:max-h-[335px]",
+                    "lg:max-h-[445px]",
+                    "xl:max-h-[470px]",
+                    "transition-transform duration-500",
+                    "group-hover:-translate-y-1",
+                  ].join(" ")}
+                />
+              </div>
 
-            <h2>
-              From your idea,
-              <span>to global delivery.</span>
-            </h2>
+              <div className="absolute inset-x-0 bottom-0 border-t border-[#1E2A24]/[0.06] px-5 py-3">
+                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#3D5245]">
+                  Natural Products
+                </span>
+              </div>
+            </div>
 
-            <p className="partner-showcase__description">
-              Work with VinEco on product development, sampling, OEM / ODM
-              manufacturing, private labeling, packaging and international
-              order fulfillment.
-            </p>
+            {/* CENTER CONTENT */}
+            <div
+              className={[
+                "relative overflow-hidden",
+                "rounded-[28px]",
+                "border border-[#F59E0B]/55",
+                "bg-white",
+                "px-6 py-9",
+                "sm:px-9 sm:py-11",
+                "lg:flex lg:min-h-[520px]",
+                "lg:flex-col lg:justify-center",
+                "lg:px-14 lg:py-12",
+                "xl:px-16",
+              ].join(" ")}
+            >
+              <div
+                aria-hidden="true"
+                className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#F59E0B]/[0.05]"
+              />
 
-            <div className="partner-showcase__actions">
-              <a href="/#/contact" className="inside-primary-button">
-                Start a conversation
-              </a>
+              <div
+                aria-hidden="true"
+                className="absolute bottom-0 left-0 h-[3px] w-[42%] bg-[#F59E0B]"
+              />
 
-              <a href="/#/oem-odm" className="inside-text-link">
-                OEM / ODM Services
-              </a>
+              <div className="relative z-10 max-w-[660px]">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#D97706] sm:text-[11px]">
+                  Partner with VinEco
+                </p>
+
+                <h2
+                  className={[
+                    "mt-4",
+                    "text-[clamp(2.7rem,4.4vw,4.7rem)]",
+                    "font-extrabold",
+                    "leading-[0.94]",
+                    "tracking-[-0.055em]",
+                    "text-[#1E2A24]",
+                  ].join(" ")}
+                >
+                  From your idea,
+                  <span className="block text-[#F59E0B]">
+                    to global delivery.
+                  </span>
+                </h2>
+
+                <p
+                  className={[
+                    "mt-6 max-w-[610px]",
+                    "text-[15px] font-medium",
+                    "leading-7 text-[#3D5245]",
+                    "sm:text-[16px] sm:leading-8",
+                  ].join(" ")}
+                >
+                  Work with VinEco on product development, sampling,
+                  OEM / ODM manufacturing, private labeling, packaging
+                  and international order fulfillment.
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {[
+                    "Sampling",
+                    "OEM / ODM",
+                    "Private Label",
+                    "Global Fulfillment",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className={[
+                        "rounded-full",
+                        "border border-[#1E2A24]/10",
+                        "bg-[#FAF8F5]",
+                        "px-3.5 py-2",
+                        "text-[10px] font-bold",
+                        "uppercase tracking-[0.08em]",
+                        "text-[#3D5245]",
+                      ].join(" ")}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <Link
+                    to="/contact"
+                    className={[
+                      "inline-flex min-h-[48px]",
+                      "items-center justify-center",
+                      "rounded-full",
+                      "bg-[#F59E0B]",
+                      "px-6",
+                      "text-[14px] font-extrabold",
+                      "text-[#1E2A24]",
+                      "shadow-[0_10px_24px_rgba(245,158,11,0.18)]",
+                      "transition duration-200",
+                      "hover:-translate-y-[1px]",
+                      "hover:bg-[#D97706]",
+                    ].join(" ")}
+                  >
+                    Start a conversation
+                  </Link>
+
+                  <Link
+                    to="/oem-odm"
+                    className={[
+                      "inline-flex min-h-[48px]",
+                      "items-center gap-2",
+                      "text-[14px] font-extrabold",
+                      "text-[#1E2A24]",
+                      "transition-colors",
+                      "hover:text-[#D97706]",
+                    ].join(" ")}
+                  >
+                    OEM / ODM Services
+                    <SiteIcon name="arrow" size={16} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT VISUAL */}
+            <div
+              className={[
+                "group relative overflow-hidden",
+                "rounded-[28px]",
+                "bg-[#FAF8F5]",
+                "min-h-[300px]",
+                "sm:min-h-[360px]",
+                "lg:min-h-[520px]",
+              ].join(" ")}
+            >
+              <div
+                aria-hidden="true"
+                className={[
+                  "absolute left-1/2 top-[44%]",
+                  "h-[240px] w-[240px]",
+                  "-translate-x-1/2 -translate-y-1/2",
+                  "rounded-full",
+                  "bg-[#F59E0B]/[0.05]",
+                  "blur-2xl",
+                  "sm:h-[290px] sm:w-[290px]",
+                ].join(" ")}
+              />
+
+              <div className="absolute inset-0 flex items-end justify-center px-3 pb-12 pt-5 sm:px-5 lg:pb-14">
+                <img
+                  src="/images/home-stories/06-partner-cat.png?v=2"
+                  alt="VinEco pet product lifestyle presentation"
+                  className={[
+                    "relative z-10",
+                    "block h-auto w-auto",
+                    "max-h-[280px] max-w-[96%]",
+                    "object-contain object-bottom",
+                    "sm:max-h-[335px]",
+                    "lg:max-h-[445px]",
+                    "xl:max-h-[470px]",
+                    "transition-transform duration-500",
+                    "group-hover:-translate-y-1",
+                  ].join(" ")}
+                />
+              </div>
+
+              <div className="absolute inset-x-0 bottom-0 border-t border-[#1E2A24]/[0.06] px-5 py-3">
+                <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#3D5245]">
+                  Brand Ready
+                </span>
+              </div>
             </div>
           </div>
-
-          <div className="partner-showcase__visual">
-            <img
-              src="/images/home-stories/06-partner-cat.png?v=2"
-              alt="Cat playing with toy"
-              className="partner-showcase__image partner-showcase__image--cat"
-            />
-          </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
 }
-
-
 /* ==========================================================
    QUALITY
 ========================================================== */
@@ -345,6 +516,7 @@ function QualitySection() {
     <section className="inside-quality">
       <div className="inside-extras-shell">
 
+        {/* HEADING */}
         <Reveal>
           <header className="inside-quality__heading">
             <p className="inside-extras-eyebrow">
@@ -361,26 +533,82 @@ function QualitySection() {
         </Reveal>
 
 
-        <div className="inside-quality__grid">
+        {/* =================================================
+            QUALITY GRID
+        ================================================= */}
 
-          {/* LEFT — MOISTURE CONTROL */}
-          <Reveal variant="left">
-            <div className="inside-quality__pet-card quality-photo-card">
-              <SmartImage
-                src="/images/home-stories/01-moisture-check.png"
-                alt="VinEco moisture inspection for finished coffee wood pet products"
-                className="h-full w-full object-cover object-[50%_58%]"
-              />
+        <div
+          className={[
+            "inside-quality__grid",
+            "items-stretch",
+          ].join(" ")}
+        >
 
-              <span>
-                QUALITY CONTROL
-              </span>
+          {/* =================================================
+              LEFT — SAME HEIGHT AS RIGHT
+              IMAGE IS NOT CROPPED
+          ================================================= */}
+
+          <Reveal
+            variant="left"
+            className="h-full"
+          >
+            <div
+              className={[
+                "inside-quality__pet-card",
+                "relative",
+                "flex h-full min-h-[520px]",
+                "flex-col overflow-hidden",
+                "lg:min-h-[640px]",
+              ].join(" ")}
+            >
+              <div
+                className={[
+                  "relative",
+                  "flex h-full min-h-0 flex-1",
+                  "items-center justify-center",
+                  "overflow-hidden",
+                  "bg-[#F4F1EA]",
+                  "p-4 sm:p-5",
+                ].join(" ")}
+              >
+                <SmartImage
+                  src="/images/home-stories/01-moisture-check.png"
+                  alt="VinEco moisture inspection for finished coffee wood pet products"
+                  className="block max-h-full max-w-full object-contain object-center"
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "center",
+                    transform: "none",
+                  }}
+                />
+
+                <span
+                  className={[
+                    "absolute bottom-4 left-4",
+                    "rounded-full",
+                    "bg-[#0F2F24]",
+                    "px-3 py-2",
+                    "text-[10px] font-extrabold",
+                    "uppercase tracking-[0.1em]",
+                    "text-white",
+                  ].join(" ")}
+                >
+                  Quality Control
+                </span>
+              </div>
             </div>
           </Reveal>
 
 
-          {/* CENTER */}
-          <Reveal variant="up" delay={80}>
+          {/* =================================================
+              CENTER
+          ================================================= */}
+
+          <Reveal
+            variant="up"
+            delay={80}
+          >
             <div className="inside-quality__statement">
               <p>
                 CHECK.
@@ -397,63 +625,59 @@ function QualitySection() {
           </Reveal>
 
 
-          {/* RIGHT */}
-          <Reveal variant="right" delay={130}>
-            <div className="inside-quality__detail">
+          {/* =================================================
+              RIGHT — SAME HEIGHT AS LEFT
+          ================================================= */}
 
-              <p className="inside-quality__lead">
-                VinEco treats quality as a sequence
-                of production controls rather than
-                relying only on a final inspection.
+          <Reveal
+            variant="right"
+            delay={130}
+            className="h-full"
+          >
+            <div
+              className={[
+                "inside-quality__detail",
+                "flex h-full min-h-[520px] flex-col",
+                "lg:min-h-[640px]",
+              ].join(" ")}
+            >
+
+              {/* LEAD */}
+              <p
+                className={[
+                  "inside-quality__lead",
+                  "text-[22px]",
+                  "font-extrabold",
+                  "leading-[1.5]",
+                  "tracking-[-0.02em]",
+                  "text-[#1E2A24]",
+                  "sm:text-[23px]",
+                  "lg:text-[24px]",
+                ].join(" ")}
+              >
+                VinEco treats quality as a sequence of production controls
+                rather than relying only on a final inspection.
               </p>
 
 
+              {/* STEPS */}
               <div className="inside-quality__checks">
+                {qualitySteps.map((step) => (
+                  <div key={step.number}>
+                    <span>
+                      {step.number}
+                    </span>
 
-                <div>
-                  <span>01</span>
-
-                  <p>
-                    Coffee wood selection and
-                    material preparation.
-                  </p>
-                </div>
-
-
-                <div>
-                  <span>02</span>
-
-                  <p>
-                    Controlled drying and
-                    moisture management.
-                  </p>
-                </div>
-
-
-                <div>
-                  <span>03</span>
-
-                  <p>
-                    Shaping, sanding,
-                    smoothing and finishing.
-                  </p>
-                </div>
-
-
-                <div>
-                  <span>04</span>
-
-                  <p>
-                    Final product check before
-                    packing and export preparation.
-                  </p>
-                </div>
-
+                    <p>
+                      {step.text}
+                    </p>
+                  </div>
+                ))}
               </div>
 
 
-              <div className="inside-quality__bottom">
-
+              {/* BOTTOM */}
+              <div className="inside-quality__bottom mt-auto">
                 <Link
                   to="/oem-odm"
                   className="inside-outline-button"
@@ -467,22 +691,32 @@ function QualitySection() {
                 </Link>
 
 
-                {/* MINI PHOTO — DRYING PROCESS */}
-                <div className="inside-quality__mini-pet quality-mini-photo">
+                {/* MINI PHOTO — FULL IMAGE */}
+                <div
+                  className={[
+                    "inside-quality__mini-pet",
+                    "flex items-center justify-center",
+                    "overflow-hidden",
+                    "bg-[#F4F1EA]",
+                  ].join(" ")}
+                >
                   <SmartImage
                     src="/images/home-stories/02-heat-drying.png"
                     alt="VinEco controlled coffee wood drying process"
-                    className="h-full w-full object-cover object-[50%_45%]"
+                    className="block max-h-full max-w-full object-contain object-center"
+                    style={{
+                      objectFit: "contain",
+                      objectPosition: "center",
+                      transform: "none",
+                    }}
                   />
                 </div>
-
               </div>
 
             </div>
           </Reveal>
 
         </div>
-
       </div>
     </section>
   );

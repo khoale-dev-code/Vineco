@@ -8,118 +8,159 @@ export default function Footer() {
   const [logoFailed, setLogoFailed] = useState(false);
 
   const socials = [
-    {
-      label: "LinkedIn",
-      href: projectData.socials.linkedin,
-    },
-    {
-      label: "YouTube",
-      href: projectData.socials.youtube,
-    },
-    {
-      label: "TikTok",
-      href: projectData.socials.tiktok,
-    },
-    {
-      label: "Zalo",
-      href: projectData.contact.zaloUrl,
-    },
+    { label: "LinkedIn", href: projectData.socials.linkedin },
+    { label: "YouTube", href: projectData.socials.youtube },
+    { label: "TikTok", href: projectData.socials.tiktok },
+    { label: "Zalo", href: projectData.contact.zaloUrl },
   ].filter((item) => item.href);
 
   return (
-    <footer className="bg-ink text-white">
-      {socials.length > 0 && (
-        <div className="border-b border-white/10">
-          <div className="mx-auto max-w-[1240px] px-4 py-6 sm:px-6 lg:px-8">
-            <p className="mb-4 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-brand-500">
-              Connect with VinEco
-            </p>
+    <footer className="border-t border-[#1E2A24]/10 bg-[#FAF8F5] text-[#1E2A24]">
 
-            <div className="flex flex-wrap justify-center gap-2">
-              {socials.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-xs font-semibold transition hover:border-brand-500 hover:bg-brand-500 hover:text-ink"
-                >
-                  {item.label} ↗
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+    
+      {/* =====================================================
+          MAIN FOOTER
+      ===================================================== */}
 
-      <div className="mx-auto grid max-w-[1240px] gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.35fr_.7fr_.7fr_1fr] lg:px-8 lg:py-16">
-        <div>
+      <div
+        className={[
+          "mx-auto grid max-w-[1240px]",
+          "gap-10 px-4 py-12",
+          "sm:px-6 sm:py-14",
+          "md:grid-cols-2",
+          "lg:grid-cols-[1.35fr_.72fr_.9fr_1.15fr]",
+          "lg:gap-12 lg:px-8 lg:py-16",
+        ].join(" ")}
+      >
+
+        {/* ===================================================
+            BRAND
+        =================================================== */}
+
+        <div className="min-w-0">
           {!logoFailed ? (
-            <img
-              src={projectData.brand.logo}
-              alt="VinEco"
-              onError={() => setLogoFailed(true)}
-              className="h-10 w-auto max-w-[190px] object-contain brightness-0 invert"
-            />
+            <Link
+              to="/"
+              aria-label="VinEco home"
+              className="inline-flex"
+            >
+              <img
+                src={projectData.brand.logo}
+                alt="VinEco Pet Toys"
+                loading="eager"
+                decoding="async"
+                onError={() => setLogoFailed(true)}
+                className={[
+                  "block h-auto object-contain object-left",
+                  "w-[125px]",
+                  "sm:w-[140px]",
+                  "lg:w-[155px]",
+                ].join(" ")}
+              />
+            </Link>
           ) : (
-            <p className="text-2xl font-extrabold">
+            <p className="text-[30px] font-extrabold tracking-[-0.04em] text-[#0F2F24]">
               VinEco
             </p>
           )}
 
-          <p className="mt-5 max-w-sm text-sm leading-7 text-white/65">
+          <p
+            className={[
+              "mt-6 max-w-[400px]",
+              "text-[15px] font-medium",
+              "leading-7",
+              "text-[#3D5245]",
+              "sm:text-[16px] sm:leading-8",
+            ].join(" ")}
+          >
             {projectData.brand.tagline}
           </p>
 
-          <div className="mt-6 space-y-3 text-sm text-white/70">
+          <div
+            className={[
+              "mt-7 space-y-4",
+              "text-[15px] font-semibold",
+              "text-[#1E2A24]",
+              "sm:text-[16px]",
+            ].join(" ")}
+          >
             <a
               href={`mailto:${projectData.contact.salesEmail}`}
-              className="flex gap-3 hover:text-brand-500"
+              className="flex items-center gap-3 transition-colors hover:text-[#D97706]"
             >
-              <SiteIcon name="mail" size={17} />
-              {projectData.contact.salesEmail}
+              <span className="shrink-0 text-[#3D5245]">
+                <SiteIcon
+                  name="mail"
+                  size={19}
+                  strokeWidth={1.8}
+                />
+              </span>
+
+              <span className="break-all">
+                {projectData.contact.salesEmail}
+              </span>
             </a>
 
             <a
               href={`tel:${projectData.contact.phoneRaw}`}
-              className="flex gap-3 hover:text-brand-500"
+              className="flex items-center gap-3 transition-colors hover:text-[#D97706]"
             >
-              <SiteIcon name="phone" size={17} />
-              {projectData.contact.phone}
+              <span className="shrink-0 text-[#3D5245]">
+                <SiteIcon
+                  name="phone"
+                  size={19}
+                  strokeWidth={1.8}
+                />
+              </span>
+
+              <span>
+                {projectData.contact.phone}
+              </span>
             </a>
           </div>
         </div>
 
+        {/* ===================================================
+            COMPANY
+        =================================================== */}
+
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-brand-500">
+          <FooterHeading>
             Company
-          </h3>
+          </FooterHeading>
 
-          <div className="mt-5 flex flex-col gap-3 text-sm text-white/65">
-            <a href="/#/">
+          <nav
+            aria-label="Footer company navigation"
+            className="mt-6 flex flex-col gap-4 text-[15px] font-semibold text-[#3D5245] sm:text-[16px]"
+          >
+            <FooterLink to="/">
               Home
-            </a>
+            </FooterLink>
 
-            <a href="/#/?section=about">
-              About
-            </a>
+            <FooterLink to="/about">
+              About Us
+            </FooterLink>
 
-            <Link to="/oem-odm">
+            <FooterLink to="/oem-odm">
               OEM / ODM
-            </Link>
+            </FooterLink>
 
-            <Link to="/contact">
+            <FooterLink to="/contact">
               Contact
-            </Link>
-          </div>
+            </FooterLink>
+          </nav>
         </div>
 
-        <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-brand-500">
-            Products
-          </h3>
+        {/* ===================================================
+            PRODUCTS
+        =================================================== */}
 
-          <div className="mt-5 flex flex-col gap-3 text-sm text-white/65">
+        <div>
+          <FooterHeading>
+            Products
+          </FooterHeading>
+
+          <div className="mt-6 flex flex-col gap-4 text-[15px] font-semibold leading-6 text-[#3D5245] sm:text-[16px]">
             {projectData.products.map((product) => (
               <span key={product.id}>
                 {product.title}
@@ -128,32 +169,56 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* ===================================================
+            VIETNAM
+        =================================================== */}
+
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-brand-500">
+          <FooterHeading>
             Vietnam
-          </h3>
+          </FooterHeading>
 
-          <div className="mt-5 space-y-4 text-sm leading-6 text-white/65">
-            <p>
-              <strong className="text-white">
+          <div className="mt-6 space-y-6 text-[15px] font-medium leading-7 text-[#3D5245] sm:text-[16px] sm:leading-8">
+            <div>
+              <p className="mb-1 font-extrabold text-[#0F2F24]">
                 Office
-              </strong>
-              <br />
-              {projectData.contact.office}
-            </p>
+              </p>
 
-            <p>
-              <strong className="text-white">
+              <p>
+                {projectData.contact.office}
+              </p>
+            </div>
+
+            <div>
+              <p className="mb-1 font-extrabold text-[#0F2F24]">
                 Factory
-              </strong>
-              <br />
-              {projectData.contact.factory}
-            </p>
+              </p>
+
+              <p>
+                {projectData.contact.factory}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-[1240px] flex-col gap-3 border-t border-white/10 px-4 py-6 text-xs text-white/40 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+      {/* =====================================================
+          COPYRIGHT
+      ===================================================== */}
+
+      <div
+        className={[
+          "mx-auto flex max-w-[1240px]",
+          "flex-col gap-3",
+          "border-t border-[#1E2A24]/10",
+          "px-4 py-6",
+          "text-[12px] font-medium",
+          "leading-5 text-[#6A645D]",
+          "sm:px-6 sm:text-[13px]",
+          "md:flex-row md:items-center md:justify-between",
+          "lg:px-8",
+        ].join(" ")}
+      >
         <p>
           © 2026 {projectData.brand.company}. All rights reserved.
         </p>
@@ -163,5 +228,41 @@ export default function Footer() {
         </p>
       </div>
     </footer>
+  );
+}
+
+
+/* ==========================================================
+   SMALL COMPONENTS
+========================================================== */
+
+function FooterHeading({ children }) {
+  return (
+    <h3
+      className={[
+        "text-[12px] font-extrabold",
+        "uppercase tracking-[0.16em]",
+        "text-[#D97706]",
+        "sm:text-[13px]",
+      ].join(" ")}
+    >
+      {children}
+    </h3>
+  );
+}
+
+
+function FooterLink({ to, children }) {
+  return (
+    <Link
+      to={to}
+      className={[
+        "w-fit",
+        "transition-colors duration-200",
+        "hover:text-[#D97706]",
+      ].join(" ")}
+    >
+      {children}
+    </Link>
   );
 }
