@@ -22,8 +22,8 @@ function Eyebrow({
   return (
     <p
       className={[
-        "text-[9px] font-extrabold uppercase tracking-[0.2em]",
-        "sm:text-[10px]",
+        "text-[11px] font-black uppercase tracking-[0.16em]",
+        "sm:text-[12px]",
         light
           ? "text-[#F59E0B]"
           : "text-[#D97706]",
@@ -45,9 +45,9 @@ function ArrowLink({
       to={to}
       className={[
         "group inline-flex items-center gap-2",
-        "text-[12px] font-extrabold",
+        "text-[14px] font-extrabold",
         "transition-colors duration-200",
-        "sm:text-[13px]",
+        "sm:text-[15px]",
 
         light
           ? "text-white hover:text-[#F59E0B]"
@@ -263,14 +263,14 @@ function FeaturedProduct({
               mt-4
               max-w-[620px]
 
-              text-[13px]
+              text-[15px]
               font-medium
-              leading-6
+              leading-7
 
-              text-[#5F625E]
+              text-[#3D4A42]
 
-              sm:text-[14px]
-              sm:leading-7
+              sm:text-[16px]
+              sm:leading-8
             "
           >
             {product.description}
@@ -378,7 +378,7 @@ function SecondaryProduct({
 
             <span
               className="
-                text-[10px]
+                text-[11px]
                 font-extrabold
                 text-[#F59E0B]
               "
@@ -410,13 +410,13 @@ function SecondaryProduct({
             className="
               mt-3
 
-              text-[12px]
+              text-[14px]
               font-medium
-              leading-6
+              leading-7
 
-              text-[#5F625E]
+              text-[#3D4A42]
 
-              sm:text-[13px]
+              sm:text-[15px]
             "
           >
             {product.description}
@@ -577,14 +577,13 @@ function RopeFeatureCard({
               mt-4
               max-w-[600px]
 
-              text-[13px]
+              text-[15px]
               font-medium
-              leading-6
+              leading-7
 
-              text-[#5F625E]
+              text-[#3D4A42]
 
-              sm:text-[14px]
-              sm:leading-7
+              sm:text-[16px]
             "
           >
             <strong
@@ -608,12 +607,12 @@ function RopeFeatureCard({
               items-center
               gap-2
 
-              text-[12px]
+              text-[14px]
               font-extrabold
 
               text-[#D97706]
 
-              sm:text-[13px]
+              sm:text-[15px]
             "
           >
             View product
@@ -706,7 +705,7 @@ function RopeSmallCard({
 
               px-2
 
-              text-[9px]
+              text-[10px]
               font-extrabold
               text-[#D97706]
 
@@ -761,13 +760,13 @@ function RopeSmallCard({
             className="
               mt-3
 
-              text-[12px]
+              text-[13px]
               font-medium
               leading-[1.65]
 
-              text-[#5F625E]
+              text-[#3D4A42]
 
-              sm:text-[12.5px]
+              sm:text-[14px]
             "
           >
             {variant.design ||
@@ -780,7 +779,7 @@ function RopeSmallCard({
               mt-auto
               pt-5
 
-              text-[11px]
+              text-[12px]
               font-extrabold
 
               text-[#D97706]
@@ -925,13 +924,13 @@ export default function ProductsPage() {
                     className="
                       max-w-[530px]
 
-                      text-[14px]
+                      text-[16px]
                       font-medium
-                      leading-7
+                      leading-8
 
-                      text-[#5F625E]
+                      text-[#3D4A42]
 
-                      sm:text-[15px]
+                      sm:text-[17px]
                     "
                   >
                     Coffee wood chews and natural
@@ -965,17 +964,17 @@ export default function ProductsPage() {
 
                           bg-white
 
-                          px-3
-                          py-1.5
+                          px-3.5
+                          py-2
 
-                          text-[8px]
-                          font-bold
+                          text-[10px]
+                          font-extrabold
                           uppercase
-                          tracking-[0.09em]
+                          tracking-[0.08em]
 
-                          text-[#3D5245]
+                          text-[#1E2A24]
 
-                          sm:text-[9px]
+                          sm:text-[11px]
                         "
                       >
                         {item}
@@ -1215,13 +1214,13 @@ export default function ProductsPage() {
                     mt-5
                     max-w-[480px]
 
-                    text-[13px]
+                    text-[15px]
                     font-medium
                     leading-7
 
-                    text-white/65
+                    text-white/80
 
-                    sm:text-[14px]
+                    sm:text-[16px]
                   "
                 >
                   Choose coffee wood dimensions
@@ -1346,13 +1345,13 @@ export default function ProductsPage() {
                       className="
                         max-w-[500px]
 
-                        text-[13px]
+                        text-[15px]
                         font-medium
                         leading-7
 
-                        text-[#5F625E]
+                        text-[#3D4A42]
 
-                        sm:text-[14px]
+                        sm:text-[16px]
                       "
                     >
                       Coffee wood blocks are combined
@@ -1386,17 +1385,17 @@ export default function ProductsPage() {
 
                             bg-white
 
-                            px-3
-                            py-1.5
+                            px-3.5
+                            py-2
 
-                            text-[8px]
-                            font-bold
+                            text-[10px]
+                            font-extrabold
                             uppercase
-                            tracking-[0.1em]
+                            tracking-[0.09em]
 
-                            text-[#3D5245]
+                            text-[#1E2A24]
 
-                            sm:text-[9px]
+                            sm:text-[11px]
                           "
                         >
                           {item}
@@ -1520,14 +1519,14 @@ export default function ProductsPage() {
 
                     <p
                       className="
-                        text-[8px]
+                        text-[10px]
                         font-extrabold
                         uppercase
                         tracking-[0.16em]
 
                         text-[#D97706]
 
-                        sm:text-[9px]
+                        sm:text-[11px]
                       "
                     >
                       Custom Development
@@ -1540,13 +1539,13 @@ export default function ProductsPage() {
 
                         max-w-[520px]
 
-                        text-[13px]
+                        text-[14px]
                         font-bold
-                        leading-5
+                        leading-6
 
                         text-[#0F2F24]
 
-                        sm:text-[14px]
+                        sm:text-[15px]
                       "
                     >
                       Need a custom rope
@@ -1572,7 +1571,7 @@ export default function ProductsPage() {
 
                       px-5
 
-                      text-[12px]
+                      text-[13px]
                       font-extrabold
 
                       text-white
@@ -1652,12 +1651,12 @@ export default function ProductsPage() {
 
                   <p
                     className="
-                      text-[9px]
+                      text-[10px]
                       font-extrabold
                       uppercase
-                      tracking-[0.2em]
+                      tracking-[0.18em]
 
-                      text-[#0F2F24]/60
+                      text-[#0F2F24]/70
                     "
                   >
                     OEM / ODM / Private Label

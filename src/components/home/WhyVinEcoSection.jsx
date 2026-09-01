@@ -23,7 +23,7 @@ const whyItems = [
     label: "Global Export",
     title: "Export-Ready & Full Support.",
     description:
-      "Complete compliance docs (Phytosanitary, C/O, Fumigation, tE), direct Amazon FBA shipping.",
+      "Complete compliance docs (Phytosanitary, C/O, Fumigation, Bill of Lading), direct Amazon FBA shipping.",
     image: "/images/home/why/03-export-ready.png",
   },
 ];
@@ -79,19 +79,8 @@ function WhyCard({ item, index }) {
 
         {/* CONTENT */}
         <div className="flex flex-1 flex-col p-5 sm:p-6">
-          <span
-            className={[
-              "text-[9px] font-extrabold",
-              "uppercase tracking-[0.18em]",
-              "text-[#F59E0B]",
-            ].join(" ")}
-          >
-            {item.number}
-          </span>
-
           <h3
             className={[
-              "mt-3",
               "text-[21px] font-extrabold",
               "leading-[1.08]",
               "tracking-[-0.04em]",
@@ -106,9 +95,9 @@ function WhyCard({ item, index }) {
           <p
             className={[
               "mt-4",
-              "text-[13px] font-medium",
-              "leading-6 text-[#6A645D]",
-              "sm:text-[14px] sm:leading-7",
+              "text-[15px] font-medium",
+              "leading-7 text-[#3D4A42]",
+              "sm:text-[16px] sm:leading-8",
             ].join(" ")}
           >
             {item.description}
@@ -150,11 +139,11 @@ export default function WhyVinEcoSection() {
             <p
               className={[
                 "mx-auto mt-4 max-w-[780px]",
-                "text-[13px] font-bold",
-                "leading-[1.65]",
+                "text-[15px] font-bold",
+                "leading-[1.7]",
                 "text-[#1E2A24]",
-                "sm:text-[15px]",
-                "lg:text-[16px]",
+                "sm:text-[16px]",
+                "lg:text-[17px]",
               ].join(" ")}
             >
               VinEco isn’t just a factory — it’s your trusted partner for

@@ -41,7 +41,7 @@ function ProductImage({
             VinEco
           </strong>
 
-          <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.18em] text-[#D97706]">
+          <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-[#D97706]">
             Product Visual
           </span>
         </div>
@@ -83,7 +83,7 @@ function Kicker({
   return (
     <p
       className={[
-        "text-[10px] font-extrabold uppercase tracking-[0.2em]",
+        "text-[11px] font-black uppercase tracking-[0.16em]",
         light
           ? "text-[#F59E0B]"
           : "text-[#D97706]",
@@ -158,10 +158,10 @@ function BenefitCard({
         <p
           className="
             mt-3
-            text-[14px]
+            text-[15px]
             font-medium
             leading-7
-            text-[#5F625E]
+            text-[#3D4A42]
           "
         >
           {item.text}
@@ -243,9 +243,9 @@ function ProductGallery({
                     border-[#1E2A24]/10
                     px-5
                     py-4
-                    text-[11px]
+                    text-[13px]
                     font-bold
-                    text-[#5F625E]
+                    text-[#3D4A42]
                   "
                 >
                   {image.label}
@@ -378,12 +378,12 @@ function RopeDesignCard({
           <p
             className="
               mt-4
-              text-[13px]
+              text-[15px]
               font-medium
-              leading-6
-              text-[#5F625E]
+              leading-7
+              text-[#3D4A42]
 
-              sm:text-[14px]
+              sm:text-[16px]
             "
           >
             <strong className="font-extrabold text-[#0F2F24]">
@@ -487,7 +487,7 @@ function RelatedProduct({
               inline-flex
               items-center
               gap-2
-              text-[12px]
+              text-[13px]
               font-extrabold
               text-[#F59E0B]
             "
@@ -632,10 +632,10 @@ export default function ProductDetailPage() {
               <Link
                 to="/products"
                 className="
-                  text-[9px]
+                  text-[10px]
                   font-extrabold
                   uppercase
-                  tracking-[0.18em]
+                  tracking-[0.16em]
                   text-[#D97706]
                 "
               >
@@ -644,11 +644,11 @@ export default function ProductDetailPage() {
 
               <span
                 className="
-                  text-[9px]
+                  text-[10px]
                   font-bold
                   uppercase
-                  tracking-[0.18em]
-                  text-[#6A645D]
+                  tracking-[0.16em]
+                  text-[#3D4A42]
                 "
               >
                 Made in Vietnam
@@ -696,12 +696,12 @@ export default function ProductDetailPage() {
                     className="
                       mt-6
                       max-w-[610px]
-                      text-[15px]
+                      text-[16px]
                       font-medium
-                      leading-7
-                      text-[#5F625E]
+                      leading-8
+                      text-[#3D4A42]
 
-                      sm:text-[16px]
+                      sm:text-[17px]
                     "
                   >
                     {product.description}
@@ -732,7 +732,7 @@ export default function ProductDetailPage() {
                         >
                           <span
                             className="
-                              text-[9px]
+                              text-[10px]
                               font-bold
                               uppercase
                               tracking-[0.14em]
@@ -745,12 +745,12 @@ export default function ProductDetailPage() {
                           <p
                             className="
                               mt-1.5
-                              text-[11px]
+                              text-[13px]
                               font-semibold
                               leading-5
                               text-[#0F2F24]
 
-                              sm:text-[12px]
+                              sm:text-[14px]
                             "
                           >
                             {spec.value}
@@ -936,10 +936,10 @@ export default function ProductDetailPage() {
                 <p
                   className="
                     max-w-[460px]
-                    text-[14px]
+                    text-[15px]
                     font-medium
                     leading-7
-                    text-[#5F625E]
+                    text-[#3D4A42]
 
                     lg:justify-self-end
                   "
@@ -1053,10 +1053,10 @@ export default function ProductDetailPage() {
 
                           <p
                             className="
-                              text-[14px]
+                              text-[15px]
                               font-medium
-                              leading-6
-                              text-white/75
+                              leading-7
+                              text-white/85
                             "
                           >
                             {spec.value}
@@ -1167,10 +1167,10 @@ export default function ProductDetailPage() {
                   <p
                     className="
                       max-w-[470px]
-                      text-[14px]
+                      text-[15px]
                       font-medium
                       leading-7
-                      text-[#5F625E]
+                      text-[#3D4A42]
 
                       lg:justify-self-end
                     "
@@ -1302,7 +1302,7 @@ export default function ProductDetailPage() {
                       font-extrabold
                       uppercase
                       tracking-[0.18em]
-                      text-[#0F2F24]/60
+                      text-[#0F2F24]/70
                     "
                   >
                     OEM / ODM / Private Label
@@ -1368,4 +1368,4 @@ export default function ProductDetailPage() {
       <FloatingContactDock />
     </>
   );
-} 
+}

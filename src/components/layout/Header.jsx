@@ -100,8 +100,8 @@ function Logo({ mobile = false, onClick }) {
         decoding="async"
         className={
           mobile
-            ? "h-[58px] w-auto object-contain"
-            : "h-[66px] w-auto object-contain lg:h-[72px]"
+            ? "h-[66px] w-auto object-contain"
+            : "h-[76px] w-auto object-contain lg:h-[84px]"
         }
       />
     </Link>
@@ -140,21 +140,21 @@ function SampleButton({ onClick, mobile = false }) {
 
         mobile
           ? [
-              "flex h-[52px] w-full",
+              "flex h-[54px] w-full",
               "items-center justify-center",
               "rounded-[15px]",
               "px-6",
-              "text-[15px]",
+              "text-[16px]",
               "font-extrabold",
               "leading-none",
               "tracking-[-0.02em]",
             ].join(" ")
           : [
-              "hidden h-[48px] shrink-0",
+              "hidden h-[50px] shrink-0",
               "items-center justify-center",
               "rounded-[15px]",
               "px-7",
-              "text-[15px]",
+              "text-[16px]",
               "font-extrabold",
               "leading-none",
               "tracking-[-0.02em]",
@@ -223,8 +223,8 @@ function desktopLinkClass({ isActive }) {
 
     "px-3",
 
-    "text-[14px]",
-    "font-semibold",
+    "text-[16px]",
+    "font-bold",
     "leading-none",
     "tracking-[-0.015em]",
 
@@ -262,18 +262,18 @@ function desktopLinkClass({ isActive }) {
 
 function mobileLinkClass({ isActive }) {
   return [
-    "flex min-h-[50px] items-center",
+    "flex min-h-[52px] items-center",
     "rounded-xl px-3",
 
-    "text-[15px]",
-    "font-medium",
+    "text-[17px]",
+    "font-semibold",
     "tracking-[-0.01em]",
 
     "transition-colors duration-200",
 
     isActive
       ? "bg-[#FFF3D6] text-[#D97706]"
-      : "text-[#26382F] hover:bg-[#F4F1EA] hover:text-[#1E2A24]",
+      : "text-[#1E2A24] hover:bg-[#F4F1EA] hover:text-[#1E2A24]",
   ].join(" ");
 }
 
@@ -400,7 +400,7 @@ export default function Header() {
               <div
                 className="
                   flex
-                  h-[76px]
+                  h-[80px]
                   shrink-0
                   items-center
                   justify-between
@@ -485,17 +485,17 @@ export default function Header() {
                               }
                               aria-controls="mobile-product-menu"
                               className={[
-                                "flex min-h-[50px] w-full",
+                                "flex min-h-[52px] w-full",
                                 "items-center justify-between",
                                 "rounded-xl px-3",
-                                "text-left text-[15px]",
-                                "font-medium",
+                                "text-left text-[17px]",
+                                "font-semibold",
                                 "tracking-[-0.01em]",
                                 "transition-colors duration-200",
 
                                 productsActive
                                   ? "bg-[#FFF3D6] text-[#D97706]"
-                                  : "text-[#26382F] hover:bg-[#F4F1EA]",
+                                  : "text-[#1E2A24] hover:bg-[#F4F1EA]",
                               ].join(" ")}
                             >
                               <span>Product</span>
@@ -543,7 +543,7 @@ export default function Header() {
                                       rounded-lg
                                       px-3
                                       py-2.5
-                                      text-[13px]
+                                      text-[15px]
                                       font-semibold
                                       text-[#D97706]
                                       transition
@@ -569,9 +569,9 @@ export default function Header() {
                                           rounded-lg
                                           px-3
                                           py-2.5
-                                          text-[13px]
-                                          font-normal
-                                          text-[#6A645D]
+                                          text-[15px]
+                                          font-medium
+                                          text-[#3D4A42]
                                           transition
                                           hover:bg-[#F4F1EA]
                                           hover:text-[#1E2A24]
@@ -625,10 +625,10 @@ export default function Header() {
                       className="
                         mt-4
                         text-center
-                        text-[10px]
-                        font-normal
+                        text-[12px]
+                        font-medium
                         leading-5
-                        text-[#6A645D]
+                        text-[#3D4A42]
                       "
                     >
                       Natural pet products ·
@@ -668,7 +668,7 @@ export default function Header() {
           className="
             mx-auto
             flex
-            h-[84px]
+            h-[92px]
             w-full
             max-w-[1360px]
             items-center
@@ -679,7 +679,7 @@ export default function Header() {
             lg:px-8
 
             min-[1180px]:grid
-            min-[1180px]:grid-cols-[220px_minmax(0,1fr)_220px]
+            min-[1180px]:grid-cols-[240px_minmax(0,1fr)_240px]
           "
         >
 
@@ -710,7 +710,7 @@ export default function Header() {
               justify-center
               gap-4
               min-[1180px]:flex
-              xl:gap-5
+              xl:gap-6
             "
           >
             {navigation.map((item) => {
@@ -749,7 +749,7 @@ export default function Header() {
                         left-1/2
                         top-full
                         z-50
-                        w-[320px]
+                        w-[340px]
                         -translate-x-1/2
                         translate-y-2
                         pt-2
@@ -782,8 +782,8 @@ export default function Header() {
                             px-3
                             pb-2
                             pt-1
-                            text-[9px]
-                            font-semibold
+                            text-[11px]
+                            font-bold
                             uppercase
                             tracking-[0.16em]
                             text-[#D97706]
@@ -804,18 +804,18 @@ export default function Header() {
                                 to={`/products/${product.slug}`}
                                 className="
                                   flex
-                                  min-h-[40px]
+                                  min-h-[42px]
                                   items-center
                                   justify-between
                                   gap-3
                                   rounded-lg
                                   px-3
-                                  text-[12px]
-                                  font-normal
-                                  text-[#3D5245]
+                                  text-[14px]
+                                  font-medium
+                                  text-[#1E2A24]
                                   transition
                                   hover:bg-[#F4F1EA]
-                                  hover:text-[#1E2A24]
+                                  hover:text-[#0F2F24]
                                 "
                               >
                                 <span>
@@ -840,14 +840,14 @@ export default function Header() {
                           className="
                             mt-2
                             flex
-                            min-h-[40px]
+                            min-h-[42px]
                             items-center
                             justify-center
                             rounded-lg
                             bg-[#0F2F24]
                             px-4
-                            text-[11px]
-                            font-semibold
+                            text-[13px]
+                            font-bold
                             text-white
                             transition
                             hover:bg-[#2F4538]

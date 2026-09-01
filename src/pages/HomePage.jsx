@@ -76,36 +76,36 @@ function ProductCard({ product, index }) {
   return (
     <Reveal variant="up" delay={index * 100} className="h-full">
       <article className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-[#F59E0B]/35 bg-[#F4F1EA] transition duration-300 hover:-translate-y-1 hover:border-[#F59E0B] hover:shadow-[0_20px_52px_rgba(245,158,11,0.16)]">
-        <div className="relative aspect-square overflow-hidden bg-white bg-[#F4F1EA]">
+        <div className="relative aspect-square overflow-hidden bg-[#F4F1EA]">
           <img
               src={product.image}
               alt={product.title}
               loading="lazy"
               decoding="async"
-              className="block h-full w-full object-contain object-center"
+              className="block h-full w-full object-cover object-center"
             />
 
-          <span className="absolute left-4 top-4 rounded-full bg-[#3D5245] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-white">
+          <span className="absolute left-4 top-4 rounded-full bg-[#3D5245] px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wide text-white">
             {product.badge}
           </span>
         </div>
 
         <div className="flex flex-1 flex-col p-5">
-          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#F59E0B]">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-[#D97706]">
             {product.category}
           </p>
 
-          <h3 className="mt-2 text-lg font-bold leading-tight text-[#1E2A24]">
+          <h3 className="mt-2 text-xl font-extrabold leading-tight text-[#1E2A24]">
             {product.title}
           </h3>
 
-          <p className="mt-3 flex-1 text-sm leading-6 text-[#6A645D]">
+          <p className="mt-3 flex-1 text-[15px] leading-7 text-[#3D4A42]">
             {product.description}
           </p>
 
           <Link
             to="/contact"
-            className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#1E2A24] transition hover:text-[#F59E0B]"
+            className="mt-5 inline-flex items-center gap-2 text-[15px] font-extrabold text-[#1E2A24] transition hover:text-[#F59E0B]"
           >
             Request sample
             <SiteIcon name="arrow" size={16} />
@@ -143,7 +143,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#FAF8F5]/98 via-[#FAF8F5]/78 to-transparent" />
 
                   <div className="relative z-10 flex min-h-[430px] max-w-2xl flex-col justify-end p-7 sm:min-h-[520px] sm:p-10 lg:p-12">
-                    <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#3D5245]">
+                    <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-[#2C3F35]">
                       {homeContent.hero.eyebrow}
                     </p>
 
@@ -155,11 +155,11 @@ export default function HomePage() {
                     </h1>
 
                     <div className="mt-5 max-w-xl space-y-3">
-                      <p className="text-sm font-medium leading-7 text-[#1E2A24]/80 sm:text-base">
+                      <p className="text-base font-semibold leading-8 text-[#1E2A24] sm:text-[17px]">
                         {homeContent.hero.description}
                       </p>
 
-                      <p className="max-w-lg text-sm leading-6 text-[#6A645D]">
+                      <p className="max-w-lg text-[15px] leading-7 text-[#3D4A42] sm:text-base">
                         {homeContent.hero.subDescription}
                       </p>
                     </div>
@@ -167,14 +167,14 @@ export default function HomePage() {
                     <div className="mt-7 flex flex-wrap gap-3">
                       <Link
                         to="/contact"
-                        className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#F59E0B] px-6 text-sm font-extrabold text-[#1E2A24] shadow-[0_12px_28px_rgba(245,158,11,0.20)] transition hover:-translate-y-0.5 hover:bg-[#D97706]"
+                        className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#F59E0B] px-6 text-base font-extrabold text-[#1E2A24] shadow-[0_12px_28px_rgba(245,158,11,0.20)] transition hover:-translate-y-0.5 hover:bg-[#D97706]"
                       >
                         {homeContent.hero.primaryCta}
                       </Link>
 
                       <Link
                         to="/oem-odm"
-                        className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#F59E0B] bg-white px-6 text-sm font-bold text-[#1E2A24] transition hover:bg-[#F4F1EA]"
+                        className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#F59E0B] bg-white px-6 text-base font-bold text-[#1E2A24] transition hover:bg-[#F4F1EA]"
                       >
                         {homeContent.hero.secondaryCta}
                       </Link>
@@ -188,7 +188,7 @@ export default function HomePage() {
                 <div className="flex h-full min-h-[360px] flex-col justify-between overflow-hidden rounded-[30px] border border-[#F59E0B]/40 bg-gradient-to-b from-[#F4F1EA] to-[#FAF8F5] p-7 shadow-[0_20px_50px_rgba(245,158,11,0.10)] sm:p-8">
 
                   <div>
-                    <span className="inline-flex rounded-full bg-[#3D5245] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-white">
+                    <span className="inline-flex rounded-full bg-[#3D5245] px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wide text-white">
                       {homeContent.sideCard.badge}
                     </span>
 
@@ -196,27 +196,27 @@ export default function HomePage() {
                       {homeContent.sideCard.title}
                     </h2>
 
-                    <p className="mt-4 text-sm font-medium leading-6 text-[#6A645D]">
+                    <p className="mt-4 text-base font-semibold leading-7 text-[#1E2A24]">
                       {homeContent.sideCard.tagline}
                     </p>
 
-                    <p className="mt-3 text-sm leading-7 text-[#6A645D]">
+                    <p className="mt-3 text-[15px] leading-7 text-[#3D4A42]">
                       {homeContent.sideCard.description}
                     </p>
 
-                    <p className="mt-3 text-sm leading-6 text-[#6A645D]">
+                    <p className="mt-3 text-[15px] leading-7 text-[#3D4A42]">
                       {homeContent.sideCard.note}
                     </p>
                   </div>
 
-                  <div className="mt-6 rounded-[24px] bg-transparent">
+                  <div className="mt-6 overflow-hidden rounded-[24px] border border-[#1E2A24]/8 bg-white p-4 sm:p-5">
                     <img
-                src={homeContent.sideCard.image}
-                alt={homeContent.sideCard.title}
-                loading="lazy"
-                decoding="async"
-                className="block h-auto w-full object-contain object-center"
-              />
+                      src={homeContent.sideCard.image}
+                      alt={homeContent.sideCard.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="block h-auto w-full object-contain object-center"
+                    />
                   </div>
                 </div>
               </Reveal>
@@ -254,7 +254,7 @@ export default function HomePage() {
                     {metric.value}
                   </p>
 
-                  <p className="mt-2 text-xs font-bold leading-5 text-white/75">
+                  <p className="mt-2 text-sm font-bold leading-5 text-white/85">
                     {metric.label}
                   </p>
                 </div>
@@ -269,7 +269,7 @@ export default function HomePage() {
   <div className="mx-auto max-w-[1080px] px-4 sm:px-6">
     <Reveal>
       <div className="mb-8 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#3D5245]">
+        <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#2C3F35]">
           Inside VinEco
         </p>
 
@@ -316,7 +316,7 @@ export default function HomePage() {
               <div className="overflow-hidden rounded-[32px] border border-[#F59E0B]/35 bg-gradient-to-br from-[#F4F1EA] to-[#FAF8F5] px-6 py-10 text-[#1E2A24] shadow-[0_22px_58px_rgba(245,158,11,0.10)] sm:px-10 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10 lg:px-14 lg:py-14">
 
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#3D5245]">
+                  <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#2C3F35]">
                     OEM / ODM / Private Label
                   </p>
 
@@ -324,7 +324,7 @@ export default function HomePage() {
                     Turn your product idea into an export-ready collection.
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-[#6A645D]">
+                  <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[#3D4A42]">
                     Sampling, manufacturing, inspection, branding and global
                     shipping support in one clear process.
                   </p>
@@ -332,7 +332,7 @@ export default function HomePage() {
 
                 <Link
                   to="/oem-odm"
-                  className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#F59E0B] px-7 text-sm font-extrabold text-[#1E2A24] shadow-[0_12px_28px_rgba(245,158,11,0.16)] transition hover:bg-[#D97706] lg:mt-0"
+                  className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#F59E0B] px-7 text-base font-extrabold text-[#1E2A24] shadow-[0_12px_28px_rgba(245,158,11,0.16)] transition hover:bg-[#D97706] lg:mt-0"
                 >
                   Explore OEM / ODM
                   <SiteIcon name="arrow" size={17} />
@@ -354,7 +354,7 @@ export default function HomePage() {
 
             <Reveal>
               <div className="text-center">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#3D5245]">
+                <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#2C3F35]">
                   FAQ
                 </p>
 
@@ -371,7 +371,7 @@ export default function HomePage() {
 
                   <details className="group rounded-2xl border border-[#F59E0B]/25 bg-white px-5 py-1 shadow-[0_6px_18px_rgba(15,47,36,0.04)]">
 
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-sm font-bold text-[#1E2A24]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-base font-bold text-[#1E2A24]">
                       {item.q}
 
                       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F59E0B] text-lg font-medium text-[#1E2A24] transition group-open:rotate-45">
@@ -379,7 +379,7 @@ export default function HomePage() {
                       </span>
                     </summary>
 
-                    <p className="border-t border-[#1E2A24]/10 pb-5 pt-4 text-sm leading-7 text-[#6A645D]">
+                    <p className="border-t border-[#1E2A24]/10 pb-5 pt-4 text-[15px] leading-7 text-[#3D4A42]">
                       {item.a}
                     </p>
 
@@ -400,7 +400,7 @@ export default function HomePage() {
             <Reveal variant="zoom">
               <div className="rounded-[32px] border border-[#F59E0B]/30 bg-gradient-to-br from-[#F59E0B] to-[#FFB530] px-6 py-12 text-center shadow-[0_24px_65px_rgba(245,158,11,0.18)] sm:px-10">
 
-                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#1E2A24]/70">
+                <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#1E2A24]/75">
                   Start your brand journey
                 </p>
 
@@ -408,14 +408,14 @@ export default function HomePage() {
                   Ready to test VinEco quality?
                 </h2>
 
-                <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#1E2A24]/70">
+                <p className="mx-auto mt-4 max-w-xl text-[15px] leading-7 text-[#1E2A24]/80">
                   Request a sample, discuss your packaging or send us your
                   OEM / ODM idea.
                 </p>
 
                 <Link
                   to="/contact"
-                  className="mt-7 inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-extrabold text-[#1E2A24] shadow-[0_10px_24px_rgba(30,42,36,0.08)] transition hover:-translate-y-0.5 hover:bg-[#FAF8F5]"
+                  className="mt-7 inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-base font-extrabold text-[#1E2A24] shadow-[0_10px_24px_rgba(30,42,36,0.08)] transition hover:-translate-y-0.5 hover:bg-[#FAF8F5]"
                 >
                   Contact VinEco
                 </Link>
