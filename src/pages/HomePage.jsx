@@ -46,7 +46,7 @@ const homeContent = {
       description:
         "Smooth, durable coffee wood chew made from mature branches. Ideal for everyday chewing and clean product presentation.",
       image: "/images/home/product-classic-chew.webp",
-      imagePosition: "object-[50%_48%]",
+      imagePosition: "50% 55%",
     },
     {
       id: "gorilla-chew",
@@ -56,7 +56,7 @@ const homeContent = {
       description:
         "Dense and thicker-root coffee wood chew for bigger dogs and stronger chewers who need a tougher natural option.",
       image: "/images/home/product-gorilla-chew.webp",
-      imagePosition: "object-[50%_43%]",
+      imagePosition: "50% 32%",
     },
     {
       id: "rope-toy",
@@ -66,7 +66,7 @@ const homeContent = {
       description:
         "Natural coffee wood paired with rope for tugging, chewing and enrichment. A stronger-value format for premium pet lines.",
       image: "/images/home/product-rope-toy.webp",
-      imagePosition: "object-[50%_40%]",
+      imagePosition: "50% 72%",
     },
   ],
 };
@@ -76,12 +76,14 @@ function ProductCard({ product, index }) {
   return (
     <Reveal variant="up" delay={index * 100} className="h-full">
       <article className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-[#F59E0B]/35 bg-[#F4F1EA] transition duration-300 hover:-translate-y-1 hover:border-[#F59E0B] hover:shadow-[0_20px_52px_rgba(245,158,11,0.16)]">
-        <div className="relative aspect-[4/3] overflow-hidden bg-white">
-          <SmartImage
-            src={product.image}
-            alt={product.title}
-            className={`h-full w-full object-cover ${product.imagePosition}`}
-          />
+        <div className="relative aspect-square overflow-hidden bg-white bg-[#F4F1EA]">
+          <img
+              src={product.image}
+              alt={product.title}
+              loading="lazy"
+              decoding="async"
+              className="block h-full w-full object-contain object-center"
+            />
 
           <span className="absolute left-4 top-4 rounded-full bg-[#3D5245] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-white">
             {product.badge}
@@ -126,10 +128,10 @@ export default function HomePage() {
         <section id="home" className="scroll-mt-24 overflow-hidden bg-[#FAF8F5]">
           <div className="mx-auto max-w-[1240px] px-4 pb-10 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-14">
 
-            <div className="grid gap-4 lg:grid-cols-[1.55fr_.72fr]">
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1.38fr)_minmax(360px,.82fr)] xl:grid-cols-[minmax(0,1.42fr)_minmax(390px,.78fr)] items-stretch">
 
-              <Reveal variant="left">
-                <div className="relative min-h-[430px] overflow-hidden rounded-[30px] border border-[#F59E0B]/40 bg-white shadow-[0_18px_48px_rgba(245,158,11,0.10)] sm:min-h-[520px]">
+              <Reveal variant="left" className="h-full">
+                <div className="relative min-h-[430px] overflow-hidden rounded-[30px] border border-[#F59E0B]/40 bg-white shadow-[0_18px_48px_rgba(245,158,11,0.10)] sm:min-h-[520px] lg:h-full lg:min-h-[100%]">
 
                   <SmartImage
                     src={homeContent.hero.image}
@@ -194,7 +196,7 @@ export default function HomePage() {
                       {homeContent.sideCard.title}
                     </h2>
 
-                    <p className="mt-4 text-sm font-semibold text-[#F59E0B]">
+                    <p className="mt-4 text-sm font-medium leading-6 text-[#6A645D]">
                       {homeContent.sideCard.tagline}
                     </p>
 
@@ -202,17 +204,19 @@ export default function HomePage() {
                       {homeContent.sideCard.description}
                     </p>
 
-                    <p className="mt-3 text-sm leading-6 text-[#3D5245]">
+                    <p className="mt-3 text-sm leading-6 text-[#6A645D]">
                       {homeContent.sideCard.note}
                     </p>
                   </div>
 
-                  <div className="mt-7 overflow-hidden rounded-[24px] bg-white">
-                    <SmartImage
-                      src={homeContent.sideCard.image}
-                      alt="VinEco eco-friendly coffee wood chews"
-                      className="aspect-[4/3] h-full w-full object-contain object-center p-3"
-                    />
+                  <div className="mt-6 rounded-[24px] bg-transparent">
+                    <img
+                src={homeContent.sideCard.image}
+                alt={homeContent.sideCard.title}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full object-contain object-center"
+              />
                   </div>
                 </div>
               </Reveal>

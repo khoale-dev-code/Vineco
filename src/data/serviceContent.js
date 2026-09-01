@@ -32,12 +32,12 @@ export const serviceContent = {
         "From dielines and artwork preparation to retail-ready printing, packaging can be developed for private-label products, gift sets and international sales channels.",
 
       points: [
-        "Custom Designs â€” Made to your exact size, shape and branding style.",
-        "Artwork Support â€” Support with dielines and print files. Use your own artwork or let VinEco assist with the design.",
-        "Low MOQ â€” Custom printed boxes can start from around 200 pieces.",
-        "Retail Ready â€” Suitable for retail shelves, private-label products and gift sets.",
-        "Variable Printing â€” Add barcodes, QR codes, product information and custom brand elements.",
-        "Extra Protection â€” Retail packaging can be combined with inner vacuum sealing.",
+        "Custom Designs — Made to your exact size, shape and branding style.",
+        "Artwork Support — Support with dielines and print files. Use your own artwork or let VinEco assist with the design.",
+        "Low MOQ — Custom printed boxes can start from around 200 pieces.",
+        "Retail Ready — Suitable for retail shelves, private-label products and gift sets.",
+        "Variable Printing — Add barcodes, QR codes, product information and custom brand elements.",
+        "Extra Protection — Retail packaging can be combined with inner vacuum sealing.",
       ],
 
       images: [
@@ -60,12 +60,12 @@ export const serviceContent = {
         "Brands can choose the design, color, size, material and placement depending on the product, packaging format and target market.",
 
       points: [
-        "Size â€” Standard 5 Ã— 8 cm format is available, with custom sizing on request.",
-        "Material â€” Kraft paper or eco-friendly cardboard options.",
-        "Colors â€” Natural brown, full-color printing or custom brand tones.",
-        "Placement â€” Tags can be placed inside vacuum-sealed bags.",
-        "Placement â€” Tags can be tied directly to the chew stick.",
-        "Placement â€” Labels or tags can be attached to the outer packaging.",
+        "Size — Standard 5 × 8 cm format is available, with custom sizing on request.",
+        "Material — Kraft paper or eco-friendly cardboard options.",
+        "Colors — Natural brown, full-color printing or custom brand tones.",
+        "Placement — Tags can be placed inside vacuum-sealed bags.",
+        "Placement — Tags can be tied directly to the chew stick.",
+        "Placement — Labels or tags can be attached to the outer packaging.",
       ],
 
       images: [
@@ -88,10 +88,10 @@ export const serviceContent = {
         "Laser engraving creates a permanent brand detail on the product itself and is suitable for Private Label, small-batch testing and customized collections.",
 
       points: [
-        "Low MOQ â€” Start from only 50 pieces for selected engraving projects.",
-        "Full Support â€” Support from branding discussion through production, shipping and required paperwork.",
-        "Custom Branding â€” Add your logo, message or suitable brand element directly to the wooden surface.",
-        "Made to Order â€” Engraving can be produced according to your supplied artwork and requirements.",
+        "Low MOQ — Start from only 50 pieces for selected engraving projects.",
+        "Full Support — Support from branding discussion through production, shipping and required paperwork.",
+        "Custom Branding — Add your logo, message or suitable brand element directly to the wooden surface.",
+        "Made to Order — Engraving can be produced according to your supplied artwork and requirements.",
       ],
 
       images: [
@@ -113,9 +113,9 @@ export const serviceContent = {
         "VinEco supports vacuum sealing, bulk packing and customized retail packing to help protect products, reduce shipping volume and prepare orders for wholesale or retail distribution.",
 
       points: [
-        "Vacuum Sealing Protection â€” Helps reduce shipping volume, limit moisture exposure, keep products clean and maintain product quality.",
-        "Standard Bulk Packing â€” Standard packing can include approximately 9 to 15 toys per bag depending on product size.",
-        "Custom Options â€” Individual bags, shrink wrap, custom retail boxes and other packing formats can be discussed based on your requirements.",
+        "Vacuum Sealing Protection — Helps reduce shipping volume, limit moisture exposure, keep products clean and maintain product quality.",
+        "Standard Bulk Packing — Standard packing can include approximately 9 to 15 toys per bag depending on product size.",
+        "Custom Options — Individual bags, shrink wrap, custom retail boxes and other packing formats can be discussed based on your requirements.",
       ],
 
       images: [

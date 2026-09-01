@@ -22,11 +22,22 @@ function QualityControlSteps({ steps = [] }) {
 
             <div className="qc-step__images">
               {step.images?.map((src, imageIndex) => (
-                <figure key={`${step.number}-${imageIndex}`}>
+                <figure
+                  key={`${step.number}-${imageIndex}`}
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    padding: 0,
+                    margin: 0,
+                    boxShadow: "none",
+                    outline: "none",
+                    overflow: "hidden",
+                  }}
+                >
                   <SmartImage
                     src={src}
                     alt={`${step.title} ${imageIndex + 1}`}
-                    className="h-full w-full object-contain object-center"
+                    className="block h-full w-full object-contain object-center"
                   />
                 </figure>
               ))}
@@ -131,11 +142,22 @@ export default function ServiceChapter({ service, index }) {
             <div className="service-v2-collage">
 
               {service.images?.[0] && (
-                <figure className="service-v2-collage__main">
+                <figure
+                  className="service-v2-collage__main"
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    padding: 0,
+                    margin: 0,
+                    boxShadow: "none",
+                    outline: "none",
+                    overflow: "hidden",
+                  }}
+                >
                   <SmartImage
                     src={service.images[0]}
                     alt={service.title}
-                    className="h-full w-full object-contain object-center"
+                    className="block h-full w-full object-contain object-center"
                   />
 
                   <span>{service.eyebrow}</span>
@@ -144,22 +166,44 @@ export default function ServiceChapter({ service, index }) {
 
 
               {service.images?.[1] && (
-                <figure className="service-v2-collage__secondary">
+                <figure
+                  className="service-v2-collage__secondary"
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    padding: 0,
+                    margin: 0,
+                    boxShadow: "none",
+                    outline: "none",
+                    overflow: "hidden",
+                  }}
+                >
                   <SmartImage
                     src={service.images[1]}
                     alt=""
-                    className="h-full w-full object-contain object-center"
+                    className="block h-full w-full object-contain object-center"
                   />
                 </figure>
               )}
 
 
               {service.images?.[2] && (
-                <figure className="service-v2-collage__third">
+                <figure
+                  className="service-v2-collage__third"
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    padding: 0,
+                    margin: 0,
+                    boxShadow: "none",
+                    outline: "none",
+                    overflow: "hidden",
+                  }}
+                >
                   <SmartImage
                     src={service.images[2]}
                     alt=""
-                    className="h-full w-full object-contain object-center"
+                    className="block h-full w-full object-contain object-center"
                   />
                 </figure>
               )}

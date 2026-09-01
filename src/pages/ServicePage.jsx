@@ -30,21 +30,21 @@ function GlobalBusinessVisual() {
   ];
 
   return (
-    <div className="relative w-full overflow-hidden rounded-[22px] border border-[#1E2A24]/10 bg-[#FAF8F5] sm:rounded-[28px]">
+    <div className="relative w-full overflow-hidden rounded-[22px] border border-[#1E2A24]/8 bg-[#FAF8F5] shadow-[0_24px_60px_rgba(30,42,36,0.08)] sm:rounded-[28px]">
 
       {/* TOP */}
-      <div className="flex items-start justify-between gap-4 border-b border-[#1E2A24]/10 px-4 py-4 sm:px-5">
+      <div className="flex items-start justify-between gap-4 border-b border-[#1E2A24]/8 bg-white px-5 py-4 sm:px-6 sm:py-5">
         <div>
-          <span className="block text-[8px] font-extrabold uppercase tracking-[0.18em] text-[#D97706]">
+          <span className="block text-[9px] font-extrabold uppercase tracking-[0.18em] text-[#D97706]">
             Export Network
           </span>
 
-          <strong className="mt-1.5 block text-[13px] font-extrabold tracking-[-0.02em] text-[#0F2F24] sm:text-[14px]">
+          <strong className="mt-1.5 block text-[14px] font-extrabold tracking-[-0.02em] text-[#0F2F24] sm:text-[16px]">
             From Vietnam to global markets.
           </strong>
         </div>
 
-        <span className="shrink-0 rounded-full border border-[#F59E0B]/25 bg-[#F59E0B]/10 px-3 py-1.5 text-[7px] font-extrabold uppercase tracking-[0.12em] text-[#D97706] sm:text-[8px]">
+        <span className="shrink-0 rounded-full border border-[#F59E0B]/30 bg-[#F59E0B]/10 px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-[0.12em] text-[#D97706] sm:text-[9px]">
           B2B Export
         </span>
       </div>
@@ -56,7 +56,7 @@ function GlobalBusinessVisual() {
         {/* SUBTLE GRID */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.22]"
+          className="pointer-events-none absolute inset-0 opacity-[0.18]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(30,42,36,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(30,42,36,.08) 1px, transparent 1px)",
@@ -74,12 +74,12 @@ function GlobalBusinessVisual() {
 
 
         {/* VIETNAM BADGE */}
-        <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2 rounded-[12px] bg-[#0F2F24] px-3 py-2.5 shadow-[0_12px_30px_rgba(15,47,36,.16)] sm:bottom-5 sm:right-5 sm:px-4">
-          <strong className="text-[19px] font-black leading-none text-[#F59E0B] sm:text-[22px]">
+        <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2 rounded-[14px] bg-[#0F2F24] px-3.5 py-2.5 shadow-[0_14px_32px_rgba(15,47,36,.22)] sm:bottom-5 sm:right-5 sm:px-4">
+          <strong className="text-[20px] font-black leading-none text-[#F59E0B] sm:text-[23px]">
             VN
           </strong>
 
-          <span className="text-[6px] font-extrabold uppercase leading-[1.2] tracking-[0.08em] text-white sm:text-[7px]">
+          <span className="text-[6.5px] font-extrabold uppercase leading-[1.25] tracking-[0.08em] text-white sm:text-[7.5px]">
             Global
             <br />
             Support
@@ -90,20 +90,20 @@ function GlobalBusinessVisual() {
 
 
       {/* FACTS */}
-      <div className="grid grid-cols-1 border-t border-[#1E2A24]/10 sm:grid-cols-3">
+      <div className="grid grid-cols-1 border-t border-[#1E2A24]/8 bg-white sm:grid-cols-3">
         {exportFacts.map((item, index) => (
           <div
             key={item.label}
             className={[
-              "flex items-center justify-between gap-4 px-4 py-3 sm:block sm:px-5 sm:py-4",
-              index ? "border-t border-[#1E2A24]/10 sm:border-l sm:border-t-0" : "",
+              "flex items-center justify-between gap-4 px-5 py-3.5 transition-colors duration-200 hover:bg-[#FAF8F5] sm:block sm:px-6 sm:py-5",
+              index ? "border-t border-[#1E2A24]/8 sm:border-l sm:border-t-0" : "",
             ].join(" ")}
           >
-            <span className="text-[7px] font-extrabold uppercase tracking-[0.14em] text-[#D97706]">
+            <span className="text-[8px] font-extrabold uppercase tracking-[0.14em] text-[#D97706]">
               {item.label}
             </span>
 
-            <strong className="text-[11px] font-extrabold text-[#0F2F24] sm:mt-1.5 sm:block sm:text-[12px]">
+            <strong className="text-[12px] font-extrabold text-[#0F2F24] sm:mt-1.5 sm:block sm:text-[13px]">
               {item.value}
             </strong>
           </div>
@@ -156,7 +156,7 @@ export default function ServicePage() {
 
             <div className="service-v2-hero__meta">
               <span>VINECO SERVICES</span>
-              <span>OEM / ODM Â· PRIVATE LABEL</span>
+              <span>OEM / ODM · PRIVATE LABEL</span>
             </div>
 
             <div className="service-v2-rule" />
@@ -222,12 +222,23 @@ export default function ServicePage() {
               >
                 <div className="service-v2-hero-collage">
 
-                  <figure className="service-v2-hero-collage__large">
+                  <figure
+                    className="service-v2-hero-collage__large"
+                    style={{
+                      border: "none",
+                      background: "transparent",
+                      padding: 0,
+                      margin: 0,
+                      boxShadow: "none",
+                      outline: "none",
+                      overflow: "hidden",
+                    }}
+                  >
 
                     <SmartImage
                       src={heroImages[0]}
                       alt="VinEco packaging and product support"
-                      className="h-full w-full object-contain p-4 sm:p-6"
+                      className="block h-full w-full object-contain"
                     />
 
                     <span>
@@ -238,12 +249,23 @@ export default function ServicePage() {
 
 
                   {heroImages[1] && (
-                    <figure className="service-v2-hero-collage__small">
+                    <figure
+                      className="service-v2-hero-collage__small"
+                      style={{
+                        border: "none",
+                        background: "transparent",
+                        padding: 0,
+                        margin: 0,
+                        boxShadow: "none",
+                      outline: "none",
+                        overflow: "hidden",
+                      }}
+                    >
 
                       <SmartImage
                         src={heroImages[1]}
                         alt="VinEco branding and private-label support"
-                        className="h-full w-full object-contain p-3 sm:p-5"
+                        className="block h-full w-full object-contain"
                       />
 
                     </figure>
@@ -344,7 +366,7 @@ export default function ServicePage() {
             OVERVIEW
         ================================================== */}
 
-        <section className="service-v2-overview">
+        <section className="service-v2-overview" style={{ backgroundColor: "#FCFAF7" }}>
           <div className="service-v2-shell">
 
             <Reveal>

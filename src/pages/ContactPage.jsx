@@ -36,20 +36,20 @@ function ContactCard({ icon, eyebrow, title, children, dark = false }) {
         <div className="min-w-0">
           <p
             className={[
-              "text-[8px] font-extrabold uppercase tracking-[0.18em]",
+              "text-[10px] font-extrabold uppercase tracking-[0.18em]",
               dark ? "text-[#F59E0B]" : "text-[#D97706]",
             ].join(" ")}
           >
             {eyebrow}
           </p>
 
-          <h3 className="mt-1.5 text-[17px] font-extrabold leading-tight tracking-[-0.03em]">
+          <h3 className="mt-1.5 text-[21px] font-black leading-tight tracking-[-0.03em]">
             {title}
           </h3>
 
           <div
             className={[
-              "mt-2 break-words text-[12px] font-medium leading-6 sm:text-[13px]",
+              "mt-2 break-words text-[14px] font-medium leading-6 sm:text-[15px]",
               dark ? "text-white/65" : "text-[#5F625E]",
             ].join(" ")}
           >
@@ -85,7 +85,7 @@ export default function ContactPage() {
         `Full name: ${name}`,
         `Company: ${company}`,
         `Email: ${email}`,
-        `Phone / WhatsApp / Zalo: ${phone}`,
+        `Phone / WhatsApp: ${phone}`,
         `Interested in: ${interest}`,
         "",
         "Message:",
@@ -263,7 +263,7 @@ export default function ContactPage() {
 
                       <label>
                         <span className="mb-2 block text-[11px] font-bold text-[#3D5245]">
-                          Phone / WhatsApp / Zalo
+                          Phone / WhatsApp
                         </span>
                         <input
                           name="phone"
@@ -320,8 +320,7 @@ export default function ContactPage() {
                     </button>
 
                     <p className="mt-4 text-center text-[10px] font-medium leading-5 text-[#6A645D]/70">
-                      Submitting opens your email application with the enquiry
-                      already prepared.
+                      By submitting, you agree to our privacy policy. We never share your data.
                     </p>
                   </div>
                 </form>
@@ -332,11 +331,11 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <Reveal variant="right">
                   <div className="rounded-[24px] bg-[#0F2F24] p-5 text-white sm:p-6">
-                    <p className="text-[8px] font-extrabold uppercase tracking-[0.18em] text-[#F59E0B]">
+                    <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#F59E0B]">
                       Direct Contact
                     </p>
 
-                    <h3 className="mt-2 text-[25px] font-extrabold tracking-[-0.04em]">
+                    <h3 className="mt-2 text-[29px] font-black tracking-[-0.04em]">
                       Talk directly with VinEco.
                     </h3>
 
@@ -345,10 +344,10 @@ export default function ContactPage() {
                         href={`mailto:${contact.salesEmail}`}
                         className="rounded-[14px] border border-white/10 bg-white/[0.06] px-4 py-3 transition hover:bg-white/[0.1]"
                       >
-                        <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-white/40">
+                        <span className="block text-[10px] font-bold uppercase tracking-[0.12em] text-white/40">
                           Sales
                         </span>
-                        <strong className="mt-1 block text-[12px]">
+                        <strong className="mt-1 block text-[14px]">
                           {contact.salesEmail}
                         </strong>
                       </a>
@@ -359,10 +358,10 @@ export default function ContactPage() {
                         rel="noreferrer"
                         className="rounded-[14px] border border-white/10 bg-white/[0.06] px-4 py-3 transition hover:bg-white/[0.1]"
                       >
-                        <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-white/40">
-                          WhatsApp / Zalo
+                        <span className="block text-[10px] font-bold uppercase tracking-[0.12em] text-white/40">
+                          WhatsApp
                         </span>
-                        <strong className="mt-1 block text-[12px]">
+                        <strong className="mt-1 block text-[14px]">
                           {contact.phone}
                         </strong>
                       </a>
@@ -374,7 +373,7 @@ export default function ContactPage() {
                 {/* WEBSITES */}
                 <Reveal variant="right" delay={40}>
                   <article className="rounded-[22px] border border-[#1E2A24]/10 bg-white p-5 sm:p-6">
-                    <p className="text-[8px] font-extrabold uppercase tracking-[0.18em] text-[#D97706]">
+                    <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#D97706]">
                       Websites
                     </p>
 
@@ -385,7 +384,7 @@ export default function ContactPage() {
                           href={site.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex min-h-[38px] items-center rounded-full border border-[#1E2A24]/10 bg-[#FAF8F5] px-4 text-[11px] font-bold text-[#0F2F24] transition hover:border-[#F59E0B] hover:text-[#D97706]"
+                          className="inline-flex min-h-[38px] items-center rounded-full border border-[#1E2A24]/10 bg-[#FAF8F5] px-4 text-[13px] font-bold text-[#0F2F24] transition hover:border-[#F59E0B] hover:text-[#D97706]"
                         >
                           {site.label}
                         </a>
@@ -431,22 +430,22 @@ export default function ContactPage() {
 
                 {/* RESPONSE */}
                 <Reveal variant="right" delay={160}>
-                  <article className="relative overflow-hidden rounded-[24px] bg-[#205B35] p-6 text-white">
+                  <article className="relative overflow-hidden rounded-[24px] bg-[#0F2F24] p-6 text-white">
                     <div
                       aria-hidden="true"
                       className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-white/[0.05]"
                     />
 
                     <div className="relative">
-                      <p className="text-[8px] font-extrabold uppercase tracking-[0.18em] text-[#F59E0B]">
+                      <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#F59E0B]">
                         Fast Response
                       </p>
 
-                      <h3 className="mt-2 text-[23px] font-extrabold tracking-[-0.04em]">
+                      <h3 className="mt-2 text-[27px] font-black tracking-[-0.04em]">
                         Fast response guaranteed.
                       </h3>
 
-                      <p className="mt-3 max-w-[560px] text-[13px] font-medium leading-6 text-white/70">
+                      <p className="mt-3 max-w-[560px] text-[15px] font-medium leading-6 text-white/70">
                         We respond to all inquiries within 24 hours during
                         business days. For urgent matters, use WhatsApp.
                       </p>
@@ -459,15 +458,6 @@ export default function ContactPage() {
                           className="inline-flex min-h-[42px] items-center justify-center rounded-full bg-[#F59E0B] px-5 text-[11px] font-extrabold text-[#0F2F24] transition hover:-translate-y-0.5 hover:bg-[#D97706]"
                         >
                           WhatsApp
-                        </a>
-
-                        <a
-                          href={contact.zaloUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex min-h-[42px] items-center justify-center rounded-full border border-white/15 bg-white/[0.07] px-5 text-[11px] font-extrabold text-white transition hover:bg-white/[0.12]"
-                        >
-                          Zalo
                         </a>
                       </div>
                     </div>
