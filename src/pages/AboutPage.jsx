@@ -26,75 +26,13 @@ const facts = [
   },
   {
     value: "GIA LAI",
-    unit: "& DAK LAK",
+    unit: "",
     label: "Vietnam Central Highlands",
   },
   {
     value: "SECOND",
     unit: "LIFE",
     label: "Upcycled natural material",
-  },
-];
-
-
-const proofItems = [
-  {
-    id: "quality",
-    eyebrow: "Quality Control",
-    title: "Checked before packing.",
-    description:
-      "Finished coffee wood products are inspected before packing and order preparation.",
-    image: "/images/about/03-finished-chews-qc.png",
-    alt: "VinEco coffee wood products during quality inspection",
-    contain: false,
-  },
-
-  {
-    id: "packaging",
-    eyebrow: "Private Label",
-    title: "Retail-ready packaging.",
-    description:
-      "Flexible packaging and branding options help prepare products for different markets.",
-    image: "/images/about/09-retail-box.png",
-    alt: "VinEco retail packaging for Coffee Wood Dog Chew",
-    contain: true,
-  },
-
-  {
-    id: "documentation",
-    eyebrow: "Documentation",
-    title: "Export support.",
-    description:
-      "Product documentation can support international B2B and export preparation.",
-    image: "/images/about/10-sgs-report.png",
-    alt: "SGS test report supplied for VinEco Coffee Wood Dog Chew",
-    contain: true,
-  },
-];
-
-
-const missionItems = [
-  {
-    number: "01",
-    title: "For pets.",
-    description:
-      "Create natural and satisfying coffee wood chew products for dogs worldwide.",
-    featured: true,
-  },
-
-  {
-    number: "02",
-    title: "For local value.",
-    description:
-      "Give mature coffee wood another purpose after its agricultural yield cycle ends.",
-  },
-
-  {
-    number: "03",
-    title: "For less waste.",
-    description:
-      "Make better use of an existing agricultural by-product instead of discarding it.",
-    dark: true,
   },
 ];
 
@@ -149,301 +87,6 @@ function ImageFrame({
 
 
 /* ==========================================================
-   PROCESS FEATURE CARD
-========================================================== */
-
-function ProofFeatureCard({ item }) {
-  return (
-    <Reveal
-      variant="up"
-      className="h-full"
-    >
-      <article
-        className="
-          group
-          flex
-          h-full
-          flex-col
-          overflow-hidden
-          rounded-[26px]
-          border
-          border-[#1E2A24]/10
-          bg-white
-          shadow-[0_18px_50px_rgba(30,42,36,0.06)]
-          transition-all
-          duration-300
-
-          hover:-translate-y-1
-          hover:border-[#F59E0B]/50
-          hover:shadow-[0_24px_60px_rgba(30,42,36,0.10)]
-        "
-      >
-        {/* IMAGE */}
-        <div
-          className="
-            relative
-            aspect-[4/3]
-            overflow-hidden
-            bg-[#F4F1EA]
-
-            sm:aspect-[16/11]
-
-            lg:aspect-auto
-            lg:min-h-[390px]
-          "
-        >
-          <SmartImage
-            src={item.image}
-            alt={item.alt}
-            loading="lazy"
-            className="
-              block
-              h-full
-              w-full
-              object-cover
-              object-center
-            "
-          />
-
-          <div
-            aria-hidden="true"
-            className="
-              pointer-events-none
-              absolute
-              inset-0
-              bg-gradient-to-t
-              from-[#0F2F24]/30
-              via-transparent
-              to-transparent
-            "
-          />
-
-          <span
-            className="
-              absolute
-              left-4
-              top-4
-              rounded-full
-              bg-white/95
-              px-3
-              py-1.5
-              text-[9px]
-              font-extrabold
-              uppercase
-              tracking-[0.16em]
-              text-[#D97706]
-              shadow-sm
-
-              sm:left-5
-              sm:top-5
-            "
-          >
-            {item.eyebrow}
-          </span>
-        </div>
-
-
-        {/* COPY */}
-        <div className="flex flex-1 flex-col p-5 sm:p-6 lg:p-7">
-
-          <div className="flex items-start justify-between gap-5">
-
-            <h3
-              className="
-                max-w-[440px]
-                text-[25px]
-                font-extrabold
-                leading-[1.02]
-                tracking-[-0.04em]
-                text-[#0F2F24]
-
-                sm:text-[28px]
-                lg:text-[31px]
-              "
-            >
-              {item.title}
-            </h3>
-
-
-            <span
-              aria-hidden="true"
-              className="
-                hidden
-                h-10
-                w-10
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-[#F59E0B]/35
-                text-lg
-                font-bold
-                text-[#D97706]
-
-                transition
-                duration-300
-
-                group-hover:bg-[#F59E0B]
-                group-hover:text-[#0F2F24]
-
-                sm:flex
-              "
-            >
-              ↗
-            </span>
-
-          </div>
-
-
-          <p
-            className="
-              mt-4
-              max-w-[520px]
-              text-[14px]
-              font-medium
-              leading-7
-              text-[#5F625E]
-
-              sm:text-[15px]
-            "
-          >
-            {item.description}
-          </p>
-
-        </div>
-      </article>
-    </Reveal>
-  );
-}
-
-
-/* ==========================================================
-   PROCESS COMPACT CARD
-========================================================== */
-
-function ProofCompactCard({
-  item,
-  index,
-}) {
-  return (
-    <Reveal
-      variant="up"
-      delay={(index + 1) * 70}
-      className="h-full"
-    >
-      <article
-        className="
-          group
-          grid
-          h-full
-          overflow-hidden
-          rounded-[24px]
-          border
-          border-[#1E2A24]/10
-          bg-white
-          shadow-[0_12px_36px_rgba(30,42,36,0.05)]
-
-          transition-all
-          duration-300
-
-          hover:-translate-y-1
-          hover:border-[#F59E0B]/50
-          hover:shadow-[0_20px_46px_rgba(30,42,36,0.09)]
-
-          sm:grid-cols-[190px_1fr]
-          lg:grid-cols-[200px_1fr]
-        "
-      >
-        {/* IMAGE */}
-        <div
-          className="
-            aspect-[16/10]
-            overflow-hidden
-            bg-[#F4F1EA]
-
-            sm:aspect-auto
-            sm:min-h-[220px]
-          "
-        >
-          <SmartImage
-            src={item.image}
-            alt={item.alt}
-            loading="lazy"
-            className={[
-              "block h-full w-full",
-
-              item.contain
-                ? "object-contain p-4 sm:p-5"
-                : "object-cover object-center",
-            ].join(" ")}
-          />
-        </div>
-
-
-        {/* COPY */}
-        <div
-          className="
-            flex
-            min-w-0
-            flex-col
-            justify-center
-            p-5
-
-            sm:p-6
-          "
-        >
-          <p
-            className="
-              text-[9px]
-              font-extrabold
-              uppercase
-              tracking-[0.18em]
-              text-[#D97706]
-            "
-          >
-            {item.eyebrow}
-          </p>
-
-
-          <h3
-            className="
-              mt-2
-              text-[21px]
-              font-extrabold
-              leading-[1.05]
-              tracking-[-0.035em]
-              text-[#0F2F24]
-
-              sm:text-[23px]
-            "
-          >
-            {item.title}
-          </h3>
-
-
-          <p
-            className="
-              mt-3
-              text-[13px]
-              font-medium
-              leading-6
-              text-[#5F625E]
-
-              sm:text-[14px]
-            "
-          >
-            {item.description}
-          </p>
-
-        </div>
-      </article>
-    </Reveal>
-  );
-}
-
-
-/* ==========================================================
    PAGE
 ========================================================== */
 
@@ -474,44 +117,6 @@ export default function AboutPage() {
               lg:px-8
             "
           >
-
-            {/* META */}
-            <div
-              className="
-                mb-5
-                flex
-                items-center
-                justify-between
-                border-b
-                border-[#1E2A24]/10
-                pb-3
-              "
-            >
-              <span
-                className="
-                  text-[9px]
-                  font-bold
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#D97706]
-                "
-              >
-                About / Our Story
-              </span>
-
-              <span
-                className="
-                  text-[9px]
-                  font-bold
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#6A645D]
-                "
-              >
-                Vietnam
-              </span>
-            </div>
-
 
             <div
               className="
@@ -656,8 +261,8 @@ export default function AboutPage() {
 
                   <div
                     className="
-                      aspect-[4/3]
-                      max-h-[520px]
+                      aspect-[4/5]
+                      max-h-[600px]
                       overflow-hidden
                       rounded-[24px]
                       border
@@ -737,13 +342,13 @@ export default function AboutPage() {
 
                       <strong
                         className="
-                          text-[23px]
+                          text-[25px]
                           font-extrabold
                           leading-none
                           tracking-[-0.04em]
                           text-[#F59E0B]
 
-                          sm:text-[28px]
+                          sm:text-[30px]
                         "
                       >
                         {fact.value}
@@ -753,11 +358,13 @@ export default function AboutPage() {
                       {fact.unit && (
                         <span
                           className="
-                            text-[10px]
+                            text-[25px]
                             font-extrabold
-                            uppercase
-                            tracking-[0.08em]
+                            leading-none
+                            tracking-[-0.04em]
                             text-[#F59E0B]
+
+                            sm:text-[30px]
                           "
                         >
                           {fact.unit}
@@ -770,11 +377,13 @@ export default function AboutPage() {
                     <p
                       className="
                         mt-2
-                        max-w-[180px]
-                        text-[11px]
-                        font-medium
-                        leading-5
-                        text-white/70
+                        max-w-[190px]
+                        text-[13px]
+                        font-semibold
+                        leading-6
+                        text-white/80
+
+                        sm:text-[14px]
                       "
                     >
                       {fact.label}
@@ -816,14 +425,8 @@ export default function AboutPage() {
               <Reveal variant="left">
                 <div>
 
-                  <SectionLabel>
-                    01 / Our Story
-                  </SectionLabel>
-
-
                   <h2
                     className="
-                      mt-3
                       text-[34px]
                       font-extrabold
                       leading-[1]
@@ -882,7 +485,7 @@ export default function AboutPage() {
                       The material comes from
 
                       <strong className="font-extrabold text-[#0F2F24]">
-                        {" "}Gia Lai and Dak Lak
+                        {" "}Gia Lai Province
                       </strong>
 
                       , in Vietnam&apos;s Central Highlands.
@@ -951,14 +554,8 @@ export default function AboutPage() {
               >
                 <div>
 
-                  <SectionLabel>
-                    02 / The Second Life
-                  </SectionLabel>
-
-
                   <h2
                     className="
-                      mt-3
                       text-[34px]
                       font-extrabold
                       leading-[1]
@@ -1039,249 +636,6 @@ export default function AboutPage() {
 
 
         {/* ==================================================
-            PROCESS / PROOF
-        ================================================== */}
-
-        <section className="bg-[#FAF8F5] py-14 sm:py-16 lg:py-20">
-          <div
-            className="
-              mx-auto
-              max-w-[1180px]
-              px-4
-              sm:px-6
-              lg:px-8
-            "
-          >
-
-            {/* HEADING */}
-            <Reveal>
-              <div
-                className="
-                  grid
-                  gap-5
-                  border-b
-                  border-[#1E2A24]/10
-                  pb-7
-
-                  lg:grid-cols-[1fr_0.75fr]
-                  lg:items-end
-                  lg:gap-12
-                  lg:pb-9
-                "
-              >
-
-                <div>
-                  <SectionLabel>
-                    Inside VinEco
-                  </SectionLabel>
-
-
-                  <h2
-                    className="
-                      mt-3
-                      max-w-[700px]
-                      text-[36px]
-                      font-extrabold
-                      leading-[0.98]
-                      tracking-[-0.05em]
-                      text-[#0F2F24]
-
-                      sm:text-[46px]
-                      lg:text-[58px]
-                    "
-                  >
-                    From production
-
-                    <span className="block">
-                      to export-ready.
-                    </span>
-                  </h2>
-                </div>
-
-
-                <p
-                  className="
-                    max-w-[500px]
-                    text-[14px]
-                    font-medium
-                    leading-7
-                    text-[#5F625E]
-
-                    sm:text-[15px]
-
-                    lg:justify-self-end
-                  "
-                >
-                  A focused process covering quality
-                  checks, packaging and documentation
-                  for international B2B orders.
-                </p>
-
-              </div>
-            </Reveal>
-
-
-            {/* PROCESS GRID */}
-            <div
-              className="
-                mt-7
-                grid
-                gap-4
-
-                lg:mt-9
-                lg:grid-cols-[1.05fr_.95fr]
-                lg:gap-5
-              "
-            >
-
-              {/* MAIN CARD */}
-              <ProofFeatureCard
-                item={proofItems[0]}
-              />
-
-
-              {/* SIDE CARDS */}
-              <div className="grid gap-4 lg:gap-5">
-
-                <ProofCompactCard
-                  item={proofItems[1]}
-                  index={0}
-                />
-
-                <ProofCompactCard
-                  item={proofItems[2]}
-                  index={1}
-                />
-
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-
-        {/* ==================================================
-            MISSION
-        ================================================== */}
-
-        <section className="bg-[#F4F1EA] py-14 sm:py-16 lg:py-20">
-          <div
-            className="
-              mx-auto
-              max-w-[1120px]
-              px-4
-              sm:px-6
-            "
-          >
-
-            <Reveal>
-              <div className="max-w-[680px]">
-
-                <SectionLabel>
-                  03 / Our Mission
-                </SectionLabel>
-
-
-                <h2
-                  className="
-                    mt-3
-                    text-[34px]
-                    font-extrabold
-                    leading-[1]
-                    tracking-[-0.045em]
-                    text-[#0F2F24]
-
-                    sm:text-[42px]
-                    lg:text-[48px]
-                  "
-                >
-                  Better use of what
-                  already exists.
-                </h2>
-
-              </div>
-            </Reveal>
-
-
-            <div
-              className="
-                mt-8
-                grid
-                gap-3
-
-                md:grid-cols-3
-              "
-            >
-              {missionItems.map(
-                (item, index) => (
-                  <Reveal
-                    key={item.number}
-                    variant="up"
-                    delay={index * 80}
-                    className="h-full"
-                  >
-                    <article
-                      className={[
-                        "flex h-full min-h-[230px] flex-col",
-                        "rounded-[20px] border p-5 sm:p-6",
-
-                        item.featured
-                          ? "border-[#F59E0B] bg-[#F59E0B] text-[#0F2F24]"
-                          : item.dark
-                            ? "border-[#0F2F24] bg-[#0F2F24] text-white"
-                            : "border-[#1E2A24]/10 bg-white text-[#0F2F24]",
-                      ].join(" ")}
-                    >
-                      <span
-                        className={[
-                          "text-[11px] font-extrabold",
-
-                          item.dark
-                            ? "text-[#F59E0B]"
-                            : "text-[#0F2F24]/60",
-                        ].join(" ")}
-                      >
-                        {item.number}
-                      </span>
-
-
-                      <h3
-                        className="
-                          mt-auto
-                          pt-10
-                          text-[22px]
-                          font-extrabold
-                          leading-[1.05]
-                          tracking-[-0.035em]
-                        "
-                      >
-                        {item.title}
-                      </h3>
-
-
-                      <p
-                        className={[
-                          "mt-3 text-[13px] font-medium leading-6",
-
-                          item.dark
-                            ? "text-white/70"
-                            : "text-[#4F5752]",
-                        ].join(" ")}
-                      >
-                        {item.description}
-                      </p>
-
-                    </article>
-                  </Reveal>
-                ),
-              )}
-            </div>
-
-          </div>
-        </section>
-
-
-        {/* ==================================================
             FINAL CTA
         ================================================== */}
 
@@ -1299,15 +653,9 @@ export default function AboutPage() {
 
             <Reveal variant="zoom">
 
-              <SectionLabel>
-                Continue the story
-              </SectionLabel>
-
-
               <h2
                 className="
                   mx-auto
-                  mt-3
                   max-w-[760px]
                   text-[36px]
                   font-extrabold

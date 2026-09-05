@@ -12,7 +12,6 @@ const navigation = [
   { label: "About Us", to: "/about" },
   { label: "Product", to: "/products", type: "products" },
   { label: "Service", to: "/service" },
-  { label: "FAQ", to: "/faq" },
   { label: "Contact Us", to: "/contact" },
 ];
 

@@ -122,23 +122,10 @@ function GlobalBusinessVisual() {
 export default function ServicePage() {
   const services = serviceContent.services ?? [];
 
-  const serviceCount = String(
-    services.length,
-  ).padStart(2, "0");
-
   const heroImages =
     serviceContent.hero.images ?? [
       "/images/service-mobile/service-hero-main.png?v=5",
       "/images/service-mobile/service-hero-secondary.png?v=5",
-    ];
-
-  const heroPills =
-    serviceContent.hero.pills ?? [
-      "Packaging Design",
-      "Labels & Tags",
-      "Laser Engraving",
-      "Custom Packaging",
-      "Quality Control",
     ];
 
   return (
@@ -153,11 +140,6 @@ export default function ServicePage() {
 
         <section className="service-v2-hero">
           <div className="service-v2-shell">
-
-            <div className="service-v2-hero__meta">
-              <span>VINECO SERVICES</span>
-              <span>OEM / ODM · PRIVATE LABEL</span>
-            </div>
 
             <div className="service-v2-rule" />
 
@@ -272,36 +254,11 @@ export default function ServicePage() {
                   )}
 
 
-                  <div className="service-v2-hero-collage__orange">
-
-                    <span>
-                      {serviceCount}
-                    </span>
-
-                    <p>
-                      SERVICE
-                      <br />
-                      AREAS
-                    </p>
-
-                  </div>
-
                 </div>
               </Reveal>
 
             </div>
 
-
-            {/* PILLS */}
-            <div className="service-v2-pills">
-
-              {heroPills.map((item) => (
-                <span key={item}>
-                  {item}
-                </span>
-              ))}
-
-            </div>
 
           </div>
         </section>
