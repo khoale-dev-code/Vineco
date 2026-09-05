@@ -1759,3 +1759,763 @@
 /* ==========================================================
    VINECO SERVICE MOBILE V6 END
 ========================================================== */
+
+/* ==========================================================
+   VINECO SERVICE MOBILE V7
+   FULL IMAGE + CLEAN MOBILE LAYOUT
+========================================================== */
+
+
+/* ==========================================================
+   TABLET / MOBILE
+========================================================== */
+
+@media (max-width: 899px) {
+
+  /* --------------------------------------------------------
+     GENERAL
+  -------------------------------------------------------- */
+
+  .service-v2 {
+    overflow-x: clip !important;
+  }
+
+  .service-v2-shell,
+  .service-v2-layout {
+    width: calc(100% - 24px) !important;
+    max-width: 1240px !important;
+    margin-inline: auto !important;
+  }
+
+
+  /* --------------------------------------------------------
+     HERO
+     Hiện tại JSX chỉ có 2 ảnh nên mobile không chia 1fr + 92px nữa.
+  -------------------------------------------------------- */
+
+  .service-v2-hero__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  .service-v2-hero-collage {
+    display: grid !important;
+
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+
+    gap: 10px !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  .service-v2-hero-collage__large,
+  .service-v2-hero-collage__small {
+    position: relative !important;
+
+    inset: auto !important;
+
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 18px !important;
+
+    overflow: hidden !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+
+  /*
+   * Quan trọng:
+   * Không height:100%.
+   * Không ép aspect ratio.
+   * Ảnh chạy theo tỷ lệ thật.
+   */
+
+  .service-v2-hero-collage__large img,
+  .service-v2-hero-collage__small img,
+  .service-v2-hero-collage__large picture,
+  .service-v2-hero-collage__small picture,
+  .service-v2-hero-collage__large picture img,
+  .service-v2-hero-collage__small picture img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+
+  .service-v2-hero-collage__large > span {
+    position: absolute !important;
+
+    left: 10px !important;
+    bottom: 10px !important;
+
+    z-index: 2;
+
+    max-width: calc(100% - 20px);
+
+    padding: 7px 11px !important;
+
+    border-radius: 999px;
+
+    font-size: 8px !important;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+  /* --------------------------------------------------------
+     INTRO
+  -------------------------------------------------------- */
+
+  .service-v2-intro {
+    padding: 46px 0 28px !important;
+  }
+
+  .service-v2-intro h2 {
+    max-width: 100% !important;
+
+    font-size: clamp(
+      2rem,
+      9vw,
+      3.15rem
+    ) !important;
+
+    line-height: 1.04 !important;
+  }
+
+
+  /* --------------------------------------------------------
+     SERVICE CHAPTER
+  -------------------------------------------------------- */
+
+  .service-v2-chapter {
+    padding: 34px 0 52px !important;
+  }
+
+
+  /*
+   * Số + tiêu đề cùng hàng.
+   * Gọn hơn rất nhiều so với số nằm riêng một dòng.
+   */
+
+  .service-v2-chapter__header {
+    display: grid !important;
+
+    grid-template-columns:
+      52px minmax(0, 1fr) !important;
+
+    align-items: start !important;
+
+    gap: 12px !important;
+
+    margin-bottom: 24px !important;
+  }
+
+
+  .service-v2-chapter__number {
+    display: block !important;
+
+    margin: 0 !important;
+
+    font-size: 48px !important;
+
+    line-height: .84 !important;
+    letter-spacing: -.06em !important;
+  }
+
+
+  .service-v2-chapter__header h2 {
+    width: 100% !important;
+
+    margin-top: 4px !important;
+
+    font-size: clamp(
+      1.65rem,
+      7vw,
+      2.35rem
+    ) !important;
+
+    line-height: 1.08 !important;
+  }
+
+
+  /* --------------------------------------------------------
+     CONTENT
+  -------------------------------------------------------- */
+
+  .service-v2-feature,
+  .service-v2-feature--reverse {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+
+    gap: 22px !important;
+  }
+
+
+  /*
+   * Mobile luôn:
+   *
+   * TEXT
+   * IMAGE
+   *
+   * Không đảo trái/phải như desktop.
+   */
+
+  .service-v2-feature > div:first-child,
+  .service-v2-feature--reverse > div:first-child {
+    order: 1 !important;
+  }
+
+  .service-v2-feature > div:last-child,
+  .service-v2-feature--reverse > div:last-child {
+    order: 2 !important;
+  }
+
+
+  .service-v2-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+
+  .service-v2-copy__lead {
+    max-width: 100% !important;
+
+    font-size: clamp(
+      1.22rem,
+      5.2vw,
+      1.55rem
+    ) !important;
+
+    line-height: 1.42 !important;
+  }
+
+
+  .service-v2-copy ul {
+    margin-top: 18px !important;
+    gap: 10px !important;
+  }
+
+
+  .service-v2-copy li {
+    grid-template-columns:
+      19px minmax(0, 1fr) !important;
+
+    gap: 7px !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.62 !important;
+  }
+
+
+  /* ========================================================
+     NORMAL SERVICE IMAGES
+     1 ảnh / 1 hàng trên mobile.
+     Không crop.
+  ======================================================== */
+
+  .service-v2-collage:not(.service-v2-collage--grid) {
+    position: relative !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+
+    gap: 10px !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  .service-v2-collage__main,
+  .service-v2-collage__secondary,
+  .service-v2-collage__third {
+    position: relative !important;
+
+    inset: auto !important;
+
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    border-radius: 16px !important;
+
+    overflow: hidden !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+
+  .service-v2-collage__main img,
+  .service-v2-collage__secondary img,
+  .service-v2-collage__third img,
+  .service-v2-collage__main picture img,
+  .service-v2-collage__secondary picture img,
+  .service-v2-collage__third picture img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+
+  /* Label của main image */
+
+  .service-v2-collage__main > span {
+    left: 9px !important;
+    bottom: 9px !important;
+
+    z-index: 2;
+
+    max-width: calc(100% - 18px);
+
+    padding: 6px 10px !important;
+
+    border-radius: 999px;
+
+    font-size: 8px !important;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+  /* ========================================================
+     GRID 4 IMAGES
+     Custom Packaging & Fulfillment
+  ======================================================== */
+
+  .service-v2-collage--grid {
+    position: relative !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 10px !important;
+
+    width: 100% !important;
+
+    min-height: 0 !important;
+  }
+
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell {
+    position: relative !important;
+
+    grid-column: auto !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    border-radius: 15px !important;
+
+    overflow: hidden !important;
+
+    background: transparent !important;
+  }
+
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+
+  /* ========================================================
+     QUALITY CONTROL
+  ======================================================== */
+
+  .service-v2-quality-layout {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+
+    gap: 24px !important;
+  }
+
+
+  .qc-steps {
+    gap: 12px !important;
+  }
+
+
+  .qc-step {
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+
+    gap: 16px !important;
+
+    padding: 14px !important;
+
+    border-radius: 17px !important;
+  }
+
+
+  .qc-step__images {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 8px !important;
+  }
+
+
+  .qc-step__images figure {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    border-radius: 13px !important;
+
+    overflow: hidden !important;
+
+    background: transparent !important;
+  }
+
+
+  .qc-step__images img,
+  .qc-step__images picture,
+  .qc-step__images picture img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+}
+
+
+
+/* ==========================================================
+   REAL MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  /*
+   * 4 ảnh packaging:
+   * trên điện thoại chuyển thành 1 ảnh / hàng
+   * để khách nhìn rõ sản phẩm.
+   */
+
+  .service-v2-collage--grid {
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+  }
+
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell {
+    grid-column: 1 / -1 !important;
+  }
+
+
+  /*
+   * QC:
+   * 2 ảnh cũng xuống thành từng ảnh full-width.
+   */
+
+  .qc-step__images {
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+  }
+
+
+  .qc-step__images figure {
+    grid-column: 1 / -1 !important;
+  }
+
+
+  /* HERO */
+
+  .service-v2-hero {
+    padding:
+      14px 0 38px !important;
+  }
+
+
+  .service-v2-hero__copy h1 {
+    font-size: clamp(
+      2.55rem,
+      11.3vw,
+      3.5rem
+    ) !important;
+
+    line-height: .98 !important;
+  }
+
+
+  /* CHAPTER */
+
+  .service-v2-chapter {
+    padding:
+      30px 0 46px !important;
+  }
+
+
+  /* OVERVIEW TABLE -> CARD */
+
+  .service-v2-table {
+    overflow: visible !important;
+  }
+
+
+  .service-v2-table__head {
+    display: none !important;
+  }
+
+
+  .service-v2-table__row {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto !important;
+
+    gap:
+      8px 12px !important;
+
+    min-width: 0 !important;
+
+    margin-bottom: 8px !important;
+
+    padding: 14px !important;
+
+    border:
+      1px solid
+      rgba(30, 42, 36, .09) !important;
+
+    border-radius: 14px !important;
+
+    background: #fff !important;
+  }
+
+
+  .service-v2-table__row > strong {
+    min-width: 0;
+  }
+
+
+  .service-v2-table__row
+  > span:last-child {
+    grid-column:
+      1 / -1;
+
+    color:
+      rgba(30, 42, 36, .58);
+
+    font-size:
+      12px;
+
+    line-height:
+      1.5;
+  }
+
+}
+
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 430px) {
+
+  .service-v2-shell,
+  .service-v2-layout {
+    width:
+      calc(100% - 20px) !important;
+
+    max-width:
+      calc(100% - 20px) !important;
+  }
+
+
+  .service-v2-chapter__header {
+    grid-template-columns:
+      45px minmax(0, 1fr) !important;
+
+    gap: 10px !important;
+  }
+
+
+  .service-v2-chapter__number {
+    font-size:
+      42px !important;
+  }
+
+
+  .service-v2-chapter__header h2 {
+    font-size:
+      clamp(
+        1.5rem,
+        6.8vw,
+        2rem
+      ) !important;
+  }
+
+
+  .service-v2-copy__lead {
+    font-size:
+      1.18rem !important;
+  }
+
+}
+
+
+
+/* ==========================================================
+   VERY SMALL MOBILE
+========================================================== */
+
+@media (max-width: 359px) {
+
+  .service-v2-shell,
+  .service-v2-layout {
+    width:
+      calc(100% - 16px) !important;
+
+    max-width:
+      calc(100% - 16px) !important;
+  }
+
+
+  .service-v2-hero__actions {
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+  }
+
+
+  .service-v2-chapter__header {
+    grid-template-columns:
+      40px minmax(0, 1fr) !important;
+  }
+
+
+  .service-v2-chapter__number {
+    font-size:
+      38px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   VINECO SERVICE MOBILE V7 END
+========================================================== */
