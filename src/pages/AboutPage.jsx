@@ -496,17 +496,40 @@ export default function AboutPage() {
               </Reveal>
 
 
-              {/* STORY IMAGE */}
-              <Reveal
-                variant="right"
-                delay={100}
-              >
-                <ImageFrame
-                  src="/images/about/02-reclaimed-coffee-wood.jpg"
-                  alt="Mature Robusta coffee tree in Vietnam"
-                  position="object-[52%_42%]"
-                />
-              </Reveal>
+             {/* STORY IMAGE - FULL PORTRAIT */}
+<Reveal
+  variant="right"
+  delay={100}
+>
+  <figure
+    className="
+      mx-auto
+      w-full
+      max-w-[560px]
+      overflow-hidden
+      rounded-[24px]
+      border
+      border-[#1E2A24]/10
+      bg-white
+      shadow-[0_18px_48px_rgba(30,42,36,0.08)]
+
+      lg:ml-auto
+    "
+  >
+    <SmartImage
+      src="/images/about/02-reclaimed-coffee-wood.jpg"
+      alt="Mature Robusta coffee tree in Gia Lai Province, Vietnam"
+      loading="lazy"
+      className="
+        block
+        h-auto
+        w-full
+        object-contain
+        object-center
+      "
+    />
+  </figure>
+</Reveal>
 
             </div>
           </div>
