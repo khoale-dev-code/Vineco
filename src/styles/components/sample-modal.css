@@ -1,20 +1,42 @@
-/* VINECO SAMPLE MODAL START */
+/* ==========================================================
+   VINECO SAMPLE MODAL START
+   Full Image · Safe Scroll · Responsive Modal
+========================================================== */
+
+
+/* ==========================================================
+   BACKDROP
+========================================================== */
 
 .sample-modal-backdrop {
   position: fixed;
   inset: 0;
+
   z-index: 9999;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
   padding: 20px;
 
+  overflow-x: hidden;
   overflow-y: auto;
 
-  background: rgba(30, 42, 36, 0.56);
-  backdrop-filter: blur(8px);
+  overscroll-behavior: contain;
+
+  background:
+    rgba(30, 42, 36, 0.58);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+
+  backdrop-filter:
+    blur(8px);
 
   animation:
     sample-backdrop-enter
@@ -23,16 +45,32 @@
     both;
 }
 
+
+/* ==========================================================
+   MAIN DIALOG
+========================================================== */
+
 .sample-modal {
   position: relative;
 
   display: grid;
-  grid-template-columns:
-    minmax(0, 1.05fr)
-    minmax(350px, .95fr);
 
-  width: min(100%, 980px);
-  max-height: calc(100dvh - 40px);
+  grid-template-columns:
+    minmax(0, 1.04fr)
+    minmax(420px, 0.96fr);
+
+  width:
+    min(
+      1220px,
+      calc(100vw - 40px)
+    );
+
+  height: auto;
+
+  max-height:
+    calc(100dvh - 40px);
+
+  margin: auto;
 
   overflow: hidden;
 
@@ -40,117 +78,393 @@
     2px solid
     #F59E0B;
 
-  border-radius: 30px;
+  border-radius:
+    30px;
 
-  background: #ffffff;
+  background:
+    #ffffff;
 
   box-shadow:
     0 30px 100px
-    rgba(30, 42, 36, 0.30);
+    rgba(30, 42, 36, 0.3);
+
+  isolation: isolate;
 
   animation:
     sample-dialog-enter
     420ms
-    cubic-bezier(.16,1,.3,1)
+    cubic-bezier(.16, 1, .3, 1)
     both;
 }
 
+
+/* ==========================================================
+   CLOSE
+========================================================== */
+
 .sample-modal-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 20;
+
+  top: 16px;
+  right: 16px;
+
+  z-index: 50;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
+
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
 
   border:
-    2px solid
-    rgba(30, 42, 36, .12);
+    1.5px solid
+    rgba(30, 42, 36, 0.14);
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
-  background: rgba(255,255,255,.94);
-  color: #1E2A24;
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  color:
+    #1E2A24;
+
+  box-shadow:
+    0 6px 18px
+    rgba(30, 42, 36, 0.08);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+
+  backdrop-filter:
+    blur(8px);
 
   transition:
     transform 180ms ease,
+    border-color 180ms ease,
     background 180ms ease,
-    border-color 180ms ease;
+    box-shadow 180ms ease;
 }
 
+
 .sample-modal-close:hover {
-  transform: rotate(6deg);
-  border-color: #F59E0B;
-  background: #fff8e8;
+  transform:
+    rotate(6deg);
+
+  border-color:
+    #F59E0B;
+
+  background:
+    #FFF8E8;
+
+  box-shadow:
+    0 8px 24px
+    rgba(30, 42, 36, 0.1);
 }
+
+
+.sample-modal-close:focus-visible {
+  outline:
+    3px solid
+    rgba(245, 158, 11, 0.28);
+
+  outline-offset:
+    3px;
+}
+
+
+/* ==========================================================
+   LEFT VISUAL
+========================================================== */
 
 .sample-modal-visual {
   min-width: 0;
+  min-height: 0;
 
+  padding:
+    42px;
+
+  overflow-x: hidden;
   overflow-y: auto;
 
-  padding: 42px;
+  -webkit-overflow-scrolling:
+    touch;
+
+  overscroll-behavior-y:
+    contain;
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    rgba(245, 158, 11, 0.55)
+    transparent;
 
   background:
     radial-gradient(
       circle at 100% 0%,
-      rgba(255,255,255,.42),
-      transparent 30%
+      rgba(255, 255, 255, 0.46),
+      transparent 32%
     ),
     linear-gradient(
       145deg,
-      #ffe2aa 0%,
-      #fff1d5 100%
+      #FFE0A6 0%,
+      #FFF0CF 100%
     );
 }
 
-.sample-modal-form {
-  min-width: 0;
 
+/* ==========================================================
+   FULL IMAGE FRAME
+========================================================== */
+
+.sample-modal-media {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio:
+    4 / 3;
+
+  margin-top:
+    28px;
+
+  overflow: hidden;
+
+  border-radius:
+    24px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 14px 34px
+    rgba(30, 42, 36, 0.07);
+
+  isolation: isolate;
+}
+
+
+/*
+ * Full bleed:
+ * - no padding
+ * - no contain
+ * - image fills 100% frame
+ */
+
+.sample-modal-media__image {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit:
+    cover !important;
+
+  object-position:
+    center !important;
+
+  transform:
+    scale(1.015);
+
+  transform-origin:
+    center;
+}
+
+
+/* SmartImage fallback */
+
+.sample-modal-media > div {
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+}
+
+
+/* ==========================================================
+   RIGHT FORM
+========================================================== */
+
+.sample-modal-form {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 0;
+
+  max-height:
+    calc(100dvh - 40px);
+
+  overflow: hidden;
+
+  background:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   FORM SCROLL AREA
+========================================================== */
+
+.sample-modal-form__scroll {
+  flex:
+    1 1 auto;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding:
+    42px 42px 24px;
+
+  overflow-x: hidden;
   overflow-y: auto;
 
-  padding: 42px;
+  -webkit-overflow-scrolling:
+    touch;
 
-  background: #ffffff;
+  overscroll-behavior-y:
+    contain;
+
+  scrollbar-gutter:
+    stable;
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    rgba(245, 158, 11, 0.58)
+    transparent;
 }
+
+
+/* ==========================================================
+   FIXED FORM FOOTER
+========================================================== */
+
+.sample-modal-form__footer {
+  position: relative;
+
+  z-index: 10;
+
+  flex:
+    0 0 auto;
+
+  padding:
+    16px 42px 22px;
+
+  border-top:
+    1px solid
+    rgba(30, 42, 36, 0.08);
+
+  background:
+    rgba(255, 255, 255, 0.99);
+
+  box-shadow:
+    0 -12px 30px
+    rgba(30, 42, 36, 0.04);
+}
+
+
+/*
+ * Submit button cannot disappear
+ * outside the form column.
+ */
+
+.sample-modal-form__footer button[type="submit"] {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  min-height: 52px;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================================
+   FIELD LABEL
+========================================================== */
 
 .sample-field-label {
   display: block;
 
-  margin-bottom: 7px;
+  margin-bottom:
+    7px;
 
-  color: rgba(30, 42, 36, .72);
+  color:
+    rgba(30, 42, 36, 0.72);
 
-  font-size: 11px;
-  font-weight: 800;
+  font-size:
+    11px;
 
-  letter-spacing: .03em;
+  font-weight:
+    800;
+
+  line-height:
+    1.3;
+
+  letter-spacing:
+    0.03em;
 }
 
+
+/* ==========================================================
+   FIELD
+========================================================== */
+
 .sample-field {
+  display: block;
+
   width: 100%;
-  min-height: 46px;
+
+  min-width: 0;
+  min-height: 48px;
 
   padding:
     0 14px;
 
   border:
     1.5px solid
-    rgba(30, 42, 36, .18);
+    rgba(30, 42, 36, 0.18);
 
-  border-radius: 10px;
+  border-radius:
+    10px;
 
-  outline: none;
+  outline:
+    none;
 
-  background: #ffffff;
-  color: #1E2A24;
+  background:
+    #ffffff;
 
-  font-size: 14px;
+  color:
+    #1E2A24;
+
+  font-family:
+    inherit;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.5;
 
   transition:
     border-color 160ms ease,
@@ -158,60 +472,175 @@
     background 160ms ease;
 }
 
+
 .sample-field::placeholder {
   color:
-    rgba(30, 42, 36, .34);
+    rgba(30, 42, 36, 0.34);
 }
+
 
 .sample-field:hover {
   border-color:
-    rgba(245, 158, 11, .75);
+    rgba(245, 158, 11, 0.75);
 }
 
+
 .sample-field:focus {
-  border-color: #F59E0B;
+  border-color:
+    #F59E0B;
+
+  background:
+    #FFFDFA;
 
   box-shadow:
     0 0 0 4px
-    rgba(245, 158, 11, .13);
-
-  background: #fffdfa;
+    rgba(245, 158, 11, 0.13);
 }
+
+
+/* SELECT */
+
+select.sample-field {
+  cursor: pointer;
+
+  padding-right:
+    38px;
+}
+
+
+/* TEXTAREA */
+
+textarea.sample-field {
+  min-height:
+    96px;
+
+  padding:
+    12px 14px;
+
+  line-height:
+    1.55;
+
+  resize:
+    vertical;
+}
+
+
+/* ==========================================================
+   RADIO CARD
+========================================================== */
 
 .sample-radio-card {
   display: flex;
+
   align-items: center;
 
-  min-height: 44px;
+  min-width: 0;
+  min-height: 48px;
 
-  gap: 9px;
+  gap:
+    9px;
 
   padding:
     0 13px;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
   border:
     1.5px solid
-    rgba(245, 158, 11, .55);
+    rgba(245, 158, 11, 0.55);
 
-  border-radius: 10px;
+  border-radius:
+    10px;
 
-  background: #fffaf1;
+  background:
+    #FFFAF1;
 
-  color: #1E2A24;
+  color:
+    #1E2A24;
 
-  font-size: 12px;
-  font-weight: 700;
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
 }
+
+
+.sample-radio-card:hover {
+  border-color:
+    #F59E0B;
+
+  background:
+    #FFF4DF;
+}
+
+
+.sample-radio-card:active {
+  transform:
+    scale(0.99);
+}
+
 
 .sample-radio-card input {
-  accent-color: #F59E0B;
+  width: 15px;
+  height: 15px;
+
+  flex:
+    0 0 15px;
+
+  margin: 0;
+
+  accent-color:
+    #F59E0B;
 }
 
-/* ENTRY */
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+.sample-modal-visual::-webkit-scrollbar,
+.sample-modal-form__scroll::-webkit-scrollbar,
+.sample-modal::-webkit-scrollbar,
+.sample-modal-backdrop::-webkit-scrollbar {
+  width:
+    7px;
+}
+
+
+.sample-modal-visual::-webkit-scrollbar-track,
+.sample-modal-form__scroll::-webkit-scrollbar-track,
+.sample-modal::-webkit-scrollbar-track,
+.sample-modal-backdrop::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+
+.sample-modal-visual::-webkit-scrollbar-thumb,
+.sample-modal-form__scroll::-webkit-scrollbar-thumb,
+.sample-modal::-webkit-scrollbar-thumb,
+.sample-modal-backdrop::-webkit-scrollbar-thumb {
+  border-radius:
+    999px;
+
+  background:
+    rgba(245, 158, 11, 0.48);
+}
+
+
+/* ==========================================================
+   ENTRY ANIMATION
+========================================================== */
 
 @keyframes sample-backdrop-enter {
+
   from {
     opacity: 0;
   }
@@ -219,107 +648,511 @@
   to {
     opacity: 1;
   }
+
 }
+
 
 @keyframes sample-dialog-enter {
+
   from {
     opacity: 0;
 
     transform:
-      translate3d(0, 28px, 0)
-      scale(.97);
+      translate3d(
+        0,
+        28px,
+        0
+      )
+      scale(0.97);
   }
 
   to {
     opacity: 1;
 
     transform:
-      translate3d(0, 0, 0)
+      translate3d(
+        0,
+        0,
+        0
+      )
       scale(1);
   }
+
 }
 
-/* TABLET */
 
-@media (max-width: 820px) {
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1280px) {
+
   .sample-modal {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      minmax(0, 1.06fr)
+      minmax(440px, 0.94fr);
+  }
 
-    width:
-      min(100%, 620px);
+}
 
+
+/* ==========================================================
+   SHORT DESKTOP HEIGHT
+========================================================== */
+
+@media
+  (min-width: 821px)
+  and
+  (max-height: 820px) {
+
+  .sample-modal-backdrop {
+    padding:
+      12px;
+  }
+
+
+  .sample-modal {
     max-height:
       calc(100dvh - 24px);
   }
 
+
+  .sample-modal-form {
+    max-height:
+      calc(100dvh - 24px);
+  }
+
+
   .sample-modal-visual {
     padding:
       30px;
-
-    overflow: visible;
   }
 
-  .sample-modal-visual
-  > div:nth-child(2) {
-    min-height: 190px;
+
+  .sample-modal-media {
+    margin-top:
+      20px;
+
+    aspect-ratio:
+      16 / 10;
   }
 
-  .sample-modal-form {
+
+  .sample-modal-form__scroll {
     padding:
-      30px;
+      30px 34px 20px;
   }
+
+
+  .sample-modal-form__footer {
+    padding:
+      13px 34px 17px;
+  }
+
+
+  .sample-field {
+    min-height:
+      44px;
+  }
+
+
+  .sample-radio-card {
+    min-height:
+      44px;
+  }
+
+
+  textarea.sample-field {
+    min-height:
+      82px;
+  }
+
 }
 
-/* MOBILE */
 
-@media (max-width: 520px) {
-  .sample-modal-backdrop {
-    align-items: flex-end;
+/* ==========================================================
+   VERY SHORT DESKTOP
+========================================================== */
 
-    padding: 0;
+@media
+  (min-width: 821px)
+  and
+  (max-height: 680px) {
+
+  .sample-modal-visual {
+    padding:
+      24px;
   }
 
-  .sample-modal {
-    width: 100%;
-    max-height: 94dvh;
 
-    border-right: 0;
-    border-bottom: 0;
-    border-left: 0;
+  .sample-modal-media {
+    margin-top:
+      16px;
+  }
+
+
+  .sample-modal-form__scroll {
+    padding:
+      24px 30px 16px;
+  }
+
+
+  .sample-modal-form__footer {
+    padding:
+      11px 30px 14px;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 820px) {
+
+  .sample-modal-backdrop {
+    align-items:
+      flex-start;
+
+    justify-content:
+      center;
+
+    padding:
+      12px;
+  }
+
+
+  /*
+   * Tablet:
+   * Không dùng 2 vùng scroll lồng nhau.
+   * Toàn bộ modal scroll.
+   */
+
+  .sample-modal {
+    display:
+      block;
+
+    width:
+      min(
+        100%,
+        640px
+      );
+
+    max-height:
+      calc(100dvh - 24px);
+
+    overflow-x:
+      hidden;
+
+    overflow-y:
+      auto;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    overscroll-behavior-y:
+      contain;
+  }
+
+
+  .sample-modal-close {
+    position:
+      sticky;
+
+    top:
+      12px;
+
+    float:
+      right;
+
+    margin:
+      12px 12px -56px 0;
+  }
+
+
+  .sample-modal-visual {
+    min-height:
+      auto;
+
+    overflow:
+      visible;
+
+    padding:
+      32px;
+  }
+
+
+  .sample-modal-media {
+    aspect-ratio:
+      16 / 10;
+
+    margin-top:
+      24px;
+  }
+
+
+  .sample-modal-form {
+    display:
+      block;
+
+    max-height:
+      none;
+
+    overflow:
+      visible;
+  }
+
+
+  .sample-modal-form__scroll {
+    overflow:
+      visible;
+
+    padding:
+      32px 32px 16px;
+  }
+
+
+  .sample-modal-form__footer {
+    position:
+      static;
+
+    padding:
+      12px 32px 32px;
+
+    border-top:
+      0;
+
+    box-shadow:
+      none;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+  .sample-modal-backdrop {
+    align-items:
+      flex-end;
+
+    justify-content:
+      center;
+
+    padding:
+      0;
+  }
+
+
+  .sample-modal {
+    width:
+      100%;
+
+    max-height:
+      96dvh;
+
+    margin:
+      0;
+
+    border-right:
+      0;
+
+    border-bottom:
+      0;
+
+    border-left:
+      0;
 
     border-radius:
       24px 24px 0 0;
+
+    box-shadow:
+      0 -20px 70px
+      rgba(30, 42, 36, 0.22);
   }
+
+
+  .sample-modal-close {
+    top:
+      10px;
+
+    width:
+      40px;
+
+    height:
+      40px;
+
+    margin:
+      10px 10px -50px 0;
+  }
+
 
   .sample-modal-visual {
     padding:
       26px 20px 20px;
   }
 
-  .sample-modal-form {
+
+  .sample-modal-media {
+    width:
+      calc(100% + 40px);
+
+    margin:
+      22px -20px 0;
+
+    aspect-ratio:
+      4 / 3;
+
+    border-radius:
+      0;
+
+    box-shadow:
+      none;
+  }
+
+
+  /*
+   * Mobile image truly reaches
+   * both sides of visual section.
+   */
+
+  .sample-modal-media__image {
+    transform:
+      scale(1.02);
+  }
+
+
+  .sample-modal-form__scroll {
     padding:
-      24px 20px 30px;
+      27px 20px 12px;
   }
 
-  .sample-modal-close {
-    top: 10px;
-    right: 10px;
 
-    width: 38px;
-    height: 38px;
+  .sample-modal-form__footer {
+    padding:
+      10px
+      20px
+      calc(
+        24px +
+        env(safe-area-inset-bottom)
+      );
   }
+
+
+  .sample-field {
+    min-height:
+      50px;
+
+    font-size:
+      16px;
+  }
+
+
+  /*
+   * 16px prevents iOS Safari
+   * from zooming when input receives focus.
+   */
+
+  textarea.sample-field {
+    min-height:
+      100px;
+
+    font-size:
+      16px;
+  }
+
+
+  select.sample-field {
+    font-size:
+      16px;
+  }
+
+
+  .sample-radio-card {
+    min-height:
+      50px;
+
+    font-size:
+      13px;
+  }
+
 }
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+
+  .sample-modal-visual {
+    padding:
+      24px 16px 18px;
+  }
+
+
+  .sample-modal-media {
+    width:
+      calc(100% + 32px);
+
+    margin-left:
+      -16px;
+
+    margin-right:
+      -16px;
+  }
+
+
+  .sample-modal-form__scroll {
+    padding-left:
+      16px;
+
+    padding-right:
+      16px;
+  }
+
+
+  .sample-modal-form__footer {
+    padding-left:
+      16px;
+
+    padding-right:
+      16px;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
 
 @media (
   prefers-reduced-motion:
   reduce
 ) {
+
   .sample-modal-backdrop,
   .sample-modal {
-    animation: none;
+    animation:
+      none !important;
   }
+
+
+  .sample-modal-close,
+  .sample-radio-card,
+  .sample-field {
+    transition:
+      none !important;
+  }
+
 }
 
-/* =========================================================
-   VINECO ABOUT EXPERIENCE V3 END
-========================================================= */
+
+/* ==========================================================
+   VINECO SAMPLE MODAL END
+========================================================== */
