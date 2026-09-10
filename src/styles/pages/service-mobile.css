@@ -2519,3 +2519,1424 @@
 /* ==========================================================
    VINECO SERVICE MOBILE V7 END
 ========================================================== */
+
+
+/* === VINECO SERVICE CLIENT MOBILE PATCH START === */
+
+@media (max-width: 899px) {
+
+  /* ========================================================
+     TWO IMAGE CHAPTERS
+     Keep equal image proportions on tablet/mobile
+  ======================================================== */
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__main,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__secondary,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__third {
+
+    width: 100% !important;
+
+    aspect-ratio: 4 / 3 !important;
+
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    border-radius: 16px !important;
+
+    background: #F4F1EA !important;
+  }
+
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__main img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__secondary img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__third img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__main picture img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__secondary picture img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__third picture img {
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+
+  /* ========================================================
+     FOUR IMAGE GRID
+  ======================================================== */
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell {
+
+    aspect-ratio: 4 / 3 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell img,
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell picture img {
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+
+  /* ========================================================
+     SERVICE TABLE READABILITY
+  ======================================================== */
+
+  .service-v2-table__row {
+    padding: 16px !important;
+
+    font-size: 15px !important;
+
+    line-height: 1.5 !important;
+  }
+
+
+  .service-v2-table__row > strong {
+    font-size: 15px !important;
+
+    line-height: 1.4;
+  }
+
+
+  .service-v2-status {
+    font-size: 14px !important;
+  }
+
+
+  .service-v2-table__row > span:last-child {
+    font-size: 14px !important;
+
+    line-height: 1.55 !important;
+  }
+
+
+  /* ========================================================
+     CTA
+  ======================================================== */
+
+  .service-v2-cta__inner h2 {
+    line-height: 1.04 !important;
+
+    letter-spacing: -.045em !important;
+
+    text-wrap: balance;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .service-v2-table__row {
+    font-size: 14px !important;
+  }
+
+
+  .service-v2-table__row > strong {
+    font-size: 14px !important;
+  }
+
+
+  .service-v2-status {
+    font-size: 13px !important;
+  }
+
+
+  .service-v2-table__row > span:last-child {
+    font-size: 13px !important;
+  }
+
+}
+
+/* === VINECO SERVICE CLIENT MOBILE PATCH END === */
+
+
+
+
+
+/* VINECO SERVICE HERO MOBILE V1 START */
+
+
+/* ==========================================================
+   TABLET + MOBILE
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2-hero {
+    padding:
+      22px 0 54px !important;
+  }
+
+
+  .service-v2-hero__grid {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+
+    gap:
+      30px !important;
+
+    padding-top:
+      30px !important;
+  }
+
+
+  .service-v2-hero__copy {
+    width: 100%;
+
+    max-width: 720px;
+
+    min-width: 0;
+  }
+
+
+  .service-v2-hero__copy
+  h1 {
+    max-width:
+      680px !important;
+
+    margin-top:
+      12px !important;
+
+    font-size:
+      clamp(
+        3rem,
+        8.5vw,
+        4.6rem
+      ) !important;
+
+    line-height:
+      .96 !important;
+
+    letter-spacing:
+      -.052em !important;
+  }
+
+
+  .service-v2-hero__copy
+  > p:not(.service-v2-eyebrow) {
+    max-width:
+      650px !important;
+
+    margin-top:
+      20px !important;
+
+    font-size:
+      15px !important;
+
+    font-weight: 520;
+
+    line-height:
+      1.72 !important;
+  }
+
+
+  /* TWO PHOTOS */
+
+  .service-v2-hero-collage {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      ) !important;
+
+    grid-template-rows:
+      auto !important;
+
+    gap:
+      10px !important;
+
+    width:
+      100% !important;
+
+    height:
+      auto !important;
+
+    min-height:
+      0 !important;
+
+    margin:
+      0 !important;
+
+    padding:
+      0 !important;
+  }
+
+
+  .service-v2-hero-collage__large,
+  .service-v2-hero-collage__small {
+    position:
+      relative !important;
+
+    inset:
+      auto !important;
+
+    grid-column:
+      auto !important;
+
+    grid-row:
+      auto !important;
+
+    width:
+      100% !important;
+
+    height:
+      auto !important;
+
+    min-height:
+      0 !important;
+
+    aspect-ratio:
+      4 / 5 !important;
+
+    margin:
+      0 !important;
+
+    padding:
+      0 !important;
+
+    overflow:
+      hidden !important;
+
+    border:
+      1px solid
+      rgba(30,42,36,.10) !important;
+
+    border-radius:
+      18px !important;
+
+    background:
+      #F4F1EA !important;
+
+    box-shadow:
+      none !important;
+
+    transform:
+      none !important;
+  }
+
+
+  .service-v2-hero-collage__large
+  img,
+
+  .service-v2-hero-collage__small
+  img,
+
+  .service-v2-hero-collage__large
+  picture,
+
+  .service-v2-hero-collage__small
+  picture,
+
+  .service-v2-hero-collage__large
+  picture img,
+
+  .service-v2-hero-collage__small
+  picture img {
+
+    display:
+      block !important;
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    max-width:
+      none !important;
+
+    max-height:
+      none !important;
+
+    margin:
+      0 !important;
+
+    padding:
+      0 !important;
+
+    object-fit:
+      cover !important;
+
+    object-position:
+      center !important;
+  }
+
+
+  .service-v2-hero-collage__large
+  > span {
+    position:
+      absolute !important;
+
+    left:
+      10px !important;
+
+    bottom:
+      10px !important;
+
+    z-index: 4;
+
+    padding:
+      7px 10px !important;
+
+    border-radius:
+      999px;
+
+    background:
+      #F59E0B;
+
+    font-size:
+      8px !important;
+
+    line-height:
+      1;
+
+    white-space:
+      nowrap;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE 360 - 640
+========================================================== */
+
+@media (max-width: 640px) {
+
+  .service-v2-hero__grid {
+    gap:
+      24px !important;
+  }
+
+
+  .service-v2-hero__copy
+  h1 {
+    font-size:
+      clamp(
+        2.65rem,
+        11.5vw,
+        3.55rem
+      ) !important;
+
+    line-height:
+      .97 !important;
+  }
+
+
+  .service-v2-hero__copy
+  > p:not(.service-v2-eyebrow) {
+    font-size:
+      15px !important;
+
+    line-height:
+      1.68 !important;
+  }
+
+
+  .service-v2-hero__actions {
+    display:
+      grid !important;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      ) !important;
+
+    width:
+      100%;
+
+    gap:
+      8px !important;
+  }
+
+
+  .service-v2-hero__actions
+  .service-v2-button {
+    width:
+      100%;
+
+    min-width:
+      0;
+
+    min-height:
+      48px;
+
+    padding-inline:
+      10px;
+
+    font-size:
+      12px;
+  }
+
+
+  .service-v2-hero-collage {
+    gap:
+      8px !important;
+  }
+
+
+  .service-v2-hero-collage__large,
+  .service-v2-hero-collage__small {
+    aspect-ratio:
+      3 / 4 !important;
+
+    border-radius:
+      15px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL
+========================================================== */
+
+@media (max-width: 359px) {
+
+  .service-v2-hero__actions {
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+  }
+
+
+  .service-v2-hero-collage {
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+  }
+
+
+  .service-v2-hero-collage__large,
+  .service-v2-hero-collage__small {
+    aspect-ratio:
+      4 / 3 !important;
+  }
+
+}
+
+
+/* VINECO SERVICE HERO MOBILE V1 END */
+
+
+/* VINECO GLOBAL SUPPORT MOBILE V2 START */
+
+
+@media (max-width: 899px) {
+
+  .service-v2-global {
+    padding:
+      54px 0 !important;
+
+    background:
+      #FFFDF9 !important;
+  }
+
+
+  .service-v2-global__grid {
+    display:
+      grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+
+    width:
+      100%;
+
+    overflow:
+      hidden !important;
+
+    border:
+      1px solid
+      rgba(30, 42, 36, .11) !important;
+
+    border-radius:
+      22px !important;
+
+    background:
+      #FFFFFF !important;
+
+    box-shadow:
+      0 18px 48px
+      rgba(30, 42, 36, .065) !important;
+  }
+
+
+  .service-v2-global__copy {
+    padding:
+      30px 22px 27px !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        #FFFFFF 0%,
+        #FCF9F2 100%
+      ) !important;
+  }
+
+
+  .service-v2-global__copy::after {
+    display:
+      none !important;
+  }
+
+
+  .service-v2-global__copy h2 {
+    max-width:
+      620px !important;
+
+    margin-top:
+      10px !important;
+
+    font-size:
+      clamp(
+        2.3rem,
+        9vw,
+        3.15rem
+      ) !important;
+
+    line-height:
+      .98 !important;
+
+    letter-spacing:
+      -.048em !important;
+  }
+
+
+  .service-v2-global__copy
+  > p:not(.service-v2-eyebrow) {
+    max-width:
+      620px !important;
+
+    margin:
+      17px 0 22px !important;
+
+    font-size:
+      15px !important;
+
+    line-height:
+      1.68 !important;
+  }
+
+
+  .service-v2-global__visual {
+    display:
+      block !important;
+
+    width:
+      100%;
+
+    min-height:
+      0 !important;
+
+    padding:
+      10px !important;
+
+    background:
+      #F4F1EA !important;
+  }
+
+
+  .service-v2-global__visual
+  > div {
+    width:
+      100% !important;
+
+    border-radius:
+      18px !important;
+
+    box-shadow:
+      none !important;
+  }
+
+
+  /*
+   * Keep the world map fully visible.
+   * Do not crop or stretch SVG.
+   */
+  .service-v2-global__visual svg {
+    display:
+      block;
+
+    width:
+      100% !important;
+
+    height:
+      auto !important;
+
+    max-width:
+      none;
+  }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 430px) {
+
+  .service-v2-global__copy {
+    padding:
+      27px 18px 24px !important;
+  }
+
+
+  .service-v2-global__copy h2 {
+    font-size:
+      clamp(
+        2.12rem,
+        10vw,
+        2.75rem
+      ) !important;
+  }
+
+
+  .service-v2-global__visual {
+    padding:
+      7px !important;
+  }
+
+
+  .service-v2-global__visual
+  > div {
+    border-radius:
+      15px !important;
+  }
+
+}
+
+
+/* VINECO GLOBAL SUPPORT MOBILE V2 END */
+
+
+/* === VINECO GLOBAL MAP FINAL MOBILE START === */
+
+@media (max-width: 899px) {
+
+  .service-v2-global__grid {
+    opacity: 1 !important;
+    transform: none !important;
+
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+  }
+
+
+  .service-v2-global__visual {
+    width: 100%;
+
+    min-width: 0;
+    min-height: 0 !important;
+
+    padding: 0 !important;
+
+    overflow: visible !important;
+
+    background: transparent !important;
+  }
+
+
+  .service-v2-global__visual > div {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .vineco-export-map {
+    display: block;
+
+    width: 100% !important;
+    height: auto !important;
+
+    overflow: visible;
+  }
+
+}
+
+
+/* === VINECO GLOBAL MAP FINAL MOBILE END === */
+
+
+
+
+
+
+
+
+
+
+
+/* VINECO SERVICE MOBILE FULL IMAGE V8 START */
+
+/*
+ * Mobile image policy:
+ * - no forced crop
+ * - no forced fixed aspect-ratio
+ * - use real image ratio
+ * - one image per row on phones
+ * - image always uses full available width
+ */
+
+@media (max-width: 640px) {
+
+  /* ========================================================
+     HERO IMAGES
+  ======================================================== */
+
+  .service-v2-hero-collage {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    gap: 10px !important;
+
+    overflow: visible !important;
+  }
+
+  .service-v2-hero-collage__large,
+  .service-v2-hero-collage__small {
+    position: relative !important;
+    inset: auto !important;
+
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    border-radius: 16px !important;
+
+    background: transparent !important;
+
+    transform: none !important;
+  }
+
+  .service-v2-hero-collage__large img,
+  .service-v2-hero-collage__small img,
+  .service-v2-hero-collage__large picture,
+  .service-v2-hero-collage__small picture,
+  .service-v2-hero-collage__large picture img,
+  .service-v2-hero-collage__small picture img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+
+  /* ========================================================
+     NORMAL SERVICE CHAPTER IMAGES
+  ======================================================== */
+
+  .service-v2-collage:not(.service-v2-collage--grid) {
+    position: relative !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    gap: 10px !important;
+
+    overflow: visible !important;
+  }
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__main,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__secondary,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__third {
+    position: relative !important;
+
+    inset: auto !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    grid-column: 1 / -1 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    border-radius: 16px !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+  .service-v2-collage__main img,
+  .service-v2-collage__secondary img,
+  .service-v2-collage__third img,
+
+  .service-v2-collage__main picture,
+  .service-v2-collage__secondary picture,
+  .service-v2-collage__third picture,
+
+  .service-v2-collage__main picture img,
+  .service-v2-collage__secondary picture img,
+  .service-v2-collage__third picture img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    transform: none !important;
+  }
+
+
+  /* ========================================================
+     FOUR-IMAGE GRID
+     Custom Packaging etc.
+  ======================================================== */
+
+  .service-v2-collage--grid {
+    display: grid !important;
+
+    grid-template-columns: minmax(0, 1fr) !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    gap: 10px !important;
+  }
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell {
+    position: relative !important;
+
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    border-radius: 15px !important;
+
+    background: transparent !important;
+  }
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell img,
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell picture,
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell picture img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+
+  /* ========================================================
+     QUALITY CONTROL IMAGES
+  ======================================================== */
+
+  .qc-step__images {
+    display: grid !important;
+
+    grid-template-columns: minmax(0, 1fr) !important;
+
+    width: 100% !important;
+
+    gap: 10px !important;
+  }
+
+  .qc-step__images figure {
+    grid-column: 1 / -1 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    border-radius: 15px !important;
+
+    background: transparent !important;
+  }
+
+  .qc-step__images img,
+  .qc-step__images picture,
+  .qc-step__images picture img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    transform: none !important;
+  }
+}
+
+
+/* ==========================================================
+   TABLET
+   Keep 2-image layouts, but never crop photos.
+========================================================== */
+
+@media (min-width: 641px) and (max-width: 899px) {
+
+  .service-v2-collage__main img,
+  .service-v2-collage__secondary img,
+  .service-v2-collage__third img,
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell img,
+
+  .qc-step__images img {
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+}
+
+/* VINECO SERVICE MOBILE FULL IMAGE V8 END */
+
+
+/* VINECO QC INITIAL RESTORE MOBILE START */
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 899px) {
+
+  #quality-control
+  .service-v2-quality-layout {
+    display:
+      block !important;
+  }
+
+
+  #quality-control
+  .service-v2-quality-layout
+  .service-v2-copy {
+    display:
+      grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0,1fr)) !important;
+
+    gap:
+      24px !important;
+
+    margin:
+      0 0 24px !important;
+
+    padding:
+      24px !important;
+  }
+
+
+  #quality-control
+  .service-v2-quality-layout
+  .service-v2-copy > ul {
+    display:
+      none !important;
+  }
+
+
+  #quality-control
+  .qc-steps {
+    display:
+      grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0,1fr)) !important;
+
+    gap:
+      14px !important;
+  }
+
+
+  #quality-control
+  .qc-step {
+    display:
+      flex !important;
+
+    flex-direction:
+      column !important;
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    gap:
+      0 !important;
+
+    padding:
+      17px !important;
+
+    border-radius:
+      18px !important;
+  }
+
+
+  #quality-control
+  .qc-step__copy {
+    min-height:
+      145px !important;
+  }
+
+
+  #quality-control
+  .qc-step__images {
+    display:
+      grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0,1fr)) !important;
+
+    gap:
+      7px !important;
+
+    margin-top:
+      14px !important;
+  }
+
+
+  #quality-control
+  .qc-step__images figure {
+    grid-column:
+      auto !important;
+
+    display:
+      block !important;
+
+    width:
+      100% !important;
+
+    height:
+      auto !important;
+
+    aspect-ratio:
+      4 / 3 !important;
+
+    margin:
+      0 !important;
+
+    padding:
+      0 !important;
+
+    overflow:
+      hidden !important;
+
+    border:
+      0 !important;
+
+    border-radius:
+      12px !important;
+
+    background:
+      #F4F1EA !important;
+  }
+
+
+  #quality-control
+  .qc-step__images picture {
+    display:
+      block !important;
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+  }
+
+
+  #quality-control
+  .qc-step__images img,
+
+  #quality-control
+  .qc-step__images picture img {
+    display:
+      block !important;
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    max-width:
+      none !important;
+
+    max-height:
+      none !important;
+
+    margin:
+      0 !important;
+
+    padding:
+      0 !important;
+
+    object-fit:
+      cover !important;
+
+    object-position:
+      center center !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  #quality-control
+  .service-v2-quality-layout
+  .service-v2-copy {
+    display:
+      block !important;
+
+    margin-bottom:
+      18px !important;
+
+    padding:
+      18px 16px !important;
+
+    border-radius:
+      16px !important;
+  }
+
+
+  #quality-control
+  .service-v2-copy__lead {
+    font-size:
+      20px !important;
+
+    line-height:
+      1.25 !important;
+  }
+
+
+  #quality-control
+  .service-v2-quality-layout
+  .service-v2-copy
+  > p:not(.service-v2-copy__lead) {
+    margin-top:
+      10px !important;
+
+    font-size:
+      15px !important;
+  }
+
+
+  /*
+   * Original responsive structure:
+   * one STEP per row,
+   * two photos stay next to each other.
+   */
+  #quality-control
+  .qc-steps {
+    grid-template-columns:
+      minmax(0,1fr) !important;
+
+    gap:
+      12px !important;
+  }
+
+
+  #quality-control
+  .qc-step {
+    padding:
+      14px !important;
+
+    border-radius:
+      17px !important;
+  }
+
+
+  #quality-control
+  .qc-step__copy {
+    min-height:
+      0 !important;
+  }
+
+
+  #quality-control
+  .qc-step h3 {
+    margin-top:
+      10px !important;
+
+    font-size:
+      19px !important;
+  }
+
+
+  #quality-control
+  .qc-step__copy > p {
+    font-size:
+      13px !important;
+
+    line-height:
+      1.6 !important;
+  }
+
+
+  #quality-control
+  .qc-step__images {
+    grid-template-columns:
+      repeat(2, minmax(0,1fr)) !important;
+
+    gap:
+      6px !important;
+
+    margin-top:
+      13px !important;
+  }
+
+
+  #quality-control
+  .qc-step__images figure {
+    grid-column:
+      auto !important;
+
+    aspect-ratio:
+      4 / 3 !important;
+
+    border-radius:
+      11px !important;
+  }
+
+}
+
+
+/* VINECO QC INITIAL RESTORE MOBILE END */

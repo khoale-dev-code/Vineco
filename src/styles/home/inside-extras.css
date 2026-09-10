@@ -1222,3 +1222,1207 @@
     line-height: 1.6;
   }
 }
+
+
+/* VINECO HOME CLIENT POLISH V1 START */
+
+
+/* ==========================================================
+   PARTNER WITH VINECO
+   - prevent title collision
+   - give center copy more breathing room
+   - keep side visuals inside their own columns
+========================================================== */
+
+.home-partner-grid {
+  isolation: isolate;
+}
+
+.home-partner-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.home-partner-visual {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.home-partner-title {
+  max-width: 100%;
+
+  font-size:
+    clamp(
+      2.45rem,
+      3.6vw,
+      4rem
+    ) !important;
+
+  line-height:
+    1.04 !important;
+
+  letter-spacing:
+    -0.045em !important;
+
+  text-wrap:
+    balance;
+}
+
+.home-partner-title span {
+  line-height:
+    inherit;
+}
+
+
+/* Desktop / laptop */
+@media (min-width: 1024px) {
+
+  .home-partner-grid {
+    grid-template-columns:
+      minmax(185px, .58fr)
+      minmax(0, 2.05fr)
+      minmax(185px, .58fr)
+      !important;
+  }
+
+}
+
+
+/* Large desktop */
+@media (min-width: 1280px) {
+
+  .home-partner-grid {
+    grid-template-columns:
+      minmax(205px, .58fr)
+      minmax(0, 2.12fr)
+      minmax(205px, .58fr)
+      !important;
+  }
+
+}
+
+
+/* Tablet / mobile:
+   center content first,
+   two visuals below */
+@media (max-width: 1023px) {
+
+  .home-partner-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr))
+      !important;
+
+    gap:
+      10px !important;
+  }
+
+  .home-partner-content {
+    grid-column:
+      1 / -1;
+
+    order:
+      1;
+  }
+
+  .home-partner-visual {
+    order:
+      2;
+
+    min-height:
+      260px !important;
+  }
+
+  .home-partner-title {
+    font-size:
+      clamp(
+        2.45rem,
+        7vw,
+        3.6rem
+      ) !important;
+
+    line-height:
+      1.04 !important;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .home-partner-visual {
+    min-height:
+      190px !important;
+
+    border-radius:
+      20px !important;
+  }
+
+  .home-partner-title {
+    font-size:
+      clamp(
+        2.25rem,
+        11vw,
+        3rem
+      ) !important;
+
+    line-height:
+      1.05 !important;
+
+    letter-spacing:
+      -0.04em !important;
+  }
+
+}
+
+
+/* ==========================================================
+   FROM PRODUCTION TO GLOBAL DELIVERY
+========================================================== */
+
+.inside-process-card {
+  will-change:
+    auto !important;
+}
+
+
+/*
+  Disable whole-card translate on process cards.
+  This avoids browser raster/compositing softness on images
+  and text on some desktop screens.
+*/
+.inside-process-card:hover {
+  transform:
+    none !important;
+}
+
+
+/* Image stays full frame without CSS zoom */
+.inside-process-card__image {
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  object-fit:
+    cover !important;
+
+  transform:
+    none !important;
+
+  filter:
+    none !important;
+
+  image-rendering:
+    auto;
+}
+
+
+/*
+  Footer was removed, so body no longer needs
+  the old oversized empty vertical area.
+*/
+.inside-process-card .inside-review-card__body {
+  min-height:
+    250px !important;
+
+  padding-bottom:
+    22px;
+}
+
+
+/* Keep all desktop cards visually balanced */
+@media (min-width: 1000px) {
+
+  .inside-process-card .inside-review-card__media {
+    height:
+      220px !important;
+  }
+
+  .inside-process-card .inside-review-card__body {
+    min-height:
+      250px !important;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .inside-process-card .inside-review-card__body {
+    min-height:
+      0 !important;
+
+    padding-bottom:
+      20px;
+  }
+
+}
+
+
+/* VINECO HOME CLIENT POLISH V1 END */
+
+
+/* VINECO PROCESS CAROUSEL LARGE V1 START */
+
+
+/* ==========================================================
+   FROM PRODUCTION TO GLOBAL DELIVERY
+
+   Real carousel:
+   - 3 large cards on desktop
+   - 2 cards on laptop/tablet
+   - 1 large card + next-card hint on mobile
+========================================================== */
+
+.inside-reviews__stage {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* ==========================================================
+   TRACK
+========================================================== */
+
+.inside-reviews__track {
+  display: grid !important;
+
+  grid-auto-flow: column !important;
+
+  /*
+   * Keep this gap at 16px.
+   * scrollStories() already scrolls cardWidth + 16.
+   */
+  gap: 16px !important;
+
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+
+  padding:
+    6px 2px 18px !important;
+
+  scroll-snap-type:
+    x mandatory;
+
+  scroll-padding-inline:
+    2px;
+
+  scrollbar-width:
+    none;
+
+  -webkit-overflow-scrolling:
+    touch;
+
+  overscroll-behavior-inline:
+    contain;
+}
+
+
+.inside-reviews__track::-webkit-scrollbar {
+  display:
+    none;
+}
+
+
+.inside-reviews__reveal {
+  width:
+    100%;
+
+  min-width:
+    0;
+
+  height:
+    100%;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.inside-review-card {
+  display:
+    flex !important;
+
+  flex-direction:
+    column;
+
+  width:
+    100%;
+
+  min-width:
+    0;
+
+  height:
+    100%;
+
+  overflow:
+    hidden;
+
+  scroll-snap-align:
+    start;
+
+  scroll-snap-stop:
+    always;
+
+  border:
+    1.5px solid
+    #F59E0B;
+
+  border-radius:
+    24px;
+
+  background:
+    #FFFFFF;
+
+  box-shadow:
+    0 8px 28px
+    rgba(30,42,36,.035);
+
+  transition:
+    border-color .22s ease,
+    box-shadow .22s ease,
+    transform .22s ease;
+}
+
+
+/* ==========================================================
+   IMAGE
+
+   Larger frame so real production photos are the focus.
+========================================================== */
+
+.inside-review-card__media {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    auto !important;
+
+  aspect-ratio:
+    4 / 3;
+
+  flex:
+    0 0 auto;
+
+  overflow:
+    hidden;
+
+  background:
+    #F4F1EA;
+}
+
+
+.inside-review-card__media img {
+  display:
+    block;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  object-fit:
+    cover !important;
+
+  transform:
+    none !important;
+
+  image-rendering:
+    auto;
+}
+
+
+/* Number slightly larger */
+
+.inside-review-card__number {
+  top:
+    14px;
+
+  left:
+    14px;
+
+  width:
+    40px;
+
+  height:
+    40px;
+
+  font-size:
+    11px;
+}
+
+
+/* ==========================================================
+   CARD COPY
+========================================================== */
+
+.inside-review-card__body {
+  display:
+    flex;
+
+  flex:
+    1 1 auto;
+
+  flex-direction:
+    column;
+
+  min-height:
+    0 !important;
+
+  padding:
+    25px 24px 27px !important;
+}
+
+
+.inside-review-card__body h3 {
+  font-size:
+    23px !important;
+
+  line-height:
+    1.1 !important;
+
+  letter-spacing:
+    -.03em !important;
+}
+
+
+.inside-review-card__body > p {
+  font-size:
+    15px !important;
+
+  line-height:
+    1.65 !important;
+}
+
+
+/* ==========================================================
+   DESKTOP 1200+
+   Show only 3 cards at once.
+========================================================== */
+
+@media (min-width: 1200px) {
+
+  .inside-reviews__track {
+    grid-auto-columns:
+      calc((100% - 32px) / 3) !important;
+  }
+
+
+  .inside-review-card__media {
+    aspect-ratio:
+      4 / 3;
+  }
+
+
+  .inside-review-card__body {
+    padding:
+      26px 25px 28px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   LAPTOP 900 - 1199
+   Two large cards.
+========================================================== */
+
+@media
+(min-width: 900px)
+and
+(max-width: 1199px) {
+
+  .inside-reviews__track {
+    grid-auto-columns:
+      calc((100% - 16px) / 2) !important;
+  }
+
+
+  .inside-review-card__media {
+    aspect-ratio:
+      4 / 3;
+  }
+
+
+  .inside-review-card__body {
+    padding:
+      24px 22px 25px !important;
+  }
+
+
+  .inside-review-card__body h3 {
+    font-size:
+      22px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET 641 - 899
+========================================================== */
+
+@media
+(min-width: 641px)
+and
+(max-width: 899px) {
+
+  .inside-reviews__track {
+    grid-auto-columns:
+      calc((100% - 16px) / 2) !important;
+  }
+
+
+  .inside-review-card__media {
+    aspect-ratio:
+      4 / 3;
+  }
+
+
+  .inside-review-card__body {
+    padding:
+      21px 19px 23px !important;
+  }
+
+
+  .inside-review-card__body h3 {
+    font-size:
+      20px !important;
+  }
+
+
+  /*
+   * Show arrows on tablet too.
+   */
+  .inside-reviews__arrow {
+    display:
+      flex !important;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE <= 640
+
+   One large card + a little of the next card.
+   This clearly communicates horizontal navigation.
+========================================================== */
+
+@media (max-width: 640px) {
+
+  .inside-reviews__track {
+    grid-auto-columns:
+      91% !important;
+
+    gap:
+      16px !important;
+
+    padding:
+      5px 2px 16px !important;
+  }
+
+
+  .inside-review-card {
+    border-radius:
+      20px;
+  }
+
+
+  .inside-review-card__media {
+    aspect-ratio:
+      4 / 3 !important;
+  }
+
+
+  .inside-review-card__number {
+    top:
+      11px;
+
+    left:
+      11px;
+
+    width:
+      36px;
+
+    height:
+      36px;
+
+    font-size:
+      10px;
+  }
+
+
+  .inside-review-card__body {
+    padding:
+      20px 18px 22px !important;
+  }
+
+
+  .inside-review-card__body h3 {
+    font-size:
+      21px !important;
+
+    line-height:
+      1.12 !important;
+  }
+
+
+  .inside-review-card__body > p {
+    font-size:
+      15px !important;
+
+    line-height:
+      1.62 !important;
+  }
+
+
+  /*
+   * Customers can still swipe naturally.
+   * Also keep click arrows visible.
+   */
+  .inside-reviews__arrow {
+    display:
+      flex !important;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    width:
+      36px !important;
+
+    height:
+      36px !important;
+
+    font-size:
+      23px !important;
+
+    background:
+      rgba(255,255,255,.94);
+
+    backdrop-filter:
+      blur(6px);
+  }
+
+
+  .inside-reviews__arrow--left {
+    left:
+      -5px !important;
+  }
+
+
+  .inside-reviews__arrow--right {
+    right:
+      -5px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .inside-review-card:hover {
+    transform:
+      translateY(-3px);
+
+    border-color:
+      #D97706;
+
+    box-shadow:
+      0 18px 42px
+      rgba(30,42,36,.075);
+  }
+
+
+  .inside-reviews__arrow:hover {
+    background:
+      #F59E0B;
+
+    transform:
+      translateY(-50%)
+      scale(1.06);
+  }
+
+}
+
+
+/* ==========================================================
+   DOTS
+========================================================== */
+
+.inside-reviews__dots {
+  margin-top:
+    15px !important;
+}
+
+
+/* VINECO PROCESS CAROUSEL LARGE V1 END */
+
+
+/* VINECO PARTNER LARGE PETS V3 START */
+
+
+/* ==========================================================
+   PARTNER BANNER
+   Make both transparent pet images visually dominant.
+========================================================== */
+
+.partner-showcase {
+  overflow: hidden;
+}
+
+
+/* Visual columns are only image stages now */
+.partner-showcase__visual {
+  position: relative !important;
+
+  display: flex !important;
+
+  min-width: 0;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+
+  overflow: visible !important;
+
+  border: 0 !important;
+
+  background: transparent !important;
+
+  box-shadow: none !important;
+}
+
+
+/*
+ * Important:
+ *
+ * Do not force height:100%.
+ * Transparent PNGs should scale from WIDTH
+ * and keep their natural aspect ratio.
+ */
+.partner-showcase__image {
+  display: block !important;
+
+  height: auto !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  flex: 0 0 auto;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+
+  filter: none !important;
+
+  background: transparent !important;
+
+  image-rendering: auto;
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP 1440+
+========================================================== */
+
+@media (min-width: 1440px) {
+
+  .partner-showcase__grid {
+    grid-template-columns:
+      minmax(320px, .82fr)
+      minmax(600px, 1.72fr)
+      minmax(340px, .88fr)
+      !important;
+
+    gap:
+      18px !important;
+
+    align-items:
+      stretch !important;
+  }
+
+
+  .partner-showcase__visual {
+    min-height:
+      520px !important;
+  }
+
+
+  /*
+   * Left curly dog.
+   */
+  .partner-showcase__image--dog {
+    width:
+      clamp(
+        390px,
+        29vw,
+        470px
+      ) !important;
+
+    height:
+      auto !important;
+  }
+
+
+  /*
+   * Right horizontal Beagle needs more width.
+   */
+  .partner-showcase__image--cat {
+    width:
+      clamp(
+        430px,
+        32vw,
+        520px
+      ) !important;
+
+    height:
+      auto !important;
+  }
+
+
+  .partner-showcase__content {
+    min-height:
+      520px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   NORMAL DESKTOP 1200 - 1439
+========================================================== */
+
+@media
+(min-width: 1200px)
+and
+(max-width: 1439px) {
+
+  .partner-showcase__grid {
+    grid-template-columns:
+      minmax(285px, .78fr)
+      minmax(540px, 1.75fr)
+      minmax(300px, .82fr)
+      !important;
+
+    gap:
+      16px !important;
+  }
+
+
+  .partner-showcase__visual {
+    min-height:
+      490px !important;
+  }
+
+
+  .partner-showcase__image--dog {
+    width:
+      clamp(
+        345px,
+        28vw,
+        410px
+      ) !important;
+
+    height:
+      auto !important;
+  }
+
+
+  .partner-showcase__image--cat {
+    width:
+      clamp(
+        380px,
+        31vw,
+        455px
+      ) !important;
+
+    height:
+      auto !important;
+  }
+
+
+  .partner-showcase__content {
+    min-height:
+      490px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   LAPTOP 1101 - 1199
+========================================================== */
+
+@media
+(min-width: 1101px)
+and
+(max-width: 1199px) {
+
+  .partner-showcase__grid {
+    grid-template-columns:
+      minmax(235px, .7fr)
+      minmax(0, 1.75fr)
+      minmax(245px, .72fr)
+      !important;
+
+    gap:
+      12px !important;
+  }
+
+
+  .partner-showcase__visual {
+    min-height:
+      450px !important;
+  }
+
+
+  .partner-showcase__image--dog {
+    width:
+      305px !important;
+
+    height:
+      auto !important;
+  }
+
+
+  .partner-showcase__image--cat {
+    width:
+      335px !important;
+
+    height:
+      auto !important;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET 641 - 1100
+
+   Main content on top.
+   Two pets large side-by-side underneath.
+========================================================== */
+
+@media
+(min-width: 641px)
+and
+(max-width: 1100px) {
+
+  .partner-showcase__grid {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr))
+      !important;
+
+    grid-template-areas:
+      "content content"
+      "left right"
+      !important;
+
+    gap:
+      12px !important;
+  }
+
+
+  .partner-showcase__visual:first-child {
+    grid-area: left;
+
+    order: initial !important;
+  }
+
+
+  .partner-showcase__content {
+    grid-area: content;
+
+    order: initial !important;
+
+    min-height:
+      auto !important;
+  }
+
+
+  .partner-showcase__visual:last-child {
+    grid-area: right;
+
+    order: initial !important;
+  }
+
+
+  .partner-showcase__visual {
+    min-height:
+      300px !important;
+
+    overflow:
+      hidden !important;
+  }
+
+
+  .partner-showcase__image--dog {
+    width:
+      min(125%, 360px) !important;
+
+    height:
+      auto !important;
+  }
+
+
+  .partner-showcase__image--cat {
+    width:
+      min(138%, 400px) !important;
+
+    height:
+      auto !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  .partner-showcase__grid {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr))
+      !important;
+
+    grid-template-areas:
+      "content content"
+      "left right"
+      !important;
+
+    gap:
+      8px !important;
+  }
+
+
+  .partner-showcase__visual:first-child {
+    grid-area:
+      left;
+
+    order:
+      initial !important;
+  }
+
+
+  .partner-showcase__content {
+    grid-area:
+      content;
+
+    order:
+      initial !important;
+
+    min-width:
+      0;
+
+    min-height:
+      auto !important;
+  }
+
+
+  .partner-showcase__visual:last-child {
+    grid-area:
+      right;
+
+    order:
+      initial !important;
+  }
+
+
+  .partner-showcase__visual {
+    min-height:
+      clamp(
+        180px,
+        52vw,
+        230px
+      ) !important;
+
+    overflow:
+      hidden !important;
+  }
+
+
+  .partner-showcase__image--dog {
+    width:
+      135% !important;
+
+    height:
+      auto !important;
+  }
+
+
+  .partner-showcase__image--cat {
+    width:
+      155% !important;
+
+    height:
+      auto !important;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+
+  .partner-showcase__visual {
+    min-height:
+      170px !important;
+  }
+
+
+  .partner-showcase__image--dog {
+    width:
+      132% !important;
+  }
+
+
+  .partner-showcase__image--cat {
+    width:
+      150% !important;
+  }
+
+}
+
+
+/* VINECO PARTNER LARGE PETS V3 END */

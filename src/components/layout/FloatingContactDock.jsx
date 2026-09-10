@@ -142,6 +142,26 @@ function SocialIcon({ type }) {
   }
 
 
+
+  if (type === "gmail") {
+    return (
+      <img
+        src="/images/social/gmail.png"
+        alt=""
+        aria-hidden="true"
+        draggable="false"
+        className="
+          block
+          h-[25px]
+          w-[25px]
+          object-contain
+          sm:h-[27px]
+          sm:w-[27px]
+        "
+      />
+    );
+  }
+
   return (
     <svg {...common} viewBox="0 0 24 24">
       <rect

@@ -1,4 +1,5 @@
-﻿<!doctype html>
+<!doctype html>
+
 <html lang="en">
   <head>
     <!-- =====================================================
@@ -14,12 +15,17 @@
 
     <meta
       name="theme-color"
-      content="#ffa412"
+      content="#FAF8F5"
     />
 
     <meta
       name="color-scheme"
       content="light"
+    />
+
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
     />
 
 
@@ -28,29 +34,36 @@
     ====================================================== -->
 
     <!--
-      Place your VinEco favicon here:
-      public/favicon.png
+      Primary favicon:
+      public/images/social/vineco-favicon-polished.svg
 
-      Recommended:
-      512 x 512px
-      transparent PNG
+      SVG is preferred for modern browsers because
+      it stays sharp on high-DPI displays and browser tabs.
     -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/images/social/vineco-favicon-polished.svg?v=9"
+    />
 
+    <!-- PNG fallback -->
     <link
       rel="icon"
       type="image/png"
-      href="/favicon.png"
+      sizes="512x512"
+      href="/images/social/faviconLogo.png?v=9"
     />
 
     <link
       rel="shortcut icon"
       type="image/png"
-      href="/favicon.png"
+      href="/images/social/faviconLogo.png?v=9"
     />
 
+    <!-- iOS / iPadOS -->
     <link
       rel="apple-touch-icon"
-      href="/favicon.png"
+      href="/images/social/faviconLogo.png?v=9"
     />
 
 
@@ -69,7 +82,7 @@
 
     <meta
       name="keywords"
-      content="VinEco, pet products Vietnam, natural pet products, coffee wood dog chew, dog chew manufacturer, OEM pet products, ODM pet products, private label pet products, pet toy manufacturer Vietnam"
+      content="VinEco, natural pet products Vietnam, coffee wood dog chew, dog chew manufacturer Vietnam, pet toy manufacturer, OEM pet products, ODM pet products, private label pet products, coffee wood dog chew manufacturer"
     />
 
     <meta
@@ -79,12 +92,12 @@
 
     <meta
       name="robots"
-      content="index, follow"
+      content="index, follow, max-image-preview:large"
     />
 
     <meta
       name="googlebot"
-      content="index, follow"
+      content="index, follow, max-image-preview:large"
     />
 
     <link
@@ -95,7 +108,7 @@
 
     <!-- =====================================================
          OPEN GRAPH
-         Facebook / Messenger / Zalo / LinkedIn
+         Facebook / Messenger / LinkedIn / Zalo
     ====================================================== -->
 
     <meta
@@ -220,6 +233,22 @@
 
 
     <!-- =====================================================
+         PERFORMANCE
+    ====================================================== -->
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+
+    <!-- =====================================================
          STRUCTURED DATA
     ====================================================== -->
 
@@ -228,9 +257,11 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "VinEco",
+        "alternateName": "VinEco Pet Toys",
         "url": "https://vineco.vercel.app/",
-        "logo": "https://vineco.vercel.app/favicon.png",
-        "description": "VinEco manufactures natural pet products in Vietnam with OEM, ODM and private-label support for global pet brands."
+        "logo": "https://vineco.vercel.app/images/social/vineco-logo.png",
+        "image": "https://vineco.vercel.app/images/pinterest-preview/pin-06.jpg",
+        "description": "VinEco manufactures natural pet products in Vietnam with OEM, ODM and private-label support for distributors, retailers and global pet brands."
       }
     </script>
   </head>

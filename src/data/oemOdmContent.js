@@ -46,7 +46,7 @@ export const oemOdmContent = {
       subtitle: "Your brand, our products",
       description:
         "Choose suitable VinEco products and create your own branded collection with custom logos, labels and packaging for a faster route to market.",
-      minimumOrder: "50 units",
+      minimumOrder: "500 units",
       leadTime: "7 days",
       pricing: "$1\u2013$10 / unit",
       bestFor: "Fast market entry",

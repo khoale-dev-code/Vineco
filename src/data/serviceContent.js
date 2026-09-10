@@ -23,7 +23,7 @@ export const serviceContent = {
       points: [
         "Custom Designs — Made to your exact size, shape and branding style.",
         "Artwork Support — Support with dielines and print files. Use your own artwork or let VinEco assist with the design.",
-        "Low MOQ — Custom printed boxes can start from around 200 pieces.",
+        "Low MOQ — Custom printed boxes can start from around 500 pieces.",
         "Retail Ready — Suitable for retail shelves, private-label products and gift sets.",
         "Variable Printing — Add barcodes, QR codes, product information and custom brand elements.",
         "Extra Protection — Retail packaging can be combined with inner vacuum sealing.",
@@ -180,7 +180,7 @@ export const serviceContent = {
   ],
 
   overview: [
-    { service: "Packaging design", availability: "Available", note: "MOQ around 200 pcs" },
+    { service: "Packaging design", availability: "Available", note: "MOQ around 500 pcs" },
     { service: "Stickers & tags", availability: "Available", note: "Custom by request" },
     { service: "Laser engraving", availability: "Available", note: "From 50 pcs" },
     { service: "Custom packaging", availability: "Available", note: "Wholesale / Private Label" },

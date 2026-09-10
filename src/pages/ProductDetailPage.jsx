@@ -27,6 +27,7 @@ function ProductImage({
   alt,
   contain = true,
   eager = false,
+  mobileNatural = false,
   className = "",
 }) {
   const [failed, setFailed] =
@@ -59,11 +60,19 @@ function ProductImage({
       decoding="async"
       onError={() => setFailed(true)}
       className={[
-        "block h-full w-full",
+        "block w-full",
 
-        contain
-          ? "object-contain"
-          : "object-cover",
+        mobileNatural
+          ? "h-auto sm:h-full"
+          : "h-full",
+
+        mobileNatural
+          ? contain
+            ? "object-contain"
+            : "object-contain sm:object-cover"
+          : contain
+            ? "object-contain"
+            : "object-cover",
 
         className,
       ].join(" ")}
@@ -227,13 +236,14 @@ function ProductGallery({
 
                     infographic
                       ? "p-0"
-                      : "aspect-[4/5] p-0 sm:aspect-[4/5]",
+                      : "aspect-auto p-0 sm:aspect-[4/5]",
                   ].join(" ")}
                 >
                   <ProductImage
                     src={image.src}
                     alt={image.alt}
                     contain={infographic}
+                    mobileNatural={!infographic}
                     className={[
                       image.position ||
                         "object-center",
@@ -314,19 +324,22 @@ function RopeDesignCard({
         <div
           className="
             relative
-            aspect-[4/3]
+            w-full
+            aspect-auto
             min-w-0
             overflow-hidden
-            bg-[#F4F1EA]
+            bg-white
 
             sm:aspect-auto
             sm:min-h-[280px]
+            sm:bg-[#F4F1EA]
           "
         >
           <ProductImage
             src={item.image}
             alt={item.name}
             contain={false}
+            mobileNatural
             className={
               item.imagePosition ||
               "object-center"
@@ -636,8 +649,10 @@ export default function ProductDetailPage() {
                     className="
                       mt-7
                       grid
-                      grid-cols-2
+                      grid-cols-1
                       gap-2
+
+                      sm:grid-cols-2
                     "
                   >
                     {product.specifications
@@ -770,14 +785,15 @@ export default function ProductDetailPage() {
                       "overflow-hidden",
 
                       fullBleedHero
-                        ? "aspect-[4/3] sm:aspect-[16/11] lg:aspect-[16/10]"
-                        : "aspect-[4/3] p-3 sm:p-5",
+                        ? "aspect-auto sm:aspect-[16/11] lg:aspect-[16/10]"
+                        : "aspect-auto sm:aspect-[4/3] sm:p-5",
                     ].join(" ")}
                   >
                     <ProductImage
                       src={product.image}
                       alt={product.name}
                       contain={!fullBleedHero}
+                      mobileNatural
                       eager
                       className={
                         product.imagePosition ||

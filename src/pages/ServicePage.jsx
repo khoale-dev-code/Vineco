@@ -22,9 +22,21 @@ import { projectData } from "../data/projectData";
 
 function GlobalBusinessVisual() {
   const exportFacts = [
-    { label: "Origin", value: "Vietnam" },
-    { label: "Market", value: "Global B2B" },
-    { label: "Support", value: "OEM / ODM" },
+    {
+      label: "Origin",
+      value: "Vietnam",
+      icon: "pin",
+    },
+    {
+      label: "Market",
+      value: "Global B2B",
+      icon: "globe",
+    },
+    {
+      label: "Support",
+      value: "OEM / ODM",
+      icon: "factory",
+    },
   ];
 
   return (
@@ -97,7 +109,15 @@ function GlobalBusinessVisual() {
               index ? "border-t border-[#1E2A24]/8 sm:border-l sm:border-t-0" : "",
             ].join(" ")}
           >
-            <span className="text-[8px] font-extrabold uppercase tracking-[0.14em] text-[#D97706]">
+            <span className="flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#D97706]">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#F59E0B]/12 text-[#D97706]">
+                <SiteIcon
+                  name={item.icon}
+                  size={13}
+                  strokeWidth={2}
+                />
+              </span>
+
               {item.label}
             </span>
 

@@ -76,10 +76,10 @@ export const projectData = {
 
   faq: [
     {
-      q: "Do you offer a free sample?",
+      q: "Do you offer free sample?",
       a:
         "Yes! You can get one free sample per SKU to test our quality and packaging.\n\n" +
-        "You only cover the shipping fee — which we'll refund with your first order.\n\n" +
+        "You only cover the shipping fee - which we'll refund with your first order.\n\n" +
         "We can deliver worldwide or arrange local pickup in Vietnam.",
     },
 
@@ -93,50 +93,47 @@ export const projectData = {
     {
       q: "Can I customize products with my own brand?",
       a:
-        "Absolutely — that's our specialty.\n\n" +
+        "Absolutely - that's our specialty.\n\n" +
         "We provide full OEM & ODM services, including:\n\n" +
-        "• Custom logos, labels and packaging design\n" +
-        "• Laser engraving directly on the product\n" +
-        "• Eco-friendly packaging options — vacuum, kraft and biodegradable solutions\n\n" +
-        "✓ No extra service fees when using our standard packaging.\n\n" +
+        "- Custom logos, labels, and packaging design\n" +
+        "- Laser engraving directly on the product\n" +
+        "- Sustainable packaging options (vacuum bags, kraft paper, and compostable options upon request)\n\n" +
+        "No extra service fees when using our standard packaging.\n\n" +
         "Our design team can deliver a ready-to-test prototype within a few days.",
     },
 
     {
       q: "What materials do you use? Are they eco-friendly?",
       a:
-        "Our chews are made from mature coffee trees around 20–25 years old that have completed their productive cycle. The wood is naturally processed and crafted into durable chew products.\n\n" +
-        "No chemicals. No artificial flavors.\n\n" +
-        "✔ 100% real coffee wood\n" +
-        "✔ Non-toxic, durable and crack-resistant\n" +
-        "✔ Sustainable use of agricultural by-products while supporting local Vietnamese farming communities",
+        "Our chews are crafted from 20-25-year-old pruned robusta coffee trees from local farms in Vietnam that have reached the end of their fruit-bearing lifecycle - naturally dried without chemical treatments.\n\n" +
+        "- 100% natural coffee wood\n" +
+        "- Durable and naturally resilient material\n" +
+        "- Sourced directly from Vietnamese agricultural communities",
     },
 
     {
       q: "What certificates do you hold?",
       a:
-        "VinEco can provide or support the following documentation depending on shipment and destination requirements:\n\n" +
-        "• C/O — Certificate of Origin\n" +
-        "• Phytosanitary Certificate\n" +
-        "• Fumigation Certificate\n" +
-        "• SGS Inspection Report\n\n" +
-        "We also welcome third-party inspections and audits such as SGS or Intertek for additional transparency.",
+        "CO (Certificate of Origin)\n\n" +
+        "Phytosanitary Certificate\n\n" +
+        "Fumigation Certificate\n\n" +
+        "SGS Inspection Report\n\n" +
+        "We also welcome third-party audits (SGS, Intertek, etc.) for complete transparency.",
     },
 
     {
-      q: "How long do production and delivery take?",
+      q: "How long does production and delivery time?",
       a:
         "Production lead time:\n\n" +
-        "• Standard orders: 15–30 working days\n" +
-        "• OEM orders: 30–45 working days\n" +
-        "• ODM orders: 35–60 working days\n\n" +
-        "Estimated transit time by sea:\n\n" +
-        "• Asia: approximately 3–7 days\n" +
-        "• Europe & America: approximately 25–45 days\n\n" +
-        "VinEco operates a 2,000 m² factory and warehouse in Gia Lai to support consistent production and on-time shipment preparation.",
+        "- Standard orders: 7-14 working days\n" +
+        "- OEM orders: 45 working days\n" +
+        "- ODM orders: 60 working days\n\n" +
+        "Estimated Transit Time (ETD / ETA) by Sea:\n\n" +
+        "- Asia: 3-7 days\n" +
+        "- Europe & America: 25-45 days\n\n" +
+        "VinEco operates a 2000m2 factory and warehouse (Gia Lai) for consistent, on-time shipping.",
     },
   ],
-
   contact: {
     generalEmail: "contact@vin-eco.vn",
     salesEmail: "sales@vin-eco.vn",
@@ -159,7 +156,7 @@ export const projectData = {
     ],
 
     factory:
-      " ",
+      "34 Nguyen Cong Tru, Yen Do Ward, Pleiku City, Gia Lai Province",
 
     office:
       "26/20 Huynh Dinh Hai, Binh Thanh District, Ho Chi Minh City, Vietnam",

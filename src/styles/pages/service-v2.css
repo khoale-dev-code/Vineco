@@ -1601,3 +1601,1640 @@ summary strong {
 }
 
 /* VINECO-QC-STEPS-END */
+
+
+/* === VINECO SERVICE CLIENT PATCH START === */
+
+/*
+ * Client feedback 2026-09-10
+ *
+ * - Chapters 01 / 02 / 03:
+ *   two equal large images
+ *
+ * - Chapter 04:
+ *   four equal large images
+ *
+ * - Service overview:
+ *   improve readability
+ *
+ * - Final CTA:
+ *   prevent heading lines from touching
+ */
+
+@media (min-width: 900px) {
+
+  /* ========================================================
+     TWO IMAGE CHAPTERS
+     Packaging / Labels / Laser Engraving
+  ======================================================== */
+
+  .service-v2-collage:not(.service-v2-collage--grid) {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    width: 100%;
+    min-height: 0;
+
+    align-items: stretch;
+  }
+
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__main,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__secondary,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__third {
+
+    position: relative !important;
+
+    inset: auto !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    aspect-ratio: 4 / 5;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 18px !important;
+
+    overflow: hidden !important;
+
+    background: #F4F1EA !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__main img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__secondary img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__third img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__main picture img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__secondary picture img,
+
+  .service-v2-collage:not(.service-v2-collage--grid)
+  .service-v2-collage__third picture img {
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+
+  /* Image category label */
+
+  .service-v2-collage__main > span {
+    left: 12px;
+    bottom: 12px;
+
+    z-index: 4;
+
+    padding: 7px 10px;
+
+    border-radius: 4px;
+
+    font-size: 8px;
+  }
+
+
+  /* ========================================================
+     FOUR IMAGE CHAPTER
+     Custom Packaging & Fulfillment
+  ======================================================== */
+
+  .service-v2-collage--grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    width: 100%;
+
+    min-height: 0;
+  }
+
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #F4F1EA;
+  }
+
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell img,
+
+  .service-v2-collage--grid
+  .service-v2-collage__cell picture img {
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+
+  /* ========================================================
+     SERVICE AT A GLANCE
+     Larger text for easier reading
+  ======================================================== */
+
+  .service-v2-table {
+    max-width: 1000px;
+
+    padding: 18px;
+
+    border-radius: 26px;
+  }
+
+
+  .service-v2-table__head {
+    padding: 11px 18px;
+
+    font-size: 10px;
+
+    line-height: 1.35;
+
+    letter-spacing: .13em;
+  }
+
+
+  .service-v2-table__row {
+    min-height: 56px;
+
+    padding: 15px 18px;
+
+    border-radius: 13px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+  }
+
+
+  .service-v2-table__row strong {
+    font-size: 15px;
+
+    font-weight: 850;
+  }
+
+
+  .service-v2-status {
+    font-size: 15px;
+
+    font-weight: 850;
+  }
+
+
+  /* ========================================================
+     FINAL CTA
+     Fix overlapping / touching lines
+  ======================================================== */
+
+  .service-v2-cta__inner h2 {
+    max-width: 900px;
+
+    font-size:
+      clamp(
+        3.1rem,
+        5.2vw,
+        5.4rem
+      );
+
+    line-height: 1.04;
+
+    letter-spacing: -.055em;
+
+    text-wrap: balance;
+  }
+
+}
+
+/* === VINECO SERVICE CLIENT PATCH END === */
+
+
+
+
+
+/* VINECO SERVICE HERO REDESIGN V1 START */
+
+
+/* ==========================================================
+   HERO - DESKTOP
+========================================================== */
+
+@media (min-width: 980px) {
+
+  .service-v2-hero {
+    padding:
+      34px 0 82px;
+  }
+
+
+  .service-v2-hero__grid {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1.08fr)
+      minmax(420px, .92fr) !important;
+
+    align-items: center !important;
+
+    gap:
+      clamp(
+        42px,
+        5vw,
+        72px
+      ) !important;
+
+    padding-top:
+      48px !important;
+  }
+
+
+  .service-v2-hero__grid
+  > * {
+    min-width: 0;
+  }
+
+
+  /* ========================================================
+     COPY
+  ======================================================== */
+
+  .service-v2-hero__copy {
+    width: 100%;
+
+    max-width: 690px;
+  }
+
+
+  .service-v2-hero__copy
+  > p.service-v2-eyebrow {
+    font-size: 12px;
+
+    letter-spacing: .20em;
+  }
+
+
+  .service-v2-hero__copy h1 {
+    max-width: 690px !important;
+
+    margin-top:
+      16px !important;
+
+    font-size:
+      clamp(
+        3.75rem,
+        5vw,
+        5.35rem
+      ) !important;
+
+    font-weight: 850;
+
+    line-height:
+      .94 !important;
+
+    letter-spacing:
+      -.055em !important;
+
+    text-wrap: balance;
+  }
+
+
+  .service-v2-hero__copy h1 span {
+    display: block;
+  }
+
+
+  .service-v2-hero__copy
+  > p:not(.service-v2-eyebrow) {
+    max-width: 600px;
+
+    margin-top:
+      24px;
+
+    color:
+      rgba(30,42,36,.72);
+
+    font-size:
+      16px;
+
+    font-weight: 520;
+
+    line-height:
+      1.72;
+  }
+
+
+  .service-v2-hero__actions {
+    gap: 12px;
+
+    margin-top:
+      28px;
+  }
+
+
+  .service-v2-hero__actions
+  .service-v2-button {
+    min-height: 50px;
+
+    padding-inline: 25px;
+
+    font-size: 13px;
+  }
+
+
+  /* ========================================================
+     VISUAL
+     Two equal full-height photos
+  ======================================================== */
+
+  .service-v2-hero-collage {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1.04fr)
+      minmax(0, .96fr) !important;
+
+    gap:
+      14px !important;
+
+    width: 100%;
+
+    height:
+      clamp(
+        455px,
+        39vw,
+        540px
+      );
+
+    min-height: 0;
+
+    align-items: stretch;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+
+  .service-v2-hero-collage__large,
+  .service-v2-hero-collage__small {
+    position: relative !important;
+
+    inset: auto !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    border:
+      1px solid
+      rgba(30,42,36,.10) !important;
+
+    border-radius:
+      24px !important;
+
+    background:
+      #F4F1EA !important;
+
+    box-shadow:
+      0 18px 45px
+      rgba(30,42,36,.065) !important;
+
+    transform: none !important;
+  }
+
+
+  .service-v2-hero-collage__large
+  img,
+
+  .service-v2-hero-collage__small
+  img,
+
+  .service-v2-hero-collage__large
+  picture,
+
+  .service-v2-hero-collage__small
+  picture,
+
+  .service-v2-hero-collage__large
+  picture img,
+
+  .service-v2-hero-collage__small
+  picture img {
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit:
+      cover !important;
+
+    object-position:
+      center !important;
+  }
+
+
+  /* PRODUCT SUPPORT LABEL */
+
+  .service-v2-hero-collage__large
+  > span {
+    position: absolute !important;
+
+    left: 14px !important;
+    bottom: 14px !important;
+
+    z-index: 5;
+
+    padding:
+      8px 12px !important;
+
+    border-radius:
+      999px;
+
+    background:
+      #F59E0B;
+
+    color:
+      #0F2F24;
+
+    font-size:
+      9px !important;
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing: .12em;
+  }
+
+}
+
+
+/* ==========================================================
+   LAPTOP 980 - 1199
+========================================================== */
+
+@media
+(min-width: 980px)
+and
+(max-width: 1199px) {
+
+  .service-v2-hero__grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(370px, .9fr) !important;
+
+    gap:
+      34px !important;
+  }
+
+
+  .service-v2-hero__copy h1 {
+    font-size:
+      clamp(
+        3.35rem,
+        5.4vw,
+        4.45rem
+      ) !important;
+  }
+
+
+  .service-v2-hero-collage {
+    height:
+      440px;
+  }
+
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1440px) {
+
+  .service-v2-hero__copy h1 {
+    max-width:
+      720px !important;
+
+    font-size:
+      5.55rem !important;
+  }
+
+
+  .service-v2-hero-collage {
+    height:
+      560px;
+  }
+
+}
+
+
+/* VINECO SERVICE HERO REDESIGN V1 END */
+
+
+/* VINECO GLOBAL SUPPORT MAP V2 START */
+
+
+/* ==========================================================
+   GLOBAL BUSINESS SUPPORT - PREMIUM B2B LAYOUT
+========================================================== */
+
+.service-v2-global {
+  padding:
+    84px 0;
+
+  background:
+    #FFFDF9;
+}
+
+
+.service-v2-global__grid {
+  position:
+    relative;
+
+  align-items:
+    stretch;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(30, 42, 36, .11) !important;
+
+  border-radius:
+    30px;
+
+  background:
+    #FFFFFF;
+
+  box-shadow:
+    0 26px 70px
+    rgba(30, 42, 36, .075);
+}
+
+
+/*
+ * Orange is now an accent,
+ * rather than a heavy border around the whole section.
+ */
+.service-v2-global__grid::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  right:
+    0;
+
+  left:
+    0;
+
+  z-index:
+    5;
+
+  height:
+    3px;
+
+  background:
+    #F59E0B;
+
+  pointer-events:
+    none;
+}
+
+
+.service-v2-global__copy {
+  position:
+    relative;
+
+  display:
+    flex;
+
+  min-width:
+    0;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  padding:
+    50px 38px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #FFFFFF 0%,
+      #FCF9F2 100%
+    );
+}
+
+
+.service-v2-global__copy::after {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  right:
+    0;
+
+  bottom:
+    0;
+
+  width:
+    110px;
+
+  height:
+    110px;
+
+  border:
+    24px solid
+    rgba(245, 158, 11, .045);
+
+  border-radius:
+    999px;
+
+  transform:
+    translate(42%, 42%);
+
+  pointer-events:
+    none;
+}
+
+
+.service-v2-global__copy h2 {
+  max-width:
+    450px !important;
+
+  margin-top:
+    12px !important;
+
+  font-size:
+    clamp(
+      2.75rem,
+      3.65vw,
+      3.55rem
+    ) !important;
+
+  font-weight:
+    850;
+
+  line-height:
+    .97 !important;
+
+  letter-spacing:
+    -.052em !important;
+}
+
+
+.service-v2-global__copy
+> p:not(.service-v2-eyebrow) {
+  max-width:
+    455px !important;
+
+  margin:
+    20px 0 27px !important;
+
+  color:
+    rgba(30, 42, 36, .68) !important;
+
+  font-size:
+    15.5px !important;
+
+  font-weight:
+    520;
+
+  line-height:
+    1.72 !important;
+}
+
+
+.service-v2-global__copy
+.service-v2-button {
+  align-self:
+    flex-start;
+
+  min-height:
+    50px;
+}
+
+
+/* ==========================================================
+   MAP SIDE
+========================================================== */
+
+.service-v2-global__visual {
+  display:
+    flex;
+
+  min-width:
+    0;
+
+  min-height:
+    0 !important;
+
+  align-items:
+    center;
+
+  padding:
+    14px;
+
+  background:
+    #F4F1EA;
+}
+
+
+.service-v2-global__visual
+> div {
+  width:
+    100%;
+
+  border:
+    1px solid
+    rgba(30, 42, 36, .085) !important;
+
+  border-radius:
+    24px !important;
+
+  box-shadow:
+    0 16px 42px
+    rgba(30, 42, 36, .065) !important;
+}
+
+
+/* Smooth visual treatment for map SVG */
+
+.service-v2-global__visual svg {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    auto;
+}
+
+
+/* ==========================================================
+   DESKTOP GRID
+========================================================== */
+
+@media (min-width: 900px) {
+
+  .service-v2-global__grid {
+    grid-template-columns:
+      minmax(380px, .78fr)
+      minmax(0, 1.22fr) !important;
+  }
+
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1360px) {
+
+  .service-v2-global__grid {
+    grid-template-columns:
+      minmax(400px, .76fr)
+      minmax(0, 1.24fr) !important;
+  }
+
+
+  .service-v2-global__copy {
+    padding:
+      56px 44px !important;
+  }
+
+
+  .service-v2-global__copy h2 {
+    max-width:
+      465px !important;
+
+    font-size:
+      3.65rem !important;
+  }
+
+}
+
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media
+(min-width: 900px)
+and
+(max-width: 1100px) {
+
+  .service-v2-global__grid {
+    grid-template-columns:
+      minmax(335px, .82fr)
+      minmax(0, 1.18fr) !important;
+  }
+
+
+  .service-v2-global__copy {
+    padding:
+      40px 30px !important;
+  }
+
+
+  .service-v2-global__copy h2 {
+    font-size:
+      clamp(
+        2.55rem,
+        4.5vw,
+        3rem
+      ) !important;
+  }
+
+
+  .service-v2-global__copy
+  > p:not(.service-v2-eyebrow) {
+    font-size:
+      15px !important;
+  }
+
+}
+
+
+/* VINECO GLOBAL SUPPORT MAP V2 END */
+/* === VINECO GLOBAL MAP POLISH START === */
+
+/* Hover feedback on markers — pure CSS, needs SVG transform-box support */
+.vineco-map-marker {
+  cursor: pointer;
+}
+
+.vineco-map-marker__dot,
+.vineco-map-marker__chip {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform .22s ease, filter .22s ease;
+}
+
+.vineco-map-marker:hover .vineco-map-marker__dot {
+  transform: scale(1.35);
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, .55));
+}
+
+.vineco-map-marker:hover .vineco-map-marker__chip {
+  transform: scale(1.06);
+}
+
+.vineco-map-marker:hover .vineco-map-marker__leader {
+  opacity: .45;
+}
+
+/* Card entrance animation. Toggle .is-visible via your existing
+   IntersectionObserver ("reveal") convention used elsewhere on the page. */
+.service-v2-global__grid {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity .7s cubic-bezier(.16,.84,.44,1),
+    transform .7s cubic-bezier(.16,.84,.44,1);
+}
+
+.service-v2-global__grid.is-visible,
+.service-v2-global__grid.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-v2-global__grid {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* === VINECO GLOBAL MAP POLISH END === */
+
+
+/* === VINECO GLOBAL MAP FINAL START === */
+
+
+/* ==========================================================
+   GLOBAL BUSINESS SUPPORT
+========================================================== */
+
+/*
+ * Reveal already lives on the wrapper component.
+ * Never hide this child grid itself.
+ */
+.service-v2-global__grid {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/*
+ * GlobalBusinessVisual already contains its own:
+ * - border
+ * - radius
+ * - background
+ * - shadow
+ *
+ * Therefore this element is layout-only.
+ */
+.service-v2-global__visual {
+  display: flex;
+
+  min-width: 0;
+  min-height: 0 !important;
+
+  align-items: stretch;
+
+  padding: 0 !important;
+
+  background: transparent !important;
+}
+
+
+.service-v2-global__visual > div {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* ==========================================================
+   MAP
+========================================================== */
+
+.vineco-export-map {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
+
+
+.vineco-map-marker {
+  cursor: pointer;
+}
+
+
+.vineco-map-marker__dot,
+.vineco-map-marker__chip {
+  transform-box: fill-box;
+  transform-origin: center;
+
+  transition:
+    transform .22s ease,
+    filter .22s ease;
+}
+
+
+.vineco-map-marker__leader {
+  transition:
+    opacity .22s ease;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .vineco-map-marker:hover
+  .vineco-map-marker__dot {
+    transform: scale(1.35);
+
+    filter:
+      drop-shadow(
+        0 0 6px
+        rgba(245,158,11,.55)
+      );
+  }
+
+
+  .vineco-map-marker:hover
+  .vineco-map-marker__chip {
+    transform: scale(1.06);
+  }
+
+
+  .vineco-map-marker:hover
+  .vineco-map-marker__leader {
+    opacity: .5;
+  }
+
+}
+
+
+/* ==========================================================
+   SECTION PROPORTION
+========================================================== */
+
+@media (min-width: 900px) {
+
+  .service-v2-global__grid {
+    grid-template-columns:
+      minmax(340px, .72fr)
+      minmax(0, 1.28fr) !important;
+  }
+
+
+  .service-v2-global__copy {
+    padding:
+      42px 34px !important;
+  }
+
+
+  .service-v2-global__copy h2 {
+    max-width:
+      430px !important;
+
+    font-size:
+      clamp(
+        2.8rem,
+        3.65vw,
+        3.65rem
+      ) !important;
+
+    line-height:
+      .97 !important;
+
+    letter-spacing:
+      -.05em !important;
+  }
+
+
+  .service-v2-global__copy
+  > p:not(.service-v2-eyebrow) {
+    max-width:
+      450px;
+
+    font-size:
+      15.5px !important;
+
+    line-height:
+      1.72 !important;
+  }
+
+}
+
+
+@media (min-width: 1440px) {
+
+  .service-v2-global__grid {
+    grid-template-columns:
+      minmax(390px, .7fr)
+      minmax(0, 1.3fr) !important;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .vineco-map-marker__dot,
+  .vineco-map-marker__chip,
+  .vineco-map-marker__leader {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+}
+
+
+/* === VINECO GLOBAL MAP FINAL END === */
+
+
+/* VINECO FAQ CONTENT FORMAT START */
+
+/*
+ * FAQ answers contain paragraphs and list-style line breaks.
+ * Keep newline formatting from projectData.faq.
+ */
+.service-v2-faq-item > p {
+  white-space: pre-line;
+}
+
+/* VINECO FAQ CONTENT FORMAT END */
+
+
+/* VINECO QC INITIAL RESTORE START */
+
+
+/* ==========================================================
+   QUALITY CONTROL - INITIAL APPROVED LAYOUT
+========================================================== */
+
+#quality-control .service-v2-quality-layout {
+  display: block !important;
+  width: 100% !important;
+}
+
+
+/* ==========================================================
+   INTRO CARD
+========================================================== */
+
+#quality-control
+.service-v2-quality-layout
+.service-v2-copy {
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, .9fr)
+    minmax(0, 1.1fr) !important;
+
+  gap:
+    clamp(30px, 5vw, 72px) !important;
+
+  width:
+    100% !important;
+
+  max-width:
+    none !important;
+
+  margin:
+    0 0 32px !important;
+
+  padding:
+    27px 40px !important;
+
+  align-items:
+    center !important;
+
+  border:
+    1px solid rgba(30,42,36,.10);
+
+  border-radius:
+    22px;
+
+  background:
+    #F4F1EA;
+}
+
+
+#quality-control
+.service-v2-copy__lead {
+  margin:
+    0 !important;
+
+  font-size:
+    clamp(
+      1.45rem,
+      2vw,
+      1.9rem
+    ) !important;
+
+  line-height:
+    1.25 !important;
+}
+
+
+#quality-control
+.service-v2-quality-layout
+.service-v2-copy
+> p:not(.service-v2-copy__lead) {
+  margin:
+    0 !important;
+
+  font-size:
+    15px !important;
+
+  line-height:
+    1.72 !important;
+}
+
+
+#quality-control
+.service-v2-quality-layout
+.service-v2-copy > ul {
+  display:
+    none !important;
+}
+
+
+/* ==========================================================
+   TWO STEP CARDS PER ROW
+========================================================== */
+
+#quality-control .qc-steps {
+  display:
+    grid !important;
+
+  grid-template-columns:
+    repeat(2, minmax(0,1fr)) !important;
+
+  gap:
+    22px !important;
+
+  width:
+    100% !important;
+
+  margin:
+    0 !important;
+}
+
+
+#quality-control
+.qc-steps > .reveal {
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  min-width:
+    0;
+}
+
+
+/* ==========================================================
+   STEP CARD
+========================================================== */
+
+#quality-control .qc-step {
+  display:
+    flex !important;
+
+  flex-direction:
+    column !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  min-width:
+    0;
+
+  gap:
+    0 !important;
+
+  padding:
+    24px !important;
+
+  overflow:
+    hidden !important;
+
+  border:
+    1px solid rgba(30,42,36,.10) !important;
+
+  border-radius:
+    21px !important;
+
+  background:
+    #FFFFFF !important;
+
+  box-shadow:
+    0 9px 30px
+    rgba(30,42,36,.035);
+}
+
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+#quality-control .qc-step__copy {
+  width:
+    100%;
+
+  min-width:
+    0;
+
+  min-height:
+    145px !important;
+}
+
+
+#quality-control
+.qc-step__meta {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px !important;
+}
+
+
+#quality-control
+.qc-step__meta span {
+  display:
+    grid;
+
+  width:
+    35px !important;
+
+  height:
+    35px !important;
+
+  flex:
+    0 0 35px !important;
+
+  place-items:
+    center;
+}
+
+
+#quality-control
+.qc-step h3 {
+  margin:
+    13px 0 0 !important;
+
+  font-size:
+    clamp(
+      19px,
+      1.7vw,
+      24px
+    ) !important;
+
+  line-height:
+    1.07 !important;
+}
+
+
+#quality-control
+.qc-step__copy > p {
+  margin:
+    9px 0 0 !important;
+
+  color:
+    #666B67 !important;
+
+  font-size:
+    13px !important;
+
+  line-height:
+    1.65 !important;
+}
+
+
+/* ==========================================================
+   TWO IMAGE GRID
+========================================================== */
+
+#quality-control .qc-step__images {
+  display:
+    grid !important;
+
+  grid-template-columns:
+    repeat(2, minmax(0,1fr)) !important;
+
+  gap:
+    10px !important;
+
+  width:
+    100% !important;
+
+  margin-top:
+    18px !important;
+
+  padding:
+    0 !important;
+}
+
+
+#quality-control
+.qc-step__images figure {
+  position:
+    relative !important;
+
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  height:
+    auto !important;
+
+  min-width:
+    0 !important;
+
+  aspect-ratio:
+    4 / 3 !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  overflow:
+    hidden !important;
+
+  border:
+    0 !important;
+
+  border-radius:
+    14px !important;
+
+  background:
+    #F4F1EA !important;
+}
+
+
+#quality-control
+.qc-step__images picture {
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+}
+
+
+#quality-control
+.qc-step__images img,
+
+#quality-control
+.qc-step__images picture img {
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  max-width:
+    none !important;
+
+  max-height:
+    none !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  object-fit:
+    cover !important;
+
+  object-position:
+    center center !important;
+
+  transform:
+    none !important;
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  #quality-control
+  .qc-step:hover {
+    transform:
+      translateY(-2px);
+
+    border-color:
+      rgba(245,158,11,.42) !important;
+
+    box-shadow:
+      0 15px 36px
+      rgba(30,42,36,.055);
+  }
+
+}
+
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media
+(min-width: 900px)
+and
+(max-width: 1100px) {
+
+  #quality-control
+  .qc-steps {
+    gap:
+      16px !important;
+  }
+
+
+  #quality-control
+  .qc-step {
+    padding:
+      20px !important;
+  }
+
+
+  #quality-control
+  .qc-step__copy {
+    min-height:
+      155px !important;
+  }
+
+}
+
+
+/* VINECO QC INITIAL RESTORE END */
