@@ -159,7 +159,7 @@ export const projectData = {
     ],
 
     factory:
-      "34 Nguyen Cong Tru, Yen Do Ward, Pleiku City, Gia Lai Province",
+      " ",
 
     office:
       "26/20 Huynh Dinh Hai, Binh Thanh District, Ho Chi Minh City, Vietnam",
@@ -173,5 +173,6 @@ export const projectData = {
     linkedin: "",
     youtube: "",
     tiktok: "",
+    instagram: "",
   },
 };

@@ -8,6 +8,7 @@ import {
 } from "react-router";
 
 import PageLoader from "../components/ui/PageLoader";
+import FloatingContactDock from "../components/layout/FloatingContactDock";
 
 import {
   SampleModalProvider,
@@ -120,6 +121,7 @@ export default function App() {
         </Suspense>
 
         <SampleModal />
+        <FloatingContactDock />
       </SampleModalProvider>
     </HashRouter>
   );

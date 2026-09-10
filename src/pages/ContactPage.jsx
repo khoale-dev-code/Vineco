@@ -1,7 +1,5 @@
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import FloatingContactDock from "../components/layout/FloatingContactDock";
-
 import GoogleMapEmbed from "../components/ui/GoogleMapEmbed";
 import Reveal from "../components/ui/Reveal";
 import SiteIcon from "../components/ui/SiteIcon";
@@ -14,7 +12,7 @@ function ContactCard({ icon, eyebrow, title, children, dark = false }) {
   return (
     <article
       className={[
-        "rounded-[22px] border p-5 transition duration-300 sm:p-6",
+        "h-full rounded-[22px] border p-5 transition duration-300 sm:p-6",
         "hover:-translate-y-1",
         dark
           ? "border-white/10 bg-[#0F2F24] text-white"
@@ -394,8 +392,12 @@ export default function ContactPage() {
                 </Reveal>
 
 
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <Reveal variant="right" delay={70}>
+                <div className="grid items-stretch gap-4 sm:grid-cols-2">
+                  <Reveal
+                    variant="right"
+                    delay={70}
+                    className="h-full"
+                  >
                     <ContactCard
                       icon="factory"
                       eyebrow="Factory"
@@ -405,7 +407,11 @@ export default function ContactPage() {
                     </ContactCard>
                   </Reveal>
 
-                  <Reveal variant="right" delay={100}>
+                  <Reveal
+                    variant="right"
+                    delay={100}
+                    className="h-full"
+                  >
                     <ContactCard
                       icon="pin"
                       eyebrow="Office"
@@ -477,31 +483,27 @@ export default function ContactPage() {
           <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
 
             <Reveal>
-              <div className="mb-7 grid gap-4 lg:grid-cols-[1fr_.7fr] lg:items-end">
-                <div>
-                  <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#D97706]">
-                    Find VinEco
-                  </p>
+              <div className="mb-7">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-[#D97706]">
+                  Find VinEco
+                </p>
 
-                  <h2 className="mt-3 text-[clamp(2rem,4vw,3.2rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-[#1E2A24]">
-                    Visit our
-                    <span className="text-[#F59E0B]"> Vietnam office.</span>
-                  </h2>
-                </div>
+                <h2 className="mt-3 text-[clamp(2.2rem,4vw,3.5rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-[#1E2A24]">
+                 Visit our <span className="text-[#F59E0B]">Factory.</span>
+                </h2>
 
-                <p className="text-[12px] font-medium leading-6 text-[#6A645D] lg:text-right">
-                  {contact.office}
+                <p className="mt-3 max-w-[680px] text-[14px] font-medium leading-7 text-[#6A645D] sm:text-[15px]">
+                  {contact.factory}
                 </p>
               </div>
             </Reveal>
-
 
             <Reveal variant="zoom">
               <div className="overflow-hidden rounded-[26px] border border-[#1E2A24]/10 bg-[#F4F1EA] p-2 shadow-[0_18px_48px_rgba(30,42,36,.06)]">
                 <GoogleMapEmbed
                   html={mapEmbedHtml}
-                  title="VinEco office Google Map"
-                  address={contact.office}
+                  title="VinEco Factory - Gia Lai"
+                  address={contact.factory}
                 />
               </div>
             </Reveal>
@@ -550,7 +552,6 @@ export default function ContactPage() {
       </main>
 
       <Footer />
-      <FloatingContactDock />
     </>
   );
 }

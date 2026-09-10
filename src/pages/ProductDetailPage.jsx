@@ -63,7 +63,7 @@ function ProductImage({
 
         contain
           ? "object-contain"
-          : "object-cover object-center",
+          : "object-cover",
 
         className,
       ].join(" ")}
@@ -184,77 +184,88 @@ function ProductGallery({
     return null;
   }
 
+  const singleImage =
+    images.length === 1;
+
   return (
     <div
       className={[
         "grid gap-4",
-        images.length > 1
-          ? "lg:grid-cols-[1.05fr_.95fr]"
-          : "mx-auto max-w-[760px]",
+        singleImage
+          ? "mx-auto w-full max-w-[980px]"
+          : "lg:grid-cols-2",
       ].join(" ")}
     >
       {images.map(
-        (image, index) => (
-          <Reveal
-            key={`${image.src}-${index}`}
-            variant="up"
-            delay={index * 70}
-            className="h-full"
-          >
-            <figure
-              className="
-                flex
-                h-full
-                flex-col
-                overflow-hidden
-                rounded-[24px]
-                border
-                border-[#1E2A24]/10
-                bg-white
-              "
+        (image, index) => {
+          const infographic =
+            Boolean(image.contain);
+
+          return (
+            <Reveal
+              key={`${image.src}-${index}`}
+              variant="up"
+              delay={index * 70}
+              className="h-full"
             >
-              <div
+              <figure
                 className="
                   flex
-                  min-h-[280px]
-                  flex-1
-                  items-center
-                  justify-center
+                  h-full
+                  flex-col
                   overflow-hidden
-                  bg-[#F4F1EA]
-                  p-3
-
-                  sm:min-h-[360px]
-                  sm:p-5
+                  rounded-[24px]
+                  border
+                  border-[#1E2A24]/10
+                  bg-white
                 "
               >
-                <ProductImage
-                  src={image.src}
-                  alt={image.alt}
-                  contain={image.contain}
-                />
-              </div>
+                <div
+                  className={[
+                    "flex flex-1 items-center justify-center overflow-hidden",
+                    "bg-[#F4F1EA]",
 
-
-              {image.label && (
-                <figcaption
-                  className="
-                    border-t
-                    border-[#1E2A24]/10
-                    px-5
-                    py-4
-                    text-[13px]
-                    font-bold
-                    text-[#3D4A42]
-                  "
+                    infographic
+                      ? "p-0"
+                      : "aspect-[4/5] p-0 sm:aspect-[4/5]",
+                  ].join(" ")}
                 >
-                  {image.label}
-                </figcaption>
-              )}
+                  <ProductImage
+                    src={image.src}
+                    alt={image.alt}
+                    contain={infographic}
+                    className={[
+                      image.position ||
+                        "object-center",
 
-            </figure>
-          </Reveal>
-        ),
+                      infographic
+                        ? "!h-auto !w-full"
+                        : "h-full w-full",
+                    ].join(" ")}
+                  />
+                </div>
+
+
+                {image.label && (
+                  <figcaption
+                    className="
+                      border-t
+                      border-[#1E2A24]/10
+                      px-5
+                      py-4
+                      text-[13px]
+                      font-bold
+                      text-[#3D4A42]
+                    "
+                  >
+                    {image.label}
+                  </figcaption>
+                )}
+
+              </figure>
+            </Reveal>
+          );
+        },
       )}
     </div>
   );
@@ -295,14 +306,16 @@ function RopeDesignCard({
           "hover:shadow-[0_18px_46px_rgba(30,42,36,0.08)]",
 
           wide
-            ? "lg:grid-cols-[340px_1fr]"
-            : "sm:grid-cols-[210px_1fr]",
+            ? "lg:grid-cols-[340px_minmax(0,1fr)]"
+            : "sm:grid-cols-[210px_minmax(0,1fr)]",
         ].join(" ")}
       >
-        {/* IMAGE */}
+        {/* IMAGE - VINECO ROPE FULL MEDIA PATCH V1 */}
         <div
           className="
+            relative
             aspect-[4/3]
+            min-w-0
             overflow-hidden
             bg-[#F4F1EA]
 
@@ -313,8 +326,11 @@ function RopeDesignCard({
           <ProductImage
             src={item.image}
             alt={item.name}
-            contain
-            className="p-4 sm:p-5"
+            contain={false}
+            className={
+              item.imagePosition ||
+              "object-center"
+            }
           />
         </div>
 
@@ -403,111 +419,6 @@ function RopeDesignCard({
 
 
 /* ==========================================================
-   RELATED PRODUCT
-========================================================== */
-
-function RelatedProduct({
-  item,
-  index,
-}) {
-  return (
-    <Reveal
-      variant="up"
-      delay={index * 70}
-      className="h-full"
-    >
-      <Link
-        to={`/products/${item.slug}`}
-        className="
-          group
-          grid
-          h-full
-          overflow-hidden
-          rounded-[24px]
-          border
-          border-white/10
-          bg-white/[0.06]
-
-          transition
-          duration-300
-
-          hover:border-[#F59E0B]/50
-
-          sm:grid-cols-[190px_1fr]
-        "
-      >
-        <div
-          className="
-            aspect-[4/3]
-            overflow-hidden
-            bg-white
-
-            sm:aspect-auto
-          "
-        >
-          <ProductImage
-            src={item.image}
-            alt={item.name}
-            contain
-            className="p-4"
-          />
-        </div>
-
-
-        <div
-          className="
-            flex
-            flex-col
-            justify-center
-            p-5
-          "
-        >
-          <Kicker light>
-            {item.eyebrow}
-          </Kicker>
-
-
-          <h3
-            className="
-              mt-2
-              text-[20px]
-              font-extrabold
-              leading-[1.06]
-              tracking-[-0.03em]
-              text-white
-            "
-          >
-            {item.name}
-          </h3>
-
-
-          <span
-            className="
-              mt-5
-              inline-flex
-              items-center
-              gap-2
-              text-[13px]
-              font-extrabold
-              text-[#F59E0B]
-            "
-          >
-            View product
-
-            <SiteIcon
-              name="arrow"
-              size={14}
-            />
-          </span>
-
-        </div>
-      </Link>
-    </Reveal>
-  );
-}
-
-
-/* ==========================================================
    PAGE
 ========================================================== */
 
@@ -589,19 +500,22 @@ export default function ProductDetailPage() {
   }
 
 
-  const related =
-    productCatalog
-      .filter(
-        (item) =>
-          item.slug !==
-          product.slug,
-      )
-      .slice(0, 2);
-
-
   const displayName =
     product.fullName ||
     product.name;
+
+
+  const compactHeroTitle =
+    product.slug ===
+      "classic-natural-coffee-wood-chew" ||
+    product.slug ===
+      "natural-coffee-wood-chew-with-rope";
+
+
+  const fullBleedHero =
+    compactHeroTitle ||
+    product.slug ===
+      "coffee-wood-gorilla-chew";
 
 
   return (
@@ -678,15 +592,24 @@ export default function ProductDetailPage() {
 
 
                   <h1
-                    className="
-                      mt-3
-                      max-w-[700px]
-                      text-[clamp(2.7rem,5.5vw,5.8rem)]
-                      font-extrabold
-                      leading-[0.91]
-                      tracking-[-0.06em]
-                      text-[#0F2F24]
-                    "
+                    className={[
+                      "mt-3",
+                      "max-w-[760px]",
+                      "font-extrabold",
+                      "text-[#0F2F24]",
+
+                      compactHeroTitle
+                        ? [
+                            "text-[clamp(2.35rem,4.25vw,4.5rem)]",
+                            "leading-[0.96]",
+                            "tracking-[-0.05em]",
+                          ].join(" ")
+                        : [
+                            "text-[clamp(2.7rem,5.5vw,5.8rem)]",
+                            "leading-[0.91]",
+                            "tracking-[-0.06em]",
+                          ].join(" "),
+                    ].join(" ")}
                   >
                     {displayName}
                   </h1>
@@ -843,18 +766,23 @@ export default function ProductDetailPage() {
                   "
                 >
                   <div
-                    className="
-                      aspect-[4/3]
-                      p-3
+                    className={[
+                      "overflow-hidden",
 
-                      sm:p-5
-                    "
+                      fullBleedHero
+                        ? "aspect-[4/3] sm:aspect-[16/11] lg:aspect-[16/10]"
+                        : "aspect-[4/3] p-3 sm:p-5",
+                    ].join(" ")}
                   >
                     <ProductImage
                       src={product.image}
                       alt={product.name}
-                      contain
+                      contain={!fullBleedHero}
                       eager
+                      className={
+                        product.imagePosition ||
+                        "object-center"
+                      }
                     />
                   </div>
 
@@ -1209,62 +1137,6 @@ export default function ProductDetailPage() {
             </div>
           </section>
         )}
-
-
-        {/* ==================================================
-            RELATED
-        ================================================== */}
-
-        <section className="bg-[#0F2F24] py-14 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-8">
-
-            <Reveal>
-
-              <Kicker light>
-                Product Family
-              </Kicker>
-
-              <h2
-                className="
-                  mt-3
-                  max-w-[620px]
-                  text-[35px]
-                  font-extrabold
-                  leading-[0.98]
-                  tracking-[-0.045em]
-                  text-white
-
-                  sm:text-[44px]
-                "
-              >
-                Continue exploring VinEco.
-              </h2>
-
-            </Reveal>
-
-
-            <div
-              className="
-                mt-8
-                grid
-                gap-4
-
-                lg:grid-cols-2
-              "
-            >
-              {related.map(
-                (item, index) => (
-                  <RelatedProduct
-                    key={item.slug}
-                    item={item}
-                    index={index}
-                  />
-                ),
-              )}
-            </div>
-
-          </div>
-        </section>
 
 
         {/* ==================================================

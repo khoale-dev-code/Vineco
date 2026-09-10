@@ -107,19 +107,61 @@ function ProductVisual({
    FEATURED PRODUCT
 ========================================================== */
 
-function FeaturedProduct({
+function getCollectionCardImageConfig(
   product,
+) {
+  switch (product.slug) {
+    case "coffee-wood-gorilla-chew":
+      return {
+        aspectClass:
+          "aspect-[4/3]",
+        contain: false,
+        imageClass:
+          "object-center",
+      };
+
+    case "natural-coffee-wood-chew-with-rope":
+      return {
+        aspectClass:
+          "aspect-[4/3]",
+        contain: false,
+        imageClass:
+          "object-center",
+      };
+
+    default:
+      return {
+        aspectClass:
+          "aspect-[4/3]",
+        contain: false,
+        imageClass:
+          "object-center",
+      };
+  }
+}
+
+
+/* ==========================================================
+   PRODUCT COLLECTION CARD
+========================================================== */
+
+function ProductCollectionCard({
+  product,
+  delay = 0,
 }) {
+  const imageConfig =
+    getCollectionCardImageConfig(product);
+
   return (
     <Reveal
-      variant="left"
+      variant="up"
+      delay={delay}
       className="h-full"
     >
       <Link
         to={`/products/${product.slug}`}
         className="
           group
-          relative
           flex
           h-full
           flex-col
@@ -134,88 +176,27 @@ function FeaturedProduct({
           transition-all
           duration-300
 
+          hover:-translate-y-1
           hover:border-[#F59E0B]/60
-          hover:shadow-[0_22px_60px_rgba(30,42,36,0.09)]
+          hover:shadow-[0_20px_52px_rgba(30,42,36,0.09)]
 
           sm:rounded-[26px]
-          lg:min-h-[650px]
+          lg:min-h-[560px]
         "
       >
-        {/* NUMBER */}
-        <span
-          className="
-            absolute
-            left-4
-            top-4
-            z-20
-
-            flex
-            h-9
-            w-9
-            items-center
-            justify-center
-
-            rounded-full
-            bg-[#0F2F24]
-
-            text-[10px]
-            font-extrabold
-            text-white
-
-            sm:left-5
-            sm:top-5
-            sm:h-10
-            sm:w-10
-          "
-        >
-          01
-        </span>
-
-
         {/* IMAGE */}
         <div
-          className="
-            relative
-            aspect-[4/3]
-            overflow-hidden
-
-            sm:aspect-[16/11]
-
-            lg:aspect-auto
-            lg:min-h-[390px]
-            lg:flex-1
-          "
+          className={[
+            "relative overflow-hidden bg-[#F4F1EA]",
+            imageConfig.aspectClass,
+          ].join(" ")}
         >
           <ProductVisual
             src={product.image}
             alt={product.name}
-            contain={
-              product.imageFit ===
-              "contain"
-            }
-            eager
-            className={
-              product.imageFit ===
-              "contain"
-                ? "p-5 sm:p-7 lg:p-8"
-                : ""
-            }
-          />
-
-          <div
-            aria-hidden="true"
-            className="
-              pointer-events-none
-              absolute
-              inset-x-0
-              bottom-0
-              h-24
-              bg-gradient-to-t
-              from-[#F4F1EA]
-              to-transparent
-
-              sm:h-32
-            "
+            contain={imageConfig.contain}
+            eager={delay === 0}
+            className={imageConfig.imageClass}
           />
         </div>
 
@@ -223,14 +204,17 @@ function FeaturedProduct({
         {/* CONTENT */}
         <div
           className="
-            relative
-            z-10
+            grid
+            flex-1
+            grid-rows-[auto_auto_1fr_auto]
 
             px-5
             pb-6
+            pt-5
 
-            sm:px-7
-            sm:pb-8
+            sm:px-6
+            sm:pb-7
+            sm:pt-6
           "
         >
           <Eyebrow>
@@ -240,18 +224,18 @@ function FeaturedProduct({
 
           <h2
             className="
-              mt-2
-              max-w-[620px]
+              mt-3
 
-              text-[27px]
+              text-[24px]
               font-extrabold
               leading-[0.98]
-              tracking-[-0.045em]
+              tracking-[-0.04em]
 
               text-[#0F2F24]
 
-              sm:text-[34px]
-              lg:text-[40px]
+              sm:text-[28px]
+              lg:min-h-[62px]
+              lg:text-[30px]
             "
           >
             {product.name}
@@ -261,7 +245,6 @@ function FeaturedProduct({
           <p
             className="
               mt-4
-              max-w-[620px]
 
               text-[15px]
               font-medium
@@ -270,160 +253,13 @@ function FeaturedProduct({
               text-[#3D4A42]
 
               sm:text-[16px]
-              sm:leading-8
             "
           >
             {product.description}
           </p>
 
 
-          <div className="mt-5">
-            <ArrowLink
-              to={`/products/${product.slug}`}
-            >
-              Explore product
-            </ArrowLink>
-          </div>
-
-        </div>
-      </Link>
-    </Reveal>
-  );
-}
-
-
-/* ==========================================================
-   SECONDARY PRODUCT
-========================================================== */
-
-function SecondaryProduct({
-  product,
-  number,
-  delay,
-}) {
-  return (
-    <Reveal
-      variant="right"
-      delay={delay}
-      className="h-full"
-    >
-      <Link
-        to={`/products/${product.slug}`}
-        className="
-          group
-          grid
-          h-full
-          overflow-hidden
-
-          rounded-[22px]
-
-          border
-          border-[#1E2A24]/10
-
-          bg-white
-
-          transition-all
-          duration-300
-
-          hover:border-[#F59E0B]/60
-          hover:shadow-[0_18px_46px_rgba(30,42,36,0.08)]
-
-          sm:grid-cols-[42%_1fr]
-
-          lg:min-h-[315px]
-        "
-      >
-        {/* IMAGE */}
-        <div
-          className="
-            aspect-[16/10]
-            overflow-hidden
-            bg-[#F4F1EA]
-
-            sm:aspect-auto
-          "
-        >
-          <ProductVisual
-            src={product.image}
-            alt={product.name}
-            contain
-            className="p-4 sm:p-5"
-          />
-        </div>
-
-
-        {/* COPY */}
-        <div
-          className="
-            flex
-            min-w-0
-            flex-col
-
-            p-5
-
-            sm:p-6
-          "
-        >
-          <div
-            className="
-              flex
-              items-center
-              justify-between
-              gap-4
-            "
-          >
-            <Eyebrow>
-              {product.eyebrow}
-            </Eyebrow>
-
-            <span
-              className="
-                text-[11px]
-                font-extrabold
-                text-[#F59E0B]
-              "
-            >
-              {number}
-            </span>
-          </div>
-
-
-          <h2
-            className="
-              mt-3
-
-              text-[21px]
-              font-extrabold
-              leading-[1.03]
-              tracking-[-0.035em]
-
-              text-[#0F2F24]
-
-              lg:text-[24px]
-            "
-          >
-            {product.name}
-          </h2>
-
-
-          <p
-            className="
-              mt-3
-
-              text-[14px]
-              font-medium
-              leading-7
-
-              text-[#3D4A42]
-
-              sm:text-[15px]
-            "
-          >
-            {product.description}
-          </p>
-
-
-          <div className="mt-auto pt-5">
+          <div className="pt-5">
             <ArrowLink
               to={`/products/${product.slug}`}
             >
@@ -799,11 +635,8 @@ function RopeSmallCard({
 ========================================================== */
 
 export default function ProductsPage() {
-  const featuredProduct =
-    productCatalog[0];
-
-  const secondaryProducts =
-    productCatalog.slice(1, 3);
+  const collectionProducts =
+    productCatalog.slice(0, 3);
 
   const ropeProduct =
     productCatalog.find(
@@ -1057,549 +890,28 @@ export default function ProductsPage() {
                 grid
                 gap-4
 
-                lg:grid-cols-[1.08fr_.92fr]
+                md:grid-cols-2
+
+                lg:grid-cols-[repeat(3,minmax(0,1fr))]
                 lg:gap-5
               "
             >
-
-              {/* MAIN PRODUCT */}
-              {featuredProduct && (
-                <FeaturedProduct
-                  product={featuredProduct}
-                />
+              {collectionProducts.map(
+                (product, index) => (
+                  <ProductCollectionCard
+                    key={product.slug}
+                    product={product}
+                    delay={index * 70}
+                  />
+                ),
               )}
-
-
-              {/* SECONDARY */}
-              <div
-                className="
-                  grid
-                  gap-4
-
-                  md:grid-cols-2
-
-                  lg:grid-cols-1
-                  lg:grid-rows-2
-                  lg:gap-5
-                "
-              >
-                {secondaryProducts.map(
-                  (product, index) => (
-                    <SecondaryProduct
-                      key={product.slug}
-                      product={product}
-                      number={`0${index + 2}`}
-                      delay={
-                        (index + 1) * 70
-                      }
-                    />
-                  ),
-                )}
-              </div>
-
             </div>
 
           </div>
         </section>
 
 
-        {/* ==================================================
-            SIZE GUIDE
-        ================================================== */}
-
-        <section
-          className="
-            bg-[#0F2F24]
-
-            py-12
-
-            sm:py-16
-
-            lg:py-20
-          "
-        >
-          <div
-            className="
-              mx-auto
-              grid
-              max-w-[1180px]
-              items-center
-              gap-8
-
-              px-4
-
-              sm:px-6
-
-              lg:grid-cols-[1.15fr_.85fr]
-              lg:gap-14
-              lg:px-8
-            "
-          >
-
-            {/* IMAGE */}
-            <Reveal variant="left">
-
-              <div
-                className="
-                  overflow-hidden
-
-                  rounded-[20px]
-
-                  bg-white
-
-                  p-2
-
-                  sm:rounded-[26px]
-                  sm:p-4
-                "
-              >
-                <SmartImage
-                  src="/images/products/02-size-guide.png"
-                  alt="VinEco Coffee Wood Dog Chew size guide"
-                  className="
-                    block
-                    h-auto
-                    w-full
-                    object-contain
-                  "
-                />
-              </div>
-
-            </Reveal>
-
-
-            {/* COPY */}
-            <Reveal
-              variant="right"
-              delay={80}
-            >
-              <div>
-
-                <Eyebrow light>
-                  Coffee Wood Size Guide
-                </Eyebrow>
-
-
-                <h2
-                  className="
-                    mt-3
-
-                    text-[36px]
-                    font-extrabold
-                    leading-[0.96]
-                    tracking-[-0.05em]
-
-                    text-white
-
-                    sm:text-[44px]
-
-                    lg:text-[50px]
-                  "
-                >
-                  One material.
-
-                  <span
-                    className="
-                      block
-                      text-[#F59E0B]
-                    "
-                  >
-                    Multiple sizes.
-                  </span>
-                </h2>
-
-
-                <p
-                  className="
-                    mt-5
-                    max-w-[480px]
-
-                    text-[15px]
-                    font-medium
-                    leading-7
-
-                    text-white/80
-
-                    sm:text-[16px]
-                  "
-                >
-                  Choose coffee wood dimensions
-                  according to dog size, body weight
-                  and chewing preference—from XS
-                  through larger formats.
-                </p>
-
-
-                <div className="mt-6">
-                  <ArrowLink
-                    to="/products/classic-natural-coffee-wood-chew"
-                    light
-                  >
-                    View Classic Coffee Wood Chew
-                  </ArrowLink>
-                </div>
-
-              </div>
-            </Reveal>
-
-          </div>
-        </section>
-
-
-        {/* ==================================================
-            COFFEE WOOD + ROPE
-        ================================================== */}
-
-        {ropeProduct?.variants?.length > 0 && (
-          <section
-            className="
-              bg-[#FAF8F5]
-
-              py-14
-
-              sm:py-16
-
-              lg:py-24
-            "
-          >
-            <div
-              className="
-                mx-auto
-                max-w-[1280px]
-
-                px-4
-
-                sm:px-6
-
-                lg:px-8
-              "
-            >
-
-              {/* ============================================
-                  HEADING
-              ============================================ */}
-
-              <Reveal>
-
-                <div
-                  className="
-                    grid
-                    gap-6
-
-                    border-b
-                    border-[#1E2A24]/10
-
-                    pb-8
-
-                    lg:grid-cols-[1fr_.72fr]
-                    lg:items-end
-                    lg:gap-16
-                    lg:pb-10
-                  "
-                >
-
-                  <div>
-
-                    <Eyebrow>
-                      Coffee Wood + Rope
-                    </Eyebrow>
-
-
-                    <h2
-                      className="
-                        mt-3
-                        max-w-[760px]
-
-                        text-[38px]
-                        font-extrabold
-                        leading-[0.94]
-                        tracking-[-0.055em]
-
-                        text-[#0F2F24]
-
-                        sm:text-[48px]
-
-                        lg:text-[58px]
-
-                        xl:text-[62px]
-                      "
-                    >
-                      Five ways to
-
-                      <span
-                        className="
-                          block
-                          text-[#F59E0B]
-                        "
-                      >
-                        tug, chew & play.
-                      </span>
-                    </h2>
-
-                  </div>
-
-
-                  <div className="lg:pb-1">
-
-                    <p
-                      className="
-                        max-w-[500px]
-
-                        text-[15px]
-                        font-medium
-                        leading-7
-
-                        text-[#3D4A42]
-
-                        sm:text-[16px]
-                      "
-                    >
-                      Coffee wood blocks are combined
-                      with natural Jute / Hemp rope
-                      in multiple configurations for
-                      interactive play, chewing and
-                      tugging.
-                    </p>
-
-
-                    <div
-                      className="
-                        mt-5
-                        flex
-                        flex-wrap
-                        gap-2
-                      "
-                    >
-                      {[
-                        "Natural Coffee Wood",
-                        "Jute / Hemp Rope",
-                        "5 Designs",
-                      ].map((item) => (
-                        <span
-                          key={item}
-                          className="
-                            rounded-full
-
-                            border
-                            border-[#1E2A24]/10
-
-                            bg-white
-
-                            px-3.5
-                            py-2
-
-                            text-[10px]
-                            font-extrabold
-                            uppercase
-                            tracking-[0.09em]
-
-                            text-[#1E2A24]
-
-                            sm:text-[11px]
-                          "
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </Reveal>
-
-
-              {/* ============================================
-                  ROPE PRODUCT COMPOSITION
-              ============================================ */}
-
-              <div
-                className="
-                  mt-8
-
-                  grid
-                  gap-4
-
-                  lg:mt-10
-                  lg:grid-cols-[1.03fr_.97fr]
-                  lg:items-stretch
-                  lg:gap-5
-                "
-              >
-
-                {/* PRODUCT 01 FEATURED */}
-
-                <RopeFeatureCard
-                  variant={
-                    ropeProduct.variants[0]
-                  }
-                  productSlug={
-                    ropeProduct.slug
-                  }
-                />
-
-
-                {/* PRODUCTS 02 → 05 */}
-
-                <div
-                  className="
-                    grid
-                    gap-4
-
-                    sm:grid-cols-2
-
-                    lg:grid-cols-2
-                    lg:grid-rows-2
-                    lg:gap-5
-                  "
-                >
-                  {ropeProduct.variants
-                    .slice(1)
-                    .map(
-                      (
-                        variant,
-                        index,
-                      ) => (
-                        <RopeSmallCard
-                          key={
-                            variant.id
-                          }
-                          variant={
-                            variant
-                          }
-                          index={
-                            index
-                          }
-                          productSlug={
-                            ropeProduct.slug
-                          }
-                        />
-                      ),
-                    )}
-                </div>
-
-              </div>
-
-
-              {/* ============================================
-                  CUSTOM DEVELOPMENT
-              ============================================ */}
-
-              <Reveal
-                variant="up"
-                delay={160}
-              >
-                <div
-                  className="
-                    mt-5
-
-                    flex
-                    flex-col
-                    gap-4
-
-                    rounded-[20px]
-
-                    border
-                    border-[#1E2A24]/10
-
-                    bg-[#F4F1EA]
-
-                    px-5
-                    py-5
-
-                    sm:flex-row
-                    sm:items-center
-                    sm:justify-between
-                    sm:px-6
-                  "
-                >
-
-                  <div>
-
-                    <p
-                      className="
-                        text-[10px]
-                        font-extrabold
-                        uppercase
-                        tracking-[0.16em]
-
-                        text-[#D97706]
-
-                        sm:text-[11px]
-                      "
-                    >
-                      Custom Development
-                    </p>
-
-
-                    <p
-                      className="
-                        mt-1
-
-                        max-w-[520px]
-
-                        text-[14px]
-                        font-bold
-                        leading-6
-
-                        text-[#0F2F24]
-
-                        sm:text-[15px]
-                      "
-                    >
-                      Need a custom rope
-                      configuration for your brand?
-                    </p>
-
-                  </div>
-
-
-                  <Link
-                    to="/oem-odm"
-                    className="
-                      inline-flex
-                      min-h-[44px]
-                      shrink-0
-                      items-center
-                      justify-center
-                      gap-2
-
-                      rounded-[13px]
-
-                      bg-[#0F2F24]
-
-                      px-5
-
-                      text-[13px]
-                      font-extrabold
-
-                      text-white
-
-                      transition
-
-                      hover:bg-[#2F4538]
-                    "
-                  >
-                    Explore OEM / ODM
-
-                    <SiteIcon
-                      name="arrow"
-                      size={14}
-                    />
-                  </Link>
-
-                </div>
-              </Reveal>
-
-            </div>
-          </section>
-        )}
-
-
-        {/* ==================================================
-            FINAL CTA
-        ================================================== */}
+        {/* VINECO PRODUCTS REMOVE LEGACY SECTIONS V1 */}
 
         <section
           className="

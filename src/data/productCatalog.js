@@ -26,15 +26,15 @@ export const productCatalog = [
 
     highlights: [
       {
-        title: "Daily Dental Care",
+        title: "Natural & Stress-Relieving",
         text:
-          "Natural wood fibers gently scrape away tartar and plaque while chewing.",
+          "100% caffeine-free, satisfying your dog's natural chewing instincts.",
       },
 
       {
-        title: "Safe & Calming",
+        title: "Supports Oral Hygiene",
         text:
-          "100% caffeine-free and non-toxic, satisfying natural chewing instincts.",
+          "Natural wood fibers help clean teeth and reduce plaque buildup through the natural mechanical friction of chewing.",
       },
     ],
 
@@ -42,32 +42,17 @@ export const productCatalog = [
       {
         label: "Moisture Content",
         value:
-          "12%–14% (optimal to prevent mold and cracking).",
+          "12%\u201314% (optimal to prevent mold and cracking).",
       },
 
       {
         label: "Sizing",
         value:
-          "XS, S, M, L, XL (suitable for all breeds and life stages).",
+          "XS, S, M, L, XL, XXL (suitable for all breeds and life stages).",
       },
     ],
 
     productImages: [
-      {
-        src:
-          "/images/products/01-classic-coffee-wood.png",
-
-        alt:
-          "Classic Natural Coffee Wood Chew",
-
-        label:
-          "Classic Natural Coffee Wood Chew",
-
-        contain: false,
-
-        position: "object-center",
-      },
-
       {
         src:
           "/images/products/02-size-guide.png",
@@ -147,7 +132,7 @@ export const productCatalog = [
     productImages: [
       {
         src:
-          "/images/products/03-gorilla-chew.png",
+          "/images/products/03,1-gorilla-chew.png",
 
         alt:
           "Coffee Wood Gorilla Chew Root and Dense Cut",
@@ -155,7 +140,7 @@ export const productCatalog = [
         label:
           "Root & Dense Cut",
 
-        contain: true,
+        contain: false,
 
         position: "object-center",
       },
@@ -215,13 +200,13 @@ export const productCatalog = [
       {
         title: "Dual Functionality",
         text:
-          "Combines safe wood chewing with energetic fetch and tug-of-war games.",
+          "Combines natural wood chewing with energetic fetch and tug-of-war games.",
       },
 
       {
-        title: "Floss & Scrape Dental Action",
+        title: "Interactive Play & Oral Support",
         text:
-          "Natural rope fibers floss between teeth while the wood clears surface plaque.",
+          "Natural rope and wood textures provide an engaging chewing experience while supporting natural dental wear through mechanical friction.",
       },
     ],
 
@@ -266,7 +251,7 @@ export const productCatalog = [
           "Horizontal wood cylinder forming a T-shape with rope passing through the center, featuring knotted fringe on both ends.",
 
         image:
-          "/images/products/05-t-shape-rope-tug.png",
+          "/images/products/05,1-t-shape-rope-tug.png",
 
         alt:
           "T-Shape Coffee Wood and Rope Tug Toy",

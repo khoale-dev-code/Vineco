@@ -2,8 +2,6 @@ import { Link } from "react-router";
 
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import FloatingContactDock from "../components/layout/FloatingContactDock";
-
 import Reveal from "../components/ui/Reveal";
 import SiteIcon from "../components/ui/SiteIcon";
 
@@ -394,9 +392,6 @@ export default function OemOdmPage() {
 
 
       <Footer />
-
-      <FloatingContactDock />
-
     </>
   );
 }

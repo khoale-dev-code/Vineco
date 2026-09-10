@@ -2,7 +2,6 @@ import { Link } from "react-router";
 
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import FloatingContactDock from "../components/layout/FloatingContactDock";
 import InsideVinEcoExtras from "../components/home/InsideVinEcoExtras";
 import WhyVinEcoSection from "../components/home/WhyVinEcoSection";
 
@@ -522,7 +521,6 @@ export default function HomePage() {
       </main>
 
       <Footer />
-      <FloatingContactDock />
     </>
   );
 }

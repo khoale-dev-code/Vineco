@@ -1,6 +1,5 @@
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import FloatingContactDock from "../components/layout/FloatingContactDock";
 import PageHero from "../components/layout/PageHero";
 import Reveal from "../components/ui/Reveal";
 
@@ -153,7 +152,6 @@ export default function FaqPage() {
       </main>
 
       <Footer />
-      <FloatingContactDock />
     </>
   );
 }
