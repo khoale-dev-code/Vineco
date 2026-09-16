@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
+
 import Reveal from "../ui/Reveal";
-import SmartImage from "../ui/SmartImage";
+import ServiceResponsiveImage from "./ServiceResponsiveImage";
 
 
 /* =========================================================
@@ -198,7 +200,7 @@ function QualityControlSteps({
                     key={`${step.number}-${imageIndex}`}
                     style={cleanFigureStyle}
                   >
-                    <SmartImage
+                    <ServiceResponsiveImage
                       src={src}
                       alt={
                         imageIndex === 0
@@ -230,6 +232,378 @@ function QualityControlSteps({
    SERVICE CHAPTER
 ========================================================= */
 
+
+
+/* =========================================================
+   CUSTOM PACKAGING IMAGE SLIDER
+
+   - One large visual
+   - Auto changes every 3 seconds
+   - Loops continuously
+   - Pauses on hover / focus / touch
+   - Reduced-motion safe
+========================================================= */
+
+function PackagingImageSlider({
+  images = [],
+  title = "Custom Packaging & Fulfillment",
+  mode = "default",
+}) {
+  const safeImages =
+    Array.isArray(images)
+      ? images.filter(Boolean)
+      : [];
+
+  const imageKey =
+    safeImages.join("|");
+
+  const [activeIndex, setActiveIndex] =
+    useState(0);
+
+  const [paused, setPaused] =
+    useState(false);
+
+
+  /* VINECO PACKAGING DESIGN AUTOPLAY V2 START */
+
+  /*
+   * Product Packaging Design:
+   * - autoplay exactly every 2 seconds
+   * - hover / focus / touch do not pause it
+   *
+   * Custom Packaging:
+   * - keep 3 second autoplay
+   * - keep existing pause behavior
+   */
+  const isPackagingDesignSlider =
+    mode === "portrait";
+
+  const autoplayMs =
+    isPackagingDesignSlider
+      ? 2000
+      : 3000;
+
+  /* VINECO PACKAGING DESIGN AUTOPLAY V2 END */
+
+
+  /*
+   * Reset slider when image data changes.
+   */
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [imageKey]);
+
+
+  /*
+   * Existing autoplay behavior.
+   */
+  useEffect(() => {
+    if (
+      safeImages.length <= 1
+    ) {
+      return undefined;
+    }
+
+
+    /*
+     * For packaging-design we intentionally do not
+     * pause autoplay when hovering/focusing/touching.
+     *
+     * Other packaging sliders keep their existing
+     * interaction pause behavior.
+     */
+    if (
+      !isPackagingDesignSlider &&
+      paused
+    ) {
+      return undefined;
+    }
+
+
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+
+    /*
+     * Existing sliders still respect reduced motion.
+     *
+     * packaging-design performs an instant image swap
+     * with no fade/transform animation, so it can keep
+     * the requested 2-second automatic change.
+     */
+    if (
+      prefersReducedMotion &&
+      !isPackagingDesignSlider
+    ) {
+      return undefined;
+    }
+
+
+    const timer =
+      window.setInterval(
+        () => {
+          setActiveIndex(
+            (current) =>
+              (
+                current + 1
+              ) % safeImages.length
+          );
+        },
+        autoplayMs
+      );
+
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, [
+    paused,
+    safeImages.length,
+    imageKey,
+    isPackagingDesignSlider,
+    autoplayMs,
+  ]);
+
+
+
+
+  /* VINECO SLIDER ARROW HANDLERS FIX START */
+
+  const goPrevious = () => {
+    if (safeImages.length <= 1) {
+      return;
+    }
+
+    setActiveIndex(
+      (current) =>
+        (
+          current - 1 +
+          safeImages.length
+        ) % safeImages.length
+    );
+  };
+
+
+  const goNext = () => {
+    if (safeImages.length <= 1) {
+      return;
+    }
+
+    setActiveIndex(
+      (current) =>
+        (
+          current + 1
+        ) % safeImages.length
+    );
+  };
+
+
+  /* VINECO SLIDER ARROW HANDLERS FIX END */
+
+  if (safeImages.length === 0) {
+    return null;
+  }
+
+
+  return (
+    <div
+      className={[
+        "service-v2-packaging-slider",
+        mode === "portrait"
+          ? "service-v2-packaging-slider--portrait"
+          : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={title + " image gallery"}
+      onMouseEnter={() =>
+        setPaused(true)
+      }
+      onMouseLeave={() =>
+        setPaused(false)
+      }
+      onFocusCapture={() =>
+        setPaused(true)
+      }
+      onBlurCapture={() =>
+        setPaused(false)
+      }
+      onTouchStart={() =>
+        setPaused(true)
+      }
+      onTouchEnd={() =>
+        setPaused(false)
+      }
+    >
+
+      <div className="service-v2-packaging-slider__viewport">
+
+        {safeImages.map(
+          (src, imageIndex) => {
+
+            const active =
+              imageIndex ===
+              activeIndex;
+
+
+            return (
+              <figure
+                key={src + "-" + imageIndex}
+                className={[
+                  "service-v2-packaging-slider__slide",
+                  active
+                    ? "is-active"
+                    : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+                aria-hidden={
+                  !active
+                }
+              >
+
+                <ServiceResponsiveImage
+                  src={src}
+                  alt={
+                    active
+                      ? title + " " + (imageIndex + 1)
+                      : ""
+                  }
+                  loading={
+                    active
+                      ? "eager"
+                      : "lazy"
+                  }
+                  className="service-v2-packaging-slider__image block h-full w-full object-cover object-center"
+                />
+
+              </figure>
+            );
+          },
+        )}
+
+
+        {safeImages.length > 1 && (
+          <>
+
+            <button
+              type="button"
+              className="service-v2-packaging-slider__arrow service-v2-packaging-slider__arrow--prev"
+              aria-label="Previous packaging image"
+              onClick={goPrevious}
+            >
+              <span aria-hidden="true">
+                {"<"}
+              </span>
+            </button>
+
+
+            <button
+              type="button"
+              className="service-v2-packaging-slider__arrow service-v2-packaging-slider__arrow--next"
+              aria-label="Next packaging image"
+              onClick={goNext}
+            >
+              <span aria-hidden="true">
+                {">"}
+              </span>
+            </button>
+
+          </>
+        )}
+
+
+        <div
+          className="service-v2-packaging-slider__counter"
+          aria-hidden="true"
+        >
+
+          <strong>
+            {String(
+              activeIndex + 1
+            ).padStart(
+              2,
+              "0"
+            )}
+          </strong>
+
+          <span>
+            /
+            {" "}
+            {String(
+              safeImages.length
+            ).padStart(
+              2,
+              "0"
+            )}
+          </span>
+
+        </div>
+
+      </div>
+
+
+      {safeImages.length > 1 && (
+
+        <div
+          className="service-v2-packaging-slider__dots"
+          aria-label="Packaging image selection"
+        >
+
+          {safeImages.map(
+            (src, imageIndex) => {
+
+              const active =
+                imageIndex ===
+                activeIndex;
+
+
+              return (
+                <button
+                  key={src + "-dot-" + imageIndex}
+                  type="button"
+                  className={[
+                    "service-v2-packaging-slider__dot",
+                    active
+                      ? "is-active"
+                      : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                  aria-label={
+                    "Show packaging image " +
+                    (imageIndex + 1)
+                  }
+                  aria-current={
+                    active
+                      ? "true"
+                      : undefined
+                  }
+                  onClick={() =>
+                    setActiveIndex(
+                      imageIndex
+                    )
+                  }
+                >
+                  <span aria-hidden="true" />
+                </button>
+              );
+            },
+          )}
+
+        </div>
+      )}
+
+    </div>
+  );
+}
+
+
 export default function ServiceChapter({
   service,
   index,
@@ -246,7 +620,20 @@ export default function ServiceChapter({
       ? service.images
       : [];
 
+  const usePackagingSlider =
+    (
+      service.id === "custom-packaging" ||
+      service.id === "packaging-design"
+    ) &&
+    images.length > 0;
+
+  const packagingSliderMode =
+    service.id === "packaging-design"
+      ? "portrait"
+      : "default";
+
   const useImageGrid =
+    !usePackagingSlider &&
     images.length >= 4;
 
 
@@ -468,7 +855,15 @@ export default function ServiceChapter({
                 4 IMAGE GRID
             =============================================== */}
 
-            {useImageGrid ? (
+            {usePackagingSlider ? (
+
+              <PackagingImageSlider
+                images={images}
+                title={service.title}
+                mode={packagingSliderMode}
+              />
+
+            ) : useImageGrid ? (
 
               <div className="service-v2-collage service-v2-collage--grid">
 
@@ -486,7 +881,7 @@ export default function ServiceChapter({
                           cleanFigureStyle
                         }
                       >
-                        <SmartImage
+                        <ServiceResponsiveImage
                           src={src}
                           alt={
                             imageIndex ===
@@ -525,7 +920,7 @@ export default function ServiceChapter({
                       cleanFigureStyle
                     }
                   >
-                    <SmartImage
+                    <ServiceResponsiveImage
                       src={
                         images[0]
                       }
@@ -557,7 +952,7 @@ export default function ServiceChapter({
                       cleanFigureStyle
                     }
                   >
-                    <SmartImage
+                    <ServiceResponsiveImage
                       src={
                         images[1]
                       }
@@ -583,7 +978,7 @@ export default function ServiceChapter({
                       cleanFigureStyle
                     }
                   >
-                    <SmartImage
+                    <ServiceResponsiveImage
                       src={
                         images[2]
                       }

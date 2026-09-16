@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Reveal from "../components/ui/Reveal";
-import SmartImage from "../components/ui/SmartImage";
+import ServiceResponsiveImage from "../components/service/ServiceResponsiveImage";
 import SiteIcon from "../components/ui/SiteIcon";
 
 import ServiceIndex from "../components/service/ServiceIndex";
@@ -235,7 +235,7 @@ export default function ServicePage() {
                     }}
                   >
 
-                    <SmartImage
+                    <ServiceResponsiveImage
                       src={heroImages[0]}
                       alt="VinEco packaging and product support"
                       className="block h-full w-full object-contain"
@@ -262,7 +262,7 @@ export default function ServicePage() {
                       }}
                     >
 
-                      <SmartImage
+                      <ServiceResponsiveImage
                         src={heroImages[1]}
                         alt="VinEco branding and private-label support"
                         className="block h-full w-full object-contain"

@@ -3238,3 +3238,2730 @@ and
 
 
 /* VINECO QC INITIAL RESTORE END */
+
+
+
+/* VINECO CUSTOM PACKAGING SLIDER V2 START */
+
+
+/* ==========================================================
+   CUSTOM PACKAGING SLIDER
+   Recommended source image: 2000 x 1500 px / 4:3
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* ==========================================================
+   VIEWPORT
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__viewport {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(30,42,36,.10);
+
+  border-radius: 24px;
+
+  background: #F4F1EA;
+
+  box-shadow:
+    0 18px 46px
+    rgba(30,42,36,.08);
+
+  isolation: isolate;
+
+  touch-action: pan-y;
+}
+
+
+/* ==========================================================
+   SLIDES
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #F4F1EA;
+
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 0;
+
+  transition:
+    opacity
+    .42s
+    cubic-bezier(.22,.61,.36,1),
+    visibility
+    .42s
+    linear;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+
+  z-index: 1;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__slide
+picture {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ==========================================================
+   IMAGE
+
+   Important:
+   - No transform scaling
+   - 4:3 image fills 4:3 viewport without meaningful crop
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__slide
+img,
+
+#custom-packaging
+.service-v2-packaging-slider__image {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: cover !important;
+
+  object-position:
+    center center !important;
+
+  transform:
+    none !important;
+
+  filter:
+    none !important;
+
+  image-rendering:
+    auto;
+}
+
+
+/* ==========================================================
+   PREVIOUS / NEXT
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__arrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 5;
+
+  display: grid;
+
+  width: 48px;
+  height: 48px;
+
+  min-width: 48px;
+  min-height: 48px;
+
+  place-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(255,255,255,.76);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,.92);
+
+  color: #0F2F24;
+
+  box-shadow:
+    0 12px 28px
+    rgba(15,47,36,.16);
+
+  cursor: pointer;
+
+  transform:
+    translateY(-50%);
+
+  transition:
+    background-color .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__arrow
+span {
+  display: block;
+
+  margin-top: -2px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__arrow--prev {
+  left: 14px;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__arrow--next {
+  right: 14px;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__arrow:focus-visible {
+  outline:
+    3px solid
+    rgba(245,158,11,.34);
+
+  outline-offset:
+    3px;
+}
+
+
+@media
+(hover: hover)
+and
+(pointer: fine) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow:hover {
+    border-color:
+      #F59E0B;
+
+    background:
+      #F59E0B;
+
+    color:
+      #0F2F24;
+
+    box-shadow:
+      0 14px 30px
+      rgba(217,119,6,.22);
+  }
+
+}
+
+
+/* ==========================================================
+   COUNTER
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__counter {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  z-index: 4;
+
+  display: flex;
+
+  min-width: 64px;
+
+  align-items: baseline;
+  justify-content: center;
+
+  gap: 4px;
+
+  padding:
+    9px 12px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.22);
+
+  border-radius: 999px;
+
+  background:
+    rgba(15,47,36,.86);
+
+  color: #fff;
+
+  box-shadow:
+    0 10px 28px
+    rgba(15,47,36,.20);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__counter
+strong {
+  font-size: 13px;
+  font-weight: 850;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__counter
+span {
+  color:
+    rgba(255,255,255,.65);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* ==========================================================
+   DOT NAVIGATION
+
+   Visual dot stays small,
+   but touch target is much larger.
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__dots {
+  display: flex;
+
+  min-height: 34px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  margin-top: 10px;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__dot {
+  display: grid;
+
+  width: 30px;
+  height: 30px;
+
+  flex:
+    0 0 30px;
+
+  place-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__dot
+span {
+  display: block;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(30,42,36,.20);
+
+  transition:
+    width .22s ease,
+    background-color .22s ease,
+    transform .22s ease;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__dot.is-active
+span {
+  width: 24px;
+
+  background:
+    #F59E0B;
+}
+
+
+#custom-packaging
+.service-v2-packaging-slider__dot:focus-visible {
+  outline:
+    2px solid
+    rgba(245,158,11,.45);
+
+  outline-offset: 0;
+}
+
+
+@media
+(hover: hover)
+and
+(pointer: fine) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__dot:hover
+  span {
+    background:
+      #D97706;
+
+    transform:
+      scale(1.08);
+  }
+
+}
+
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media
+(min-width: 900px)
+and
+(max-width: 1180px) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__viewport {
+    border-radius: 21px;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET + MOBILE
+========================================================== */
+
+@media (max-width: 899px) {
+
+  #custom-packaging
+  .service-v2-packaging-slider {
+    width:
+      100% !important;
+
+    max-width:
+      100% !important;
+
+    min-width:
+      0 !important;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__viewport {
+    width:
+      100% !important;
+
+    aspect-ratio:
+      4 / 3 !important;
+
+    border-radius:
+      19px !important;
+
+    box-shadow:
+      0 12px 30px
+      rgba(30,42,36,.07);
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__slide
+  img,
+
+  #custom-packaging
+  .service-v2-packaging-slider__image {
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    max-width:
+      none !important;
+
+    object-fit:
+      cover !important;
+
+    object-position:
+      center center !important;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow--prev {
+    left: 10px;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow--next {
+    right: 10px;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__counter {
+    top: 10px;
+    right: 10px;
+
+    min-width: 58px;
+
+    padding:
+      7px 10px;
+  }
+
+}
+
+
+/* ==========================================================
+   PHONE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__viewport {
+    border-radius:
+      16px !important;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+    min-height: 44px;
+
+    background:
+      rgba(255,255,255,.94);
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow--prev {
+    left: 8px;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow--next {
+    right: 8px;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow
+  span {
+    font-size: 25px;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__dots {
+    min-height: 32px;
+
+    margin-top: 8px;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__dot {
+    width: 28px;
+    height: 28px;
+
+    flex-basis: 28px;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__dot.is-active
+  span {
+    width: 22px;
+  }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__slide,
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow,
+
+  #custom-packaging
+  .service-v2-packaging-slider__dot
+  span {
+    transition:
+      none !important;
+  }
+
+}
+
+
+/* VINECO CUSTOM PACKAGING SLIDER V2 END */
+
+/* VINECO PACKAGING ARROW GLASS V1 START */
+
+
+/* ==========================================================
+   CUSTOM PACKAGING - PREMIUM TRANSPARENT ARROWS
+
+   Default:
+   - transparent glass
+   - clean white chevron
+   - no solid white circle
+
+   Press:
+   - VinEco orange
+   - dark green chevron
+========================================================== */
+
+
+#custom-packaging
+.service-v2-packaging-slider__arrow {
+  width:
+    48px !important;
+
+  height:
+    48px !important;
+
+  min-width:
+    48px !important;
+
+  min-height:
+    48px !important;
+
+  padding:
+    0 !important;
+
+  border:
+    1px solid
+    rgba(255,255,255,.62) !important;
+
+  border-radius:
+    999px !important;
+
+  background:
+    rgba(255,255,255,.08) !important;
+
+  color:
+    #ffffff !important;
+
+  box-shadow:
+    0 8px 24px
+    rgba(15,47,36,.12) !important;
+
+  backdrop-filter:
+    blur(5px)
+    saturate(115%) !important;
+
+  -webkit-backdrop-filter:
+    blur(5px)
+    saturate(115%) !important;
+
+  cursor:
+    pointer;
+
+  -webkit-tap-highlight-color:
+    transparent;
+
+  transition:
+    background-color .16s ease,
+    border-color .16s ease,
+    box-shadow .16s ease,
+    transform .12s ease !important;
+}
+
+
+/* ==========================================================
+   CLEAN CSS CHEVRON
+
+   Hide the original < / > text visually
+   and draw a sharper premium arrow.
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__arrow
+span {
+  display:
+    block !important;
+
+  width:
+    12px !important;
+
+  height:
+    12px !important;
+
+  margin:
+    0 !important;
+
+  border-top:
+    2px solid
+    currentColor !important;
+
+  border-right:
+    2px solid
+    currentColor !important;
+
+  font-size:
+    0 !important;
+
+  line-height:
+    0 !important;
+
+  text-indent:
+    -9999px;
+
+  transform-origin:
+    center;
+
+  transition:
+    transform .16s ease !important;
+}
+
+
+/* LEFT */
+
+#custom-packaging
+.service-v2-packaging-slider__arrow--prev
+span {
+  transform:
+    rotate(-135deg) !important;
+
+  margin-left:
+    4px !important;
+}
+
+
+/* RIGHT */
+
+#custom-packaging
+.service-v2-packaging-slider__arrow--next
+span {
+  transform:
+    rotate(45deg) !important;
+
+  margin-right:
+    4px !important;
+}
+
+
+/* ==========================================================
+   DESKTOP HOVER
+
+   Keep transparent.
+   Only increase clarity.
+========================================================== */
+
+@media
+(hover: hover)
+and
+(pointer: fine) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow:hover {
+    background:
+      rgba(255,255,255,.15) !important;
+
+    border-color:
+      rgba(255,255,255,.90) !important;
+
+    color:
+      #ffffff !important;
+
+    box-shadow:
+      0 10px 28px
+      rgba(15,47,36,.16) !important;
+  }
+
+}
+
+
+/* ==========================================================
+   PRESS / CLICK
+
+   Only here the button becomes orange.
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__arrow:active {
+  background:
+    #F59E0B !important;
+
+  border-color:
+    #F59E0B !important;
+
+  color:
+    #0F2F24 !important;
+
+  box-shadow:
+    0 5px 14px
+    rgba(217,119,6,.28) !important;
+
+  transform:
+    translateY(-50%)
+    scale(.93) !important;
+}
+
+
+/* ==========================================================
+   KEYBOARD ACCESSIBILITY
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__arrow:focus-visible {
+  outline:
+    3px solid
+    rgba(245,158,11,.42) !important;
+
+  outline-offset:
+    3px !important;
+
+  border-color:
+    rgba(255,255,255,.95) !important;
+}
+
+
+/* ==========================================================
+   MOBILE / TABLET
+
+   Minimum comfortable touch target: 44px
+========================================================== */
+
+@media (max-width: 899px) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow {
+    width:
+      44px !important;
+
+    height:
+      44px !important;
+
+    min-width:
+      44px !important;
+
+    min-height:
+      44px !important;
+
+    background:
+      rgba(255,255,255,.07) !important;
+
+    border-color:
+      rgba(255,255,255,.60) !important;
+
+    backdrop-filter:
+      blur(4px)
+      saturate(110%) !important;
+
+    -webkit-backdrop-filter:
+      blur(4px)
+      saturate(110%) !important;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow
+  span {
+    width:
+      11px !important;
+
+    height:
+      11px !important;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow:active {
+    background:
+      #F59E0B !important;
+
+    border-color:
+      #F59E0B !important;
+
+    color:
+      #0F2F24 !important;
+  }
+
+}
+
+
+/* ==========================================================
+   SMALL PHONE
+
+   Slightly move buttons toward image edges
+   to reduce obstruction.
+========================================================== */
+
+@media (max-width: 640px) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow--prev {
+    left:
+      8px !important;
+  }
+
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow--next {
+    right:
+      8px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow,
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow
+  span {
+    transition:
+      none !important;
+  }
+
+}
+
+
+/* VINECO PACKAGING ARROW GLASS V1 END */
+
+/* VINECO SERVICE TYPOGRAPHY V1 START */
+
+
+/* ==========================================================
+   SERVICE TYPOGRAPHY VISIBILITY UPDATE
+
+   Goals:
+   - Improve eyebrow / metadata readability.
+   - Keep VinEco visual hierarchy.
+   - Do not globally enlarge every eyebrow.
+   - Responsive across desktop / tablet / mobile.
+========================================================== */
+
+
+/* ==========================================================
+   01. QUALITY CONTROL STEP LABELS
+
+   Wood Selection
+   Safety Finishing
+   Heat Treatment
+   Final Control
+========================================================== */
+
+.service-v2
+#quality-control
+.qc-step
+.qc-step__meta {
+  gap:
+    12px !important;
+
+  align-items:
+    center !important;
+}
+
+
+.service-v2
+#quality-control
+.qc-step
+.qc-step__meta
+small {
+  color:
+    #D97706 !important;
+
+  font-size:
+    12.5px !important;
+
+  font-weight:
+    850 !important;
+
+  line-height:
+    1.35 !important;
+
+  letter-spacing:
+    .10em !important;
+
+  text-transform:
+    uppercase !important;
+
+  text-wrap:
+    balance;
+}
+
+
+/*
+ * Slightly enlarge the numbered circle so the larger label
+ * remains visually balanced.
+ */
+.service-v2
+#quality-control
+.qc-step
+.qc-step__meta
+> span {
+  width:
+    40px !important;
+
+  height:
+    40px !important;
+
+  min-width:
+    40px !important;
+
+  flex:
+    0 0 40px !important;
+
+  display:
+    inline-flex !important;
+
+  align-items:
+    center !important;
+
+  justify-content:
+    center !important;
+}
+
+
+/* ==========================================================
+   02. SERVICE AT A GLANCE
+========================================================== */
+
+.service-v2
+.service-v2-overview
+.service-v2-overview__header
+> .service-v2-eyebrow {
+  margin:
+    0 0 18px !important;
+
+  color:
+    #D97706 !important;
+
+  font-size:
+    14px !important;
+
+  font-weight:
+    850 !important;
+
+  line-height:
+    1.4 !important;
+
+  letter-spacing:
+    .18em !important;
+}
+
+
+/*
+ * Give the two hero lines more breathing room.
+ *
+ * One partner.
+ * Multiple ways to build.
+ */
+.service-v2
+.service-v2-overview
+.service-v2-overview__header
+h2 {
+  line-height:
+    1.02 !important;
+}
+
+
+.service-v2
+.service-v2-overview
+.service-v2-overview__header
+h2
+> span {
+  display:
+    block !important;
+
+  margin-top:
+    .08em !important;
+
+  line-height:
+    1.02 !important;
+}
+
+
+/* ==========================================================
+   03. GLOBAL BUSINESS SUPPORT
+========================================================== */
+
+.service-v2
+.service-v2-global
+.service-v2-global__copy
+> .service-v2-eyebrow {
+  margin:
+    0 0 17px !important;
+
+  color:
+    #D97706 !important;
+
+  font-size:
+    14px !important;
+
+  font-weight:
+    850 !important;
+
+  line-height:
+    1.4 !important;
+
+  letter-spacing:
+    .17em !important;
+}
+
+
+/* ==========================================================
+   04. FAQ LABEL
+========================================================== */
+
+.service-v2
+.service-v2-faq
+.service-v2-faq__header
+> .service-v2-eyebrow {
+  margin:
+    0 0 15px !important;
+
+  color:
+    #D97706 !important;
+
+  font-size:
+    14px !important;
+
+  font-weight:
+    850 !important;
+
+  line-height:
+    1.4 !important;
+
+  letter-spacing:
+    .16em !important;
+}
+
+
+/*
+ * Existing FAQ h2 had its own margin-top.
+ * Remove redundant gap because eyebrow now owns spacing.
+ */
+.service-v2
+.service-v2-faq
+.service-v2-faq__header
+h2 {
+  margin-top:
+    0 !important;
+}
+
+
+/* ==========================================================
+   05. YOUR NEXT PRODUCT
+========================================================== */
+
+.service-v2
+.service-v2-cta
+.service-v2-cta__inner
+> p {
+  margin:
+    0 0 18px !important;
+
+  color:
+    #3D5245 !important;
+
+  font-size:
+    14px !important;
+
+  font-weight:
+    850 !important;
+
+  line-height:
+    1.4 !important;
+
+  letter-spacing:
+    .16em !important;
+
+  text-transform:
+    uppercase !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media
+(max-width: 899px) {
+
+  /* QC */
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  small {
+    font-size:
+      12px !important;
+
+    letter-spacing:
+      .09em !important;
+  }
+
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  > span {
+    width:
+      38px !important;
+
+    height:
+      38px !important;
+
+    min-width:
+      38px !important;
+
+    flex-basis:
+      38px !important;
+  }
+
+
+  /* SERVICE AT A GLANCE */
+
+  .service-v2
+  .service-v2-overview
+  .service-v2-overview__header
+  > .service-v2-eyebrow {
+    margin-bottom:
+      15px !important;
+
+    font-size:
+      13px !important;
+
+    letter-spacing:
+      .16em !important;
+  }
+
+
+  .service-v2
+  .service-v2-overview
+  .service-v2-overview__header
+  h2 {
+    line-height:
+      1.03 !important;
+  }
+
+
+  .service-v2
+  .service-v2-overview
+  .service-v2-overview__header
+  h2
+  > span {
+    margin-top:
+      .09em !important;
+
+    line-height:
+      1.03 !important;
+  }
+
+
+  /* GLOBAL BUSINESS SUPPORT */
+
+  .service-v2
+  .service-v2-global
+  .service-v2-global__copy
+  > .service-v2-eyebrow {
+    margin-bottom:
+      14px !important;
+
+    font-size:
+      13px !important;
+
+    letter-spacing:
+      .15em !important;
+  }
+
+
+  /* FAQ */
+
+  .service-v2
+  .service-v2-faq
+  .service-v2-faq__header
+  > .service-v2-eyebrow {
+    margin-bottom:
+      13px !important;
+
+    font-size:
+      13px !important;
+
+    letter-spacing:
+      .15em !important;
+  }
+
+
+  /* YOUR NEXT PRODUCT */
+
+  .service-v2
+  .service-v2-cta
+  .service-v2-cta__inner
+  > p {
+    margin-bottom:
+      16px !important;
+
+    font-size:
+      13px !important;
+
+    letter-spacing:
+      .15em !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media
+(max-width: 640px) {
+
+  /* QC LABELS */
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta {
+    gap:
+      10px !important;
+  }
+
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  small {
+    font-size:
+      11.5px !important;
+
+    line-height:
+      1.35 !important;
+
+    letter-spacing:
+      .075em !important;
+  }
+
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  > span {
+    width:
+      36px !important;
+
+    height:
+      36px !important;
+
+    min-width:
+      36px !important;
+
+    flex-basis:
+      36px !important;
+  }
+
+
+  /* SERVICE AT A GLANCE */
+
+  .service-v2
+  .service-v2-overview
+  .service-v2-overview__header
+  > .service-v2-eyebrow {
+    margin-bottom:
+      13px !important;
+
+    font-size:
+      12px !important;
+
+    line-height:
+      1.45 !important;
+
+    letter-spacing:
+      .14em !important;
+  }
+
+
+  .service-v2
+  .service-v2-overview
+  .service-v2-overview__header
+  h2 {
+    line-height:
+      1.04 !important;
+  }
+
+
+  .service-v2
+  .service-v2-overview
+  .service-v2-overview__header
+  h2
+  > span {
+    margin-top:
+      .10em !important;
+
+    line-height:
+      1.04 !important;
+  }
+
+
+  /* GLOBAL BUSINESS SUPPORT */
+
+  .service-v2
+  .service-v2-global
+  .service-v2-global__copy
+  > .service-v2-eyebrow {
+    margin-bottom:
+      13px !important;
+
+    font-size:
+      12px !important;
+
+    line-height:
+      1.45 !important;
+
+    letter-spacing:
+      .14em !important;
+  }
+
+
+  /* FAQ */
+
+  .service-v2
+  .service-v2-faq
+  .service-v2-faq__header
+  > .service-v2-eyebrow {
+    margin-bottom:
+      12px !important;
+
+    font-size:
+      12px !important;
+
+    line-height:
+      1.45 !important;
+
+    letter-spacing:
+      .14em !important;
+  }
+
+
+  /* YOUR NEXT PRODUCT */
+
+  .service-v2
+  .service-v2-cta
+  .service-v2-cta__inner
+  > p {
+    margin-bottom:
+      15px !important;
+
+    font-size:
+      12px !important;
+
+    line-height:
+      1.45 !important;
+
+    letter-spacing:
+      .13em !important;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL MOBILE
+========================================================== */
+
+@media
+(max-width: 380px) {
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  small {
+    font-size:
+      11px !important;
+
+    letter-spacing:
+      .065em !important;
+  }
+
+
+  .service-v2
+  .service-v2-overview
+  .service-v2-overview__header
+  > .service-v2-eyebrow,
+
+  .service-v2
+  .service-v2-global
+  .service-v2-global__copy
+  > .service-v2-eyebrow,
+
+  .service-v2
+  .service-v2-faq
+  .service-v2-faq__header
+  > .service-v2-eyebrow,
+
+  .service-v2
+  .service-v2-cta
+  .service-v2-cta__inner
+  > p {
+    font-size:
+      11.5px !important;
+
+    letter-spacing:
+      .12em !important;
+  }
+
+}
+
+
+/* VINECO SERVICE TYPOGRAPHY V1 END */
+
+/* VINECO SERVICE TYPOGRAPHY EMPHASIS V2 START */
+
+
+/* ==========================================================
+   QC META TYPOGRAPHY
+
+   01 / 02 / 03 / 04
+   =
+   WOOD SELECTION
+   SAFETY FINISHING
+   HEAT TREATMENT
+   FINAL CONTROL
+
+   The number and label intentionally share ONE CSS variable,
+   so their font size always remains identical.
+========================================================== */
+
+.service-v2
+#quality-control
+.qc-step
+.qc-step__meta {
+  --qc-meta-size:
+    15px;
+
+  gap:
+    13px !important;
+
+  align-items:
+    center !important;
+}
+
+
+/* ==========================================================
+   QC LABEL
+========================================================== */
+
+.service-v2
+#quality-control
+.qc-step
+.qc-step__meta
+small {
+  display:
+    block !important;
+
+  margin:
+    0 !important;
+
+  color:
+    #D97706 !important;
+
+  font-size:
+    var(--qc-meta-size) !important;
+
+  font-weight:
+    850 !important;
+
+  line-height:
+    1.3 !important;
+
+  letter-spacing:
+    .085em !important;
+
+  text-transform:
+    uppercase !important;
+
+  white-space:
+    normal;
+}
+
+
+/* ==========================================================
+   QC NUMBER
+
+   Font size = label font size.
+========================================================== */
+
+.service-v2
+#quality-control
+.qc-step
+.qc-step__meta
+> span {
+  display:
+    inline-flex !important;
+
+  width:
+    44px !important;
+
+  height:
+    44px !important;
+
+  min-width:
+    44px !important;
+
+  flex:
+    0 0 44px !important;
+
+  align-items:
+    center !important;
+
+  justify-content:
+    center !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  border-radius:
+    999px !important;
+
+  background:
+    #F59E0B !important;
+
+  color:
+    #0F2F24 !important;
+
+  font-size:
+    var(--qc-meta-size) !important;
+
+  font-weight:
+    900 !important;
+
+  line-height:
+    1 !important;
+
+  letter-spacing:
+    0 !important;
+}
+
+
+/* ==========================================================
+   FAQ EYEBROW
+
+   Larger than previous typography patch so the label is
+   visually clear next to the large FAQ heading.
+========================================================== */
+
+.service-v2
+.service-v2-faq
+.service-v2-faq__header
+> .service-v2-eyebrow {
+  margin:
+    0 0 18px !important;
+
+  color:
+    #D97706 !important;
+
+  font-size:
+    17px !important;
+
+  font-weight:
+    900 !important;
+
+  line-height:
+    1.25 !important;
+
+  letter-spacing:
+    .14em !important;
+
+  text-transform:
+    uppercase !important;
+}
+
+
+/* Keep FAQ title separated cleanly from eyebrow. */
+
+.service-v2
+.service-v2-faq
+.service-v2-faq__header
+h2 {
+  margin-top:
+    0 !important;
+}
+
+
+/* ==========================================================
+   LAPTOP / SMALL DESKTOP
+========================================================== */
+
+@media
+(min-width: 900px)
+and
+(max-width: 1180px) {
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta {
+    --qc-meta-size:
+      14.5px;
+
+    gap:
+      12px !important;
+  }
+
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  > span {
+    width:
+      42px !important;
+
+    height:
+      42px !important;
+
+    min-width:
+      42px !important;
+
+    flex-basis:
+      42px !important;
+  }
+
+
+  .service-v2
+  .service-v2-faq
+  .service-v2-faq__header
+  > .service-v2-eyebrow {
+    font-size:
+      16px !important;
+
+    margin-bottom:
+      17px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET / MOBILE
+========================================================== */
+
+@media (max-width: 899px) {
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta {
+    --qc-meta-size:
+      14px;
+
+    gap:
+      11px !important;
+  }
+
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  > span {
+    width:
+      41px !important;
+
+    height:
+      41px !important;
+
+    min-width:
+      41px !important;
+
+    flex-basis:
+      41px !important;
+  }
+
+
+  .service-v2
+  .service-v2-faq
+  .service-v2-faq__header
+  > .service-v2-eyebrow {
+    margin-bottom:
+      15px !important;
+
+    font-size:
+      15px !important;
+
+    line-height:
+      1.3 !important;
+
+    letter-spacing:
+      .13em !important;
+  }
+
+}
+
+
+/* ==========================================================
+   PHONE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta {
+    --qc-meta-size:
+      13.5px;
+
+    gap:
+      10px !important;
+  }
+
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  > span {
+    width:
+      40px !important;
+
+    height:
+      40px !important;
+
+    min-width:
+      40px !important;
+
+    flex-basis:
+      40px !important;
+  }
+
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  small {
+    letter-spacing:
+      .075em !important;
+  }
+
+
+  .service-v2
+  .service-v2-faq
+  .service-v2-faq__header
+  > .service-v2-eyebrow {
+    margin-bottom:
+      14px !important;
+
+    font-size:
+      14px !important;
+
+    letter-spacing:
+      .12em !important;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONE
+========================================================== */
+
+@media (max-width: 380px) {
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta {
+    --qc-meta-size:
+      13px;
+  }
+
+
+  .service-v2
+  #quality-control
+  .qc-step
+  .qc-step__meta
+  > span {
+    width:
+      38px !important;
+
+    height:
+      38px !important;
+
+    min-width:
+      38px !important;
+
+    flex-basis:
+      38px !important;
+  }
+
+
+  .service-v2
+  .service-v2-faq
+  .service-v2-faq__header
+  > .service-v2-eyebrow {
+    font-size:
+      13.5px !important;
+
+    margin-bottom:
+      13px !important;
+  }
+
+}
+
+
+/* VINECO SERVICE TYPOGRAPHY EMPHASIS V2 END */
+
+/* VINECO CTA EYEBROW WHITE V1 START */
+
+
+/* ==========================================================
+   YOUR NEXT PRODUCT
+
+   Keep all current typography settings.
+   Only change text color to white.
+========================================================== */
+
+.service-v2
+.service-v2-cta
+.service-v2-cta__inner
+> p {
+  color:
+    #FFFFFF !important;
+}
+
+
+/* VINECO CTA EYEBROW WHITE V1 END */
+
+/* VINECO PACKAGING DESIGN PORTRAIT SLIDER V1 START */
+
+/* ==========================================================
+   SECTION 01 - PRODUCT PACKAGING DESIGN
+   - one large slider
+   - portrait-friendly frame
+   - larger image area
+   - less crop, better clarity
+========================================================== */
+
+#packaging-design .service-v2-packaging-slider {
+  width: 100%;
+  min-width: 0;
+}
+
+#packaging-design .service-v2-packaging-slider__viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  min-height: clamp(380px, 52vw, 680px);
+  overflow: hidden;
+  border: 1px solid rgba(30,42,36,.10);
+  border-radius: 24px;
+  background: #F4F1EA;
+  box-shadow: 0 18px 46px rgba(30,42,36,.08);
+  isolation: isolate;
+}
+
+#packaging-design .service-v2-packaging-slider__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 14px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+  overflow: hidden;
+  background: #F4F1EA;
+  transition:
+    opacity .55s cubic-bezier(.22,.61,.36,1),
+    visibility .55s linear;
+}
+
+#packaging-design .service-v2-packaging-slider__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+#packaging-design .service-v2-packaging-slider__slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#packaging-design .service-v2-packaging-slider__slide img,
+#packaging-design .service-v2-packaging-slider__image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+
+#packaging-design .service-v2-packaging-slider__counter {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 4;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  min-width: 64px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 999px;
+  background: rgba(15,47,36,.88);
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(15,47,36,.20);
+  backdrop-filter: blur(8px);
+}
+
+#packaging-design .service-v2-packaging-slider__counter strong {
+  font-size: 13px;
+  font-weight: 850;
+}
+
+#packaging-design .service-v2-packaging-slider__counter span {
+  color: rgba(255,255,255,.68);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+#packaging-design .service-v2-packaging-slider__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 24px;
+  margin-top: 13px;
+}
+
+#packaging-design .service-v2-packaging-slider__dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(30,42,36,.18);
+  cursor: pointer;
+  transition:
+    width .22s ease,
+    background-color .22s ease,
+    transform .22s ease;
+}
+
+#packaging-design .service-v2-packaging-slider__dot.is-active {
+  width: 28px;
+  background: #F59E0B;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #packaging-design .service-v2-packaging-slider__dot:hover {
+    transform: translateY(-1px);
+    background: rgba(245,158,11,.65);
+  }
+}
+
+@media (max-width: 1023px) {
+  #packaging-design .service-v2-packaging-slider__viewport {
+    aspect-ratio: 5 / 6;
+    min-height: clamp(360px, 70vw, 620px);
+  }
+}
+
+@media (max-width: 767px) {
+  #packaging-design .service-v2-packaging-slider__viewport {
+    aspect-ratio: 5 / 6;
+    min-height: 340px;
+    border-radius: 20px;
+  }
+
+  #packaging-design .service-v2-packaging-slider__slide {
+    padding: 10px;
+  }
+
+  #packaging-design .service-v2-packaging-slider__counter {
+    right: 12px;
+    bottom: 12px;
+    padding: 8px 11px;
+  }
+
+  #packaging-design .service-v2-packaging-slider__dots {
+    margin-top: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #packaging-design .service-v2-packaging-slider__slide {
+    transition: none !important;
+  }
+
+  #packaging-design .service-v2-packaging-slider__dot {
+    transition: none !important;
+  }
+}
+
+/* VINECO PACKAGING DESIGN PORTRAIT SLIDER V1 END */
+
+/* VINECO PACKAGING DESIGN FULL BLEED V1 START */
+
+
+/* ==========================================================
+   SECTION 01 - PRODUCT PACKAGING DESIGN
+
+   FULL BLEED IMAGE
+
+   Remove visible card/frame styling.
+   Let the image become the visual surface itself.
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider {
+  width:
+    100% !important;
+
+  max-width:
+    100% !important;
+
+  min-width:
+    0 !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  background:
+    transparent !important;
+
+  border:
+    0 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* ==========================================================
+   VIEWPORT
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider__viewport {
+  position:
+    relative;
+
+  width:
+    100% !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  overflow:
+    hidden !important;
+
+  border:
+    0 !important;
+
+  outline:
+    0 !important;
+
+  border-radius:
+    22px !important;
+
+  background:
+    transparent !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* ==========================================================
+   SLIDES
+
+   No internal spacing.
+   No different card background.
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider__slide {
+  inset:
+    0 !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  overflow:
+    hidden !important;
+
+  border:
+    0 !important;
+
+  outline:
+    0 !important;
+
+  background:
+    transparent !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* SmartImage may render a picture wrapper. */
+
+#packaging-design
+.service-v2-packaging-slider__slide
+picture {
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  background:
+    transparent !important;
+}
+
+
+/* ==========================================================
+   IMAGE
+
+   FULL BLEED:
+   - fill whole viewport
+   - no internal whitespace created by CSS
+   - no transform scaling
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider__slide
+img,
+
+#packaging-design
+.service-v2-packaging-slider__image {
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  max-width:
+    none !important;
+
+  max-height:
+    none !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  border:
+    0 !important;
+
+  border-radius:
+    0 !important;
+
+  background:
+    transparent !important;
+
+  object-fit:
+    cover !important;
+
+  object-position:
+    center center !important;
+
+  transform:
+    none !important;
+
+  filter:
+    none !important;
+}
+
+
+/* ==========================================================
+   DOT AREA
+
+   Keep it visually separate but never create another card.
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider__dots {
+  background:
+    transparent !important;
+}
+
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media
+(min-width: 900px)
+and
+(max-width: 1180px) {
+
+  #packaging-design
+  .service-v2-packaging-slider__viewport {
+    border-radius:
+      20px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 899px) {
+
+  #packaging-design
+  .service-v2-packaging-slider,
+  #packaging-design
+  .service-v2-packaging-slider__viewport {
+    width:
+      100% !important;
+
+    max-width:
+      100% !important;
+
+    min-width:
+      0 !important;
+  }
+
+
+  #packaging-design
+  .service-v2-packaging-slider__viewport {
+    border:
+      0 !important;
+
+    border-radius:
+      18px !important;
+
+    background:
+      transparent !important;
+
+    box-shadow:
+      none !important;
+  }
+
+
+  #packaging-design
+  .service-v2-packaging-slider__slide {
+    padding:
+      0 !important;
+
+    background:
+      transparent !important;
+  }
+
+
+  #packaging-design
+  .service-v2-packaging-slider__slide
+  img,
+
+  #packaging-design
+  .service-v2-packaging-slider__image {
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    object-fit:
+      cover !important;
+
+    object-position:
+      center center !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  #packaging-design
+  .service-v2-packaging-slider__viewport {
+    border-radius:
+      16px !important;
+  }
+
+
+  #packaging-design
+  .service-v2-packaging-slider__slide {
+    padding:
+      0 !important;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+
+  #packaging-design
+  .service-v2-packaging-slider__viewport {
+    border-radius:
+      14px !important;
+  }
+
+}
+
+
+/* VINECO PACKAGING DESIGN FULL BLEED V1 END */
+
+/* VINECO PACKAGING DESIGN SHARPNESS V2 START */
+
+
+/* ==========================================================
+   PRODUCT PACKAGING DESIGN
+   IMAGE SHARPNESS / INSTANT SLIDE SWAP
+
+   Important:
+   - no opacity crossfade
+   - no transform animation
+   - hidden slides are display:none
+   - active image is rendered directly
+========================================================== */
+
+
+/* ==========================================================
+   SLIDE
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider__slide {
+  display:
+    none !important;
+
+  opacity:
+    1 !important;
+
+  visibility:
+    visible !important;
+
+  transform:
+    none !important;
+
+  filter:
+    none !important;
+
+  transition:
+    none !important;
+
+  will-change:
+    auto !important;
+
+  backface-visibility:
+    visible !important;
+}
+
+
+#packaging-design
+.service-v2-packaging-slider__slide.is-active {
+  display:
+    block !important;
+
+  opacity:
+    1 !important;
+
+  visibility:
+    visible !important;
+}
+
+
+/* ==========================================================
+   PICTURE WRAPPER
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider__slide
+picture {
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  transform:
+    none !important;
+
+  filter:
+    none !important;
+
+  opacity:
+    1 !important;
+
+  transition:
+    none !important;
+
+  will-change:
+    auto !important;
+}
+
+
+/* ==========================================================
+   IMAGE
+
+   Keep full-bleed behavior from the previous patch,
+   but remove common compositor causes of soft text.
+
+   -webkit-optimize-contrast is used as an optional
+   Chromium/WebKit enhancement. Unsupported browsers
+   simply keep their normal raster interpolation.
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider__slide
+img,
+
+#packaging-design
+.service-v2-packaging-slider__image {
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  max-width:
+    none !important;
+
+  max-height:
+    none !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  border:
+    0 !important;
+
+  object-fit:
+    cover !important;
+
+  object-position:
+    center center !important;
+
+  transform:
+    none !important;
+
+  scale:
+    none !important;
+
+  filter:
+    none !important;
+
+  opacity:
+    1 !important;
+
+  transition:
+    none !important;
+
+  will-change:
+    auto !important;
+
+  backface-visibility:
+    visible !important;
+
+  image-rendering:
+    auto;
+
+  image-rendering:
+    -webkit-optimize-contrast;
+}
+
+
+/* ==========================================================
+   VIEWPORT
+
+   Prevent transforms / filters on the actual image container.
+========================================================== */
+
+#packaging-design
+.service-v2-packaging-slider__viewport {
+  transform:
+    none !important;
+
+  filter:
+    none !important;
+
+  will-change:
+    auto !important;
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+
+   This slider already swaps instantly, so no visual
+   movement/fade animation is applied.
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #packaging-design
+  .service-v2-packaging-slider__slide,
+
+  #packaging-design
+  .service-v2-packaging-slider__image {
+    transition:
+      none !important;
+
+    animation:
+      none !important;
+  }
+
+}
+
+
+/* VINECO PACKAGING DESIGN SHARPNESS V2 END */
+

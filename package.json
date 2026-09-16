@@ -4,9 +4,10 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "npm run images:service && vite",
+    "build": "npm run images:service && vite build",
+    "preview": "vite preview",
+    "images:service": "node tools/generate-service-responsive-images.mjs"
   },
   "dependencies": {
     "@fontsource-variable/lexend": "^5.3.0",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "4.3.3",
     "@vitejs/plugin-react": "6.0.5",
+    "sharp": "^0.34.3",
     "tailwindcss": "4.3.3",
     "vite": "8.2.1"
   }
