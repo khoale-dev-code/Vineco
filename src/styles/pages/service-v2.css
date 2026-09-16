@@ -5965,3 +5965,149 @@ img,
 
 /* VINECO PACKAGING DESIGN SHARPNESS V2 END */
 
+/* VINECO CUSTOM PACKAGING MOBILE SWIPE V2 START */
+
+
+/* ==========================================================
+   CUSTOM PACKAGING & FULFILLMENT
+   MOBILE SWIPE
+
+   pan-y keeps native vertical scrolling.
+========================================================== */
+
+#custom-packaging
+.service-v2-packaging-slider__viewport {
+  touch-action:
+    pan-y;
+
+  -ms-touch-action:
+    pan-y;
+
+  overscroll-behavior-x:
+    contain;
+
+  -webkit-user-select:
+    none;
+
+  user-select:
+    none;
+
+  -webkit-touch-callout:
+    none;
+}
+
+
+/*
+ * Prevent browser native image dragging from
+ * interfering with the swipe gesture.
+ */
+
+#custom-packaging
+.service-v2-packaging-slider__viewport
+img {
+  -webkit-user-drag:
+    none;
+
+  user-select:
+    none;
+}
+
+
+/* ==========================================================
+   MOBILE + TABLET
+========================================================== */
+
+@media (max-width: 899px) {
+
+  /*
+   * Current VinEco arrow buttons are inside viewport.
+   * Hide them because mobile uses swipe.
+   */
+
+  #custom-packaging
+  .service-v2-packaging-slider__viewport
+  > button {
+    display:
+      none !important;
+
+    pointer-events:
+      none !important;
+  }
+
+
+  /*
+   * Compatibility with named arrow classes.
+   */
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow,
+
+  #custom-packaging
+  .service-v2-packaging-slider__nav-button,
+
+  #custom-packaging
+  .service-v2-packaging-slider__desktop-arrow,
+
+  #custom-packaging
+  .service-v2-packaging-slider__prev,
+
+  #custom-packaging
+  .service-v2-packaging-slider__next {
+    display:
+      none !important;
+
+    pointer-events:
+      none !important;
+  }
+
+
+  /*
+   * Keep image swipe natural.
+   */
+  #custom-packaging
+  .service-v2-packaging-slider__viewport {
+    cursor:
+      default;
+  }
+
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 900px) {
+
+  /*
+   * Do not force display because existing arrow CSS owns
+   * dimensions/layout. Only restore pointer interaction.
+   */
+
+  #custom-packaging
+  .service-v2-packaging-slider__viewport
+  > button,
+
+  #custom-packaging
+  .service-v2-packaging-slider__arrow,
+
+  #custom-packaging
+  .service-v2-packaging-slider__nav-button,
+
+  #custom-packaging
+  .service-v2-packaging-slider__desktop-arrow,
+
+  #custom-packaging
+  .service-v2-packaging-slider__prev,
+
+  #custom-packaging
+  .service-v2-packaging-slider__next {
+    pointer-events:
+      auto;
+  }
+
+}
+
+
+/* VINECO CUSTOM PACKAGING MOBILE SWIPE V2 END */
+

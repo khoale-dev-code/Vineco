@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Reveal from "../ui/Reveal";
 import ServiceResponsiveImage from "./ServiceResponsiveImage";
@@ -268,7 +268,7 @@ function PackagingImageSlider({
 
   /*
    * Product Packaging Design:
-   * - autoplay exactly every 2 seconds
+   * - autoplay every 1.5 seconds
    * - hover / focus / touch do not pause it
    *
    * Custom Packaging:
@@ -280,7 +280,7 @@ function PackagingImageSlider({
 
   const autoplayMs =
     isPackagingDesignSlider
-      ? 2000
+      ? 1500
       : 3000;
 
   /* VINECO PACKAGING DESIGN AUTOPLAY V2 END */
@@ -306,14 +306,13 @@ function PackagingImageSlider({
 
 
     /*
-     * For packaging-design we intentionally do not
-     * pause autoplay when hovering/focusing/touching.
+     * Pause autoplay whenever the user is interacting
+     * with the slider.
      *
-     * Other packaging sliders keep their existing
-     * interaction pause behavior.
+     * packaging-design resumes with a fresh 1.5-second
+     * cycle after the pointer leaves.
      */
     if (
-      !isPackagingDesignSlider &&
       paused
     ) {
       return undefined;
@@ -403,6 +402,189 @@ function PackagingImageSlider({
 
   /* VINECO SLIDER ARROW HANDLERS FIX END */
 
+  /* VINECO CUSTOM PACKAGING MOBILE SWIPE V2 START */
+
+
+  /*
+   * Swipe is intended for:
+   * Custom Packaging & Fulfillment.
+   *
+   * Product Packaging Design uses mode="portrait"
+   * and is intentionally excluded.
+   */
+  const enableMobileSwipe =
+    mode !== "portrait";
+
+
+  const swipeStartRef =
+    useRef(null);
+
+
+  const SWIPE_THRESHOLD =
+    50;
+
+
+  const SWIPE_DIRECTION_RATIO =
+    1.2;
+
+
+  const handleSwipeTouchStart = (
+    event
+  ) => {
+
+    if (
+      !enableMobileSwipe ||
+      safeImages.length <= 1
+    ) {
+      return;
+    }
+
+
+    const touch =
+      event.touches?.[0];
+
+
+    if (!touch) {
+      return;
+    }
+
+
+    swipeStartRef.current = {
+      x:
+        touch.clientX,
+
+      y:
+        touch.clientY,
+    };
+
+
+    /*
+     * Pause autoplay while finger is down.
+     */
+    setPaused(true);
+  };
+
+
+  const handleSwipeTouchEnd = (
+    event
+  ) => {
+
+    if (!enableMobileSwipe) {
+      return;
+    }
+
+
+    const start =
+      swipeStartRef.current;
+
+
+    swipeStartRef.current =
+      null;
+
+
+    const touch =
+      event.changedTouches?.[0];
+
+
+    if (
+      !start ||
+      !touch ||
+      safeImages.length <= 1
+    ) {
+
+      setPaused(false);
+
+      return;
+    }
+
+
+    const deltaX =
+      touch.clientX -
+      start.x;
+
+
+    const deltaY =
+      touch.clientY -
+      start.y;
+
+
+    const horizontalDistance =
+      Math.abs(
+        deltaX
+      );
+
+
+    const verticalDistance =
+      Math.abs(
+        deltaY
+      );
+
+
+    /*
+     * Swipe only when:
+     * - at least 50px horizontally
+     * - horizontal movement clearly dominates
+     *   vertical movement
+     */
+    const isHorizontalSwipe =
+      horizontalDistance >=
+        SWIPE_THRESHOLD &&
+
+      horizontalDistance >
+        verticalDistance *
+        SWIPE_DIRECTION_RATIO;
+
+
+    if (isHorizontalSwipe) {
+
+      setActiveIndex(
+        (current) => {
+
+          /*
+           * Swipe left -> next
+           */
+          if (deltaX < 0) {
+
+            return (
+              current + 1
+            ) % safeImages.length;
+          }
+
+
+          /*
+           * Swipe right -> previous
+           */
+          return (
+            current -
+            1 +
+            safeImages.length
+          ) % safeImages.length;
+        }
+      );
+    }
+
+
+    /*
+     * Resume autoplay after release.
+     */
+    setPaused(false);
+  };
+
+
+  const handleSwipeTouchCancel =
+    () => {
+
+      swipeStartRef.current =
+        null;
+
+
+      setPaused(false);
+    };
+
+
+  /* VINECO CUSTOM PACKAGING MOBILE SWIPE V2 END */
+
+
   if (safeImages.length === 0) {
     return null;
   }
@@ -441,7 +623,27 @@ function PackagingImageSlider({
       }
     >
 
-      <div className="service-v2-packaging-slider__viewport">
+      <div
+        className="service-v2-packaging-slider__viewport"
+
+        data-mobile-swipe={
+          enableMobileSwipe
+            ? "true"
+            : undefined
+        }
+
+        onTouchStart={
+          handleSwipeTouchStart
+        }
+
+        onTouchEnd={
+          handleSwipeTouchEnd
+        }
+
+        onTouchCancel={
+          handleSwipeTouchCancel
+        }
+      >
 
         {safeImages.map(
           (src, imageIndex) => {
