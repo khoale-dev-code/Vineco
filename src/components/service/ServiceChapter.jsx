@@ -229,18 +229,43 @@ function QualityControlSteps({
 
 
 /* =========================================================
-   SERVICE CHAPTER
+   SERVICE CHAPTER — SLIDER SECTION GROUPS
+
+   PACKAGING_SLIDER_IDS:
+   Tất cả section dùng chung PackagingImageSlider
+   thay vì collage / grid ảnh tĩnh.
+
+   PORTRAIT_SLIDER_IDS:
+   Trong nhóm trên, những section dùng mode "portrait"
+   (khung lớn, tự chuyển, không mũi tên/swipe kiểu 4:3).
+
+   - packaging-design (01) : portrait
+   - labels             (02) : portrait
+   - engraving          (03) : portrait
+   - custom-packaging   (04) : default (giữ nguyên slider 4:3 + arrow + swipe)
 ========================================================= */
 
+const PACKAGING_SLIDER_IDS = [
+  "packaging-design",
+  "labels",
+  "engraving",
+  "custom-packaging",
+];
+
+const PORTRAIT_SLIDER_IDS = [
+  "packaging-design",
+  "labels",
+  "engraving",
+];
 
 
 /* =========================================================
    CUSTOM PACKAGING IMAGE SLIDER
 
    - One large visual
-   - Auto changes every 3 seconds
+   - Auto changes (interval depends on mode)
    - Loops continuously
-   - Pauses on hover / focus / touch
+   - Pauses on hover / focus / touch (mode "default" only)
    - Reduced-motion safe
 ========================================================= */
 
@@ -267,11 +292,11 @@ function PackagingImageSlider({
   /* VINECO PACKAGING DESIGN AUTOPLAY V2 START */
 
   /*
-   * Product Packaging Design:
+   * Product Packaging Design / Brand Details / Laser Engraving:
    * - autoplay every 1.5 seconds
    * - hover / focus / touch do not pause it
    *
-   * Custom Packaging:
+   * Custom Packaging & Fulfillment:
    * - keep 3 second autoplay
    * - keep existing pause behavior
    */
@@ -309,7 +334,7 @@ function PackagingImageSlider({
      * Pause autoplay whenever the user is interacting
      * with the slider.
      *
-     * packaging-design resumes with a fresh 1.5-second
+     * portrait sliders resume with a fresh 1.5-second
      * cycle after the pointer leaves.
      */
     if (
@@ -329,9 +354,9 @@ function PackagingImageSlider({
     /*
      * Existing sliders still respect reduced motion.
      *
-     * packaging-design performs an instant image swap
+     * portrait sliders perform an instant image swap
      * with no fade/transform animation, so it can keep
-     * the requested 2-second automatic change.
+     * the requested automatic change.
      */
     if (
       prefersReducedMotion &&
@@ -409,8 +434,8 @@ function PackagingImageSlider({
    * Swipe is intended for:
    * Custom Packaging & Fulfillment.
    *
-   * Product Packaging Design uses mode="portrait"
-   * and is intentionally excluded.
+   * Portrait-mode sliders (01/02/03) are
+   * intentionally excluded.
    */
   const enableMobileSwipe =
     mode !== "portrait";
@@ -690,7 +715,8 @@ function PackagingImageSlider({
         )}
 
 
-        {safeImages.length > 1 && (
+        {safeImages.length > 1 &&
+          mode !== "portrait" && (
           <>
 
             <button
@@ -823,14 +849,11 @@ export default function ServiceChapter({
       : [];
 
   const usePackagingSlider =
-    (
-      service.id === "custom-packaging" ||
-      service.id === "packaging-design"
-    ) &&
+    PACKAGING_SLIDER_IDS.includes(service.id) &&
     images.length > 0;
 
   const packagingSliderMode =
-    service.id === "packaging-design"
+    PORTRAIT_SLIDER_IDS.includes(service.id)
       ? "portrait"
       : "default";
 

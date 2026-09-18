@@ -1610,6 +1610,10 @@ summary strong {
  *
  * - Chapters 01 / 02 / 03:
  *   two equal large images
+ *   (SUPERSEDED: 01/02/03 now render via PackagingImageSlider,
+ *   see VINECO PACKAGING DESIGN PORTRAIT SLIDER V1 below.
+ *   The rule below only still matters for any chapter that
+ *   keeps using the plain NORMAL COLLAGE markup.)
  *
  * - Chapter 04:
  *   four equal large images
@@ -1625,7 +1629,7 @@ summary strong {
 
   /* ========================================================
      TWO IMAGE CHAPTERS
-     Packaging / Labels / Laser Engraving
+     (legacy NORMAL COLLAGE markup, if ever used again)
   ======================================================== */
 
   .service-v2-collage:not(.service-v2-collage--grid) {
@@ -5235,19 +5239,29 @@ and
 /* VINECO PACKAGING DESIGN PORTRAIT SLIDER V1 START */
 
 /* ==========================================================
-   SECTION 01 - PRODUCT PACKAGING DESIGN
-   - one large slider
-   - portrait-friendly frame
+   SECTION 01 / 02 / 03
+   - Product Packaging Design (#packaging-design)
+   - Brand Details (#labels)
+   - Laser Engraving (#engraving)
+
+   All three now share the same large,
+   auto-rotating, portrait-friendly frame,
+   instead of the old two-image-side-by-side collage.
+
    - larger image area
    - less crop, better clarity
 ========================================================== */
 
-#packaging-design .service-v2-packaging-slider {
+#packaging-design .service-v2-packaging-slider,
+#labels .service-v2-packaging-slider,
+#engraving .service-v2-packaging-slider {
   width: 100%;
   min-width: 0;
 }
 
-#packaging-design .service-v2-packaging-slider__viewport {
+#packaging-design .service-v2-packaging-slider__viewport,
+#labels .service-v2-packaging-slider__viewport,
+#engraving .service-v2-packaging-slider__viewport {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -5260,7 +5274,9 @@ and
   isolation: isolate;
 }
 
-#packaging-design .service-v2-packaging-slider__slide {
+#packaging-design .service-v2-packaging-slider__slide,
+#labels .service-v2-packaging-slider__slide,
+#engraving .service-v2-packaging-slider__slide {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -5277,20 +5293,28 @@ and
     visibility .55s linear;
 }
 
-#packaging-design .service-v2-packaging-slider__slide.is-active {
+#packaging-design .service-v2-packaging-slider__slide.is-active,
+#labels .service-v2-packaging-slider__slide.is-active,
+#engraving .service-v2-packaging-slider__slide.is-active {
   opacity: 1;
   visibility: visible;
   z-index: 1;
 }
 
-#packaging-design .service-v2-packaging-slider__slide picture {
+#packaging-design .service-v2-packaging-slider__slide picture,
+#labels .service-v2-packaging-slider__slide picture,
+#engraving .service-v2-packaging-slider__slide picture {
   display: block;
   width: 100%;
   height: 100%;
 }
 
 #packaging-design .service-v2-packaging-slider__slide img,
-#packaging-design .service-v2-packaging-slider__image {
+#packaging-design .service-v2-packaging-slider__image,
+#labels .service-v2-packaging-slider__slide img,
+#labels .service-v2-packaging-slider__image,
+#engraving .service-v2-packaging-slider__slide img,
+#engraving .service-v2-packaging-slider__image {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
@@ -5302,7 +5326,9 @@ and
   transform: none !important;
 }
 
-#packaging-design .service-v2-packaging-slider__counter {
+#packaging-design .service-v2-packaging-slider__counter,
+#labels .service-v2-packaging-slider__counter,
+#engraving .service-v2-packaging-slider__counter {
   position: absolute;
   right: 16px;
   bottom: 16px;
@@ -5320,18 +5346,24 @@ and
   backdrop-filter: blur(8px);
 }
 
-#packaging-design .service-v2-packaging-slider__counter strong {
+#packaging-design .service-v2-packaging-slider__counter strong,
+#labels .service-v2-packaging-slider__counter strong,
+#engraving .service-v2-packaging-slider__counter strong {
   font-size: 13px;
   font-weight: 850;
 }
 
-#packaging-design .service-v2-packaging-slider__counter span {
+#packaging-design .service-v2-packaging-slider__counter span,
+#labels .service-v2-packaging-slider__counter span,
+#engraving .service-v2-packaging-slider__counter span {
   color: rgba(255,255,255,.68);
   font-size: 10px;
   font-weight: 700;
 }
 
-#packaging-design .service-v2-packaging-slider__dots {
+#packaging-design .service-v2-packaging-slider__dots,
+#labels .service-v2-packaging-slider__dots,
+#engraving .service-v2-packaging-slider__dots {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5340,7 +5372,9 @@ and
   margin-top: 13px;
 }
 
-#packaging-design .service-v2-packaging-slider__dot {
+#packaging-design .service-v2-packaging-slider__dot,
+#labels .service-v2-packaging-slider__dot,
+#engraving .service-v2-packaging-slider__dot {
   width: 8px;
   height: 8px;
   flex: 0 0 auto;
@@ -5356,53 +5390,71 @@ and
     transform .22s ease;
 }
 
-#packaging-design .service-v2-packaging-slider__dot.is-active {
+#packaging-design .service-v2-packaging-slider__dot.is-active,
+#labels .service-v2-packaging-slider__dot.is-active,
+#engraving .service-v2-packaging-slider__dot.is-active {
   width: 28px;
   background: #F59E0B;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  #packaging-design .service-v2-packaging-slider__dot:hover {
+  #packaging-design .service-v2-packaging-slider__dot:hover,
+  #labels .service-v2-packaging-slider__dot:hover,
+  #engraving .service-v2-packaging-slider__dot:hover {
     transform: translateY(-1px);
     background: rgba(245,158,11,.65);
   }
 }
 
 @media (max-width: 1023px) {
-  #packaging-design .service-v2-packaging-slider__viewport {
+  #packaging-design .service-v2-packaging-slider__viewport,
+  #labels .service-v2-packaging-slider__viewport,
+  #engraving .service-v2-packaging-slider__viewport {
     aspect-ratio: 5 / 6;
     min-height: clamp(360px, 70vw, 620px);
   }
 }
 
 @media (max-width: 767px) {
-  #packaging-design .service-v2-packaging-slider__viewport {
+  #packaging-design .service-v2-packaging-slider__viewport,
+  #labels .service-v2-packaging-slider__viewport,
+  #engraving .service-v2-packaging-slider__viewport {
     aspect-ratio: 5 / 6;
     min-height: 340px;
     border-radius: 20px;
   }
 
-  #packaging-design .service-v2-packaging-slider__slide {
+  #packaging-design .service-v2-packaging-slider__slide,
+  #labels .service-v2-packaging-slider__slide,
+  #engraving .service-v2-packaging-slider__slide {
     padding: 10px;
   }
 
-  #packaging-design .service-v2-packaging-slider__counter {
+  #packaging-design .service-v2-packaging-slider__counter,
+  #labels .service-v2-packaging-slider__counter,
+  #engraving .service-v2-packaging-slider__counter {
     right: 12px;
     bottom: 12px;
     padding: 8px 11px;
   }
 
-  #packaging-design .service-v2-packaging-slider__dots {
+  #packaging-design .service-v2-packaging-slider__dots,
+  #labels .service-v2-packaging-slider__dots,
+  #engraving .service-v2-packaging-slider__dots {
     margin-top: 11px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #packaging-design .service-v2-packaging-slider__slide {
+  #packaging-design .service-v2-packaging-slider__slide,
+  #labels .service-v2-packaging-slider__slide,
+  #engraving .service-v2-packaging-slider__slide {
     transition: none !important;
   }
 
-  #packaging-design .service-v2-packaging-slider__dot {
+  #packaging-design .service-v2-packaging-slider__dot,
+  #labels .service-v2-packaging-slider__dot,
+  #engraving .service-v2-packaging-slider__dot {
     transition: none !important;
   }
 }
@@ -5413,7 +5465,8 @@ and
 
 
 /* ==========================================================
-   SECTION 01 - PRODUCT PACKAGING DESIGN
+   SECTION 01 / 02 / 03
+   Product Packaging Design / Brand Details / Laser Engraving
 
    FULL BLEED IMAGE
 
@@ -5422,6 +5475,10 @@ and
 ========================================================== */
 
 #packaging-design
+.service-v2-packaging-slider,
+#labels
+.service-v2-packaging-slider,
+#engraving
 .service-v2-packaging-slider {
   width:
     100% !important;
@@ -5454,6 +5511,10 @@ and
 ========================================================== */
 
 #packaging-design
+.service-v2-packaging-slider__viewport,
+#labels
+.service-v2-packaging-slider__viewport,
+#engraving
 .service-v2-packaging-slider__viewport {
   position:
     relative;
@@ -5495,6 +5556,10 @@ and
 ========================================================== */
 
 #packaging-design
+.service-v2-packaging-slider__slide,
+#labels
+.service-v2-packaging-slider__slide,
+#engraving
 .service-v2-packaging-slider__slide {
   inset:
     0 !important;
@@ -5532,6 +5597,12 @@ and
 
 #packaging-design
 .service-v2-packaging-slider__slide
+picture,
+#labels
+.service-v2-packaging-slider__slide
+picture,
+#engraving
+.service-v2-packaging-slider__slide
 picture {
   display:
     block !important;
@@ -5567,6 +5638,20 @@ picture {
 img,
 
 #packaging-design
+.service-v2-packaging-slider__image,
+
+#labels
+.service-v2-packaging-slider__slide
+img,
+
+#labels
+.service-v2-packaging-slider__image,
+
+#engraving
+.service-v2-packaging-slider__slide
+img,
+
+#engraving
 .service-v2-packaging-slider__image {
   display:
     block !important;
@@ -5619,6 +5704,10 @@ img,
 ========================================================== */
 
 #packaging-design
+.service-v2-packaging-slider__dots,
+#labels
+.service-v2-packaging-slider__dots,
+#engraving
 .service-v2-packaging-slider__dots {
   background:
     transparent !important;
@@ -5635,6 +5724,10 @@ and
 (max-width: 1180px) {
 
   #packaging-design
+  .service-v2-packaging-slider__viewport,
+  #labels
+  .service-v2-packaging-slider__viewport,
+  #engraving
   .service-v2-packaging-slider__viewport {
     border-radius:
       20px !important;
@@ -5652,6 +5745,14 @@ and
   #packaging-design
   .service-v2-packaging-slider,
   #packaging-design
+  .service-v2-packaging-slider__viewport,
+  #labels
+  .service-v2-packaging-slider,
+  #labels
+  .service-v2-packaging-slider__viewport,
+  #engraving
+  .service-v2-packaging-slider,
+  #engraving
   .service-v2-packaging-slider__viewport {
     width:
       100% !important;
@@ -5665,6 +5766,10 @@ and
 
 
   #packaging-design
+  .service-v2-packaging-slider__viewport,
+  #labels
+  .service-v2-packaging-slider__viewport,
+  #engraving
   .service-v2-packaging-slider__viewport {
     border:
       0 !important;
@@ -5681,6 +5786,10 @@ and
 
 
   #packaging-design
+  .service-v2-packaging-slider__slide,
+  #labels
+  .service-v2-packaging-slider__slide,
+  #engraving
   .service-v2-packaging-slider__slide {
     padding:
       0 !important;
@@ -5695,6 +5804,20 @@ and
   img,
 
   #packaging-design
+  .service-v2-packaging-slider__image,
+
+  #labels
+  .service-v2-packaging-slider__slide
+  img,
+
+  #labels
+  .service-v2-packaging-slider__image,
+
+  #engraving
+  .service-v2-packaging-slider__slide
+  img,
+
+  #engraving
   .service-v2-packaging-slider__image {
     width:
       100% !important;
@@ -5719,6 +5842,10 @@ and
 @media (max-width: 640px) {
 
   #packaging-design
+  .service-v2-packaging-slider__viewport,
+  #labels
+  .service-v2-packaging-slider__viewport,
+  #engraving
   .service-v2-packaging-slider__viewport {
     border-radius:
       16px !important;
@@ -5726,6 +5853,10 @@ and
 
 
   #packaging-design
+  .service-v2-packaging-slider__slide,
+  #labels
+  .service-v2-packaging-slider__slide,
+  #engraving
   .service-v2-packaging-slider__slide {
     padding:
       0 !important;
@@ -5741,6 +5872,10 @@ and
 @media (max-width: 380px) {
 
   #packaging-design
+  .service-v2-packaging-slider__viewport,
+  #labels
+  .service-v2-packaging-slider__viewport,
+  #engraving
   .service-v2-packaging-slider__viewport {
     border-radius:
       14px !important;
@@ -5755,7 +5890,8 @@ and
 
 
 /* ==========================================================
-   PRODUCT PACKAGING DESIGN
+   SECTION 01 / 02 / 03
+   Product Packaging Design / Brand Details / Laser Engraving
    IMAGE SHARPNESS / INSTANT SLIDE SWAP
 
    Important:
@@ -5771,6 +5907,10 @@ and
 ========================================================== */
 
 #packaging-design
+.service-v2-packaging-slider__slide,
+#labels
+.service-v2-packaging-slider__slide,
+#engraving
 .service-v2-packaging-slider__slide {
   display:
     none !important;
@@ -5799,6 +5939,10 @@ and
 
 
 #packaging-design
+.service-v2-packaging-slider__slide.is-active,
+#labels
+.service-v2-packaging-slider__slide.is-active,
+#engraving
 .service-v2-packaging-slider__slide.is-active {
   display:
     block !important;
@@ -5816,6 +5960,12 @@ and
 ========================================================== */
 
 #packaging-design
+.service-v2-packaging-slider__slide
+picture,
+#labels
+.service-v2-packaging-slider__slide
+picture,
+#engraving
 .service-v2-packaging-slider__slide
 picture {
   display:
@@ -5860,6 +6010,20 @@ picture {
 img,
 
 #packaging-design
+.service-v2-packaging-slider__image,
+
+#labels
+.service-v2-packaging-slider__slide
+img,
+
+#labels
+.service-v2-packaging-slider__image,
+
+#engraving
+.service-v2-packaging-slider__slide
+img,
+
+#engraving
 .service-v2-packaging-slider__image {
   display:
     block !important;
@@ -5927,6 +6091,10 @@ img,
 ========================================================== */
 
 #packaging-design
+.service-v2-packaging-slider__viewport,
+#labels
+.service-v2-packaging-slider__viewport,
+#engraving
 .service-v2-packaging-slider__viewport {
   transform:
     none !important;
@@ -5952,6 +6120,18 @@ img,
   .service-v2-packaging-slider__slide,
 
   #packaging-design
+  .service-v2-packaging-slider__image,
+
+  #labels
+  .service-v2-packaging-slider__slide,
+
+  #labels
+  .service-v2-packaging-slider__image,
+
+  #engraving
+  .service-v2-packaging-slider__slide,
+
+  #engraving
   .service-v2-packaging-slider__image {
     transition:
       none !important;
@@ -6111,3 +6291,140 @@ img {
 
 /* VINECO CUSTOM PACKAGING MOBILE SWIPE V2 END */
 
+
+/* VINECO SERVICE IMAGE CONSISTENCY V1 START */
+
+
+/* ==========================================================
+   SERVICE IMAGE CONSISTENCY
+
+   Make image 2,3 render like image 1:
+   - full frame
+   - no whitespace
+   - sharper desktop rendering
+
+   NOTE: sections 01/02/03/04 no longer render this
+   .service-v2-collage markup (they use
+   PackagingImageSlider instead), so this rule now only
+   affects the Quality Control figures and any future
+   chapter that falls back to the plain collage layout.
+========================================================== */
+
+
+.service-v2-feature
+.service-v2-collage figure,
+.service-v2-quality-layout figure {
+
+
+overflow:
+hidden;
+
+background:
+transparent;
+
+}
+
+
+
+.service-v2-feature
+.service-v2-collage img,
+.service-v2-quality-layout img {
+
+
+display:
+block !important;
+
+
+width:
+100% !important;
+
+
+height:
+100% !important;
+
+
+max-width:
+none !important;
+
+
+max-height:
+none !important;
+
+
+margin:
+0 !important;
+
+
+padding:
+0 !important;
+
+
+object-fit:
+cover !important;
+
+
+object-position:
+center center !important;
+
+
+transform:
+none !important;
+
+
+filter:
+none !important;
+
+
+image-rendering:
+auto;
+
+}
+
+
+
+/*
+Desktop:
+larger visual area
+*/
+
+@media(min-width:1024px){
+
+.service-v2-feature
+.service-v2-collage__main,
+.service-v2-feature
+.service-v2-collage__secondary,
+.service-v2-feature
+.service-v2-collage__third {
+
+
+overflow:
+hidden;
+
+}
+
+
+}
+
+
+
+/*
+Mobile:
+keep natural full width
+*/
+
+@media(max-width:899px){
+
+
+.service-v2-feature
+.service-v2-collage img {
+
+
+object-fit:
+cover !important;
+
+
+}
+
+
+
+}
