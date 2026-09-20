@@ -6,6 +6,7 @@ import SmartImage from "../ui/SmartImage";
 import SiteIcon from "../ui/SiteIcon";
 
 
+import I18nScope from "../../i18n/I18nScope";
 /* ==========================================================
    REAL VINECO PROCESS DATA
 ========================================================== */
@@ -510,6 +511,7 @@ function ProcessStoriesSection() {
   }
 
   return (
+    <I18nScope namespaces={["home","common"]}>
     <section className="inside-reviews">
       <div className="inside-extras-shell">
         <Reveal>
@@ -633,6 +635,7 @@ function ProcessStoriesSection() {
         </div>
       </div>
     </section>
+    </I18nScope>
   );
 }
 
@@ -643,6 +646,7 @@ function ProcessStoriesSection() {
 
 function PartnerBanner() {
   return (
+    <I18nScope namespaces={["home","common"]}>
     <section className="overflow-hidden bg-[#FAF8F5] py-12 sm:py-14 lg:py-16">
       <div className="mx-auto w-full max-w-[1480px] px-4 sm:px-6 lg:px-8">
 
@@ -1002,6 +1006,7 @@ function PartnerBanner() {
 
       </div>
     </section>
+    </I18nScope>
   );
 }
 
@@ -1011,6 +1016,7 @@ function PartnerBanner() {
 ========================================================== */
 function QualitySection() {
   return (
+    <I18nScope namespaces={["home","common"]}>
     <section className="inside-quality">
       <div className="inside-extras-shell">
 
@@ -1217,6 +1223,7 @@ function QualitySection() {
         </div>
       </div>
     </section>
+    </I18nScope>
   );
 }
 
@@ -1227,10 +1234,12 @@ function QualitySection() {
 
 export default function InsideVinEcoExtras() {
   return (
+    <I18nScope namespaces={["home","common"]}>
     <>
       <ProcessStoriesSection />
       <PartnerBanner />
       <QualitySection />
     </>
+    </I18nScope>
   );
 }

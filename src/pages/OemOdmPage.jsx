@@ -10,8 +10,10 @@ import OemProcess from "../components/oem/OemProcess";
 import OemCapabilities from "../components/oem/OemCapabilities";
 
 
+import I18nScope from "../i18n/I18nScope";
 export default function OemOdmPage() {
   return (
+    <I18nScope namespaces={["oem","common","products"]}>
     <>
 
       <Header />
@@ -520,5 +522,6 @@ export default function OemOdmPage() {
 
       <Footer />
     </>
+    </I18nScope>
   );
 }

@@ -7,6 +7,7 @@ import {
 import Reveal from "../ui/Reveal";
 import SiteIcon from "../ui/SiteIcon";
 
+import I18nScope from "../../i18n/I18nScope";
 import {
   oemOdmContent,
 } from "../../data/oemOdmContent";
@@ -188,6 +189,7 @@ export default function OemProcess() {
 
 
   return (
+    <I18nScope namespaces={["oem","common"]}>
     <section
       ref={sectionRef}
       id="oem-process"
@@ -853,5 +855,6 @@ export default function OemProcess() {
       </div>
 
     </section>
+    </I18nScope>
   );
 }

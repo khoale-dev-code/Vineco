@@ -1,6 +1,7 @@
 import Reveal from "../ui/Reveal";
 import SmartImage from "../ui/SmartImage";
 
+import I18nScope from "../../i18n/I18nScope";
 const whyItems = [
   {
     number: "01",
@@ -30,6 +31,7 @@ const whyItems = [
 
 function WhyCard({ item, index }) {
   return (
+    <I18nScope namespaces={["home","common"]}>
     <Reveal
       variant="up"
       delay={index * 70}
@@ -105,11 +107,13 @@ function WhyCard({ item, index }) {
         </div>
       </article>
     </Reveal>
+    </I18nScope>
   );
 }
 
 export default function WhyVinEcoSection() {
   return (
+    <I18nScope namespaces={["home","common"]}>
     <section
       id="why-vineco"
       className="overflow-hidden bg-[#FAF8F5] py-14 sm:py-16 lg:py-20"
@@ -175,5 +179,6 @@ export default function WhyVinEcoSection() {
         </div>
       </div>
     </section>
+    </I18nScope>
   );
 }

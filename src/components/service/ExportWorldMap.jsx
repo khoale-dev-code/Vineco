@@ -7,6 +7,7 @@ import {
 import { feature } from "topojson-client";
 import world from "world-atlas/countries-110m.json";
 
+import I18nScope from "../../i18n/I18nScope";
 const WIDTH = 900;
 const HEIGHT = 460;
 
@@ -170,6 +171,7 @@ export default function ExportWorldMap() {
   }));
 
   return (
+    <I18nScope namespaces={["service","common"]}>
     <div className="relative w-full">
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
@@ -330,5 +332,6 @@ export default function ExportWorldMap() {
         })}
       </svg>
     </div>
+    </I18nScope>
   );
 }

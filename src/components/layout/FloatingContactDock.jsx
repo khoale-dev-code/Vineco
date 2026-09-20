@@ -2,6 +2,7 @@
 import { projectData } from "../../data/projectData";
 
 
+import I18nScope from "../../i18n/I18nScope";
 function SocialIcon({ type }) {
   const common = {
     width: 23,
@@ -267,6 +268,7 @@ function SocialButton({
   }
 
   return (
+    <I18nScope namespaces={["common"]}>
     <a
       href={href}
       target={external ? "_blank" : undefined}
@@ -282,6 +284,7 @@ function SocialButton({
     >
       {content}
     </a>
+    </I18nScope>
   );
 }
 
@@ -327,6 +330,7 @@ export default function FloatingContactDock() {
   ];
 
   return (
+    <I18nScope namespaces={["common"]}>
     <aside
       aria-label="VinEco social and contact links"
       className={[
@@ -343,5 +347,6 @@ export default function FloatingContactDock() {
         />
       ))}
     </aside>
+    </I18nScope>
   );
 }

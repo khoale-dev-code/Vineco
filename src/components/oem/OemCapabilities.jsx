@@ -1,6 +1,7 @@
 import Reveal from "../ui/Reveal";
 import SiteIcon from "../ui/SiteIcon";
 
+import I18nScope from "../../i18n/I18nScope";
 import {
   oemOdmContent,
 } from "../../data/oemOdmContent";
@@ -31,6 +32,7 @@ function SectionLabel({
 
 export default function OemCapabilities() {
   return (
+    <I18nScope namespaces={["oem","products","common"]}>
     <section
       id="oem-capabilities"
       className="bg-white py-20 sm:py-24 lg:py-28"
@@ -200,5 +202,6 @@ export default function OemCapabilities() {
       </div>
 
     </section>
+    </I18nScope>
   );
 }

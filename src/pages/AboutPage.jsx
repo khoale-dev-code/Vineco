@@ -7,6 +7,7 @@ import SmartImage from "../components/ui/SmartImage";
 import SiteIcon from "../components/ui/SiteIcon";
 
 
+import I18nScope from "../i18n/I18nScope";
 /* ==========================================================
    CONTENT
 ========================================================== */
@@ -55,6 +56,7 @@ function ImageFrame({
   position = "object-center",
 }) {
   return (
+    <I18nScope namespaces={["about","common"]}>
     <div
       className="
         aspect-[4/3]
@@ -80,6 +82,7 @@ function ImageFrame({
         ].join(" ")}
       />
     </div>
+    </I18nScope>
   );
 }
 
@@ -90,6 +93,7 @@ function ImageFrame({
 
 export default function AboutPage() {
   return (
+    <I18nScope namespaces={["about","common"]}>
     <>
       <Header />
 
@@ -768,5 +772,6 @@ export default function AboutPage() {
 
       <Footer />
     </>
+    </I18nScope>
   );
 }

@@ -1,3 +1,5 @@
+import I18nScope from "../../i18n/I18nScope";
+
 import {
   useEffect,
   useState,
@@ -73,6 +75,7 @@ export default function ServiceIndex({
   }
 
   return (
+    <I18nScope namespaces={["service","common"]}>
     <nav
       className="service-v2-index"
       aria-label="Service sections"
@@ -108,5 +111,6 @@ export default function ServiceIndex({
         )}
       </div>
     </nav>
+    </I18nScope>
   );
 }

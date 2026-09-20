@@ -5,6 +5,8 @@ import { Link, NavLink, useLocation } from "react-router";
 import { productCatalog } from "../../data/productCatalog";
 import { useSampleModal } from "../../features/sample/SampleModalContext";
 
+import LanguageSwitcher from "./LanguageSwitcher";
+import I18nScope from "../../i18n/I18nScope";
 const LOGO = "/images/social/vineco-logo.png";
 
 const navigation = [
@@ -86,6 +88,7 @@ function CloseIcon() {
 
 function Logo({ mobile = false, onClick }) {
   return (
+    <I18nScope namespaces={["common","products"]}>
     <Link
       to="/"
       onClick={onClick}
@@ -104,6 +107,7 @@ function Logo({ mobile = false, onClick }) {
         }
       />
     </Link>
+    </I18nScope>
   );
 }
 
@@ -114,6 +118,7 @@ function Logo({ mobile = false, onClick }) {
 
 function SampleButton({ onClick, mobile = false }) {
   return (
+    <I18nScope namespaces={["common","products"]}>
     <button
       type="button"
       onClick={onClick}
@@ -209,6 +214,7 @@ function SampleButton({ onClick, mobile = false }) {
         Get Free Sample
       </span>
     </button>
+    </I18nScope>
   );
 }
 
@@ -613,6 +619,10 @@ export default function Header() {
                   {/* MOBILE CTA */}
                   <div className="mt-auto pt-8">
 
+                    <div className="mb-3">
+                      <LanguageSwitcher mobile />
+                    </div>
+
                     <SampleButton
                       mobile
                       onClick={
@@ -652,6 +662,7 @@ export default function Header() {
   ======================================================== */
 
   return (
+    <I18nScope namespaces={["common","products"]}>
     <>
       <header
         className="
@@ -887,10 +898,14 @@ export default function Header() {
           <div
             className="
               hidden
+              items-center
               justify-self-end
-              min-[1180px]:block
+              gap-2
+              min-[1180px]:flex
             "
           >
+            <LanguageSwitcher />
+
             <SampleButton
               onClick={openSampleModal}
             />
@@ -943,5 +958,6 @@ export default function Header() {
 
       {mobileMenu}
     </>
+    </I18nScope>
   );
 }

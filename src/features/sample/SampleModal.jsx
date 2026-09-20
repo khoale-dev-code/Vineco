@@ -9,6 +9,8 @@ import SmartImage from "../../components/ui/SmartImage";
 import { useSampleModal } from "./SampleModalContext";
 
 
+import I18nScope from "../../i18n/I18nScope";
+import { translateText } from "../../i18n";
 export default function SampleModal() {
   const {
     isOpen,
@@ -101,21 +103,21 @@ export default function SampleModal() {
 
     const subject =
       encodeURIComponent(
-        `[VinEco Free Sample] ${product} - ${name}`,
+        `[${translateText("sample", "VinEco Free Sample")}] ${translateText("products", product)} - ${name}`,
       );
 
 
     const body =
       encodeURIComponent(
         [
-          "FREE SAMPLE REQUEST",
+          translateText("sample", "FREE SAMPLE REQUEST"),
           "",
-          `Name: ${name}`,
-          `Email: ${email}`,
-          `Product: ${product}`,
-          `Buyer type: ${buyerType}`,
+          `${translateText("sample", "Name:")} ${name}`,
+          `${translateText("sample", "Email:")} ${email}`,
+          `${translateText("sample", "Product:")} ${translateText("products", product)}`,
+          `${translateText("sample", "Buyer type:")} ${translateText("sample", buyerType)}`,
           "",
-          "Message:",
+          translateText("sample", "Message:"),
           message,
         ].join("\n"),
       );
@@ -128,6 +130,7 @@ export default function SampleModal() {
 
 
   return (
+    <I18nScope namespaces={["sample","products","common"]}>
     <div
       className="sample-modal-backdrop"
       role="presentation"
@@ -570,5 +573,6 @@ export default function SampleModal() {
 
       </div>
     </div>
+    </I18nScope>
   );
 }

@@ -8,8 +8,11 @@ import { projectData } from "../data/projectData";
 import { mapEmbedHtml } from "../data/mapEmbed";
 
 
+import I18nScope from "../i18n/I18nScope";
+import { translateText } from "../i18n";
 function ContactCard({ icon, eyebrow, title, children, dark = false }) {
   return (
+    <I18nScope namespaces={["contact","common"]}>
     <article
       className={[
         "h-full rounded-[22px] border p-5 transition duration-300 sm:p-6",
@@ -56,6 +59,7 @@ function ContactCard({ icon, eyebrow, title, children, dark = false }) {
         </div>
       </div>
     </article>
+    </I18nScope>
   );
 }
 
@@ -75,18 +79,18 @@ export default function ContactPage() {
     const message = data.get("message") || "";
 
     const subject = encodeURIComponent(
-      `[VinEco Website] ${interest} - ${name}`,
+      `[${translateText("contact", "VinEco Website")}] ${translateText("contact", interest)} - ${name}`,
     );
 
     const body = encodeURIComponent(
       [
-        `Full name: ${name}`,
-        `Company: ${company}`,
-        `Email: ${email}`,
-        `Phone / WhatsApp: ${phone}`,
-        `Interested in: ${interest}`,
+        `${translateText("contact", "Full name:")} ${name}`,
+        `${translateText("contact", "Company:")} ${company}`,
+        `${translateText("contact", "Email:")} ${email}`,
+        `${translateText("contact", "Phone / WhatsApp:")} ${phone}`,
+        `${translateText("contact", "Interested in:")} ${translateText("contact", interest)}`,
         "",
-        "Message:",
+        translateText("contact", "Message:"),
         message,
       ].join("\n"),
     );
@@ -109,6 +113,7 @@ export default function ContactPage() {
 
 
   return (
+    <I18nScope namespaces={["contact","common"]}>
     <>
       <Header />
 
@@ -553,5 +558,6 @@ export default function ContactPage() {
 
       <Footer />
     </>
+    </I18nScope>
   );
 }

@@ -4,6 +4,7 @@ import Reveal from "../ui/Reveal";
 import ServiceResponsiveImage from "./ServiceResponsiveImage";
 
 
+import I18nScope from "../../i18n/I18nScope";
 /* =========================================================
    Tách "Label — mô tả" hoặc "Label: mô tả"
    để bold phần label.
@@ -85,6 +86,7 @@ function RichPoint({ text }) {
 
 function ServiceGroups({ groups = [] }) {
   return (
+    <I18nScope namespaces={["service","common"]}>
     <div className="service-v2-groups">
       {groups.map((group, groupIndex) => (
         <div
@@ -121,6 +123,7 @@ function ServiceGroups({ groups = [] }) {
         </div>
       ))}
     </div>
+    </I18nScope>
   );
 }
 
@@ -156,6 +159,7 @@ function QualityControlSteps({
   steps = [],
 }) {
   return (
+    <I18nScope namespaces={["service","common"]}>
     <div className="qc-steps">
       {steps.map((step, index) => (
         <Reveal
@@ -224,6 +228,7 @@ function QualityControlSteps({
         </Reveal>
       ))}
     </div>
+    </I18nScope>
   );
 }
 
@@ -616,6 +621,7 @@ function PackagingImageSlider({
 
 
   return (
+    <I18nScope namespaces={["service","common"]}>
     <div
       className={[
         "service-v2-packaging-slider",
@@ -828,6 +834,7 @@ function PackagingImageSlider({
       )}
 
     </div>
+    </I18nScope>
   );
 }
 
@@ -863,6 +870,7 @@ export default function ServiceChapter({
 
 
   return (
+    <I18nScope namespaces={["service","common"]}>
     <section
       id={service.id}
       className="service-v2-chapter"
@@ -1230,5 +1238,6 @@ export default function ServiceChapter({
       )}
 
     </section>
+    </I18nScope>
   );
 }

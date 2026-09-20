@@ -3,11 +3,13 @@ import {
   useState,
 } from "react";
 
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 import Reveal from "../ui/Reveal";
 import SiteIcon from "../ui/SiteIcon";
 
+import I18nScope from "../../i18n/I18nScope";
 import {
   oemOdmContent,
 } from "../../data/oemOdmContent";
@@ -45,6 +47,7 @@ function StatCard({
   highlighted = false,
 }) {
   return (
+    <I18nScope namespaces={["oem","common"]}>
     <article
       className={[
         "rounded-[22px]",
@@ -78,11 +81,13 @@ function StatCard({
       </strong>
 
     </article>
+    </I18nScope>
   );
 }
 
 
 export default function OemModels() {
+  const { t } = useTranslation("oem");
   const [
     activeKey,
     setActiveKey,
@@ -102,6 +107,7 @@ export default function OemModels() {
 
 
   return (
+    <I18nScope namespaces={["oem","common"]}>
     <section
       id="oem-models"
       className="bg-white py-20 sm:py-24 lg:py-28"
@@ -395,7 +401,10 @@ export default function OemModels() {
                 ].join(" ")}
               >
 
-                Request {activeModel.eyebrow} quote
+                {t("oem.requestQuote", {
+                  model: activeModel.eyebrow,
+                  defaultValue: `Request ${activeModel.eyebrow} quote`,
+                })}
 
                 <SiteIcon
                   name="arrow"
@@ -414,5 +423,6 @@ export default function OemModels() {
       </div>
 
     </section>
+    </I18nScope>
   );
 }

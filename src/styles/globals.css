@@ -73,3 +73,18 @@ select {
   font: inherit;
 }
 /* VINECO CLIENT FONT GUARD END */
+
+
+/* VINECO I18N TYPOGRAPHY START */
+html[lang="ja"] body {
+  font-family: "Lexend Variable", "Lexend", "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", ui-sans-serif, system-ui, sans-serif;
+  line-break: strict;
+}
+
+html[lang="ja"] button,
+html[lang="ja"] input,
+html[lang="ja"] select,
+html[lang="ja"] textarea {
+  font-family: inherit;
+}
+/* VINECO I18N TYPOGRAPHY END */

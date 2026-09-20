@@ -18,6 +18,7 @@ import SiteIcon from "../components/ui/SiteIcon";
 import { productCatalog } from "../data/productCatalog";
 
 
+import I18nScope from "../i18n/I18nScope";
 /* ==========================================================
    IMAGE
 ========================================================== */
@@ -53,6 +54,7 @@ function ProductImage({
 
 
   return (
+    <I18nScope namespaces={["products","common"]}>
     <img
       src={src}
       alt={alt || ""}
@@ -77,6 +79,7 @@ function ProductImage({
         className,
       ].join(" ")}
     />
+    </I18nScope>
   );
 }
 
@@ -113,6 +116,7 @@ function BenefitCard({
   index,
 }) {
   return (
+    <I18nScope namespaces={["products","common"]}>
     <Reveal
       variant="up"
       delay={index * 70}
@@ -178,6 +182,7 @@ function BenefitCard({
 
       </article>
     </Reveal>
+    </I18nScope>
   );
 }
 
@@ -197,6 +202,7 @@ function ProductGallery({
     images.length === 1;
 
   return (
+    <I18nScope namespaces={["products","common"]}>
     <div
       className={[
         "grid gap-4",
@@ -278,6 +284,7 @@ function ProductGallery({
         },
       )}
     </div>
+    </I18nScope>
   );
 }
 
@@ -294,6 +301,7 @@ function RopeDesignCard({
     index === 4;
 
   return (
+    <I18nScope namespaces={["products","common"]}>
     <Reveal
       variant="up"
       delay={index * 55}
@@ -427,6 +435,7 @@ function RopeDesignCard({
 
       </article>
     </Reveal>
+    </I18nScope>
   );
 }
 
@@ -532,6 +541,7 @@ export default function ProductDetailPage() {
 
 
   return (
+    <I18nScope namespaces={["products","common"]}>
     <>
       <Header />
 
@@ -1255,5 +1265,6 @@ export default function ProductDetailPage() {
       <Footer />
       <FloatingContactDock />
     </>
+    </I18nScope>
   );
 }

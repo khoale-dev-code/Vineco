@@ -15,6 +15,7 @@ import { serviceContent } from "../data/serviceContent";
 import { projectData } from "../data/projectData";
 
 
+import I18nScope from "../i18n/I18nScope";
 /* =========================================================
    GLOBAL BUSINESS VISUAL
    No external library required
@@ -40,6 +41,7 @@ function GlobalBusinessVisual() {
   ];
 
   return (
+    <I18nScope namespaces={["service","common"]}>
     <div className="relative w-full overflow-hidden rounded-[22px] border border-[#1E2A24]/8 bg-[#FAF8F5] shadow-[0_24px_60px_rgba(30,42,36,0.08)] sm:rounded-[28px]">
 
       {/* TOP */}
@@ -129,6 +131,7 @@ function GlobalBusinessVisual() {
       </div>
 
     </div>
+    </I18nScope>
   );
 }
 
@@ -147,6 +150,7 @@ export default function ServicePage() {
     ];
 
   return (
+    <I18nScope namespaces={["service","common"]}>
     <>
       <Header />
 
@@ -581,5 +585,6 @@ export default function ServicePage() {
 
       <Footer />
     </>
+    </I18nScope>
   );
 }

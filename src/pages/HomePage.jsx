@@ -12,6 +12,7 @@ import SiteIcon from "../components/ui/SiteIcon";
 import { projectData } from "../data/projectData";
 
 
+import I18nScope from "../i18n/I18nScope";
 /* ==========================================================
    HOME CONTENT
 ========================================================== */
@@ -83,6 +84,7 @@ const homeContent = {
 
 function ProductCard({ product, index }) {
   return (
+    <I18nScope namespaces={["home","common","products"]}>
     <Reveal
       variant="up"
       delay={index * 100}
@@ -151,6 +153,7 @@ function ProductCard({ product, index }) {
         </div>
       </article>
     </Reveal>
+    </I18nScope>
   );
 }
 
@@ -161,6 +164,7 @@ function ProductCard({ product, index }) {
 
 export default function HomePage() {
   return (
+    <I18nScope namespaces={["home","common","products"]}>
     <>
       <Header />
 
@@ -522,5 +526,6 @@ export default function HomePage() {
 
       <Footer />
     </>
+    </I18nScope>
   );
 }

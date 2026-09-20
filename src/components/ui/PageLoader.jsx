@@ -1,6 +1,7 @@
 import { useLocation } from "react-router";
 
 
+import I18nScope from "../../i18n/I18nScope";
 const routeLabels = {
   "/": "Home",
   "/about": "Our Story",
@@ -29,6 +30,7 @@ export default function PageLoader() {
 
 
   return (
+    <I18nScope namespaces={["common"]}>
     <div
       className="page-loader"
       role="status"
@@ -147,5 +149,6 @@ export default function PageLoader() {
       </div>
 
     </div>
+    </I18nScope>
   );
 }

@@ -1,3 +1,5 @@
+import I18nScope from "../../i18n/I18nScope";
+
 function extractIframeSource(html) {
   if (!html) return "";
 
@@ -49,6 +51,7 @@ export default function GoogleMapEmbed({
   }
 
   return (
+    <I18nScope namespaces={["common","contact"]}>
     <div className="overflow-hidden rounded-[28px] border border-ink/10 bg-white shadow-[0_20px_60px_rgba(30,42,36,0.10)]">
       <iframe
         src={src}
@@ -59,5 +62,6 @@ export default function GoogleMapEmbed({
         className="h-[360px] w-full border-0 sm:h-[440px] lg:h-[500px]"
       />
     </div>
+    </I18nScope>
   );
 }

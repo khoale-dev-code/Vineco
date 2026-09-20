@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { projectData } from "../../data/projectData";
 import SiteIcon from "../ui/SiteIcon";
 
+import I18nScope from "../../i18n/I18nScope";
 export default function Footer() {
   const [logoFailed, setLogoFailed] = useState(false);
 
@@ -15,6 +16,7 @@ export default function Footer() {
   ].filter((item) => item.href);
 
   return (
+    <I18nScope namespaces={["common","products"]}>
     <footer className="border-t border-[#1E2A24]/10 bg-[#FAF8F5] text-[#1E2A24]">
 
     
@@ -228,6 +230,7 @@ export default function Footer() {
         </p>
       </div>
     </footer>
+    </I18nScope>
   );
 }
 

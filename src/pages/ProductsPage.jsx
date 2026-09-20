@@ -11,6 +11,7 @@ import SiteIcon from "../components/ui/SiteIcon";
 import { productCatalog } from "../data/productCatalog";
 
 
+import I18nScope from "../i18n/I18nScope";
 /* ==========================================================
    SMALL UI
 ========================================================== */
@@ -153,6 +154,7 @@ function ProductCollectionCard({
     getCollectionCardImageConfig(product);
 
   return (
+    <I18nScope namespaces={["products","common"]}>
     <Reveal
       variant="up"
       delay={delay}
@@ -270,6 +272,7 @@ function ProductCollectionCard({
         </div>
       </Link>
     </Reveal>
+    </I18nScope>
   );
 }
 
@@ -283,6 +286,7 @@ function RopeFeatureCard({
   productSlug,
 }) {
   return (
+    <I18nScope namespaces={["products","common"]}>
     <Reveal
       variant="up"
       className="h-full"
@@ -461,6 +465,7 @@ function RopeFeatureCard({
         </div>
       </Link>
     </Reveal>
+    </I18nScope>
   );
 }
 
@@ -475,6 +480,7 @@ function RopeSmallCard({
   productSlug,
 }) {
   return (
+    <I18nScope namespaces={["products","common"]}>
     <Reveal
       variant="up"
       delay={index * 60}
@@ -626,6 +632,7 @@ function RopeSmallCard({
         </div>
       </Link>
     </Reveal>
+    </I18nScope>
   );
 }
 
@@ -647,6 +654,7 @@ export default function ProductsPage() {
 
 
   return (
+    <I18nScope namespaces={["products","common"]}>
     <>
       <Header />
 
@@ -1047,5 +1055,6 @@ export default function ProductsPage() {
       <Footer />
       <FloatingContactDock />
     </>
+    </I18nScope>
   );
 }

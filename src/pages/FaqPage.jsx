@@ -6,8 +6,10 @@ import Reveal from "../components/ui/Reveal";
 import { projectData } from "../data/projectData";
 
 
+import I18nScope from "../i18n/I18nScope";
 export default function FaqPage() {
   return (
+    <I18nScope namespaces={["faq","common"]}>
     <>
       <Header />
 
@@ -153,5 +155,6 @@ export default function FaqPage() {
 
       <Footer />
     </>
+    </I18nScope>
   );
 }
