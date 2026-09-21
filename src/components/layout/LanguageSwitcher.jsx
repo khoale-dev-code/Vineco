@@ -87,10 +87,32 @@ export default function LanguageSwitcher({ mobile = false }) {
     triggerRef.current?.focus({ preventScroll: true });
   }
 
-  function selectLanguage(value) {
+  async function selectLanguage(value) {
     if (!SUPPORTED_LANGUAGES.includes(value)) return;
-    if (value !== current) void i18n.changeLanguage(value);
-    closeMenu();
+
+    const shouldChange =
+      value !== current;
+
+    // Close first so the language re-render cannot race with
+    // an open popover/focus transition.
+    setOpen(false);
+
+    if (shouldChange) {
+      try {
+        await i18n.changeLanguage(value);
+      } catch (error) {
+        console.error(
+          "[VinEco i18n] Failed to change language:",
+          error,
+        );
+      }
+    }
+
+    window.requestAnimationFrame(() => {
+      triggerRef.current?.focus({
+        preventScroll: true,
+      });
+    });
   }
 
   function handleMenuKeyDown(event) {

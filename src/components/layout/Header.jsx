@@ -388,6 +388,7 @@ export default function Header() {
     mobileOpen &&
     typeof document !== "undefined"
       ? createPortal(
+          <I18nScope namespaces={["common","products"]}>
           <div
             role="dialog"
             aria-modal="true"
@@ -651,7 +652,8 @@ export default function Header() {
               </div>
 
             </div>
-          </div>,
+          </div>
+          </I18nScope>,
           document.body,
         )
       : null;
